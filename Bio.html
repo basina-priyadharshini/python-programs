@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sonu Sood | Biography</title>
+
+<style>
+:root{
+    --dark:#0f0f0f;
+    --light:#f5f5f5;
+    --accent:#e50914;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body{
+    background:var(--dark);
+    color:#eee;
+    overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.4)),
+    url("Img/Sonu1.jpg")
+    center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    padding:0 10%;
+}
+
+.hero-content{
+    max-width:650px;
+    animation:slideUp 1.4s ease;
+}
+
+.hero h1{
+    font-size:64px;
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+
+.hero span{
+    color:var(--accent);
+}
+
+.hero p{
+    font-size:22px;
+    opacity:.9;
+}
+
+/* SECTION */
+.section{
+    padding:100px 10%;
+    background:var(--dark);
+}
+
+.section.light{
+    background:#151515;
+}
+
+.title{
+    font-size:36px;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.title::after{
+    content:"";
+    width:70px;
+    height:4px;
+    background:var(--accent);
+    position:absolute;
+    left:0;
+    bottom:-15px;
+}
+
+/* BIO */
+.bio{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:60px;
+    align-items:center;
+}
+
+.bio img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 25px 50px rgba(0,0,0,.6);
+    transition:.6s;
+}
+
+.bio img:hover{
+    transform:scale(1.05);
+}
+
+.bio p{
+    font-size:18px;
+    line-height:1.9;
+    opacity:.95;
+}
+
+/* TIMELINE */
+.timeline{
+    border-left:3px solid var(--accent);
+    padding-left:40px;
+}
+
+.time{
+    margin-bottom:45px;
+    position:relative;
+    animation:fadeIn 1.2s ease;
+}
+
+.time::before{
+    content:"";
+    width:18px;
+    height:18px;
+    background:var(--accent);
+    border-radius:50%;
+    position:absolute;
+    left:-50px;
+    top:6px;
+}
+
+.time h3{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,.5);
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-15px);
+    background:rgba(255,255,255,.12);
+}
+
+.card h4{
+    color:var(--accent);
+    margin-bottom:12px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.gallery div{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery div:hover img{
+    transform:scale(1.2);
+}
+
+/* QUOTE */
+.quote{
+    background:
+    linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,.7)),
+    url("https://upload.wikimedia.org/wikipedia/commons/5/5a/Sonu_Sood_at_IIFA_2017.jpg")
+    center/cover;
+    padding:120px 10%;
+    text-align:center;
+}
+
+.quote p{
+    font-size:30px;
+    font-style:italic;
+    max-width:900px;
+    margin:auto;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    padding:30px;
+    text-align:center;
+    font-size:14px;
+    color:#aaa;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp{
+    from{opacity:0; transform:translateY(60px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .hero h1{font-size:44px;}
+    .bio{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>SONU <span>SOOD</span></h1>
+        <p>Actor • Humanitarian • Inspiration</p>
+    </div>
+</section>
+
+<!-- BIOGRAPHY -->
+<section class="section">
+    <h2 class="title">Biography</h2>
+    <div class="bio">
+        <img src="Img/Sonu3.webp">
+        <p>
+            Sonu Sood is one of India’s most respected actors and globally admired
+            philanthropists. With a career spanning more than two decades,
+            he has worked across Hindi, Telugu, Tamil, and Kannada cinema.
+            Beyond films, he is celebrated as a real-life hero for transforming
+            compassion into action and using his influence to uplift society.
+        </p>
+    </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section light">
+    <h2 class="title">Journey</h2>
+    <div class="timeline">
+        <div class="time">
+            <h3>1973 – Early Life</h3>
+            <p>
+                Born in Moga, Punjab, Sonu Sood grew up with strong values of
+                discipline, humility, and service that shaped his personality.
+            </p>
+        </div>
+
+        <div class="time">
+            <h3>1999 – Entry into Cinema</h3>
+            <p>
+                He entered the film industry without any background support,
+                beginning his journey in South Indian cinema through dedication
+                and perseverance.
+            </p>
+        </div>
+
+        <div class="time">
+            <h3>2008 – National Recognition</h3>
+            <p>
+                His powerful performance in <strong>Jodhaa Akbar</strong>
+                brought him nationwide recognition and respect.
+            </p>
+        </div>
+
+        <div class="time">
+            <h3>2010–2019 – Career Growth</h3>
+            <p>
+                Sonu Sood continued delivering impactful performances while
+                establishing himself as a dependable and versatile actor.
+            </p>
+        </div>
+
+        <div class="time">
+            <h3>2020 – Humanitarian Turning Point</h3>
+            <p>
+                During the COVID-19 pandemic, he helped lakhs of migrant workers
+                by arranging transport, food, shelter, and medical assistance.
+            </p>
+        </div>
+
+        <div class="time">
+            <h3>2021 – Present</h3>
+            <p>
+                Through the <strong>Sood Charity Foundation</strong>, he continues
+                to support education, healthcare, employment, and disaster relief.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section">
+    <h2 class="title">Achievements & Impact</h2>
+    <div class="cards">
+        <div class="card">
+            <h4>Cinematic Excellence</h4>
+            <p>
+                Acted in over 50 films across multiple Indian film industries,
+                earning praise for strong and memorable roles.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Humanitarian Leadership</h4>
+            <p>
+                Helped lakhs of migrant workers safely return home during
+                national crisis through organized transport and relief.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Sood Charity Foundation</h4>
+            <p>
+                Founded a charitable organization dedicated to education,
+                employment, medical support, and social welfare.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Global Recognition</h4>
+            <p>
+                Honored by national and international institutions for
+                extraordinary social service and humanitarian impact.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Youth Inspiration</h4>
+            <p>
+                Widely regarded as a motivational figure who inspires millions
+                through words, actions, and leadership.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Legacy Beyond Cinema</h4>
+            <p>
+                Recognized as a symbol of hope, compassion, and responsibility
+                in modern Indian society.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section light">
+    <h2 class="title">Gallery</h2>
+    <div class="gallery">
+        <div><img src="Img/Sonu4.webp"></div>
+        <div><img src="Img/Sonu5.PNG"></div>
+        <div><img src="Img/Sonu1.jpg"></div>
+    </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+    <p>
+        “Success is not measured by fame or wealth,  
+        but by the number of lives you touch.”
+    </p>
+</section>
+
+<footer>
+    © 2025 Sonu Sood | Professional Biography Website
+</footer>
+
+</body>
+</html>

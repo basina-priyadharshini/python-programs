@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Taj Banjara</title>
+
+<style>
+    .top-bar{
+    background:#0b4ea2;
+    color:#fff;
+    text-align:center;
+    padding:8px;
+    font-size:14px;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#fff;
+    position:relative;
+    z-index:100;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b4ea2;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0b4ea2;
+    font-size:15px;
+    cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:28px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    z-index:200;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-content a:hover{
+    background:#f2f2f2;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.book-btn{
+    background:#0b4ea2;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+/*SECTION*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#ffffff;
+    color:#333;
+}
+
+/* ===== CONTAINER ===== */
+.section{
+    max-width:1400px;
+    margin:auto;
+    padding:70px 40px;
+}
+
+/* ===== CONTENT SECTION ===== */
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 60px;
+}
+
+.intro h1{
+    font-size:36px;
+    color:#0b5aa5;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.intro p{
+    font-size:17px;
+    line-height:1.8;
+    color:#555;
+}
+
+/* ===== CARDS ===== */
+.cards{
+    display:flex;
+    gap:40px;
+}
+
+/* ===== CARD ===== */
+.card{
+    width:33.33%;
+    background:#f2f2f2;
+    text-align:left;
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+/* ===== BUTTON ===== */
+.card .btn{
+    background:#0b5aa5;
+    color:#fff;
+    text-align:center;
+    padding:14px 0;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* ===== CONTENT ===== */
+.card-content{
+    padding:25px 20px 30px;
+}
+
+.card-content h3{
+    font-size:20px;
+    color:#0b5aa5;
+    font-weight:500;
+}
+/*SECTION*/
+body{
+    background:#f4f7fc;
+}
+
+/* ===== HEADER ===== */
+.contact-hero{
+    background:#0056a6;
+    color:#fff;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.contact-hero h1{
+    font-size:36px;
+    letter-spacing:1px;
+}
+
+.contact-hero p{
+    font-size:18px;
+    margin-top:12px;
+    opacity:0.9;
+}
+
+/* ===== CONTACT CARDS ===== */
+.contact-cards{
+    max-width:1100px;
+    margin:-60px auto 60px;
+    display:flex;
+    gap:30px;
+    padding:0 20px;
+}
+
+.card{
+    background:#fff;
+    flex:1;
+    padding:30px 25px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    font-size:20px;
+    color:#0056a6;
+    margin-bottom:12px;
+}
+
+.card p{
+    font-size:15px;
+    color:#444;
+    line-height:1.6;
+}
+
+/* ===== FORM SECTION ===== */
+.form-section{
+    max-width:800px;
+    background:#fff;
+    margin:auto;
+    padding:45px;
+    border-radius:10px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+
+.form-section h2{
+    text-align:center;
+    font-size:26px;
+    color:#0056a6;
+    margin-bottom:30px;
+}
+
+.form-row{
+    display:flex;
+    gap:20px;
+    margin-bottom:18px;
+}
+
+.form-row input,
+.form-row textarea{
+    width:100%;
+    padding:14px;
+    font-size:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+textarea{
+    resize:none;
+    height:130px;
+}
+
+</style>
+</head>
+
+<body>
+    <div class="top-bar">
+Welcome to the Official Website of Taj Banjara Hotels. Always ensure you are on www.tajhotels.com
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">TAJ BANJARA HOTELS</div>
+
+    <nav>
+        <a href="Hotel.html">Home</a>
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'hotelDD')">Our Hotels ▾</a>
+            <div class="dropdown-content" id="hotelDD">
+                <a href="#">Hyderabad</a>
+                <a href="#">Goa</a>
+                <a href="#">Mumbai</a>
+                <a href="#">Vizag</a>
+            </div>
+        </div>
+
+        <a href="H-About.html">About Us</a>
+        <a href="H-Offers.html">Offers</a>
+        <a href="Wedding.html">Weddings</a>
+        <a href="Discrimination.html">Discrimination</a>
+
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'expDD')">Food ▾</a>
+            <div class="dropdown-content" id="expDD">
+                <a href="H-Delivary.html">Home Delivary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-right">
+        <div>Call Us: +91 98 8680 0049</div>
+        <a href="#" class="book-btn">BOOK MY STAY</a>
+    </div>
+</header>
+<!--JS-->
+<script>
+function toggleDropdown(e,id){
+    e.preventDefault();
+    document.querySelectorAll('.dropdown-content').forEach(d=>{
+        if(d.id!==id){ d.style.display='none'; }
+    });
+    let box=document.getElementById(id);
+    box.style.display = box.style.display==='block' ? 'none':'block';
+}
+
+document.addEventListener('click',function(e){
+    if(!e.target.closest('.dropdown')){
+        document.querySelectorAll('.dropdown-content').forEach(d=>{
+            d.style.display='none';
+        });
+    }
+});
+</script>
+
+<section class="section">
+
+    <!-- ===== TAJ BANJARA CONTENT ===== -->
+    <div class="intro">
+        <h1>Welcome to Taj Banjara, Hyderabad</h1>
+        <p>
+            Nestled amidst lush greenery overlooking the serene Hussain Sagar Lake,
+            Taj Banjara is a luxurious urban retreat in the heart of Hyderabad.
+            Blending timeless elegance with contemporary comfort, the hotel offers
+            thoughtfully designed spaces, refined dining experiences, and warm
+            Taj hospitality. Whether you are visiting for business, leisure, or
+            celebrations, Taj Banjara promises a stay marked by sophistication,
+            tranquility, and personalized service.
+        </p>
+    </div>
+
+    <!-- ===== CARDS SECTION ===== -->
+    <div class="cards">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+            <div class="btn">More Info</div>
+            <div class="card-content">
+                <h3>Discover Taj Banjara</h3>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+            <div class="btn">More Info</div>
+            <div class="card-content">
+                <h3>Our Experiences</h3>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+            <div class="btn">More Info</div>
+            <div class="card-content">
+                <h3>Our Team & Hospitality</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<div class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>We’re here to help you plan your perfect stay</p>
+</div>
+
+<!-- CONTACT CARDS -->
+<div class="contact-cards">
+
+    <div class="card">
+        <h3>📍 Address</h3>
+        <p>
+            Taj Hotels & Resorts<br>
+            Hyderabad, Telangana, India
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>📞 Phone</h3>
+        <p>
+            +91 98765 43210<br>
+            +91 91234 56789
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>✉️ Email</h3>
+        <p>
+            info@tajhotels.com<br>
+            reservations@tajhotels.com
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

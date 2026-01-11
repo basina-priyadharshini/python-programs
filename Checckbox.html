@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkbox + Radio Validation</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#f2f2f2;
+}
+
+.box{
+  width:340px;
+  margin:100px auto;
+  padding:20px;
+  background:white;
+  box-shadow:0px 0px 10px gray;
+}
+
+h3{
+  text-align:center;
+}
+
+label{
+  display:block;
+  margin:6px 0;
+}
+
+button{
+  width:100%;
+  margin-top:15px;
+  padding:8px;
+  background:green;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h3>Select Skills (Max 2)</h3>
+
+  <label><input type="checkbox" class="skill"> HTML</label>
+  <label><input type="checkbox" class="skill"> CSS</label>
+  <label><input type="checkbox" class="skill"> JavaScript</label>
+  <label><input type="checkbox" class="skill"> Python</label>
+  
+  <button onclick="validateForm()">Submit</button>
+  <hr>
+
+  <h3>Select Gender</h3>
+
+  <label><input type="radio" name="gender" value="Male"> Male</label>
+  <label><input type="radio" name="gender" value="Female"> Female</label>
+  <label><input type="radio" name="gender" value="Other"> Other</label>
+
+  <button onclick="radiovalid()">Submit</button>
+</div>
+
+<script>
+function validateForm(){
+
+  /* Checkbox validation (max 2) */
+  let skills = document.getElementsByClassName("skill");
+  let count = 0;
+
+  for(let i=0;i<skills.length;i++){
+    if(skills[i].checked){
+      count++;
+    }
+  }
+
+  if(count == 0){
+    alert("At least one skill select cheyyali ❗");
+    return;
+  }
+
+  if(count > 2){
+    alert("Maximum 2 skills matrame select cheyyali ❌");
+    return;
+  }
+}
+function radiovalid(){
+  /* Radio validation */
+  let radios = document.getElementsByName("gender");
+  let selectedGender = "";
+
+  for(let i=0;i<radios.length;i++){
+    if(radios[i].checked){
+      selectedGender = radios[i].value;
+    }
+  }
+
+  if(selectedGender == ""){
+    alert("Please select gender ❗");
+    return;
+  }
+  alert("Form Valid ✅ selected: ");
+}
+
+</script>
+
+</body>
+</html>

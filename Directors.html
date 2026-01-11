@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Background</title>
+  <style>
+     .top-bar {
+    width: 100%;
+    background: rgb(10, 10, 96);
+    display: flex;
+    align-items: center;
+    gap:40px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-family: Arial;
+}
+.top-bar .social span {
+    font-weight: bold;
+    color:white;
+}
+.top-bar img {
+    width: 24px;
+    margin: 0 6px;
+}
+.top-bar i {
+    font-size: 18px;
+    margin-right: 0px;
+}
+.head{
+    font-size: 30px;
+    color:blue;
+    background-color: rgb(139, 191, 237);
+    font-weight: bold;
+    text-align: center;
+}
+.head1{
+    display: flex;
+    background: white;
+}
+/*navigation bar*/
+.navbar{
+            padding: 15px;
+            margin-top: 0%;
+            margin-left:30%;
+            width:100%;
+            display: flex;
+            gap: 10px;
+        }
+        .navbar a{
+            color: rgb(17, 15, 15);
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            top:10px;
+            font-weight: bold;
+        }
+        .custom-select1,.custom-select {
+        width: 170px;
+        position: relative;
+        font-size: 18px;
+    }
+    .selected1 {
+        padding: 10px;
+        background: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:rgb(24, 22, 22);
+        font-size:18px;
+        font-weight: bold;
+    }
+    .selected {
+        padding: 10px;
+        background: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:rgb(39, 37, 37);
+        font-size:18px;
+        font-weight: bold;
+    }
+    .options1{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background:white;
+        border: 1px solid white;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background:white;
+        border: 1px solid white;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options1 a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid white;
+    }
+    .options a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid white;
+    }
+    .options1, a:hover {
+        background: white;
+    }
+    .custom-select1.active .options1 {
+        display: block;
+    }
+    .options, a:hover {
+        background: white;
+    }
+    .custom-select.active .options {
+        display: block;
+    }
+    .gg{
+        width:150px;
+        height:90px;
+    }
+    .g1{
+        width:150px;
+        height:70px;
+    }
+    .link{
+        color:orange;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /*body*/
+    .sec1{
+        padding:100px 100px;
+        background-image: url("Img/I11.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        color:rgb(33, 47, 135);
+        text-shadow:0 0 5px  #90a4e1,
+                         0 0 15px #2b41c0,
+                         0 0 25px #3c58ca;
+            font-size: 30px;
+    }
+    /*images*/
+     body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background: #fff;
+        justify-content: center;
+    }
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        width:50%;
+    }
+
+    /* Diamond image */
+    .diamond {
+        width: 160px;
+        height: 160px;
+        transform: rotate(45deg);
+        border: 4px solid #f5b400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .diamond.blue { border-color: #0b42b8; }
+
+    .diamond img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        transform: rotate(-45deg);
+        border-radius: 5px;
+    }
+    .name {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .yellow { color: #f5b400; }
+    .blue { color: #0b42b8; }
+    .line {
+        height: 6px;
+        width: 90px;
+        border-radius: 10px;
+        margin: 6px 0 15px;
+    }
+    .yellow-bg { background: #f5b400; }
+    .blue-bg { background: #0b42b8; }
+    .role {
+        line-height: 22px;
+        font-size: 16px;
+    }
+    .sec2{
+        margin-top:10%;
+        display: flex;
+        gap:10px;
+    }
+    .sec3{
+        display:flex;
+        margin-top:10%;
+    }
+  </style>
+</head>
+<body>
+<head>
+    <div class="top-bar">
+    <div class="social">
+        <span>follow us on:</span>
+        <a href="https://www.instagram.com/find_dav005?utm_source=qr&igsh=dHF2bjhwdnQxdWNr"><img src="Img/Insta.png" alt=""></a>
+        <a href="https://www.facebook.com/share/1CdX6aN3Y8/"><img src="Img/Face.png" alt=""></a>
+        <a href="https://youtube.com/@basinapriya?si=09JiXUFDWnVk3foz"><img src="Img/youtube.png"></a>
+        <img src="facebook.png" alt="">
+    </div>
+       <a href="https://www.nicdc.in/" class="link">Public Grievance Open VC link</a>
+    </div>
+    </head>
+         <header>
+            <DIV class="head">Andhra Pradesh Industrial Infrastructure Corporation<br><small style="font-size:20px;color:gray">A Government of AP Enterprises</small></DIV>
+            <hr>
+            <div class="head1">
+            <div><img src="Img/I3.png" class="gg">
+                <img src="Img/I2.webp" class="g1"></div>
+           <div><div class="navbar">
+           <a href="IIC.html">HOME  </a>
+           <div class="custom-select1">
+           <div class="selected1">ABOUT US ▼</div>
+           <div class="options1"> 
+           <a href="Overview.html">OVERVIEW</a>
+           <a href="Our-Journey.html">OUR JOURNEY</a>
+           <a href="Mission&V.html">MISSION & VISION</a>
+           <a href="Directors.html">BOARD OF DIRECTORS</a>
+            <a href="">CORPORATE PROFILE</a>
+           </div></div>
+           <a href="Trade.html">TENDERS </a>
+           <div class="custom-select">
+           <div class="selected">INFORMATION▼</div>
+           <div class="options">
+           <a href="Right.html">RIGHT TO INFORMATION</a>
+           <a href="Career.html">CAREER</a>
+           <a href="Citi.html">CITIZENS DETAILS</a>
+           </div></div>
+           <a href="#News">NEWS</a>
+           <a href="#contact">CONTACT US</a></div></div>
+           </div>
+        <script>
+        // open/close dropdown on click
+       document.querySelector(".selected1").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+      <script>
+        // open/close dropdown on click
+       document.querySelector(".selected").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+    </header>
+    <section class="sec1">
+      <h1>Board of Directors</h1>
+    </section>
+    <section class="sec2">
+    <!-- LEFT PROFILE -->
+<div class="profile">
+    <div class="diamond">
+        <img src="chairman.jpg" alt="">
+    </div>
+    <div>
+        <div class="name yellow">Sri M. Rama Raju</div>
+        <div class="line yellow-bg"></div>
+        <div class="role">
+            Chairman <br>
+            APIIC Limited,<br>
+            Mangalagiri.
+        </div>
+    </div>
+</div>
+
+<!-- RIGHT PROFILE -->
+<div class="profile">
+    <div class="diamond blue">
+        <img src="director.jpg" alt="">
+    </div>
+
+    <div>
+        <div class="name blue">Sri M Abhisikhth Kishore, IAS</div>
+        <div class="line blue-bg"></div>
+        <div class="role">
+            Vice-Chairman & Managing Director,<br>
+            APIIC Limited &<br>
+            Director of Industries<br>
+            Mangalagiri.
+        </div>
+    </div>
+</div>
+<div class="profile">
+    <div class="diamond">
+        <img src="chairman.jpg" alt="">
+    </div>
+
+    <div>
+        <div class="name yellow">Sri M. Rama Raju</div>
+        <div class="line yellow-bg"></div>
+        <div class="role">
+            Chairman <br>
+            APIIC Limited,<br>
+            Mangalagiri.
+        </div>
+    </div>
+</div>
+</section>
+<section class="sec3">
+    <!-- LEFT PROFILE -->
+<div class="profile">
+    <div class="diamond">
+        <img src="chairman.jpg" alt="">
+    </div>
+    <div>
+        <div class="name yellow">Sri M. Rama Raju</div>
+        <div class="line yellow-bg"></div>
+        <div class="role">
+            Chairman <br>
+            APIIC Limited,<br>
+            Mangalagiri.
+        </div>
+    </div>
+</div>
+
+<!-- RIGHT PROFILE -->
+<div class="profile">
+    <div class="diamond blue">
+        <img src="director.jpg" alt="">
+    </div>
+
+    <div>
+        <div class="name blue">Sri M Abhisikhth Kishore, IAS</div>
+        <div class="line blue-bg"></div>
+        <div class="role">
+            Vice-Chairman & Managing Director,<br>
+            APIIC Limited &<br>
+            Director of Industries<br>
+            Mangalagiri.
+        </div>
+    </div>
+</div>
+<div class="profile">
+    <div class="diamond">
+        <img src="chairman.jpg" alt="">
+    </div>
+
+    <div>
+        <div class="name yellow">Sri M. Rama Raju</div>
+        <div class="line yellow-bg"></div>
+        <div class="role">
+            Chairman <br>
+            APIIC Limited,<br>
+            Mangalagiri.
+        </div>
+    </div>
+</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: linear-gradient(135deg, #fff, #fff);
+  color:#333;
+}
+
+/* NAVBAR */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:100;
+  transition:all 0.3s ease;
+}
+
+header.scrolled{
+  background:#ff7a18;
+  color:white;
+}
+
+.logo{
+  font-weight:700;
+  font-size:22px;
+  color:#ff7a18;
+}
+
+nav a{
+  text-decoration:none;
+  color:#555;
+  margin:0 15px;
+  font-size:15px;
+  position:relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:#ff7a18;
+  left:0;
+  bottom:-4px;
+  transition:width 0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+.chat-btn{
+  padding:10px 20px;
+  border:none;
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color:white;
+  font-weight:600;
+  border-radius:50px;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(255,122,24,0.4);
+}
+.chat-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 8px 25px rgba(255,122,24,0.5);
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:100px 60px;
+}
+
+.hero-text{
+  max-width:50%;
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.hero-text small{
+  color:#ff7a18;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.hero-text h1{
+  font-size:55px;
+  margin:20px 0;
+  color:#1d1d3c;
+}
+
+.hero-text span{
+  color:#ff7a18;
+}
+
+.hero-text p{
+  color:#555;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+
+.buttons{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.hire-btn{
+  padding:12px 28px;
+  border:none;
+  font-weight:600;
+  border-radius:50px;
+  cursor:pointer;
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color:white;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(255,122,24,0.4);
+}
+.hire-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(255,122,24,0.6);
+}
+
+.chat-link{
+  color:#555;
+  text-decoration:none;
+  font-weight:500;
+  transition:color 0.3s;
+}
+.chat-link:hover{
+  color:#ff7a18;
+}
+
+/* HERO IMAGE */
+.hero{
+  margin-left: 10%;
+}
+.hero-img{
+  position:relative;
+  opacity:0;
+  transform:translateX(50px);
+  animation:slideInRight 1s forwards 0.5s;
+}
+.hero-img img{
+  width:350px;
+  border-radius:20px;
+  transition: transform 0.5s ease;
+}
+.hero-img img:hover{
+  transform:scale(1.05);
+}
+
+@keyframes slideInRight{
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* HEADER SECTION */
+.header{
+  text-align:center;
+  padding:60px 20px;
+}
+
+.header h1{
+  font-size:42px;
+  color:#1d1d3c;
+}
+
+.header p{
+  margin-top:10px;
+  color:#555;
+}
+
+/* PROJECTS GRID */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:35px;
+  padding:40px 60px;
+}
+
+.project-item{
+  text-align:center;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
+}
+
+.project-item.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* PROJECT CARD 3D TILT + SHADOW */
+.project-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 30px rgb(181, 119, 81);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  perspective:1000px;
+}
+.project-card:hover{
+  transform: rotateY(8deg) rotateX(5deg) scale(1.05);
+  box-shadow:0 25px 50px rgba(187, 81, 6, 0.2);
+}
+.project-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.project-heading{
+  margin-top:12px;
+  font-size:18px;
+  font-weight:600;
+  color:#ff7a18;
+  transition:color 0.3s;
+}
+.project-heading:hover{
+  color:#ffb347;
+}
+
+/* JS PROGRAMS */
+.sec1{
+  margin:80px 10%;
+  font-family: "Poppins",sans-serif;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 1s ease;
+}
+.sec1 h2{ 
+  text-decoration:underline;
+  margin-bottom:20px;
+  font-size:45px;
+  color:#ff7a18;
+}
+
+.sec1 ol{
+  margin:auto;
+}
+
+.sec1 li{
+  margin:10px 0;
+  font-size:28px;
+}
+
+.sec1 a{
+  text-decoration:none;
+  color:#333;
+  transition:all 0.3s;
+}
+.sec1 a:hover{
+  color:#ff7a18;
+  text-shadow:0 0 5px rgba(255,122,24,0.7);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-text{
+    max-width:100%;
+    margin-left:0;
+  }
+  .hero-img{
+    margin-top:40px;
+  }
+}
+
+@media(max-width:768px){
+  .projects{
+    padding:30px 20px;
+  }
+}
+.projects-section{
+    padding:60px 40px;
+    background:#f4f6fb;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
+    color:#222;
+}
+
+.projects-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.project-card1{
+    background:#fff;
+    width:300px;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgb(167, 166, 166);
+    transition:0.3s ease;
+}
+
+.project-card1:hover{
+    transform:translateY(-8px);
+}
+
+.project-card1 h3{
+    margin-bottom:10px;
+    color:#d96247;
+}
+
+.project-card1 p{
+    font-size:14px;
+    color:#555;
+    line-height:1.6;
+}
+
+.project-card1 a{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.project-card1 a:hover{
+    background:#333;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">PORTFOLIO <br><small>RESUME</small></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#projects-section">Projects</a>
+    <a href="#Programs">Programs</a>
+    <a href="#">Contact Me</a>
+  </nav>
+  <button class="chat-btn">Let's Chat</button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <small>WELCOME TO MY WORLD</small>
+    <h1>Hey, I'm A Full-Stack <br><span> Web Developer.</span></h1>
+    <p>
+      I am a passionate web developer focused on creating responsive and 
+      interactive websites. I enjoy turning designs into real-world applications 
+      using HTML, CSS, JavaScript, and modern frameworks.
+    </p>
+    <div class="buttons">
+      <button class="hire-btn">Hire Me Now</button>
+      <a href="#" class="chat-link">Let's Chat</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="Img/Port3.png" alt="Professional Photo">
+  </div>
+</section>
+
+<section class="header">
+  <h1>My Projects</h1>
+  <p>Some of my recent works</p>
+</section>
+
+<section class="projects" id="projects-section">
+  <div class="project-item"><div class="project-card"><a href="Aadhaar.html"><img src="Img2/Logo.png" alt="Project 1"></a></div><div class="project-heading">AADHAR CARD</div></div>
+  <div class="project-item"><div class="project-card"><a href="Marks-list.html"><img src="Img2/SSC.avif" alt="Project 2"></a></div><div class="project-heading">SSC MARKS LIST</div></div>
+  <div class="project-item"><div class="project-card"><a href="Hall ticket.html"><img src="Img2/sbtet1.png" alt="Project 3"></a></div><div class="project-heading">HALL TICKET</div></div>
+  <div class="project-item"><div class="project-card"><a href="page.html"><img src="Img/career.jpg" alt="Project 4"></a></div><div class="project-heading">Landing Page Design</div></div>
+  <div class="project-item">
+    <div class="project-card">
+    <a href="Agri.html"><img src="Img/crop.jpg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">AGRICULTURE</div>
+  </div>
+
+  <div class="project-item">
+    <div class="project-card">
+     <a href="IIC.html" ><img src="Img2/IIC.png" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">IIC</div>
+  </div>
+
+   <div class="project-item">
+    <div class="project-card">
+     <a href="Hero.html"><img src="Img/Sonu1.jpg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">HERO</div>
+  </div>
+
+   <div class="project-item">
+    <div class="project-card">
+    <a href="Hospital.html"><img src="Img/D8.jpg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">HOSPITAL</div>
+  </div>
+
+   <div class="project-item">
+    <div class="project-card">
+    <a href="Orphans.html"><img src="Img/O2.jpeg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">ORPHANS ORGANISATION</div>
+  </div>
+
+  <div class="project-item">
+    <div class="project-card">
+    <a href="Smart.html"><img src="Img/Sri3.jpg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">SMART CITY</div>
+  </div>
+
+  <div class="project-item">
+    <div class="project-card">
+    <a href="Ship-H.html"><img src="Img/Ship10.webp" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">SHIPYARD</div>
+  </div>
+
+   <div class="project-item">
+    <div class="project-card">
+    <a href="Kedarnath.html" ><img src="Img/K3.jpeg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">TEMPLE</div>
+  </div>
+
+   <div class="project-item">
+    <div class="project-card">
+    <a href="Hotel.html"><img src="Img2/Hotel.jpeg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">HOTEL</div>
+  </div>
+
+   <div class="project-item">
+    <div class="project-card">
+    <a href="E-Commerce.html"><img src="Img2/E-commerce.webp" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">E-COMMERCE</div>
+  </div>
+
+  <div class="project-item">
+    <div class="project-card">
+    <a href="Entertainment.html"><img src="Img2/Disney.jpg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">DISNEY LAND</div>
+  </div>
+
+  <div class="project-item">
+    <div class="project-card">
+    <a href="Wonderla.html"><img src="Img2/P15.jpeg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">WONDER LAND</div>
+  </div>
+
+  <div class="project-item">
+    <div class="project-card">
+    <a href="Casino.html"><img src="Img2/Casi1.webp" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">CASINO</div>
+  </div>
+
+  <div class="project-item">
+    <div class="project-card">
+    <a href="Bitcoin.html"><img src="Img2/Bit3.jpg" alt="Project 4"></a>
+    </div>
+    <div class="project-heading">BITCOIN</div>
+  </div>
+</section>
+
+<div class="sec1" id="Programs">
+<h2>JS PROGRAMS</h2>
+<ol>
+  <li><a href="login.html" target="_blank">Create Login Page validation using JS</a></li>
+  <li><a href="Email.html" target="_blank">Create Email validation using JS</a></li>
+  <li><a href="Phone.html" target="_blank">Create Phone number validation using JS</a></li>
+  <li><a href="Dropdown.html" target="_blank">Create Dropdown validation using JS</a></li>
+  <li><a href="Checckbox.html" target="_blank">Create Checkbox & Radio button using JS</a></li>
+  <li><a href="" target="_blank">Create a Form using JS</a></li>
+</ol>
+</div>
+
+<script>
+// REVEAL PROJECTS + JS SECTION
+const projectItems = document.querySelectorAll('.project-item');
+const jsSec = document.querySelector('.sec1');
+
+function reveal(){
+  const triggerBottom = window.innerHeight * 0.85;
+  projectItems.forEach(item=>{
+    const top = item.getBoundingClientRect().top;
+    if(top < triggerBottom){
+      item.classList.add('show');
+    }
+  });
+
+  if(jsSec.getBoundingClientRect().top < triggerBottom){
+    jsSec.style.opacity='1';
+    jsSec.style.transform='translateY(0)';
+  }
+}
+
+// SMOOTH SCROLL
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior:'smooth'
+    });
+  });
+});
+
+// STICKY HEADER COLOR CHANGE
+window.addEventListener('scroll', ()=>{
+  document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+window.addEventListener('scroll', reveal);
+</script>
+<section class="projects-section" id="projects">
+    <h2 class="section-title">My Python Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="project-card1">
+            <h3>ATM SYSTEM</h3>
+            <p>
+                Python application to manage ATM details,
+                add, Credit and Debit.
+            </p>
+            <a href="ATM.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>NEET EXAMINATION</h3>
+            <p>
+                Display NEET examination seat details.
+            </p>
+            <a href="Neet.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>ELECTRICITY BILL</h3>
+            <p>
+                Calculate the electricity bill based on units consumed.
+            </p>
+            <a href="Electricity.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>EVEN OR ODD NUMBER</h3>
+            <p>
+                Print whether the number is even or odd.
+            </p>
+            <a href="Even_Odd.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>MIDDLE NUMBER</h3>
+            <p>
+                Reverse the number and print the middle digits.
+            </p>
+            <a href="Rev_Middle.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>REVERSE A NUMBER</h3>
+            <p>
+                Print the number in reverse order.
+            </p>
+            <a href="Reverse_num.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>MATRIX MULTIPLICATION</h3>
+            <p>
+                Perform matrix multiplication of two matrices.
+            </p>
+            <a href="MatrixMulti.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>THE ROW WITH MAX SUM.</h3>
+            <p>
+                Find the row with the highest sum in a matrix.
+            </p>
+            <a href="Row_big.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+        <div class="project-card1">
+            <h3>DIAGONAL MATRIX</h3>
+            <p>
+                Check whether the matrix is a diagonal matrix.
+            </p>
+            <a href="DiagonalMatr.py"
+               target="_blank">
+               View on VS Code
+            </a>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>

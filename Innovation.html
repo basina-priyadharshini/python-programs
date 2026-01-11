@@ -1,0 +1,519 @@
+<html>
+    <style>
+  .top-bar{
+  background:#f7931a;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 70px;
+  background:#fff;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.nav-item  a{
+  text-decoration:none;
+  color:#111;
+  font-size:15px;
+  padding:8px 0;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:36px;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  border-radius:6px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:0.3s;
+  z-index:10;
+}
+
+.dropdown a{
+  display:block;
+  padding:12px 18px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+
+.dropdown a:hover{
+  background:#f2f2f2;
+}
+
+.nav-item:hover .dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* HERO IMAGE SECTION */
+.hero{
+  height:420px;
+  background:
+    url("Img2/Bit2.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:goldenrod;
+}
+
+.hero h1{
+  font-size:44px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  color:gold;
+}
+/* MAIN SECTION */
+.innovation{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:30px;
+}
+
+/* CARD */
+.card{
+  border:1px solid #e5e5e5;
+  padding:40px 30px;
+  text-align:center;
+  height:100%;
+  background:#fff;
+}
+
+/* ICON */
+.icon{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+/* TITLE */
+.card h3{
+  font-size:20px;
+  margin-bottom:20px;
+  color:#000;
+}
+
+/* TEXT */
+.card p{
+  font-size:15px;
+  line-height:1.7;
+  color:#777;
+}
+
+.card a{
+  color:#1a73e8;
+  text-decoration:none;
+}
+/* FOOTER */
+.footer{
+  background:linear-gradient(to bottom, #0b0f14, #070a0f);
+  color:#cbd5e1;
+  padding:80px 90px 30px;
+}
+
+/* LOGO */
+.footer-logo{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:26px;
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.footer-logo span{
+  color:#f7931a;
+}
+
+/* CONTENT */
+.footer-content{
+  display:grid;
+  grid-template-columns: 1.2fr repeat(4,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+/* DONATE */
+.donate h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.donate button{
+  background:#f7931a;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  margin:10px 0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.donate a{
+  display:block;
+  color:#3b82f6;
+  font-size:14px;
+  word-break:break-all;
+  margin-top:8px;
+}
+
+/* FOOTER COLUMNS */
+.footer-col h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:14px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin-bottom:10px;
+}
+
+.footer-col a{
+  color:#9ca3af;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  border-top:1px solid #1f2937;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+.footer-bottom span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:#22c55e;
+  border-radius:50%;
+}
+</style>
+<body>
+<div class="top-bar">
+  Bitcoin.org needs your support!
+</div>
+
+<!-- NAVBAR -->
+ <nav class="navbar">
+  <div class="logo"><span>₿</span> Bitcoin</div>
+
+  <div class="nav-links">
+
+    <div class="nav-item">
+      <a href="">Introduction ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Individual.html">Individuals</a>
+        <a href="Bit-Business.html">Businesses</a>
+        <a href="Bit-Developer.html">Developers</a>
+        <a href="Bit-Started.html">Getting started</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-Resource.html">Resources ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Community.html">Community</a>
+        <a href="Bit-Vocabulary.html">Vocabulary</a>
+        <a href="Bit-Events.html">Events</a>
+        <a href="#">Exchanges</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="Innovation.html">Innovation</a>
+    </div>
+    <div class="nav-item">
+      <a href="#">Participate ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Suppport.html">Support Bitcoin</a>
+        <a href="Bit-Buy.html">Buy Bitcoin</a>
+        <a href="Bit-Sell.html">Sell Bitcoin</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-FAQ.html">FAQ</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="hero">
+  <div>
+    <h1>Innovation in Payment Systems</h1>
+    <p>Bitcoin isn't just about sending money.It has many features and opens<br> 
+        many possibilities that the community is still exploring. Here are some of <br>
+        the technologies currently being researched, and in some cases, being<br> 
+        turned into real products and services. The most interesting uses of Bitcoin<br> 
+        are probably still to be discovered. </p>
+  </div>
+</section>
+<section class="innovation">
+  <div class="cards">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Control against fraud</h3>
+      <p>
+        An unprecedented level of security is possible with Bitcoin.
+        The network provides users with protection against most prevalent
+        types of fraud like chargebacks or unwanted charges, and bitcoins
+        are impossible to counterfeit. Users can backup or encrypt their
+        wallets. Hardware wallets make it very difficult to steal or lose
+        money. Bitcoin is designed to allow its users to have complete
+        control over their money.
+      </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>Global accessibility</h3>
+      <p>
+        With Bitcoin, all payments in the world can be fully interoperable.
+        Bitcoin allows any bank, business or individual to securely send
+        and receive payments anywhere at any time, with or without a bank
+        account. Bitcoin is available in a large number of countries that
+        still remain out of reach for most payment systems due to their
+        own limitations. Bitcoin increases global access to commerce and
+        it can help international trades to flourish.
+      </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <div class="icon">💰</div>
+      <h3>Cost efficiency</h3>
+      <p>
+        With the use of cryptography, secure payments are possible without
+        slow and costly middlemen. A Bitcoin transaction can be much
+        cheaper than its alternatives and be completed in a short time.
+        This means Bitcoin holds some potential to become a common way
+        to transfer any currency in the future. Bitcoin could also play
+        a role in <a href="#">reducing poverty</a> in many countries by
+        cutting high transaction fees on workers' salary.
+      </p>
+    </div>
+
+     <div class="card">
+      <div class="icon">🫴🪙</div>
+      <h3>Tips and donations</h3>
+      <p>
+        Bitcoin has been a particularly efficient solution for tips and
+        donations. Sending a payment only requires one click and receiving
+        donations can be as simple as displaying a QR code. Donations can
+        be visible for the public, giving increased transparency for
+        non-profit organizations. In cases of emergencies such as natural
+        disasters, Bitcoin donations could contribute to a faster
+        international response.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">👥</div>
+      <h3>Crowdfunding</h3>
+      <p>
+        Bitcoin can be used to run Kickstarter-like crowdfunding campaigns,
+        in which individuals pledge money to a project that is taken from
+        them only if enough pledges are received to meet the target. Such
+        assurance contracts are processed by the Bitcoin protocol, which
+        prevents a transaction from taking place until all conditions have
+        been met. <a href="#">Learn more</a> about the technology behind
+        crowdfunding.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊🪙</div>
+      <h3>Micro payments</h3>
+      <p>
+        Imagine listening to Internet radio paid by the second, viewing web
+        pages with a small tip for each ad not shown, or buying bandwidth
+        from a WiFi hotspot by the kilobyte. Bitcoin is efficient enough to
+        make all of these ideas possible.
+        <a href="#">Learn more</a> about the technology behind Bitcoin
+        micropayments or about <a href="#">future upgrades</a> currently
+        being designed and implemented to make micropayments more
+        accessible.
+      </p>
+    </div>
+
+     <div class="card">
+      <div class="icon">⚖️</div>
+      <h3>Dispute mediation</h3>
+      <p>
+        Bitcoin can be used to develop innovative dispute mediation services
+        using multiple signatures. Such services could make it possible for
+        a third party to approve or reject a transaction in case of
+        disagreement between the other parties without having control of
+        their money. Since these services would be compatible with any user
+        and merchant using Bitcoin, this would likely lead to free
+        competition and higher quality standards.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">👥✍️</div>
+      <h3>Multi-signature accounts</h3>
+      <p>
+        Multiple signatures allow a transaction to be accepted by the
+        network only if a certain number of a defined group of persons
+        agree to sign the transaction. This could be used by a board of
+        directors to prevent any member to spend parts of their treasury
+        without other members' consent. This can also be used by banks to
+        prevent theft by blocking payments above a threshold if the user
+        does not provide additional credentials.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧩✅</div>
+      <h3>Trust and integrity</h3>
+      <p>
+        Bitcoin offers solutions to many of the trust problems that plague
+        banks. With selective accounting transparency, digital contracts,
+        and irreversible transactions, Bitcoin can be used as a ground to
+        restore trust and agreement. Crooked banks cannot cheat the system
+        to make a profit at the expense of other banks or the public. A
+        future in which major banks would support Bitcoin could help to
+        reinstate integrity and trust in financial institutions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+
+  <!-- LOGO -->
+  <div class="footer-logo">
+    <span>₿</span>Bitcoin
+  </div>
+
+  <!-- CONTENT -->
+  <div class="footer-content">
+
+    <!-- DONATE -->
+    <div class="donate">
+      <h4>Support Bitcoin.org:</h4>
+      <button>Donate</button>
+      <a href="#">bc1qpe6jw8ptj9l9pkscmlf8fhhkrrjeawgpjvtq8</a>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="footer-col">
+      <h4>Introduction:</h4>
+      <ul>
+        <li><a href="#">Individuals</a></li>
+        <li><a href="#">Businesses</a></li>
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Getting started</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">You need to know</a></li>
+        <li><a href="#">White paper</a></li>
+      </ul>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-col">
+      <h4>Resources:</h4>
+      <ul>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Exchanges</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Vocabulary</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Bitcoin Core</a></li>
+      </ul>
+    </div>
+
+    <!-- PARTICIPATE -->
+    <div class="footer-col">
+      <h4>Participate:</h4>
+      <ul>
+        <li><a href="#">Support Bitcoin</a></li>
+        <li><a href="#">Buy Bitcoin</a></li>
+        <li><a href="#">Sell Bitcoin</a></li>
+        <li><a href="#">Running a full node</a></li>
+        <li><a href="#">Development</a></li>
+      </ul>
+    </div>
+
+    <!-- OTHER -->
+    <div class="footer-col">
+      <h4>Other:</h4>
+      <ul>
+        <li><a href="#">Avoid Scams</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">About bitcoin.org</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <span>© Bitcoin Project 2009–2025 Released under the MIT license</span>
+    <span><div class="dot"></div> Network Status &nbsp; English</span>
+  </div>
+</footer>
+     </body>
+     </html>

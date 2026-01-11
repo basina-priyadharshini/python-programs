@@ -1,0 +1,359 @@
+<html>
+    <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* HEADER */
+.top-header {
+    width: 100%;
+    background: #e498be;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-logo img {
+    width: 110px;
+}
+.center-text {
+    text-align: center;
+}
+.center-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color:rgb(152, 55, 113);
+}
+.center-text h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    color: rgb(15, 15, 135);
+}
+.icons img {
+    width: 75px;
+    margin: 10px;
+}
+.right-image {
+    text-align: center;
+}
+.right-image img {
+    width: 160px;
+    height: 100%;
+    border-radius: 6px;
+}
+/* NAVBAR */
+nav{
+    background:#507be7;
+    padding:15px 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+nav a{
+    text-decoration:none;
+    color:#000;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+/* Dropdown Arrow */
+.arrow{
+    font-size:12px;
+}
+/* Dropdown Menu */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:white;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+.dropdown-menu a{
+    padding:12px;
+    display:block;
+}
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu{
+    display:flex;
+}
+/* Hover for main menu */
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+}
+.heading-box {
+    width: 300px;
+    margin: 20px auto;
+    background: #b6d4f6;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    border-bottom: 6px solid #8db3ff;
+}
+.heading-box h1 {
+    font-size: 26px;
+    margin: 0;
+    color: #2a4a8c;
+}
+/* Page Title */
+.title {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #d21b1b;
+}
+/* Table Styling */
+.table-container {
+    width: 100%;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+th {
+    background: #e8e8e8;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+tr:nth-child(even) {
+    background: #f5f5f5;
+}
+    </style>
+<body>
+    <!-- TOP HEADER WITH LOGOS -->
+<header class="top-header">
+    <div class="left-logo">
+        <img src="Img/I8.png" alt="AP Govt Logo">
+    </div>
+    <div class="left-logo">
+    <img src="Img/O6.png" alt="">
+    </div>
+    <div class="center-text">
+        <h2>Women Development and Child Welfare Department</h2>
+        <h3>Government of Andhra Pradesh</h3>
+    </div>
+    <div class="right-image">
+        <img src="Img/O8.png" alt="CM">
+    </div>
+    <div class="right-image">
+        <img src="Img/O9.png" alt="Minister">
+    </div>
+    <div class="right-image">
+            <img src="Img/O5.png" alt=""></div>
+</header>
+<!-- NAVIGATION BAR -->
+<nav>
+    <ul>
+       <!-- HOME DROPDOWN -->
+        <li><a href="Orphans.html">HOME</a></li>
+        <li><a href="Orphans.html">MISSION & VISION</a></li>
+        <li class="dropdown">
+            <a href="#">SCHEME's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Scheme1.html">Saksham Anganwadi</a>
+                <a href="Scheme2.html">Mission Sakti</a>
+            </div>
+        </li>
+        <li><a href="G2.html">GALLERY</a></li>
+        <!-- ABOUT DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">ACT's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="RTI.html">RTI Act</a>
+                <a href="#">Vision & Mission</a>
+            </div>
+        </li>
+        <!-- SERVICES DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">INSTITUTES <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Home.html">Children-Home</a>
+                <a href="Shakti.html">Sakhi Nivas</a>
+                <a href="Hostel.html">Hostels</a>
+            </div>
+        </li>
+        <!-- SIMPLE MENU WITHOUT DROPDOWN -->
+        <li><a href="">CONTACTS</a></li>
+    </ul>
+</nav>
+<body>
+<div class="heading-box">
+    <h1>Children Homes</h1>
+</div>
+<h2 class="title">Children Homes</h2>
+<div class="table-container">
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>Name of the Children Home</th>
+        <th>Location/Address</th>
+        <th>Contact details/year of establishment</th>
+        <th>Sanctioned Strength</th>
+        <th>Present Strength</th>
+        <th>In case of Hostel. No. of SC/ST/OBC Students</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Children Home-Srikakulam</td>
+        <td>Segidi veedhi, Back side of DCMS Gowdown, Arasavelli, Srikakulam Town & District, Pin:532401</td>
+        <td>9441878001 / 1965</td>
+        <td>50</td>
+        <td>20</td>
+        <td>SC-2 BC-18</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Children Home - Palasa</td>
+        <td>D.No. 13-15-225, 1st Floor, Opp. Tapaswi School, SBI-Kasibugga Line, Palasa, Pin - 532222</td>
+        <td>8500322628 / 1979</td>
+        <td>50</td>
+        <td>39</td>
+        <td>SC-2 ST-22 BC-13 OC-2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Children Home - Sompeta</td>
+        <td>Superintendent, Children Home Sompeta, Indiramma petta down, Sompeta, Pin: 532284</td>
+        <td>7893935585 / 1985</td>
+        <td>50</td>
+        <td>25</td>
+        <td>SC-7 ST-10 BC-7 OC-1</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Children Home - Vizianagaram</td>
+        <td>D.No.176, Street No-100, Maharanipeta, Vizianagaram District, Pin: 535002</td>
+        <td>9985108807 / 1982</td>
+        <td>50</td>
+        <td>20</td>
+        <td>SC-10 BC-09 Minority-1</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Children Home - Gajapathinagaram</td>
+        <td>Diguva Street, Ward No.1, Gajapathinagaram, Pin: 535270</td>
+        <td>7989628294 / 1987</td>
+        <td>50</td>
+        <td>23</td>
+        <td>SC-8 ST-9 BC-5 OC-1</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Children Home - Bobbili</td>
+        <td>Prasadnagar Colony, Patha Bobbili (V), Pin: 535558</td>
+        <td>9440114277 / 1966</td>
+        <td>50</td>
+        <td>31</td>
+        <td>SC-2 ST-5 BC-24</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Children Home - Bheemunipatanam</td>
+        <td>O/o Superintendent, Children Home, D.No: 11-3-41, Appikonda Veedhi, Chinna Bazar, Near Police station, Bheemunipatnam, Visakhapatnam-531163</td>
+        <td>9440114277 / 1966</td>
+        <td>50</td>
+        <td>31</td>
+        <td>SC-2 ST-5 BC-24</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Children Home - Kasimkota</td>
+        <td>Near Police Station, OPP: BC Boys Welfare Hostel, Kasimkota, Anakapalli District-531031, Andhra Pradesh.</td>
+        <td>7893514460/11.05.1979</td>
+        <td>50</td>
+        <td>37</td>
+        <td>SC-10 ST-5 BC-20 OC-2</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Children Home - Narsipatnam</td>
+        <td>B.C Colony.Oppt MPP School.Peenari palem ,Narsipatnam, Anakapalli dist , Andhra Pradesh, PIN-531116</td>
+        <td>9885479329/1979</td>
+        <td>50</td>
+        <td>50</td>
+        <td>ST -50 OBC-1</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Children Home - Chintapalli</td>
+        <td>opp - Coffee Department office, Gudem Road, Chintapalli Mandal, Alluri Sitharama Raju District.Pin.531111, Andhra Pradesh.</td>
+        <td>9885479329/1982</td>
+        <td>50</td>
+        <td>50</td>
+        <td>ST-50</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Children Home - Paderu</td>
+        <td>Thalarsingh, Paderu, Alluri Sieta Ramaraju District -531024, Andhra Pradesh.</td>
+        <td>9014024509/1986</td>
+        <td>50</td>
+        <td>50</td>
+        <td>SC-50</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Children Home - Rajahmundry</td>
+        <td>D.ni:-47-4-1/3, Opposite SKR Women's College, Gandhipuram 1, Rajahmundry, East Godavari district, Andhra Pradesh</td>
+        <td>9394079427/1963</td>
+        <td>50</td>
+        <td>25</td>
+        <td>ST -8 SC -3 OBC-14</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Children Home - Denduluru</td>
+        <td>D.No.1-111,Near M. R. O. office,Kaseegariveedhi,1 st ward,Denduluru,Eluru District,Andhrapradesh.</td>
+        <td>9908394714/1977</td>
+        <td>60</td>
+        <td>16</td>
+        <td>SC-1 ST-8 OBC-7</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>Children Home - Nuziveedu</td>
+        <td>4-122,Kummaripeta, Dumdum garden,Nuzvid, Eluru district,Andhrapradesh.</td>
+        <td>8919594035/1969</td>
+        <td>50</td>
+        <td>24</td>
+        <td>SC-7 ST-5 BC-10 OC-2</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Children Home - Tanuku</td>
+        <td>Old Town, 6th Ward, Khandavallivari Veedhi, D.NO.16-48-26, Tanuku, W.G.Dist.,</td>
+        <td>9440135948/1965</td>
+        <td>50</td>
+        <td>10</td>
+        <td>SC-2 BC-6 OC-2</td>
+    </tr>
+</table>
+</div>

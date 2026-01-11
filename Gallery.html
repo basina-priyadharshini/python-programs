@@ -1,0 +1,104 @@
+<html>
+    <style>
+        .bg{
+            background-image: url(Img/bg3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;    
+        }
+        .hed{
+            text-align: center;
+           
+            color:aliceblue;
+        }
+        .bar{
+            position: fixed;
+            width:100%;
+            top:30px;
+            display: flex;
+            gap:100px;
+            margin-left: 900px;
+            font-size: 18px;
+            a{
+                color:#100556;
+            }
+           font-weight: bold;
+        }
+        .slider{
+             position:fixed;
+             top:50px;
+             left:500px;
+             width:400px;
+        }
+        .slider img{
+             width:700px;
+             height:650px;
+             border-radius:10px;
+        }
+        .b1{
+            position: fixed;
+            top:350px;
+            left:420px;
+        }
+        .b2{
+            position:fixed;
+            top:350px;
+            left:1200px;
+        }
+        .ba1{
+            padding:8px 23px;
+            border:none;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius:10px;
+            background-color:paleturquoise;
+        }
+        .ba2{
+            padding:8px 23px;
+            border:none;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius:10px;
+            background-color:paleturquoise;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+    <title>
+        Gallery</title>
+        <head>
+            <div class="hed">
+                <h1>GALLERY</h1>
+            </div>
+            <div class="bar">
+            <a href="page.html">Home</a>
+            <a href="About us.html">About Us</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+        </head>
+        <body class="bg">
+
+        <div class="slider">
+          <img id="photo" src="Img/Care1.png">
+        </div>
+
+    <div class="b1"><button class="ba1" onclick="prevPhoto()">Prev</button></div>
+    <div class="b2"><button class="ba2" onclick="nextPhoto()">Next</button></div>
+
+    <script>
+    let photos = ["Img/care1.png","Img/Care3.png","Img/Care4.webp","Img/Care5.webp","Img/Care2.jpg"];
+    let index = 0;
+
+    function nextPhoto(){
+    index = (index + 1) % photos.length;
+    document.getElementById("photo").src = photos[index];
+    }
+
+    function prevPhoto(){
+    index = (index - 1 + photos.length) % photos.length;
+    document.getElementById("photo").src = photos[index];
+    }
+    </script>        
+</body>
+</html>

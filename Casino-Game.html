@@ -1,0 +1,707 @@
+<html>
+    <style>
+        body{
+            background: #000;
+            color:#fff;
+        }
+        /* ===== HEADER ===== */
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    position: fixed;
+    background: #350101;
+    padding:25px 60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    height:42px;
+}
+/* NAV */
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:50vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("Img2/Casi3.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+/* HERO TEXT */
+.hero h1{
+    font-size:72px;
+    letter-spacing:6px;
+    font-weight:300;
+    color: #d4af37;
+}
+
+/* SCROLL ICON */
+.scroll-icon{
+    position:absolute;
+    top:50%;
+    width:28px;
+    height:48px;
+    border:2px solid #fff;
+    border-radius:20px;
+}
+
+.scroll-icon::after{
+    content:"";
+    width:6px;
+    height:10px;
+    background:#fff;
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:3px;
+    animation:scroll 1.5s infinite;
+}
+
+@keyframes scroll{
+    0%{ opacity:0; top:10px; }
+    50%{ opacity:1; }
+    100%{ opacity:0; top:25px; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    header{
+        padding:20px;
+    }
+
+    nav ul{
+        gap:18px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        letter-spacing:3px;
+    }
+}
+/* ===== SECTION ===== */
+.games-section{
+    padding:80px 70px;
+}
+
+/* ===== GRID ===== */
+.games-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+}
+
+/* ===== GAME BOX ===== */
+.game-box{
+    position:relative;
+}
+
+/* ===== HEADER ===== */
+.game-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.game-icon{
+    width:42px;
+    height:42px;
+    border:2px solid #caa24d;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#caa24d;
+    font-weight:bold;
+}
+
+.game-title{
+    color:#fff;
+    letter-spacing:3px;
+    font-size:14px;
+}
+
+.game-line{
+    width:100%;
+    height:1px;
+    background:#caa24d;
+    margin:10px 0 20px;
+}
+
+/* ===== TEXT ===== */
+.game-text{
+    font-size:15px;
+    line-height:1.7;
+    color:#cfcfcf;
+    margin-bottom:30px;
+}
+
+/* ===== IMAGE ===== */
+.game-image{
+    width:100%;
+    overflow:hidden;
+}
+
+.game-image img{
+    width:100%;
+    display:block;
+    border-radius:4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .games-grid{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+}
+
+      /* ===== HERO1 SECTION ===== */
+.section{
+    height:80%;
+    width:100%;
+}
+.hero1{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("Img2/Casi1.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ===== PLAY BUTTON ===== */
+.play-btn{
+    width:90px;
+    height:90px;
+    background:rgba(255,255,255,0.25);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:0.3s;
+    backdrop-filter: blur(6px);
+}
+
+.play-btn:hover{
+    transform:scale(1.1);
+}
+
+.play-btn span{
+    width:0;
+    height:0;
+    border-left:28px solid white;
+    border-top:18px solid transparent;
+    border-bottom:18px solid transparent;
+    margin-left:5px;
+}
+
+/* ===== VIDEO OVERLAY ===== */
+.video-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+/* ===== VIDEO BOX ===== */
+.video-box{
+    position:relative;
+    width:85%;
+    max-width:900px;
+}
+
+video{
+    width:100%;
+    border-radius:8px;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn{
+    position:absolute;
+    top:-40px;
+    right:0;
+    font-size:32px;
+    color:white;
+    cursor:pointer; 
+    }
+
+    /* ===== CONTACT SECTION ===== */
+.contact-section{
+    padding:80px 60px;
+    margin-top:10%;
+    background:linear-gradient(to right,#0b0b0b,#111);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:60px;
+    align-items:flex-start;
+}
+
+/* LEFT */
+.contact-label{
+    color:#caa24d;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.contact-line{
+    width:60px;
+    height:2px;
+    background:#caa24d;
+}
+
+/* CENTER */
+.contact-title{
+    color:#caa24d;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    line-height:1.7;
+    margin-bottom:15px;
+    color:#ddd;
+}
+
+.contact-info a{
+    color:#caa24d;
+    text-decoration:none;
+}
+
+/* SOCIAL */
+.social-icons{
+    margin-top:25px;
+}
+
+.social-icons a{
+    display:inline-flex;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    justify-content:center;
+    align-items:center;
+    margin-right:10px;
+    font-size:18px;
+    color:#fff;
+}
+
+.fb{ background:#1877f2; }
+.yt{ background:#ff0000; }
+.ig{ background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+
+/* RIGHT */
+.links h3{
+    color:#caa24d;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.links ul{
+    list-style:none;
+}
+
+.links li{
+    margin-bottom:15px;
+}
+
+.links li::before{
+    content:"•";
+    color:#caa24d;
+    margin-right:10px;
+}
+
+.links a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.links a:hover{
+    color:#caa24d;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+    padding:20px;
+    text-align:center;
+    font-size:14px;
+    color:#aaa;
+    border-top:1px solid #222;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+}
+.page-zoom h1{
+    font-size: 50px;
+    text-align: center;
+    color:gold;
+    margin-top: 10%;
+}
+    </style>
+    <body>
+    <header>
+    <div class="logo">
+        <!-- replace logo.png -->
+        <img src="Img2/Casino.avif" alt="Casino Gold">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Casino.html">Home</a></li>
+            <li><a href="Casino-Tariff.html">Tariff</a></li>
+            <li><a href="Casino-Game.html">Casino Games</a></li>
+            <li><a href="Casino-Gallery.html">Gallery</a></li>
+            <li><a href="Casino-About.html">About</a></li>
+            <li><a href="Casino-Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>CASINO GAMES</h1>
+    <div class="scroll-icon"></div>
+</section>
+<section class="games-section">
+    <div class="games-grid">
+
+        <!-- AMERICAN ROULETTE -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">🎯</div>
+                <div class="game-title">AMERICAN ROULETTE</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                Place your bets and spin the wheel in this thrilling game of chance.
+                Watch as the ball bounces, wondering if it will land on your lucky number.
+                Excitement builds with every spin — will today be your day to win big
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/bet.avif" alt="American Roulette">
+            </div>
+        </div>
+
+        <!-- ANDAR BAHAR -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">AB</div>
+                <div class="game-title">ANDAR BAHAR</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                Bet on Andar (inside) or Bahar (outside) in this fast-paced, thrilling
+                game of luck. Simple to play and full of excitement — where will the
+                card land? Take a chance and find out!
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/bet2.avif" alt="Andar Bahar">
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="games-section">
+    <div class="games-grid">
+
+        <!-- THREE CARD POKER -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">
+                    <img src="Img/icons/poker-icon.png" alt="">
+                </div>
+                <div class="game-title">THREE CARD POKER</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                With three cards in hand, challenge the dealer in this exciting mix of
+                strategy and luck. Can you outsmart the dealer and win? Test your skills
+                and see if you've got what it takes!
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/Bit4.avif" alt="">
+            </div>
+        </div>
+
+        <!-- TEEN PATTI -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">AB</div>
+                <div class="game-title">TEEN PATTI</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                A popular Indian card game similar to poker, where strategy is key.
+                Bet, bluff, and outsmart your opponents in this thrilling game of skill
+                and luck. Are you ready to play?
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/Bit5.avif" alt="">
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="games-section">
+    <div class="games-grid">
+
+        <!-- THREE CARD POKER -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">
+                    <img src="Img/icons/poker-icon.png" alt="">
+                </div>
+                <div class="game-title">CASINO WAR</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                In this simple game, the highest card wins! If you tie with the dealer, 
+                go to war for a chance to claim victory and impressive rewards. It's quick, 
+                fun, and packed with excitement—perfect for those seeking a thrilling challenge!
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/Bet3.avif" alt="">
+            </div>
+        </div>
+
+        <!-- TEEN PATTI -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">AB</div>
+                <div class="game-title">BLACKJACK</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                Try to reach 21 or get as close as possible without going over 
+                in this exciting game of Blackjack. It’s a thrilling mix of skill and 
+                strategy as you take on the dealer. Will you beat the odds?
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/Bet4.avif" alt="">
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="games-section">
+    <div class="games-grid">
+
+        <!-- THREE CARD POKER -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">
+                    <img src="Img/icons/poker-icon.png" alt="">
+                </div>
+                <div class="game-title">MINI BACCARAT</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                Place your bets on the Player, Banker, or Tie in this quick 
+                and easy version of Baccarat. Simple to play and fast-paced, 
+                it's a thrilling game where you can win big in no time!
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/Bet5.avif" alt="">
+            </div>
+        </div>
+
+        <!-- TEEN PATTI -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">AB</div>
+                <div class="game-title">SIC BO</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                Bet on the roll of three dice in this thrilling Asian game of chance. 
+                With a variety of betting options, the excitement never ends, keeping 
+                the game fresh and unpredictable. Will luck be on your side?
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/Bet6.avif" alt="">
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="games-section">
+    <div class="games-grid">
+
+        <!-- THREE CARD POKER -->
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-icon">
+                    <img src="Img/icons/poker-icon.png" alt="">
+                </div>
+                <div class="game-title">MINI BACCARAT</div>
+            </div>
+
+            <div class="game-line"></div>
+
+            <p class="game-text">
+                Place your bets on the Player, Banker, or Tie in this quick 
+                and easy version of Baccarat. Simple to play and fast-paced, 
+                it's a thrilling game where you can win big in no time!
+            </p>
+
+            <div class="game-image">
+                <img src="Img2/Bet7.avif" alt="">
+            </div>
+        </div>
+</div>
+
+</section>
+<div class="section">
+<!-- ===== HERO SECTION ===== -->
+<div class="hero1">
+    <div class="play-btn" onclick="openVideo()">
+        <span></span>
+    </div>
+</div>
+<!-- ===== VIDEO POPUP ===== -->
+<div class="video-overlay" id="videoOverlay">
+    <div class="video-box">
+        <div class="close-btn" onclick="closeVideo()">✖</div>
+        <video id="promoVideo" controls>
+            <source src="Img/Vedio.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+    </div>
+</div>
+</div>
+<script>
+function openVideo(){
+    document.getElementById("videoOverlay").style.display = "flex";
+    document.getElementById("promoVideo").play();
+}
+
+function closeVideo(){
+    let video = document.getElementById("promoVideo");
+    video.pause();
+    video.currentTime = 0;
+    document.getElementById("videoOverlay").style.display = "none";
+}
+</script>
+<!-- ===== CONTACT ===== -->
+<section class="contact-section">
+    <div class="contact-grid">
+
+        <!-- LEFT -->
+        <div>
+            <div class="contact-label">• CONTACT US!</div>
+            <div class="contact-line"></div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="contact-info">
+            <div class="contact-title">Get in touch</div>
+
+            <p>
+                Casino Gold, SinQ Prive, Aguada – Siolim Rd,<br>
+                opposite Taj Holiday Village,<br>
+                Candolim, Goa 403515
+            </p>
+
+            <p><strong>+91 72630 73333</strong></p>
+
+            <p>
+                <a href="mailto:info@casinogoldgoa.com">
+                    info@casinogoldgoa.com
+                </a>
+            </p>
+
+            <div class="social-icons">
+                <a href="#" class="fb">F</a>
+                <a href="#" class="yt">▶</a>
+                <a href="#" class="ig">◎</a>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Refund and Returns Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+© Copyright 2025 | Casino Gold Candolim Goa. Managed by Future Mercury
+</div>
+</body>
+</html>

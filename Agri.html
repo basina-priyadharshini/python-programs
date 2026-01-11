@@ -1,0 +1,778 @@
+<html>
+    <style>
+     .img{
+        height:80px;
+     }
+     .hel {
+        width: 100%;
+        height:23vh;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        background: #f2f7f4;
+        border-bottom: 4px solid #0a8f3d;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        gap:130px;
+     }
+     h1 {
+        font-size: 18px;
+        color: #0e7a2a;
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 18px;
+        color: #1b944b;
+      }
+      p{
+        font-size: 12px;
+        color:black;
+        font-weight: bold;
+      }
+     .right, .center, .center1, .left{
+        text-align: center;
+     }
+.navbar {
+    background: #dd763e;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* NAV LINKS */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+/* ================= DROPDOWN ================= */
+.custom-select,
+.custom-select1 {
+    position: relative;
+    cursor: pointer;
+    outline: none; /* remove focus outline */
+}
+
+/* SELECTED BOX */
+.selected,
+.selected1 {
+    color: white;
+    font-weight: bold;
+    padding: 6px 10px;
+    background: #c36a2f;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.selected::after,
+.selected1::after {
+    content: " ▼ ";
+    font-size: 12px;
+}
+
+/* OPTIONS HIDDEN BY DEFAULT */
+.options,
+.options1 {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    background: white;
+    display: none; /* hidden */
+    flex-direction: column;
+    min-width: 150px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.options a,
+.options1 a {
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.options a:hover,
+.options1 a:hover {
+    background: #f2f2f2;
+}
+
+/* 🔥 CLICK TO OPEN DROPDOWN (focus-within) */
+.custom-select:focus-within .options {
+    display: flex;
+}
+
+.custom-select1:focus-within .options1 {
+    display: flex;
+}
+
+/* ================= MARQUEE ================= */
+.marquee-container {
+    flex: 1; /* takes remaining space */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 28px;
+}
+
+.marquee-container span {
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    animation: marquee 15s linear infinite;
+}
+
+/* MARQUEE ANIMATION */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+        .slider {
+            width: 110%;
+            height: 600px;   /* adjust size */
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slides {
+           width: 390%; /* 4 images */
+           height: 90%;
+           display: flex;
+           animation: slide 12s infinite;
+        }
+        .slides img {
+           width: 100%;
+           height: 120%;
+           object-fit: cover;
+        }
+        @keyframes slide {
+          0% { margin-left: 0; }
+          20% { margin-left: 0; }
+
+          25% { margin-left: -100%; }
+          45% { margin-left: -100%; }
+
+          50% { margin-left: -200%; }
+          70% { margin-left: -200%; }
+
+          75% { margin-left: -300%; }
+          100% { margin-left: -300%; }
+        }
+        .About1{
+          text-align: center;
+          font-size: 30px;
+        }
+        .t2{
+          font-size: 15px;
+          text-align: center;
+        }
+        .About{
+          width:80%;
+          height:20%;
+          font-size: 15px;
+          margin-left: 10%;
+        }
+        .vision,.mission,.Permission{
+          border:1px solid rgb(166, 186, 166);
+          border-radius: 10px;
+          background: #bcfdd5;
+          font-style:normal;
+          font-size: 16px;
+          margin-left:20%;
+          text-align: center;
+          padding:10px;
+          width:60%;
+          border-left: 5px solid green;
+          margin-bottom: 0;
+          box-shadow: 0 0 10px rgba(0,0,0,0.15);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s;
+        }
+        .vision:hover,.mission:hover,.Permission:hover{
+            transform: scale(1.05);
+            border:2px solid green;
+            box-shadow: 0 0 20px rgb(4, 95, 4);
+        }
+        .v1{
+          font-size: 20px;
+          color:#e57b12;
+          text-align: center;
+        }
+        .t1{
+          height:300px;
+          
+        }
+        .btn {
+       width: 50%;
+       background:rgb(192, 223, 149);
+       padding: 10px;
+       border:none;
+       border-radius: 5px;
+       font-size: 15px;
+       font-weight: bold;
+       color: rgb(80, 78, 78);
+       margin-top: 5px;
+       margin-left: 30px;
+       }
+       .btn:hover{
+        transform: scale(1);
+        border:2px sloid green;
+        box-shadow: 0 0 10px green;
+       }
+     .content {
+       display: none;
+       padding: 10px;
+       border:none;
+       border-radius: 10px;
+       font-size: 15px;
+       color:black;
+       background: #f1f1f1;
+       margin-bottom: 5px;
+       margin-left: 25px;
+       }
+       .b1{
+        display: flex;
+        margin-left:10% ;
+        width:80%;
+        padding:30px;
+        border: 1px solid rgb(144, 163, 144);
+        border-radius: 10px;
+        background: #d6e3dc;
+       }
+        .section {
+            height: 80vh;  
+            padding-top: 0px; 
+            text-align: left;
+            font-size: 18px; 
+        }
+        .section1 {
+            height: 120vh;  
+            width:100%;
+            padding-top: 80px; 
+            text-align: left;
+            font-size: 18px;
+            margin-top:0;
+            background-image: url("Img/bg2.avif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .section2{
+            height:80vh;  
+            width:100%;
+            padding-top: 80px; 
+            text-align: left;
+            font-size: 18px;
+            margin-top:0;
+            background-image: url("Img/bg4.webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .section3{
+            height:65vh;  
+            width:100%;
+            padding-top: 80px; 
+            text-align: left;
+            font-size: 18px;
+            margin-top:0;
+            background:#22723f ;   
+        }
+        .section4 {
+            height: 120vh;  
+            width:100%;
+            padding-top: 80px; 
+            text-align: left;
+            font-size: 18px;
+            margin-top:0;
+           background-color: #b3c7ba;
+        }
+        .sidebar {
+         width: 280px;
+         height: 100vh;
+         background: #ffffff;
+         box-shadow: 0 0 8px rgba(0,0,0,0.1);
+         overflow-y: auto;
+         padding: 10px 0;
+         font-family: 'Segoe UI', sans-serif;
+        }
+        .image1{
+          height:30%;
+        }
+        .image2{
+          height:30%;
+        }
+        .gap{
+          justify-content: space-between;
+          margin-left: 130px;
+        }
+        .gap1{
+          justify-content: space-between;
+          margin-left: 100px;
+        }
+        .text{
+          display:flex;
+          gap:10%;
+          margin-left:10%;
+        }
+        .text2{
+          display:flex;
+          gap:30%;
+          margin-left:15%;
+        }
+        .cont2{
+          margin-left: 60%;
+          font-size: 30px;
+          color:Red;
+        }
+        .cont{
+          margin-left:60%;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 120px;
+            padding: 100px;
+        }
+        /* Bubble Hover Effect */
+        .gallery img {
+            width: 150%;
+            height:130%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.10);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #prev { left: 20px; }
+        #next { right: 20px; }
+
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            color: white;
+            cursor: pointer;
+        }
+        .item {
+            transition: 0.3s;
+        }
+
+        /* Bubble Hover Effect */
+        .item img {
+            width: 140%;
+            height:100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .item:hover img {
+            transform: scale(1.10);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Caption Text */
+        .caption {
+            margin-top: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+        }
+    .custom-select {
+        width: 150px;
+        position: relative;
+        font-size: 18px;
+    }
+    .selected {
+        padding: 10px;
+        background: #dd763e;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:white;
+        font-size:18px;
+        font-weight: bold;
+    }
+    .options{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background: #dd763e;
+        border: 1px solid #888;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid #ddd;
+    }
+    .options, a:hover {
+        background: #dd7c2d;
+    }
+    .custom-select.active .options {
+        display: block;
+    }
+    .custom-select1 {
+        width: 150px;
+        position: relative;
+        font-size: 18px;
+    }
+    .selected1 {
+        padding: 10px;
+        background: #dd763e;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:white;
+        font-size:18px;
+        font-weight: bold;
+    }
+    .options1{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background: #dd763e;
+        border: 1px solid #888;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options1 a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid #ddd;
+    }
+    .options1, a:hover {
+        background: #dd7c2d;
+    }
+    .custom-select1.active .options1 {
+        display: block;
+    }
+    nav ul li a {
+    padding: 5px 1px; /* reduce left/right padding */
+}
+    </style>
+    <title>
+        Agriculture
+    </title>
+    <header>
+        <div class="hel">
+        <div class=" block right">
+            <img src="Img/CM2.png" class="img">
+                <h2> Bhupendra Rajnikanth Parel</h2>
+                <p>Hon'ble Chief Minister of Gujarat</p>
+        </div>
+        <div class="block center">
+            <img src="img/gujarath.jpg" class="img">
+                <h1>Government of Gujarat</h1>
+                <p> Service for people</p>
+        </div>
+        <div class="block center1">
+            <img src="Img/g-logo.jpg" class="img">
+            <h1>Department of Agriculture</h1>
+            <p>Service for Farmers</p>
+        </div>
+        <div class="block left">
+            <img src="img/minister2.png" class="img">
+             <h2> Raghavjibhai Hansrajbhai Patel</h2>
+             <p>Hon’ble Minister for Agriculture,<br>
+                Co-Operation, Marketing, Animal Husbandry,<br>
+                 Dairy Development</p>
+        </div>
+    </div>
+    </header>
+    <body class="bg"> 
+         <div class="navbar">
+   <a href="Agri.html">Home</a> 
+
+   <!-- TECH DROPDOWN -->
+   <div class="custom-select" tabindex="0">
+        <div class="selected">Tech</div>
+        <div class="options">
+            <a href="sample.html">Soil Tech</a>
+            <a href="map.html">Hydrogeology</a>
+            <a href="page.html">Water Tech</a>
+        </div>
+   </div>
+
+   <a href="#about">About</a>
+   <a href="#Timeline">Agriculture</a>
+
+   <!-- CROP-DROPDOWN -->
+   <div class="custom-select1" tabindex="0">
+       <div class="selected1">Crop-Details</div>
+       <div class="options1">
+           <a href="hello.html">Crop-Map</a>
+           <a href="graph.html">Crop-Graph</a>
+       </div>
+   </div>
+
+   <a href="#Gallery">Gallery</a>
+   <a href="#contact">Contact Us</a>
+
+   <!-- ================= MARQUEE TEXT ================= -->
+   <div class="marquee-container">
+       <span>🌾 Welcome to Agriculture Portal – Explore Soil, Water & Crop Data! 🌱</span>
+   </div>
+</div>
+
+           <!--Drop Down list-->
+        <script>
+        // open/close dropdown on click
+       document.querySelector(".selected").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+      <script>
+        // open/close dropdown on click
+       document.querySelector(".selected1").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+        </div>
+        <div id="home" class="section">
+        <div class="slider">
+            <div class="slides">
+                <img src="Img/h1.jpg">
+                <img src="Img/crop2.jpg">
+                <img src="img/crop.jpg">
+                <img src="Img/crop5.jpg">
+            </div>
+        </div> 
+        </div>
+        <div id="about" class="section1">
+          <h1 class="About1">ABOUT US</h1>
+          <div class="About">
+            <h3>About:</h3>
+            The Agriculture Department of Gujarath, post-bifurcation in 2014, has evolved into a dynamic, farmer-centric institution working towards productivity
+            profitability, and sustainability in agriculture. Through strategic programs, technology integration, and farmer empowerment,
+            it continues to serve the needs of the agrarian community.<br>
+            <br>
+            Agriculture Department of the newly formed State of Gujarath was restructured to cater to the specific agro-climatic,
+            economic, and administrative needs of the residual state.
+          </div>
+          <div class="vision">
+            <h4 class="v1">Our Vision</h4>
+            Our vision is to make agriculture profitable profession and to improve the living standards of the farmers of Gujarath in a sustainable manner.
+          </div><br>
+          <div class="mission">
+            <h4 class="v1">Our Mission</h4>
+            To provide services which can help farmers to transform subsistence agriculture to commercial agriculture without disturbing ecological balance.
+             To record higher productivity to withstand international competition by promoting diversification of cultivation of crops.
+          </div><br>
+          <div class="Permission">
+            <h4 class="v1">Our Permission</h4>
+            To achieve an increased GVA growth by adopting changes in cropping patterns and adoption of latest agricultural practices for increasing the crop
+             production and productivity through effective technology transfer from Lab to Land and its acceptability by farmers.<br>
+            To reduce production costs through biological methods, increase farmers' agricultural income, and empower farmers to sustainably use land and water resources.
+          </div>
+          </div>
+        <div id="Timeline" class="section2">
+         <h4 class="v1"> Activities of the Agriculture Department</h4>
+          <h5 class="t2"> Agriculture Department undertakes a range of activities aimed at holistic 
+             agricultural development and welfare of farmers. Key activities include:</h5>
+         <div class="b1"><img src="Img/guja.png" class="t1">
+              <div><button class="btn" onclick="toggle(1)">Input Regulation and Support</button>
+                    <div id="c1" class="content">                                     
+                     <ul><li> Issuance of licenses for seeds, fertilizers, and pesticides.</li>
+                     <li>Monitoring quality and availability of agricultural inputs.</li>
+                     <li>Promotion of certified and high-yielding varieties.</li></ul>
+                    </div><br>
+                    <button class="btn" onclick="toggle(2)">Farmer Welfare and Extension Srvices</button>
+                    <div id="c2" class="content">                                     
+                      <ul><li>Implementation of farmer-oriented welfare schemes.</li>
+                          <il>Capacity building through Farmer Training Centres (FTCs), Rythu Seva Kendras (RSK).</il>
+                          <li>Dissemination of best practices and new technologies.</li>
+                    </div>
+                    <button class="btn" onclick="toggle(3)">Crop Planning and Diversification</button>
+                    <div id="c3" class="content">
+                      <ul><li>Promotion of crop diversification based on agro-climatic zones.</li>
+                          <li>Support for horticulture, pulses, oilseeds, and millets.</li></ul>
+                    </div>
+                    <button class="btn" onclick="toggle(4)">Soil Health and Resource Management</button>
+                    <div id="c4" class="content">
+                      <ul><li>Conduct of soil health tests and distribution of soil health cards.</li>
+                          <li>Promotion of integrated nutrient and pest management practices.</li></ul>
+                    </div>
+                    <button class="btn" onclick="toggle(5)">Digital Agriculture and Innovation</button>
+                    <div id="c5" class="content">
+                     <ul><li> Introduction of e-crop booking, drone-based field monitoring, and AI-driven advisories.</li>
+                         <li>Establishment of online license management systems and grievance portals.</li></ul>
+                  </div>
+                  <button class="btn" onclick="toggle(6)">Digital Agriculture and Innovation</button>
+                    <div id="c6" class="content">
+                     <ul><li> Compensation under crop insurance schemes.</li>
+                         <li>Real-time advisory during natural calamities.</li></ul>
+                  </div>
+                  </div> 
+        </div>
+    <script>
+         function toggle(num) {
+         let box = document.getElementById("c" + num);
+         box.style.display = (box.style.display === "block") ? "none" : "block";
+         }
+    </script>
+        </div>
+        <div id="Gallery" class="section4">
+          <h1 class="About1">Natural Farming in Gujarath</h1>
+         <div class="gallery">
+    <div class="item">
+        <img src="Img/crop5.jpg" onclick="openLightbox(0)">
+        <div class="caption">Plowing with a tractor</div>
+    </div>
+    <div class="item">
+        <img src="Img/agri5.webp" onclick="openLightbox(1)">
+        <div class="caption">Cutting Wheat</div>
+    </div>
+    <div class="item">
+        <img src="Img/agri4.jpg" onclick="openLightbox(2)">
+        <div class="caption">Wheat Crop</div>
+    </div>
+    <div class="item">
+        <img src="Img/crop3.webp" onclick="openLightbox(3)">
+        <div class="caption">Wheat Sowing</div>
+    </div>
+    <div class="item">
+        <img src="Img/crop.jpg" onclick="openLightbox(4)">
+        <div class="caption">Cutting Leaves</div>
+    </div>
+     <div class="item">
+        <img src="Img/h1.jpg" onclick="openLightbox(5)">
+        <div class="caption">Cutting Leaves</div>
+    </div>
+     <div class="item">
+        <img src="Img/crop4.jpg" onclick="openLightbox(6)">
+        <div class="caption">Haggling with Yaddula</div>
+    </div>
+     <div class="item">
+        <img src="Img/agri2.webp" onclick="openLightbox(7)">
+        <div class="caption">Cutting Wheat</div>
+    </div>
+     <div class="item">
+        <img src="Img/agri.webp" onclick="openLightbox(8)">
+        <div class="caption">Types og Agriculture</div>
+    </div>
+    <div class="item">
+        <img src="Img/guja.png" onclick="openLightbox(9)">
+        <div class="caption">Agriculture</div>
+    </div>
+</div>
+<div id="lightbox">
+    <span id="closeBtn" onclick="closeLightbox()">✖</span>
+    <span class="arrow" id="prev" onclick="changeImage(-1)">❮</span>
+    <img id="lightboxImg">
+    <span class="arrow" id="next" onclick="changeImage(1)">❯</span>
+</div>
+
+<script>
+    let images = [
+        "Img/crop5.jpg",
+        "Img/agri5.webp",
+        "Img/agri4.jpg",
+        "Img/crop2.jpg",
+        "Img/crop.jpg",
+        "Img/h1.jpg",
+        "Img/crop4.jpg",
+        "Img/agri2.webp",
+        "Img/agri.webp",
+        "Img/guja.png"
+    ];
+
+    let index = 0;
+
+    function openLightbox(i) {
+        index = i;
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightboxImg").src = images[index];
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    function changeImage(direction) {
+        index = index + direction;
+        if (index < 0) index = images.length - 1;
+        if (index >= images.length) index = 0;
+        document.getElementById("lightboxImg").src = images[index];
+    }
+    </script>
+        </div>
+        <div id="contact" class="section3">
+          <h5 class="cont2">Contact Us</h5>
+          <div class="cont">
+          <h5> 📞0863-2216461</h5>
+          <h5>📧comagr[dot]ap[at]gmail[dot]com</h5>
+          <h5>📍ADDRESS:Commissioner and Director of Agriculture,
+          Agriculture Department ,Andhra Pradesh
+          Old Mirchi Yard,
+          Nallapadu Road Chuttugunta,
+          Guntur - 522004.</h5>
+          <div class="link"> <a href="https://www.facebook.com/share/1CdX6aN3Y8/">Facebooks</a><br>
+        <a href="https://www.instagram.com/find_dav005?utm_source=qr&igsh=dHF2bjhwdnQxdWNr">Instagram</a></div>
+          <h5>📍State Resource Center,Department of Agriculture,
+          IHC Corporate Building,First floor Depot Road,
+          Mangalagiri, Guntur-522503.</h5>
+        </div>
+        </div>
+    </body>
+</html>

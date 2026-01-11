@@ -1,0 +1,851 @@
+
+<html>
+<head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+body{
+    background: #101010;;
+}
+/* ================= HEADER ================= */
+.top-bar{
+    background:#1a0f0a;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    height:80px;
+}
+
+/* LOGO */
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+.logo .gold{
+    color:gold;
+}
+.logo small{
+    display:block;
+    font-size:12px;
+    color:#ccc;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+
+/* LINKS */
+nav a{
+    text-decoration:none;
+    color:gold;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+    color:#000;
+}
+
+/* ARROW */
+.arrow{
+    font-size:12px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#fbf9f9;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+
+.dropdown-menu a{
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* 🔥 CLICK BASED (NO JS) */
+.dropdown:focus-within .dropdown-menu{
+    display:flex;
+}
+/* ================= SLIDER ================= */
+.sec1{
+    height:calc(100vh-80px);        /* full screen */
+    position:relative;
+    overflow:hidden;
+}
+.slider{
+    position:relative;
+    height:100%;
+    width:100%;
+}
+.slide{
+    position:absolute;
+    inset:0;             /* top:0 right:0 bottom:0 left:0 */
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+}
+.slide.active{
+    opacity:1;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    bottom:10px;
+    left:60px;
+    color:#fff;
+}
+.overlay h1{
+    font-size:40px;
+    font-weight:300;
+}
+/* DOTS */
+.dots{
+    position:absolute;
+    bottom:30px;
+    width:100%;
+    text-align:center;
+}
+.dot{
+    height:12px;
+    width:12px;
+    background:#aaa;
+    border-radius:50%;
+    display:inline-block;
+    margin:0 5px;
+    cursor:pointer;
+}
+.dot.active{
+    background:#000;
+}
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav{
+        display:none;
+    }
+}
+    .container{
+        width:90%;
+        margin:0px auto;
+        display:flex;
+        gap:30px;
+    }
+    /* LEFT SECTION */
+    .about-box{
+        flex:1;
+        background:#fff;
+        padding:20px;
+        border-radius:6px;
+    }
+    .about-box h2{
+        margin-bottom:15px;
+    }
+    .about-content{
+        background:#f7efd9;
+        display:flex;
+        align-items:center;
+        padding:20px;
+        border-left:5px solid #d8c28d;
+    }
+    .about-content img{
+        width:140px;
+        margin-right:20px;
+    }
+    .about-text{
+        font-style:italic;
+        font-size:17px;
+        line-height:1.6;
+        color:#000;
+    }
+    .view-more{
+        margin-top:10px;
+        color:red;
+        cursor:pointer;
+        font-size:14px;
+    }
+    /* RIGHT SECTION */
+    .slider-box{
+        flex:1;
+        background:#fff;
+        padding:20px;
+        border-radius:6px;
+        position:relative;
+    }
+    .slider-box h2{
+        margin-bottom:15px;
+    }
+    .slider{
+        overflow:hidden;
+        height:300px;
+        border-radius:4px;
+    }
+    .slides{
+        display:flex;
+        width:400%;
+        animation:slide 12s infinite;
+    }
+    .slides img{
+        width:100%;
+        height:300px;
+        object-fit:cover;
+    }
+    @keyframes slide{
+        0%{margin-left:0%;}
+        25%{margin-left:0%;}
+        30%{margin-left:-100%;}
+        50%{margin-left:-100%;}
+        55%{margin-left:-200%;}
+        75%{margin-left:-200%;}
+        80%{margin-left:-300%;}
+        100%{margin-left:-300%;}
+    }
+    .caption{
+        margin-top:8px;
+        color:red;
+        font-size:14px;
+    }
+    .dots{
+        text-align:center;
+        margin-top:10px;
+    }
+    .dots span{
+        display:inline-block;
+        width:10px;
+        height:10px;
+        background:#999;
+        border-radius:50%;
+        margin:0 4px;
+    }
+    .dots span.active{
+        background:#000;
+    }
+    .gallery-section{
+    background:url('Img/K1.jpg') center/cover no-repeat;
+    padding:80px 40px;
+    text-align:center;
+    color:#fff;
+    position:relative;
+}
+.gallery-section::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+}
+.gallery-section *{
+    position:relative;
+}
+/* TITLE */
+.section-title{
+    font-size:42px;
+    margin-bottom:40px;
+}
+.section-title span{
+    display:inline-block;
+    width:80px;
+    height:3px;
+    background:#7dbd2a;
+    vertical-align:middle;
+    margin:0 15px;
+}
+/* SLIDER */
+.gallery-slider{
+    overflow:hidden;
+    max-width:1200px;
+    margin:auto;
+}
+.gallery-track{
+    display:flex;
+    gap:25px;
+    transition:transform 0.6s ease;
+}
+/* CARD */
+.gallery-card{
+    background:#fff;
+    border-radius:6px;
+    width:350px;
+    overflow:hidden;
+    color:#000;
+    position:relative;
+    flex-shrink:0;
+    cursor:pointer;
+}
+.gallery-card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+}
+.gallery-card h3{
+    padding:15px;
+}
+/* TAG */
+.tag{
+    position:absolute;
+    background:#6bb10d;
+    color:#fff;
+    padding:5px 12px;
+    font-size:14px;
+    top:15px;
+    left:15px;
+    border-radius:4px;
+}
+/* DOTS */
+.dots{
+    margin:25px 0;
+}
+.dots span{
+    width:10px;
+    height:10px;
+    background:#ccc;
+    border-radius:50%;
+    display:inline-block;
+    margin:0 5px;
+    cursor:pointer;
+}
+.dots .active{
+    background:#fff;
+}
+/* BUTTON */
+.view-btn{
+    background:#6bb10d;
+    color:#fff;
+    border:none;
+    padding:14px 40px;
+    font-size:16px;
+    border-radius:30px;
+    cursor:pointer;
+}
+.view-btn:hover{
+    background:#5aa00b;
+}
+/* ================= VIEW ALL GALLERY ================= */
+.view-all{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#000;
+    padding:40px;
+    overflow:auto;
+    z-index:1000;
+}
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(420px,1fr)); /* 🔥 width increase */
+    gap:30px;
+}
+.gallery-grid img{
+    width:100%;
+    height:300px;          /* 🔥 height increase */
+    object-fit:cover;
+    cursor:pointer;
+    border-radius:6px;
+}
+/* ================= MODAL ================= */
+.gallery-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:3000;
+}
+.gallery-modal img{
+    max-width:80%;
+    max-height:100%;
+}
+/* CLOSE & NAV */
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:#fff;
+    font-size:40px;
+    cursor:pointer;
+}
+.nav{
+    position:absolute;
+    top:50%;
+    font-size:50px;
+    color:#fff;
+    cursor:pointer;
+    user-select:none;
+}
+.nav.left{ left:30px; }
+.nav.right{ right:30px; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .gallery-track{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+}
+/*Contact Section*/
+body{
+    background:black;
+    color:#fff;
+}
+/* FOOTER */
+.footer{
+    background:#0b0b0b;
+    padding:60px 50px;
+}
+/* TOP CONTACT ROW */
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:30px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    padding-bottom:40px;
+}
+.footer-top div{
+    flex:1;
+}
+.footer-top p,
+.footer-top a{
+    color:#fff;
+    text-decoration:none;
+    line-height:1.6;
+    font-size:15px;
+}
+.footer-top a:hover{
+    color:#6bb10d;
+}
+/* ICON STYLE */
+.icon{
+    color:#6bb10d;
+    font-size:20px;
+    margin-bottom:10px;
+    display:inline-block;
+}
+/* LINKS GRID */
+.footer-links{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    margin-top:40px;
+}
+.footer-links h3{
+    color:gold;
+    margin-bottom:15px;
+    font-size:18px;
+}
+.footer-links ul{
+    list-style:none;
+}
+.footer-links ul li{
+    margin-bottom:10px;
+}
+.footer-links ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+}
+.footer-links ul li a:hover{
+    color:gold;
+}
+/* RESPONSIVE */
+@media(max-width:900px){
+    .footer-top{
+        flex-direction:column;
+    }
+    .footer-links{
+        grid-template-columns:1fr 1fr;
+    }
+}
+@media(max-width:500px){
+    .footer-links{
+        grid-template-columns:1fr;
+    }
+}
+/*map*/
+.map{
+    height:70vh;
+    display:flex;
+    justify-content: space-between;
+    background:white;
+    background-image: url(Img/);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.map p{
+    font-size:25px;
+    color:black;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.map h1{
+    font-size: 35px;
+    text-align: center;
+    color:gold;
+    margin-top: 5%;
+}
+</style>
+</head>
+<body>
+    <!--Top Navigation-->
+<header class="top-bar">
+    <div class="logo">
+        <span class="gold">LORD SHIVA 🕉️</span>
+        <small>Kēdāranātha Temple</small>
+    </div>
+       <nav>
+        <ul>
+            <li><a href="Kedarnath.html">Home</a></li>
+
+            <!-- ABOUT -->
+            <li class="dropdown">
+                <a href="#">About <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="History.html">History</a>
+                    <a href="Temple Significance.html">Temple Significance</a>
+                    <a href="Deity.html">Deity</a>
+                    <a href="Administration.html">Administration</a>
+                </div>
+            </li>
+
+            <!-- POOJA -->
+            <li class="dropdown">
+                <a href="#">Pooja <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Daily.html">Daily Poojas</a>
+                    <a href="Special-Pooja.html">Special Poojas</a>
+                    <a href="Virtual-Queue.html">Virtual Q</a>
+                    <a href="Pooja Timimg.html">Pooja Timings</a>
+                    <a href="Offers.html">Offerings</a>
+                </div>
+            </li>
+
+            <!-- HOW TO REACH -->
+            <li class="dropdown">
+                <a href="#">How to Reach <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Bus.html">🚗 By Bus</a>
+                    <a href="Train.html">🚆 By Rail</a>
+                    <a href="Air.html">✈️ By Air</a>
+                </div>
+            </li>
+
+            <li><a href="Facilities.html">Pilgrim Facilities</a></li>
+            <li><a href="Help.html">Help Line</a></li>
+            <li><a href="T-Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+</header>
+<div class="sec1">
+<section class="slider">
+    <div class="slide active" style="background-image:url('Img/K13.jpg')"></div>
+    <div class="slide" style="background-image:url('Img/K5.jpg')"></div>
+    <div class="slide" style="background-image:url('Img/K16.jpg')"></div>
+    <div class="overlay">
+        <h1>KEDARNATH TEMPLE, LORD SHIVA</h1>
+    </div>
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+</div>
+<script>
+let slides = document.querySelectorAll('.slide');
+let dots = document.querySelectorAll('.dot');
+let index = 0;
+function showSlide(i){
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
+}
+setInterval(()=>{
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}, 4000);
+dots.forEach((dot,i)=>{
+    dot.onclick = () => {
+        index = i;
+        showSlide(i);
+    }
+});
+</script>
+<!--Section2-->
+<div class="container">
+    <!-- LEFT -->
+    <div class="about-box">
+        <h2>About Sabarimala</h2>
+        <div class="about-content">
+            <img src="Img/K17.png">
+            <div class="about-text">
+                Millions of devotees visit Kedarnath seeking moksha (liberation), 
+                inner peace, and blessings of Kedarnath Mahadev, making it one of 
+                the holiest pilgrimage destinations in India. 🕉️
+            </div>
+        </div>
+        <div class="view-more">view more</div>
+    </div>
+    <!-- RIGHT -->
+    <div class="slider-box">
+        <h2>Nearest Places</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="Img/K1.jpg">
+                <img src="Img/k2.jpg">
+                <img src="Img/K8.jpg">
+                <img src="Img/K3.jpeg">
+            </div>
+        </div>
+        <div class="caption">Kedarnath Temple</div>
+        <div class="dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!--Gallery Section3-->
+<section class="gallery-section">
+    <h1 class="section-title">
+        <span></span> Latest Gallery Highlights <span></span>
+    </h1>
+    <div class="gallery-slider">
+        <div class="gallery-track" id="track">
+            <div class="gallery-card" onclick="openImage(0)">
+                <span class="tag">Events</span>
+                <img src="Img/K11.jpg">
+                <h3>Nainital</h3>
+            </div>
+            <div class="gallery-card" onclick="openImage(1)">
+                <span class="tag">Events</span>
+                <img src="Img/K13.jpg">
+                <h3>Alaknanda River</h3>
+            </div>
+            <div class="gallery-card" onclick="openImage(2)">
+                <span class="tag">Events</span>
+                <img src="Img/K4.jpg">
+                <h3>Kedarnath</h3>
+            </div>
+        </div>
+    </div>
+    <div class="dots">
+        <span class="dot active" onclick="moveSlide(0)"></span>
+        <span class="dot" onclick="moveSlide(1)"></span>
+        <span class="dot" onclick="moveSlide(2)"></span>
+    </div>
+    <button class="view-btn">VIEW ALL</button>
+</section>
+<!-- VIEW ALL GALLERY -->
+<div id="viewAllGallery" class="view-all">
+    <span class="close" onclick="closeViewAll()">×</span>
+    <div class="gallery-grid" id="galleryGrid"></div>
+</div>
+<!-- IMAGE MODAL -->
+<div id="galleryModal" class="gallery-modal">
+    <span class="close" onclick="closeGallery()">×</span>
+    <span class="nav left" onclick="prevImage()">&#10094;</span>
+    <img id="galleryImage">
+    <span class="nav right" onclick="nextImage()">&#10095;</span>
+</div>
+<script>
+let track = document.getElementById("track");
+let dot = document.querySelectorAll(".dot");
+let i = 0;
+let slideWidth = 375;
+/* SLIDER */
+function moveSlide(i){
+    index = i;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+/* AUTO SLIDE */
+setInterval(()=>{
+    index = (index + 1) % dots.length;
+    moveSlide(index);
+},3000);
+/* ================= GALLERY ================= */
+let images = [
+    "Img/K11.jpg",
+    "Img/K13.jpg",
+    "Img/K4.jpg",
+    "Img/K15.jpg",
+    "Img/K10.jpg",
+    "Img/K7.jpg"
+];
+let currentIndex = 0;
+/* VIEW ALL */
+document.querySelector(".view-btn").onclick = ()=>{
+    let grid = document.getElementById("galleryGrid");
+    grid.innerHTML="";
+    images.forEach((img,i)=>{
+        let im=document.createElement("img");
+        im.src=img;
+        im.onclick=()=>openImage(i);
+        grid.appendChild(im);
+    });
+    document.getElementById("viewAllGallery").style.display="block";
+}
+function closeViewAll(){
+    document.getElementById("viewAllGallery").style.display="none";
+}
+/* MODAL */
+function openImage(i){
+    currentIndex=i;
+    document.getElementById("galleryImage").src=images[i];
+    document.getElementById("galleryModal").style.display="flex";
+}
+function closeGallery(){
+    document.getElementById("galleryModal").style.display="none";
+}
+function nextImage(){
+    currentIndex=(currentIndex+1)%images.length;
+    openImage(currentIndex);
+}
+function prevImage(){
+    currentIndex=(currentIndex-1+images.length)%images.length;
+    openImage(currentIndex);
+}
+</script>
+<section class="map">
+    <div><h1>Kedarnath map</h1>
+        <p>Kedarnath is a famous Hindu pilgrimage place located in 
+            the Himalayas of Uttarakhand, India. It is dedicated to 
+            Lord Shiva and is one of the twelve Jyotirlingas. The 
+            Kedarnath Temple is situated near the Mandakini River and 
+            is surrounded by snow-covered mountains. Thousands of devotees 
+            visit Kedarnath every year, especially during the Char Dham Yatra. 
+            The temple is open only from April/May to October/November 
+            due to heavy snowfall in winter.</p>
+    </div>
+    <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.4278430861877!2d79.06436022537312!3d30.734481474583394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39083ee051e628b1%3A0x167ce4efaf440f1e!2sKedarnath%2C%20Uttarakhand%20246445!5e0!3m2!1sen!2sin!4v1765688180798!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+</section>
+<footer class="footer">
+    <!-- TOP CONTACT INFO -->
+    <div class="footer-top">
+        <div>
+            <span class="icon">📍</span>
+            <p>
+                Uttarakhand Tourism Development Board,<br>
+                Pt. Deen Dayal Upadhyay Paryatan Bhawan,<br>
+                Near ONGC Helipad, Garhi Cantt,<br>
+                Dehradun, Uttarakhand 248001
+            </p>
+        </div>
+        <div>
+            <span class="icon">✉️</span>
+            <p>
+                <a href="mailto:publicityutdb@gmail.com">publicityutdb@gmail.com</a><br>
+                <a href="mailto:publicityofficer@utdbofficial.com">
+                    publicityofficer@utdbofficial.com
+                </a>
+            </p>
+        </div>
+        <div>
+            <span class="icon">📞</span>
+            <p>
+                <a href="tel:+911352559898">+91 135-2559898</a><br>
+                <a href="tel:+911352559987">+91 135-2559987</a>
+            </p>
+        </div>
+    </div>
+    <!-- LINKS SECTION -->
+    <div class="footer-links">
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Press Release</a></li>
+                <li><a href="#">Citizen Charter</a></li>
+                <li><a href="#">Policy and Guidelines</a></li>
+                <li><a href="#">SIHM New Tehri</a></li>
+                <li><a href="#">Awards & Honours</a></li>
+                <li><a href="#">Important Link</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>RTI</h3>
+            <ul>
+                <li><a href="#">RTI Manual</a></li>
+                <li><a href="#">Right to Service</a></li>
+                <li><a href="#">Right to Information</a></li>
+                <li><a href="#">Market Research and Statistics</a></li>
+            </ul>
+            <h3 style="margin-top:20px;">Department of Tourism</h3>
+            <ul>
+                <li><a href="#">ADB SIRCTD Report</a></li>
+                <li><a href="#">Tenders / EOI</a></li>
+                <li><a href="#">Annual Transfer</a></li>
+                <li><a href="#">Vacancy</a></li>
+                <li><a href="#">Tourist Map</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Invest Trade</h3>
+            <ul>
+                <li><a href="#">Invest in Uttarakhand Tourism</a></li>
+                <li>
+                    <a href="#">
+                        Uttarakhand Tourism Entrepreneur Incentive Scheme<br>
+                        Operational Guidelines – 2024
+                    </a>
+                </li>
+            </ul>
+            <h3 style="margin-top:20px;">Skill Development & Training</h3>
+            <ul>
+                <li><a href="#">Training Programs</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Adventures</h3>
+            <ul>
+                <li>
+                    <a href="#">
+                        Trek of the Year 2025<br>
+                        (Pithoragarh, Chamoli, Uttarkashi)
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

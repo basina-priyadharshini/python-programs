@@ -1,0 +1,332 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+body{
+    background:#000;
+}
+/* ================= HEADER ================= */
+.top-bar{
+    background:#1a0f0a;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    height:80px;
+}
+
+/* LOGO */
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+.logo .gold{
+    color:gold;
+}
+.logo small{
+    display:block;
+    font-size:12px;
+    color:#ccc;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+
+/* LINKS */
+nav a{
+    text-decoration:none;
+    color:gold;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+    color:#000;
+}
+
+/* ARROW */
+.arrow{
+    font-size:12px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+
+.dropdown-menu a{
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* 🔥 CLICK BASED (NO JS) */
+.dropdown:focus-within .dropdown-menu{
+    display:flex;
+}
+/*Section*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+body{
+  background:linear-gradient(to right,#ede7f6,#ffffff);
+  height:100vh;
+}
+/* ===== SLIDER WRAPPER ===== */
+.wrapper{
+  width:85%;
+  max-width:900px;
+  height:360px;
+  overflow:hidden;
+  margin-top: 10%;
+  margin-left: 20%;
+  position:relative;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+  background:#fff;
+}
+/* ===== SLIDE TRACK ===== */
+.track{
+  display:flex;
+  width:500%;
+  height:100%;
+  transition:transform 1s ease-in-out;
+}
+/* ===== SINGLE SLIDE ===== */
+.slide{
+  width:100%;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  padding:40px;
+  gap:30px;
+}
+.slide i{
+  font-size:80px;
+  color:#673ab7;
+}
+.slide h2{
+  margin-bottom:10px;
+  color:#311b92;
+}
+.slide p{
+  font-size:17px;
+  color:#444;
+  line-height:1.6;
+}
+/* ===== CONTROLS ===== */
+.controls{
+  position:absolute;
+  bottom:15px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+.controls button{
+  padding:10px 18px;
+  border:none;
+  border-radius:25px;
+  background:#673ab7;
+  color:#fff;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.3s;
+}
+.controls button:hover{
+  background:#4527a0;
+}
+</style>
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">
+        <span class="gold">LORD SHIVA 🕉</span>
+        <small>Kēdāranātha Temple</small>
+    </div>
+       <nav>
+        <ul>
+            <li><a href="Kedarnath.html">Home</a></li>
+
+            <!-- ABOUT -->
+            <li class="dropdown">
+                <a href="#">About <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="History.html">History</a>
+                    <a href="Temple Significance.html">Temple Significance</a>
+                    <a href="Deity.html">Deity</a>
+                    <a href="Administration.html">Administration</a>
+                </div>
+            </li>
+
+            <!-- POOJA -->
+            <li class="dropdown">
+                <a href="#">Pooja <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Daily.html">Daily Poojas</a>
+                    <a href="Special-Pooja.html">Special Poojas</a>
+                    <a href="Virtual-Queue.html">Virtual Q</a>
+                    <a href="Pooja Timimg.html">Pooja Timings</a>
+                    <a href="Offers.html">Offerings</a>
+                </div>
+            </li>
+
+            <!-- HOW TO REACH -->
+            <li class="dropdown">
+                <a href="#">How to Reach <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Bus.html">🚗 By Bus</a>
+                    <a href="Train.html">🚆 By Rail</a>
+                    <a href="Air.html">✈️ By Air</a>
+                </div>
+            </li>
+
+            <li><a href="Facilities.html">Pilgrim Facilities</a></li>
+            <li><a href="Help.html">Help Line</a></li>
+            <li><a href="T-Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="wrapper">
+
+  <div class="track" id="track">
+
+    <div class="slide">
+      <i class="fa-solid fa-bed"></i>
+      <div>
+        <h2>Accommodation</h2>
+        <p>For pilgrims visiting Kedarnath, government guest houses (GMVN), <br>
+            dharamshalas, private lodges, and temporary tents are available.<br>
+           During peak yatra season, advance booking is recommended.<br>
+           Basic facilities such as beds, blankets, hot water, and toilets are provided for pilgrims.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <i class="fa-solid fa-utensils"></i>
+      <div>
+        <h2>Food Facilities</h2>
+        <p>Pilgrims are provided with free langar services, annadanam centers,<br>
+           and small hotels and food stalls.<br>
+           The food served is generally simple, hygienic, and vegetarian.<br>
+           Safe drinking water facilities are also available along the yatra route.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <i class="fa-solid fa-kit-medical"></i>
+      <div>
+        <h2>Medical Support</h2>
+        <p>During the yatra season, medical camps, first-aid centers,<br>
+            and emergency health services are arranged.<br>
+            Doctors, paramedical staff, oxygen cylinders, and basic medicines are available.<br>
+            Regular health check-ups help pilgrims cope with high-altitude conditions.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <i class="fa-solid fa-person-hiking"></i>
+      <div>
+        <h2>Pony & Palki</h2>
+        <p>For elderly pilgrims, children, and physically challenged devotees,<br>
+        pony, mule, and palki services are available.<br>
+        These services are provided by registered operators and follow safety guidelines,<br>
+        making the trek easier and safer.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <i class="fa-solid fa-shield-halved"></i>
+      <div>
+        <h2>Security</h2>
+        <p>To ensure pilgrim safety, police, SDRF, and disaster<br> 
+            management teams are deployed round the clock.<br>
+            Crowd control, weather monitoring, CCTV surveillance, and <br>
+            emergency rescue servicesare arranged throughout the yatra route.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="controls">
+    <button onclick="prev()">⬅ Prev</button>
+    <button onclick="next()">Next ➡</button>
+  </div>
+
+</div>
+
+<script>
+let index = 0;
+const track = document.getElementById("track");
+const total = 5;
+let auto;
+
+function show(){
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function next(){
+  index = (index + 1) % total;
+  show();
+  restart();
+}
+
+function prev(){
+  index = (index - 1 + total) % total;
+  show();
+  restart();
+}
+
+function startAuto(){
+  auto = setInterval(()=>{
+    next();
+  },4000); // slide → stop → slide
+}
+
+function restart(){
+  clearInterval(auto);
+  startAuto();
+}
+
+startAuto();
+</script>
+</body>
+</html>

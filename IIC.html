@@ -1,0 +1,577 @@
+<html>
+    <style> 
+    .top-bar {
+    width: 100%;
+    background: rgb(10, 10, 96);
+    display: flex;
+    align-items: center;
+    gap:40px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-family: Arial;
+}
+.top-bar .social span {
+    font-weight: bold;
+    color:white;
+}
+.top-bar img {
+    width: 24px;
+    margin: 0 6px;
+}
+.top-bar i {
+    font-size: 18px;
+    margin-right: 0px;
+}
+.head{
+    font-size: 30px;
+    color:blue;
+    background-color: rgb(139, 191, 237);
+    font-weight: bold;
+    text-align: center;
+}
+.head1{
+    display: flex;
+    background: white;
+}
+/*navigation bar*/
+.navbar{
+            padding: 15px;
+            margin-top: 0%;
+            margin-left:30%;
+            width:100%;
+            display: flex;
+            gap: 10px;
+        }
+        .navbar a{
+            color: rgb(17, 15, 15);
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            top:10px;
+            font-weight: bold;
+        }
+        .custom-select1,.custom-select {
+        width: 170px;
+        position: relative;
+        font-size: 18px;
+    }
+    .selected1 {
+        padding: 10px;
+        background: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:rgb(24, 22, 22);
+        font-size:18px;
+        font-weight: bold;
+    }
+    .selected {
+        padding: 10px;
+        background: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:rgb(39, 37, 37);
+        font-size:18px;
+        font-weight: bold;
+    }
+    .options1{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background:white;
+        border: 1px solid white;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background:white;
+        border: 1px solid white;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options1 a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid white;
+    }
+    .options a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid white;
+    }
+    .options1, a:hover {
+        background: white;
+    }
+    .custom-select1.active .options1 {
+        display: block;
+    }
+    .options, a:hover {
+        background: white;
+    }
+    .custom-select.active .options {
+        display: block;
+    }
+    .gg{
+        width:150px;
+        height:90px;
+    }
+    .g1{
+        width:150px;
+        height:70px;
+    }
+    .link{
+        color:orange;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /*body*/
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      background-image: url("Img/s-bg.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .hero-text {
+      width: 45%;
+    }
+    .hero-text h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color:white;
+    }
+    .hero-text p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color:white;
+    }
+    .btn-green {
+      background: #2ecc71;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      width: fit-content;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .small-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .small-buttons div {
+      background: orange;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      color: rgb(23, 22, 22);
+      font-weight: bold;
+    }
+    .video-box {
+      width: 40%;
+      height: 330px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #3284ff;
+      padding: 10px;
+    }
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+      .dropdown {
+      position: relative;
+    }
+    /*section2*/
+    .stats {
+      margin-top: 10%;
+      height:60vh;
+      display: flex;
+      justify-content: space-around;
+      gap:10px;
+      padding: 50px 20px;
+      background-image: url("Img/I4.webp");
+      background-size: cover;
+    }
+    .stat-box {
+      margin-top: 5%;
+      width: 25%;
+      height:40%;
+      background: rgba(255,255,255,0.05);
+      padding: 50px;
+      border-radius: 20px;
+      border: 2px solid rgba(255,255,255,0.5);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .stat-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+    .stat-box h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color:rgb(102, 214, 225);
+    }
+    .stat-box p {
+      font-size: 20px;
+      color:rgb(128, 211, 238);
+    }
+    .stat-box:hover {
+      background: white;
+      color: rgb(84, 200, 228);
+      transform: translateY(-9px);
+    }
+    .stat-box.active {
+      background: white;
+      color:black;
+    }
+    /*section3*/
+     .link-box {
+      width: 200px;
+      background: white;
+      padding: 25px 15px;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .link-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+    .link-icon {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .link-box h4 {
+      margin: 0;
+      font-size: 20px;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    /*section4*/
+    .advantages-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: #05396e;
+        }
+        .advantages-section h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .advantages-boxes {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;   
+        }
+        .box {
+            width: 320px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            border-radius: 25px;
+            text-align: center;
+            color: #333;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+        }
+        .box img {
+            width: 90px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+        }
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 25px rgba(0,0,0,0.25);
+        }
+        .box p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        /*section4*/
+    .contact-section {
+        padding: 60px 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+        background: #93c4f5;
+    }
+    .left {
+        width: 300px;
+    }
+    .left img {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+    .left p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .left .phone {
+        margin-top: 15px;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .social-icons {
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+    }
+    .social-icons img {
+        width: 35px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .social-icons img:hover {
+        transform: scale(1.1);
+    }
+    .middle, .right {
+        width: 250px;
+    }
+    .middle h3, .right h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .middle p, .right p {
+        margin: 8px 0;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .middle p:hover, .right p:hover {
+        color: #ddd;
+        transform: translateX(5px);
+    }
+    .visitor-box {
+        background: white;
+        color: black;
+        padding: 8px 12px;
+        display: inline-block;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .qr-box {
+        margin-top: 20px;
+        padding: 10px;
+        background: white;
+        width: 140px;
+        border-radius: 10px;
+        height:25%;
+    }
+    .qr-box img {
+        width: 100%;
+    }
+        </style>
+    <head>
+    <div class="top-bar">
+    <div class="social">
+        <span>follow us on:</span>
+        <a href="https://www.instagram.com/find_dav005?utm_source=qr&igsh=dHF2bjhwdnQxdWNr"><img src="Img/Insta.png" alt=""></a>
+        <a href="https://www.facebook.com/share/1CdX6aN3Y8/"><img src="Img/Face.png" alt=""></a>
+        <a href="https://youtube.com/@basinapriya?si=09JiXUFDWnVk3foz"><img src="Img/youtube.png"></a>
+        <img src="facebook.png" alt="">
+    </div>
+       <a href="https://www.nicdc.in/" class="link">Public Grievance Open VC link</a>
+    </div>
+    </head>
+    <body>
+         <header>
+            <DIV class="head">Andhra Pradesh Industrial Infrastructure Corporation<br><small style="font-size:20px;color:gray">A Government of AP Enterprises</small></DIV>
+            <hr>
+            <div class="head1">
+            <div><img src="Img/I3.png" class="gg">
+                <img src="Img/I2.webp" class="g1"></div>
+           <div><div class="navbar">
+           <a href="IIC.html">HOME  </a>
+           <div class="custom-select1">
+           <div class="selected1">ABOUT US ▼</div>
+           <div class="options1"> 
+           <a href="Overview.html">OVERVIEW</a>
+           <a href="Our-Journey.html">OUR JOURNEY</a>
+           <a href="Mission&V.html">MISSION & VISION</a>
+           <a href="Directors.html">BOARD OF DIRECTORS</a>
+           <a href="">CORPORATE PROFILE</a>
+           </div></div>
+           <a href="Trade.html">TENDERS </a>
+           <div class="custom-select">
+           <div class="selected">INFORMATION▼</div>
+           <div class="options">
+           <a href="Right.html">RIGHT TO INFORMATION</a>
+           <a href="Career.html">CAREER</a>
+           <a href="Citi.html">CITIZENS DETAILS</a>
+           </div></div>
+           <a href="#News">NEWS</a>
+           <a href="#contact">CONTACT US</a></div></div>
+           </div>
+        <script>
+        // open/close dropdown on click
+       document.querySelector(".selected1").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+      <script>
+        // open/close dropdown on click
+       document.querySelector(".selected").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+    </header>
+    <div>
+        <section class="hero">
+  <div class="hero-text">
+    <h1>APIIC</h1>
+    <p>Andhra Pradesh Industrial Infrastructure Corporation Ltd.
+         was incorporated on 26th September, 1973 with authorised capital of Rs.20.00 
+         crores and paid up capital of Rs.16.33 crores.</p>
+    <div class="btn-green"><a>Explore AP New Plug and Play Infrastructure Policy</a></div>
+    <div class="small-buttons">
+      <div><a>India Industrial Land Bank</a></div>
+      <div><a>PM GatiShakti</a></div>
+      <div><a>APIIC - Industry Partnership Drive</a></div>
+    </div>
+    <div class="small-buttons">
+      <div style="background:#ff6a00"><a href="" >Grievance Redressal</a></div>
+    </div>
+  </div>
+  <div class="video-box">
+    <video autoplay muted loop>
+      <source src="Img/APIIC.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+<!-- Stats Section -->
+<section class="stats">
+  <div class="stat-box" onclick="window.location.href='page1.html'">
+    <img src="Img/I5.jpg" class="stat-icon" alt="icon" />
+    <h3>Total Land Bank</h3>
+    <p>More than 1.4 Lakhs Acres</p>
+  </div>
+  <div class="stat-box" onclick="window.location.href='page2.html'">
+    <img src="Img/I5.jpg" class="stat-icon" alt="icon" />
+    <h3>Available Land Bank</h3>
+    <p>More than 44 Thousand Acres</p>
+  </div>
+  <div class="stat-box" onclick="window.location.href='page3.html'">
+    <img src="Img/I5.jpg" class="stat-icon" alt="icon" />
+    <h3>Total Industrial Parks</h3>
+    <p>More than 550</p>
+  </div>
+</section>
+<section class="links-grid" style="display:flex; justify-content:space-around; gap:30px; padding:40px 20px; background:#f5f7fb;">
+    <div class="link-box" onclick="window.location.href='nsws.html'">
+      <img src="Img/I6.png" class="link-icon" alt="NSWS" />
+      <h4>NSWS</h4>
+    </div>
+    <div class="link-box" onclick="window.location.href='dcgis.html'">
+      <img src="Img/I7.png" class="link-icon" alt="DCGIS" />
+      <h4>DCGIS</h4>
+    </div>
+    <div class="link-box" onclick="window.location.href='apindustries.html'">
+      <img src="Img/I8.png" class="link-icon" alt="AP Industries" />
+      <h4>AP Industries</h4>
+    </div>
+    <div class="link-box" onclick="window.location.href='iilb.html'">
+      <img src="Img/I9.png" class="link-icon" alt="IILB" />
+      <h4>IILB</h4>
+    </div>
+  </section>
+<section class="advantages-section">
+        <h1>ADVANTAGES OF AP</h1>
+        <div class="advantages-boxes">
+            <div class="box">
+                <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Land Icon">
+                <p>Biggest Land Bank<br>among all the States in India</p>
+            </div>
+            <div class="box">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Leadership Icon">
+                <p>Good Governance and<br>visionary Leadership</p>
+            </div>
+            <div class="box">
+                <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Leadership Icon">
+                <p>Longest coastline in the<br> country with a length of<br> 974 kms</p>
+            </div>
+            <div class="box">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Leadership Icon">
+                <p>Known as gateway to <br>East and South East Asia</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <img src="Img/AP-Logo.jpg" alt="APIIC Logo">
+        <p>
+            APIIC Towers, Plot No–1 (9th, 10th & 11th floors),<br>
+            IT Park, Mangalagiri, Guntur (Dist),<br>
+            AP – 522503
+        </p>
+        <p>If you have any questions or need help,<br>
+        feel free to contact our team.</p>
+        <p class="phone">+91-863-2381850</p>
+        <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384017.png" alt="Twitter">
+        </div>
+    </div>
+    <!-- MIDDLE -->
+    <div class="middle">
+        <h3>APIIC – At a glance</h3>
+        <p>Term of use</p>
+        <p>Sitemap</p>
+        <p>ERP</p>
+        <p>Privacy Policy</p>
+        <p>Feedback</p>
+        <p>Contact Us</p>
+        <h3 style="margin-top:25px;">Related Links</h3>
+        <p>Department of Industries</p>
+        <p>A.P. State Financial Corporation</p>
+        <p>DTCP</p>
+        <p>Careers</p>
+    </div>
+    <!-- RIGHT -->
+    <div class="right">
+        <h3>Visitors Count:</h3>
+        <div class="visitor-box">1750833</div>
+        <p style="margin-top:20px;">
+            Last updated on: 2025-12-08 12:37:14
+        </p>
+        <p>Site best viewed on: Chrome, IE9 & IE10</p>
+        <div class="qr-box">
+            <img src="Img/QR-code.png" alt="QR Code">
+        </div>
+    </div>
+</section>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+    <style>
+        body{
+            background:white ;
+            color:black;
+        }
+        .login{
+            text-align: center;
+            position: relative;
+            top:25%;
+            left:35%;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #323232;
+            box-shadow: 5px 5px 30px rgb(90, 89, 89),
+                        5px 5px 5px #bcbbbb,
+                        3px 3px 4px #8e8d8d;
+                        
+            border-radius: 5px;
+            width:30%;
+            height:40%;
+            padding:30px 10px;
+            font-size: 30px;
+        }
+        input{
+            width:60%;
+            height:15%;
+            margin: 8px 0;
+            border-radius: 10px;
+        }
+        button{
+            margin-top: 10px;
+            width:30%;
+            height:10%;
+            font-size: 15px;
+            padding:5px;
+            font-weight: bold;
+            background: green;
+            border-radius: 10px;
+        }
+    </style>
+    <body>
+        <div class="login">
+        <h1>LOGIN PAGE</h1>
+        Username:<input type="text" id="Username" placeholder="Username"><br>
+        Password:<input type="text" id="Password" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+        </div>
+        <script>
+            function login(){
+                let Username=document.getElementById("Username").value;
+                let Password=document.getElementById("Password").value;
+
+                if(Username==""||Password==""){
+                    alert("Fill the Details");
+                }
+                else if(Username=="Admin"&&Password=="123456"){
+                    alert("Login Successfully ✅");
+                }
+                else{
+                    alert("Wrong Details ❌");
+                }
+            }
+        </script>
+
+    </body>

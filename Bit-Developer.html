@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bitcoin Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+body{
+  background:#0b0f14;
+  color:#fff;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  background:#fff;
+  padding:14px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:600;
+  color:#111;
+}
+
+.logo span{
+  color:#f7931a;
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.menu li{
+  list-style:none;
+  position:relative;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#111;
+  font-size:15px;
+  font-weight:500;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:30px;
+  left:0;
+  background:#fff;
+  min-width:180px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  display:none;
+  flex-direction:column;
+}
+
+.dropdown a{
+  padding:10px 15px;
+  color:#111;
+  font-size:14px;
+}
+
+.dropdown a:hover{
+  background:#f5f5f5;
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.menu li:hover .dropdown{
+  display:flex;
+}
+
+/* SEARCH */
+.search{
+  padding:8px 14px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  outline:none;
+}
+
+/* ================= HERO ================= */
+.hero{
+  background:linear-gradient(180deg,#0b0f14,#0f141b);
+  padding:80px 60px;
+}
+
+.hero small{
+  color:#f7931a;
+  font-size:14px;
+}
+
+.hero h1{
+  font-size:42px;
+  font-weight:500;
+  margin-top:10px;
+  max-width:700px;
+}
+
+/* ================= CARDS ================= */
+.cards{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#0f141b;
+  padding:40px 30px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  border-radius:4px;
+  transition:0.3s;
+}
+
+.card:hover{
+  background:#141a22;
+  transform:translateY(-6px);
+}
+
+.card img{
+  height:40px;
+  margin-bottom:20px;
+}
+
+.card h3{
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:6px;
+}
+
+.card span{
+  font-size:14px;
+  color:#f7931a;
+}
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 60px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:600;
+}
+
+.logo span{
+  color:#f7931a;
+}
+
+.search-box{
+  display:flex;
+  align-items:center;
+  border:1px solid #dcdcdc;
+  padding:6px 12px;
+  border-radius:6px;
+}
+
+.search-box input{
+  border:none;
+  outline:none;
+  font-size:14px;
+}
+
+/* ================= CONTENT ================= */
+.container{
+  max-width:900px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.container h1{
+  font-size:40px;
+  font-weight:500;
+  color:black;
+  margin-bottom:25px;
+}
+
+.container h2{
+  font-size:28px;
+  font-weight:500;
+  margin:60px 0 20px;
+  color:black;
+}
+
+.container p{
+  font-size:16px;
+  color:#333;
+  margin-bottom:18px;
+}
+
+.container a{
+  color:#1a73e8;
+  text-decoration:none;
+}
+
+.container a:hover{
+  text-decoration:underline;
+}.sec1{
+    width:100%;
+    background: #fff;
+    padding:10px 20px;
+}
+/* FOOTER */
+.footer{
+  background:linear-gradient(to bottom, #0b0f14, #070a0f);
+  color:#cbd5e1;
+  padding:80px 90px 30px;
+}
+
+/* LOGO */
+.footer-logo{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:26px;
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.footer-logo span{
+  color:#f7931a;
+}
+
+/* CONTENT */
+.footer-content{
+  display:grid;
+  grid-template-columns: 1.2fr repeat(4,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+/* DONATE */
+.donate h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.donate button{
+  background:#f7931a;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  margin:10px 0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.donate a{
+  display:block;
+  color:#3b82f6;
+  font-size:14px;
+  word-break:break-all;
+  margin-top:8px;
+}
+
+/* FOOTER COLUMNS */
+.footer-col h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:14px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin-bottom:10px;
+}
+
+.footer-col a{
+  color:#9ca3af;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  border-top:1px solid #1f2937;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+.footer-bottom span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:#22c55e;
+  border-radius:50%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    bitcoin<span>developer</span>
+  </div>
+
+  <ul class="menu">
+    <li>
+      <a href="#">Introduction ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Individual.html">Individuals</a>
+        <a href="Bit-Business.html">Businesses</a>
+        <a href="Bit-Developer.html">Developers</a>
+        <a href="Bit-Started.html">Getting Started</a>
+      </div>
+    </li>
+    <li>
+      <a href="Bit-Resource.html">Resources ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Community.html">Community</a>
+        <a href="Bit-Developer.html">documentation</a>
+        <a href="Bit-Vocabulary.html">Vocabulary</a>
+        <a href="Bit-Events.html">Events</a>
+      </div>
+    </li>
+    <li><a href="Innovation.html">Innovation</a></li>
+    <li>
+      <a href="">Participate ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Suppport.html">Support Bitcoin</a>
+        <a href="Bit-Buy.html">Buy Bitcoin</a>
+        <a href="Bit-Sell.html">Sell Bitcoin</a>
+      </div>
+    </li>
+    <li><a href="Bit-FAQ.html">FAQ</a></li>
+  </ul>
+
+  <input type="text" class="search" placeholder="Search">
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <small>Welcome</small>
+  <h1>Learn Bitcoin and start building Bitcoin-based applications.</h1>
+
+  <div class="cards">
+    <a href="#" class="card">
+      <img src="https://bitcoin.org/img/icons/code.svg">
+      <h3>Developer Guides</h3>
+      <span>Learn more</span>
+    </a>
+
+    <a href="#" class="card">
+      <img src="https://bitcoin.org/img/icons/search.svg">
+      <h3>Reference</h3>
+      <span>Learn more</span>
+    </a>
+
+    <a href="#" class="card">
+      <img src="https://bitcoin.org/img/icons/examples.svg">
+      <h3>Examples</h3>
+      <span>Learn more</span>
+    </a>
+
+    <a href="#" class="card">
+      <img src="https://bitcoin.org/img/icons/book.svg">
+      <h3>Glossary</h3>
+      <span>Learn more</span>
+    </a>
+  </div>
+</section>
+<section class="sec1">
+<div class="container">
+
+  <h1>Getting Started</h1>
+
+  <p>
+    The site aims to provide the information you need to understand Bitcoin and
+    start building Bitcoin-based applications. To make the best use of this
+    documentation, <a href="#">make sure you're running a node</a>.
+  </p>
+
+  <p>
+    For technical support, we recommend
+    <a href="#">Bitcoin Stack Exchange</a>.
+    For errors or suggestions related to this documentation, please open an
+    issue on <a href="#">GitHub</a>.
+  </p>
+
+  <h2>Acknowledgments</h2>
+
+  <p>
+    This documentation would not be possible without the many contributions to
+    the Bitcoin project over the years from core developers and other people.
+    A very special thanks, however, goes to
+    <a href="#">David Harding</a> who in 2014 helped lead the effort to compose
+    and bring together a significant amount of the material found here.
+    Also, to <a href="#">Cornelius Schumacher</a> for envisioning new ways to
+    extend the developer documentation that led to this site.
+  </p>
+
+</div>
+</section>
+<footer class="footer">
+
+  <!-- LOGO -->
+  <div class="footer-logo">
+    <span>₿</span>Bitcoin
+  </div>
+
+  <!-- CONTENT -->
+  <div class="footer-content">
+    <!-- DONATE -->
+    <div class="donate">
+      <h4>Support Bitcoin.org:</h4>
+      <button>Donate</button>
+      <a href="#">bc1qpe6jw8ptj9l9pkscmlf8fhhkrrjeawgpjvtq8</a>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="footer-col">
+      <h4>Introduction:</h4>
+      <ul>
+        <li><a href="#">Individuals</a></li>
+        <li><a href="#">Businesses</a></li>
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Getting started</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">You need to know</a></li>
+        <li><a href="#">White paper</a></li>
+      </ul>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-col">
+      <h4>Resources:</h4>
+      <ul>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Exchanges</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Vocabulary</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Bitcoin Core</a></li>
+      </ul>
+    </div>
+
+    <!-- PARTICIPATE -->
+    <div class="footer-col">
+      <h4>Participate:</h4>
+      <ul>
+        <li><a href="#">Support Bitcoin</a></li>
+        <li><a href="#">Buy Bitcoin</a></li>
+        <li><a href="#">Sell Bitcoin</a></li>
+        <li><a href="#">Running a full node</a></li>
+        <li><a href="#">Development</a></li>
+      </ul>
+    </div>
+
+    <!-- OTHER -->
+    <div class="footer-col">
+      <h4>Other:</h4>
+      <ul>
+        <li><a href="#">Avoid Scams</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">About bitcoin.org</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <span>© Bitcoin Project 2009–2025 Released under the MIT license</span>
+    <span><div class="dot"></div> Network Status &nbsp; English</span>
+  </div>
+
+</footer>
+
+</body>
+</html>

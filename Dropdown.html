@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dropdown Validation</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#f2f2f2;
+}
+
+.box{
+  width:300px;
+  margin:100px auto;
+  padding:20px;
+  background:white;
+  text-align:center;
+  box-shadow:0px 0px 10px gray;
+}
+
+select{
+  width:100%;
+  padding:8px;
+  margin-bottom:10px;
+}
+
+button{
+  width:100%;
+  padding:8px;
+  background:purple;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+  <h3>Select Course</h3>
+
+  <select id="course">
+    <option value="">-- Select Course --</option>
+    <option>HTML</option>
+    <option>CSS</option>
+    <option>JavaScript</option>
+  </select>
+
+  <button onclick="checkDropdown()">Submit</button>
+</div>
+
+<script>
+function checkDropdown(){
+  let course = document.getElementById("course").value;
+  if(course == ""){
+    alert( "Please select an option ❗");
+  }
+  else{
+    alert("You selected: " + course + " ✅");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,588 @@
+<html>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+        .section{
+            background-image: url("Img/blue.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: cover;
+            
+        }
+   .top-bar {
+    width: 100%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap:40px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-family: Arial;
+}
+
+.top-bar .social span {
+    font-weight: bold;
+}
+
+.top-bar img {
+    width: 24px;
+    margin: 0 6px;
+}
+
+.top-bar i {
+    font-size: 18px;
+    margin-right: 0px;
+}
+.navbar{
+            padding: 15px;
+            margin-top: 0px;
+            margin-left:30%;
+            width:100%;
+            display: flex;
+            gap: 10px;
+        
+        }
+        .navbar a{
+            color: rgb(17, 15, 15);
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            top:10px;
+            font-weight: bold;
+        }
+        nav{
+            background:white;
+        }
+        .custom-select1 {
+        width: 150px;
+        position: relative;
+        font-size: 18px;
+    }
+    .selected1 {
+        padding: 10px;
+        background: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:rgb(24, 22, 22);
+        font-size:18px;
+        font-weight: bold;
+    }
+    .options1{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background:white;
+        border: 1px solid white;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options1 a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid white;
+    }
+    .options1, a:hover {
+        background: white;
+    }
+    .custom-select1.active .options1 {
+        display: block;
+    }
+    .gg{
+        width:150px;
+        height:70px;
+        margin-left: 10%;
+        position: fixed;
+        margin-top:3px ;
+    }
+    .g1{
+        width:150px;
+        height:70px;
+        position: fixed;
+        margin-top:0px ;
+        margin-left: 50%;
+    }
+    /* body*/
+    .img{
+        height:100%;
+        width:100%;
+    }
+    .img1{
+        margin-left:50%;
+    }
+    .head{
+        margin-left:10%;
+    }
+    .head h1{
+        color:black;
+       font-family: "Whisper", cursive;
+            text-shadow:0 0 5px  #a3eaec,
+                         0 0 15px #5aabd1,
+                         0 0 25px #9dc2d3;
+            font-size: 50px;
+    }
+    .head p{
+       color:rgb(76, 84, 91);
+            text-shadow: 0 0 5px #67dee0,
+                         0 0 5px #88c8ea;         
+            font-family:  "Caveat", cursive;
+            font-size: 30px;
+    }
+    .bg{
+        display: flex;
+        justify-content: space-between;}
+    .appointment-box {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    margin-top:8%;
+}
+
+.appointment-box h3 {
+    margin-bottom: 20px;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 80%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+}
+input:focus, select:focus {
+    border-color: #00a884;
+}
+.btn {
+    background: #00a884;
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background: #008f72;
+}
+.section{ height: 90vh;  
+            padding-top: 0px; 
+            text-align: left;
+            font-size: 18px;
+        }
+ .section1 { height: 90vh;  
+            padding-top: 0px; 
+            text-align: left;
+            font-size: 18px;
+        }
+.section2 { height: 100vh;  
+            text-align: center;
+            font-size: 18px;
+            background-image: url("Img/hospital2.png");
+            background-repeat: no-repeat;
+            background-position:center;
+            background-size: cover;
+        }
+.section2 p{
+    margin-top: 10%;
+    text-align: right;
+}
+.section2 h1{
+    text-align: center;
+    color:black;
+}
+.section3 { height: 90vh;  
+            padding-top: 0px; 
+            text-align: left;
+            font-size: 18px;
+        }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .slider-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background: #fff;
+    }
+    .slider-wrapper h1{
+        text-align: center;
+        margin-top:10%;
+    }
+    .slider {
+        margin-top:5%;
+        display: flex;
+        width: 500%;   /* 5 SLIDES = 500% */
+        animation: slide 10s infinite linear;
+    }
+    .slide {
+        width: 100%;
+        text-align: center;
+    }
+    .slide img {
+        width: 50%;
+        height: 330px;
+        object-fit: cover;
+    }
+
+    .content {
+        background: #fff;
+        padding: 15px 30px;
+        text-align: Center;
+    }
+
+    .content h2 {
+        margin: 0;
+        font-size: 26px;
+    }
+
+    .content p {
+        color: #444;
+        margin-top: 8px;
+        line-height: 1.6;
+    }
+
+    .content a {
+        margin-top: 10px;
+        display: inline-block;
+        color: #008c7d;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    @keyframes slide {
+    0%   { margin-left: 0%; }
+
+    18%  { margin-left: 0%; }
+
+    25%  { margin-left: -100%; }
+    43%  { margin-left: -100%; }
+
+    50%  { margin-left: -200%; }
+    68%  { margin-left: -200%; }
+
+    75%  { margin-left: -300%; }
+    93%  { margin-left: -300%; }
+
+    100% { margin-left: 0%; } /* LAST → FIRST */
+}
+    .footer{
+        width:100%;
+        background:#fff;
+        padding:50px 80px;
+        box-sizing:border-box;
+    }
+    .footer-row{
+        display:flex;
+        justify-content: space-between;
+        margin-bottom:50px;
+    }
+    /* LEFT ABOUT TEXT */
+    .footer-about{
+        width:35%;
+        line-height:1.7;
+        color:#333;
+        font-size:16px;
+    }
+    /* LEGAL SECTION */
+    .footer-legal{
+        width:20%;
+        font-size:16px;
+    }
+    .footer-legal h3{
+        margin-bottom:15px;
+    }
+    .footer-legal a{
+        display:block;
+        text-decoration:none;
+        color:#000;
+        margin-top:10px;
+    }
+    /* TERMS SECTION */
+    .footer-terms{
+        width:25%;
+        font-size:16px;
+    }
+    .footer-terms h3{
+        margin-bottom:15px;
+    }
+    /* BOTTOM SECTION */
+    .bottom{
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        margin-top:40px;
+        padding-top:40px;
+        border-top:1px solid #ccc;
+    }
+    /* CONTACT ICON + TEXT */
+    .contact-box{
+        display:flex;
+        gap:60px;
+    }
+    .c-item{
+        font-size:16px;
+        line-height:1.7;
+    }
+    .c-item i{
+        font-size:22px;
+        margin-right:10px;
+    }
+    /* SOCIAL MEDIA */
+    .social-area{
+        text-align:left;
+    }
+    .social-area h2{
+        margin:0;
+    }
+    .social-icons{
+        margin-top:10px;
+        display:flex;
+        gap:20px;
+    }
+    .social-icons i{
+        font-size:28px;
+        cursor:pointer;
+    }
+    </style>
+    <head>
+    <div class="top-bar">
+    <div class="social">
+        <span>follow us on:</span>
+        <a href="https://www.instagram.com/find_dav005?utm_source=qr&igsh=dHF2bjhwdnQxdWNr"><img src="Img/Insta.png" alt=""></a>
+        <a href="https://www.facebook.com/share/1CdX6aN3Y8/"><img src="Img/Face.png" alt=""></a>
+        <a href="https://youtube.com/@basinapriya?si=09JiXUFDWnVk3foz"><img src="Img/youtube.png"></a>
+        <img src="facebook.png" alt="">
+    </div>
+    <div class="contact">
+        <i class='bx bx-phone'></i>
+        0471 2779100 | 0471 2779101 | 0471 4299299
+    </div>
+    <div class="email">
+        <i class='bx bx-envelope'></i>
+        feedback@gg-hospital.com | mdoffice@gg-hospital.com
+    </div>
+    <div class="email1">
+        <i class='bx bx-envelope'></i>
+        gg-hospital@gmail.com| giri-ganesh@gmail.com
+    </div>
+</div>
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+            <img src="Img/GG.png" class="gg">
+            <div class="navbar">
+           <a href="Hospital.html">Home  </a> 
+           <a href="About.html">About  </a>
+           <a href="Doct.html">Doctors</a>
+           <div class="custom-select1">
+           <div class="selected1">Departments</div>
+           <div class="options1">
+           <a href="Depart.html">Emergency Medicines</a>
+           <a href="Dept2.html">Dermatology</a>
+           </div></div>
+           <a href="#News">News and Media</a>
+           <a href="#contact">Contact Us </a>
+          <img src="Img/GG.png" class="g1"></div></nav>
+        
+        <script>
+        // open/close dropdown on click
+       document.querySelector(".selected1").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+    </header>
+    <div class="Section">
+        <div class="bg">
+            <div class="head">
+                <h1>GG HOSPITAL</h1>
+                <h1>Love & Care to Humanity</h1>
+                <p>Fastest-Growing Multi Speciality Hospital
+                   in South Kerala</p>
+            </div>
+        </div>
+    <div class="appointment-box">
+    <h3>Book an Appointment</h3>
+    <div class="form-row">
+        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Phone Number">
+        <select>
+            <option selected disabled>Department</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Orthopedics</option>
+            <option>Gynecology</option>
+            <option>Pediatrics</option>
+            <option>Dermatology</option>
+            <option>ENT</option>
+            <option>General Medicine</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <select>
+            <option selected disabled>Doctor</option>
+            <option>Dr. Raman</option>
+            <option>Dr. Priya</option>
+            <option>Dr. Anand</option>
+        </select>
+        <input type="date">
+        <button class="btn">Book an Appointment</button>
+    </div>
+</div></div>
+<div class="section1">
+<div class="slider-wrapper">
+    <h1>Some Departments</h1>
+    <div class="slider">
+        <!-- Slide 1 -->
+        <div class="slide">
+            <img src="Img/hospital8.jpg">
+            <div class="content">
+                <h2>Emergency Medicine</h2>
+                <p>24/7 advanced emergency care with experienced doctors and rapid response.</p>
+                <a href="Depart.html">Read More</a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="Img/D6.jpg">
+            <div class="content">
+                <h2>Dermatology</h2>
+                <p>Specialized treatments for skincare, cosmetic procedures and laser services.</p>
+                <a href="Dept2.html">Read More</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="Img/D7.jpg">
+            <div class="content">
+                <h2>Paediatrics Cardiology</h2>
+                <p>Expert cardiac care for children with compassionate and safe treatment.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="Img/D8.jpg">
+            <div class="content">
+                <h2>Cardiology</h2>
+                <p>Advanced surgical procedures with high-end technology for better outcomes.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="slide">
+            <img src="Img/D9.jpg">
+            <div class="content">
+                <h2>Nephrology</h2>
+                <p>Compassionate and expert care for infants and young children.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="section2">
+<div>
+<h1 >Why GG Hospital</h1>
+<p>
+<h3>▶&nbsp;Fastest growing multi-super specialty hospital in South Kerala</h3>
+<h3>▶&nbsp;Achieved the unique reputation of attracting the finest clinical<br>
+     talent from across the country</h3>
+<h3>▶&nbsp;The International Patient Services at GG Hospital ensure tostrike<br>
+     the chord of care in every patient from the moment they establish<br>contact
+     till the time they are discharged after treatment and cure</h3>
+<h3>▶&nbsp;The growth of GG Hospital to become such a reputed and renow<br>-ned  institution 
+    in Kerala has been fueled by the combination of<br> Love, Care and Quality</h3>
+<h3>▶&nbsp;GG hospital emphasises Love and care towards humanity provi<br>-ded to 
+    patients and thus got accredited by NABH and NABL from <br>2020 onwards.</h3></p></div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<div class="section3">
+<div class="footer">
+    <!-- FIRST ROW -->
+    <div class="footer-row">
+        <!-- ABOUT SECTION -->
+        <div class="footer-about">
+            <p>
+                GG Hospital (Paragon Hospital Kerala Pvt. Ltd) is the flagship hospital of 
+                the Sree Gokulam Group of Companies.
+            </p>
+        </div>
+        <!-- LEGAL -->
+        <div class="footer-legal">
+            <h3>Legal</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Documentation</a>
+        </div>
+        <!-- TERMS -->
+        <div class="footer-terms">
+            <h3>Terms of Services</h3>
+        </div>
+    </div>
+    <!-- SECOND ROW -->
+    <div class="bottom">
+        <!-- CONTACT -->
+        <div class="contact-box">
+            <div class="c-item">
+                <i class="fas fa-home"></i><br>
+                <strong>Address:<br></strong>
+                Medical College, Pattom<br>
+                Kumarapuram Rd,<br>
+                Murinjapalam,<br>
+                Thiruvananthapuram,<br>
+                Kerala 695011
+            </div>
+            <div class="c-item">
+                <i class="fas fa-phone"></i><br>
+                <strong>Phone:<br></strong>
+                0471 2779100<br>
+                0471 2779101<br>
+                0471 4299299
+            </div>
+            <div class="c-item">
+                <i class="fas fa-envelope"></i><br>
+                <strong>Email:<br></strong>
+                feedback@gg-hospital.com<br>
+                mdoffice@gg-hospital.com
+            </div>
+        </div>
+        <!-- SOCIAL MEDIA -->
+        <div class="social-area">
+            <h2>We are on Social Media</h2>
+            <div class="social-icons">
+               <a href="https://www.instagram.com/find_dav005?utm_source=qr&igsh=dHF2bjhwdnQxdWNr"><img src="Img/Insta.png" alt=""></a>
+               <a href="https://www.facebook.com/share/1CdX6aN3Y8/"><img src="Img/Face.png" alt=""></a>
+               <a href="https://youtube.com/@basinapriya?si=09JiXUFDWnVk3foz"><img src="Img/youtube.png"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </body>
+</html>

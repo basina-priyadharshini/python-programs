@@ -1,0 +1,492 @@
+<html>
+    <style>
+        body{
+            background: #000;
+            color:#fff;
+        }
+        header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:42px;
+}
+/* NAV */
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:40px;
+    margin-right:15%;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:50vh;
+    width:100%;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("Img2/Casi3.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+/* HERO TEXT */
+.hero h1{
+    font-size:72px;
+    letter-spacing:6px;
+    font-weight:300;
+    color:#d4af37;
+}
+
+/* SCROLL ICON */
+.scroll-icon{
+    position:absolute;
+    top:50%;
+    width:28px;
+    height:48px;
+    border:2px solid #fff;
+    border-radius:20px;
+}
+
+.scroll-icon::after{
+    content:"";
+    width:6px;
+    height:10px;
+    background:#fff;
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:3px;
+    animation:scroll 1.5s infinite;
+}
+
+@keyframes scroll{
+    0%{ opacity:0; top:10px; }
+    50%{ opacity:1; }
+    100%{ opacity:0; top:25px; }
+}
+/* ===== ZOOM EFFECT ON PAGE LOAD ===== */
+.page-zoom{
+  animation: zoomIn 1.2s ease forwards;
+  transform: scale(1.15);
+  opacity:0;
+}
+
+@keyframes zoomIn{
+  to{
+    transform: scale(1);
+    opacity:1;
+  }
+}
+/* ===== FILTER ===== */
+.filter{
+  text-align:center;
+  margin:30px 0;
+}
+
+.filter a{
+  color:#ccc;
+  text-decoration:none;
+  margin:0 15px;
+  font-size:16px;
+}
+
+.filter a.active{
+  color:#d4af37;
+}
+
+/* ===== GALLERY GRID ===== */
+.gallery{
+  padding:0 40px 60px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.gallery img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  transition:0.5s;
+  cursor:pointer;
+}
+
+/* IMAGE HOVER ZOOM */
+.gallery img:hover{
+  transform:scale(1.08);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .header{
+    flex-direction:column;
+    gap:15px;
+  }
+}
+/* ===== HERO1 SECTION ===== */
+.hero1{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("Img2/Casi1.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ===== PLAY BUTTON ===== */
+.play-btn{
+    width:90px;
+    height:90px;
+    background:rgba(255,255,255,0.25);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:0.3s;
+    backdrop-filter: blur(6px);
+}
+
+.play-btn:hover{
+    transform:scale(1.1);
+}
+
+.play-btn span{
+    width:0;
+    height:0;
+    border-left:28px solid white;
+    border-top:18px solid transparent;
+    border-bottom:18px solid transparent;
+    margin-left:5px;
+}
+
+/* ===== VIDEO OVERLAY ===== */
+.video-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+/* ===== VIDEO BOX ===== */
+.video-box{
+    position:relative;
+    width:85%;
+    max-width:900px;
+}
+
+video{
+    width:100%;
+    border-radius:8px;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn{
+    position:absolute;
+    top:-40px;
+    right:0;
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+}
+/* ===== CONTACT SECTION ===== */
+.contact-section{
+    padding:80px 60px;
+    background:linear-gradient(to right,#0b0b0b,#111);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:60px;
+    align-items:flex-start;
+}
+
+/* LEFT */
+.contact-label{
+    color:#caa24d;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.contact-line{
+    width:60px;
+    height:2px;
+    background:#caa24d;
+}
+
+/* CENTER */
+.contact-title{
+    color:#caa24d;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    line-height:1.7;
+    margin-bottom:15px;
+    color:#ddd;
+}
+
+.contact-info a{
+    color:#caa24d;
+    text-decoration:none;
+}
+
+/* SOCIAL */
+.social-icons{
+    margin-top:25px;
+}
+
+.social-icons a{
+    display:inline-flex;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    justify-content:center;
+    align-items:center;
+    margin-right:10px;
+    font-size:18px;
+    color:#fff;
+}
+
+.fb{ background:#1877f2; }
+.yt{ background:#ff0000; }
+.ig{ background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+
+/* RIGHT */
+.links h3{
+    color:#caa24d;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.links ul{
+    list-style:none;
+}
+
+.links li{
+    margin-bottom:15px;
+}
+
+.links li::before{
+    content:"•";
+    color:#caa24d;
+    margin-right:10px;
+}
+
+.links a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.links a:hover{
+    color:#caa24d;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+    padding:20px;
+    text-align:center;
+    font-size:14px;
+    color:#aaa;
+    border-top:1px solid #222;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+}
+.page-zoom h1{
+    font-size: 50px;
+    text-align: center;
+    color:gold;
+    margin-top: 10%;
+}
+    </style>
+    <body>
+         <header>
+    <div class="logo">
+        <!-- replace logo.png -->
+        <img src="Img2/Casino.avif" alt="Casino Gold">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Casino.html">Home</a></li>
+            <li><a href="Casino-Tariff.html">Tariff</a></li>
+            <li><a href="Casino-Game.html">Casino Games</a></li>
+            <li><a href="Casino-Gallery.html">Gallery</a></li>
+            <li><a href="Casino-About.html">About</a></li>
+            <li><a href="Casino-Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>CASINO GAMES</h1>
+    <div class="scroll-icon"></div>
+</section>
+
+<div class="page-zoom">
+<h1>Gallery</h1>
+  <!-- GALLERY -->
+  <div class="gallery">
+    <img src="Img2/Gallery.avif">
+    <img src="Img2/Gallery1.avif">
+    <img src="Img2/H1.jpg">
+    <img src="Img2/H2.avif">
+
+    <img src="Img2/Gallery2.avif">
+    <img src="Img2/Gallery3.avif">
+    <img src="Img2/H3.avif">
+    <img src="Img2/H4.jpg">
+
+    <img src="Img2/Gallery4.avif">
+    <img src="Img2/Gallery5.avif">
+    <img src="Img2/H5.avif">
+    <img src="Img2/H6.avif">
+
+    <img src="Img2/Gallery6.avif">
+    <img src="Img2/Gallery7.avif">
+    <img src="Img2/H6.avif">
+    <img src="Img2/H7.avif">
+
+    <img src="Img2/Gallery8.avif">
+    <img src="Img2/Gallery9.avif">
+    <img src="Img2/H8.jpg">
+    <img src="Img2/H9.avif">
+
+    <img src="Img2/Gallery10.avif">
+    <img src="Img2/Gallery11.avif">
+    <img src="Img2/Gallery12.avif">
+    <img src="Img2/H10.jpeg">
+
+    <img src="Img2/Gallery13.avif">
+    <img src="Img2/Gallery14.avif">
+    <img src="Img2/Gallery15.avif">
+    <img src="Img2/Gallery16.avif">
+  </div>
+
+</div>
+<div class="hero1">
+    <div class="play-btn" onclick="openVideo()">
+        <span></span>
+    </div>
+</div>
+
+<!-- ===== VIDEO POPUP ===== -->
+<div class="video-overlay" id="videoOverlay">
+    <div class="video-box">
+        <div class="close-btn" onclick="closeVideo()">✖</div>
+        <video id="promoVideo" controls>
+            <source src="Img/Vedio.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+    </div>
+</div>
+
+<script>
+function openVideo(){
+    document.getElementById("videoOverlay").style.display = "flex";
+    document.getElementById("promoVideo").play();
+}
+
+function closeVideo(){
+    let video = document.getElementById("promoVideo");
+    video.pause();
+    video.currentTime = 0;
+    document.getElementById("videoOverlay").style.display = "none";
+}
+</script>
+<!-- ===== CONTACT ===== -->
+<section class="contact-section">
+    <div class="contact-grid">
+
+        <!-- LEFT -->
+        <div>
+            <div class="contact-label">• CONTACT US!</div>
+            <div class="contact-line"></div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="contact-info">
+            <div class="contact-title">Get in touch</div>
+
+            <p>
+                Casino Gold, SinQ Prive, Aguada – Siolim Rd,<br>
+                opposite Taj Holiday Village,<br>
+                Candolim, Goa 403515
+            </p>
+
+            <p><strong>+91 72630 73333</strong></p>
+
+            <p>
+                <a href="mailto:info@casinogoldgoa.com">
+                    info@casinogoldgoa.com
+                </a>
+            </p>
+
+            <div class="social-icons">
+                <a href="#" class="fb">F</a>
+                <a href="#" class="yt">▶</a>
+                <a href="#" class="ig">◎</a>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Refund and Returns Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+© Copyright 2025 | Casino Gold Candolim Goa. Managed by Future Mercury
+</div>
+    </body>
+</html>

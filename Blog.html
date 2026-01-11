@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sonu Sood | Blog & Journey of Impact</title>
+
+<style>
+:root{
+  --accent:#e50914;
+  --accent2:#ff6a00;
+  --bg:#0e0e0e;
+  --panel:#161616;
+  --text:#f2f2f2;
+  --muted:#b5b5b5;
+  --border:#262626;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.9;
+  overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:110px 12% 70px;
+  background:#000;
+  background-image: url(Img/Sonu3.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+header h1{
+  font-size:52px;
+  position:relative;
+  display:inline-block;
+}
+
+header h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-14px;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));
+  background-size:300%;
+  animation:gradientFlow 6s linear infinite;
+  border-radius:4px;
+}
+
+header p{
+  margin-top:28px;
+  max-width:820px;
+  font-size:20px;
+  color:var(--muted);
+}
+
+/* ===== HERO IMAGE ===== */
+.hero{
+  width:100%;
+  height:440px;
+  overflow:hidden;
+}
+
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  animation:slowZoom 14s ease infinite;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:90px 12%;
+  animation:bgShift 14s ease-in-out infinite;
+}
+
+/* ===== META ===== */
+.meta{
+  display:flex;
+  gap:25px;
+  font-size:14px;
+  color:#9a9a9a;
+  margin-bottom:45px;
+}
+
+.meta span:hover{
+  color:var(--accent2);
+  transition:0.4s;
+}
+
+/* ===== CONTENT ===== */
+.content p{
+  margin-bottom:28px;
+  color:var(--muted);
+}
+
+/* ===== IMAGE BLOCK ===== */
+.image-block{
+  margin:60px 0;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid transparent;
+  animation:borderPulse 9s ease infinite;
+}
+
+.image-block img{
+  width:100%;
+  display:block;
+  animation:imageReveal 1.6s ease forwards;
+}
+
+/* ===== SIDE SECTION ===== */
+.side{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  margin:75px 0;
+  align-items:center;
+}
+
+.side img{
+  width:100%;
+  border-radius:18px;
+  animation:panIn 1.6s ease forwards;
+}
+
+/* ===== HIGHLIGHT ===== */
+.highlight{
+  background:var(--panel);
+  border-left:5px solid var(--accent);
+  padding:38px;
+  border-radius:16px;
+  margin:55px 0;
+  font-size:18px;
+  color:#ddd;
+  transition:0.6s;
+}
+
+.highlight:hover{
+  box-shadow:0 0 35px rgba(229,9,20,0.35);
+  background:linear-gradient(135deg,#1a1a1a,#121212);
+}
+
+/* ===== TIMELINE ===== */
+.timeline{
+  margin-top:70px;
+  border-left:2px solid var(--border);
+  padding-left:30px;
+}
+
+.timeline div{
+  margin-bottom:40px;
+}
+
+.timeline h4{
+  color:var(--accent2);
+  margin-bottom:8px;
+}
+
+/* ===== AUTHOR ===== */
+.author{
+  margin-top:80px;
+  padding-top:35px;
+  border-top:1px solid var(--border);
+  font-size:15px;
+  color:#aaa;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#000;
+  padding:28px;
+  text-align:center;
+  font-size:14px;
+  color:#888;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slowZoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.12);}
+}
+
+@keyframes imageReveal{
+  from{clip-path:inset(0 0 100% 0);}
+  to{clip-path:inset(0 0 0 0);}
+}
+
+@keyframes panIn{
+  from{opacity:0;transform:translateX(-40px);}
+  to{opacity:1;transform:translateX(0);}
+}
+
+@keyframes gradientFlow{
+  0%{background-position:0%;}
+  100%{background-position:300%;}
+}
+
+@keyframes borderPulse{
+  0%{border-color:#222;}
+  50%{border-color:var(--accent);}
+  100%{border-color:#222;}
+}
+
+@keyframes bgShift{
+  0%{background-color:#0e0e0e;}
+  50%{background-color:#111;}
+  100%{background-color:#0e0e0e;}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .side{grid-template-columns:1fr;}
+  header h1{font-size:38px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Sonu Sood: Beyond the Screen</h1>
+  <p>
+    A journey defined not by fame, but by compassion, leadership, and
+    real-world impact.
+  </p>
+</header>
+
+<div class="hero">
+  <img src="https://placehold.co/1600x900/111/ffffff?text=Sonu+Sood">
+</div>
+
+<main class="container">
+
+  <div class="meta">
+    <span>Blog</span>
+    <span>Social Impact</span>
+    <span>Leadership</span>
+  </div>
+
+  <section class="content">
+    <p>
+      Sonu Sood’s journey stands as a remarkable example of how public influence
+      can be transformed into purposeful action. While cinema gave him
+      recognition, humanity earned him respect.
+    </p>
+
+    <div class="image-block">
+      <img src="Img/Sonu6.avif">
+    </div>
+
+    <p>
+      During the nationwide lockdown, he emerged as a guiding force, personally
+      coordinating transportation, food distribution, and medical assistance
+      for those left stranded and vulnerable.
+    </p>
+
+    <div class="side">
+      <div>
+        <p>
+          What began as emergency relief soon evolved into a structured mission
+          focused on long-term empowerment through education, healthcare, and
+          sustainable support systems.
+        </p>
+
+        <div class="highlight">
+          “True leadership is not about position — it’s about responsibility.”
+        </div>
+      </div>
+
+      <img src="Img/Sonu7.avif">
+    </div>
+
+    <p>
+      Today, Sonu Sood’s work reflects transparency, accountability, and a
+      relentless commitment to service — redefining the role of a modern public
+      figure.
+    </p>
+
+    <div class="timeline">
+      <div>
+        <h4>2020</h4>
+        <p>Large-scale migrant support and emergency humanitarian relief.</p>
+      </div>
+      <div>
+        <h4>2021</h4>
+        <p>Healthcare aid, oxygen supply, and student assistance initiatives.</p>
+      </div>
+      <div>
+        <h4>2022 – Present</h4>
+        <p>Structured empowerment programs with long-term vision.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="author">
+    Written by Editorial Desk • Inspired by real-life impact
+  </div>
+
+</main>
+
+<footer>
+  © 2025 Sonu Sood | Official Blog Experience
+</footer>
+
+</body>
+</html>

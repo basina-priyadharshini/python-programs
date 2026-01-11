@@ -1,0 +1,699 @@
+
+<html>
+  <style>
+    /* ORANGE BAR */
+.top-bar{
+  background:#f7931a;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 70px;
+  background:#fff;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.nav-item > a{
+  text-decoration:none;
+  color:#111;
+  font-size:15px;
+  padding:8px 0;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:36px;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  border-radius:6px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:0.3s;
+  z-index:10;
+}
+
+.dropdown a{
+  display:block;
+  padding:12px 18px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+
+.dropdown a:hover{
+  background:#f2f2f2;
+}
+
+.nav-item:hover .dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* HERO IMAGE SECTION */
+.hero{
+  height:420px;
+  background:
+    url("Img2/Bit2.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:goldenrod;
+}
+
+.hero h1{
+  font-size:44px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  color:gold;
+}
+/* TOP DARK IMAGE SECTION */
+.top-bg{
+  height:220px;
+  background:linear-gradient(120deg,#0c1220,#060a14);
+  position:relative;
+}
+
+.top-bg::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background:#fff;
+  clip-path: polygon(0 40%, 5% 50%, 10% 45%, 15% 55%, 20% 48%, 
+                      30% 55%, 40% 45%, 50% 55%, 60% 48%, 
+                      70% 55%, 80% 45%, 90% 55%, 100% 48%, 100% 100%, 0 100%);
+}
+
+/* CONTENT */
+.container{
+  width:90%;
+  max-width:1000px;
+  margin:60px auto;
+}
+
+.cards{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:380px;
+  border:1px solid #ddd;
+  padding:40px 30px;
+  text-align:center;
+}
+
+.icon{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.card h2{
+  margin-bottom:20px;
+  font-size:22px;
+  color:#000;
+}
+
+.card a{
+  display:block;
+  text-decoration:none;
+  color:#2b7cff;
+  margin:8px 0;
+  font-size:16px;
+}
+
+.card a:hover{
+  text-decoration:underline;
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.social-icons span{
+  margin:0 6px;
+}
+
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:60px auto;
+}
+
+hr{
+  border:none;
+  border-top:1px solid #ddd;
+  margin-bottom:40px;
+}
+
+h2{
+  text-align:center;
+  color:#f7931a;
+  font-weight:normal;
+  margin-bottom:50px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:50px 40px;
+}
+
+.item{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.flag{
+  font-size:26px;
+}
+
+.country{
+  font-size:18px;
+  margin-bottom:6px;
+}
+
+.item a{
+  color:#2b7cff;
+  text-decoration:none;
+  font-size:15px;
+}
+
+.item a:hover{
+  text-decoration:underline;
+}
+
+/* FOOTER TEXT */
+.footer-link{
+  margin-top:50px;
+  text-align:center;
+  font-size:15px;
+}
+
+.footer-link a{
+  color:#2b7cff;
+  text-decoration:none;
+}
+
+.footer-link a:hover{
+  text-decoration:underline;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+/* FOOTER */
+.footer{
+  background:linear-gradient(to bottom, #0b0f14, #070a0f);
+  color:#cbd5e1;
+  padding:80px 90px 30px;
+}
+
+/* LOGO */
+.footer-logo{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:26px;
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.footer-logo span{
+  color:#f7931a;
+}
+
+/* CONTENT */
+.footer-content{
+  display:grid;
+  grid-template-columns: 1.2fr repeat(4,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+/* DONATE */
+.donate h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.donate button{
+  background:#f7931a;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  margin:10px 0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.donate a{
+  display:block;
+  color:#3b82f6;
+  font-size:14px;
+  word-break:break-all;
+  margin-top:8px;
+}
+
+/* FOOTER COLUMNS */
+.footer-col h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:14px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin-bottom:10px;
+}
+
+.footer-col a{
+  color:#9ca3af;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  border-top:1px solid #1f2937;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+.footer-bottom span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:#22c55e;
+  border-radius:50%;
+}
+    </style>
+  <body>
+    <!-- ORANGE BAR -->
+<div class="top-bar">
+  Bitcoin.org needs your support!
+</div>
+
+<!-- NAVBAR -->
+  <nav class="navbar">
+  <div class="logo"><span>₿</span> Bitcoin</div>
+
+  <div class="nav-links">
+
+    <div class="nav-item">
+      <a href="">Introduction ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Individual.html">Individuals</a>
+        <a href="Bit-Business.html">Businesses</a>
+        <a href="Bit-Developer.html">Developers</a>
+        <a href="Bit-Started.html">Getting started</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-Resource.html">Resources ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Community.html">Community</a>
+        <a href="Bit-Vocabulary.html">Vocabulary</a>
+        <a href="Bit-Events.html">Events</a>
+        <a href="#">Exchanges</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="Innovation.html">Innovation</a>
+    </div>
+    <div class="nav-item">
+      <a href="#">Participate ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Suppport.html">Support Bitcoin</a>
+        <a href="Bit-Buy.html">Buy Bitcoin</a>
+        <a href="Bit-Sell.html">Sell Bitcoin</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-FAQ.html">FAQ</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="hero">
+  <div>
+    <h1>Bitcoin Communities</h1>
+    <p>Find interesting people, groups and communities related to Bitcoin.</p>
+  </div>
+</section>
+<!-- TOP IMAGE -->
+<div class="top-bg"></div>
+
+<!-- CARDS -->
+<div class="container">
+  <div class="cards">
+
+    <!-- FORUMS -->
+    <div class="card">
+      <div class="icon"><img src="Img2/V.jpg"></div>
+      <h2>Forums</h2>
+
+      <a href="#">BitcoinTalk Forum</a>
+      <a href="#">Reddit's Bitcoin Community</a>
+      <a href="#">Bitcoin StackExchange (Q&amp;A)</a>
+    </div>
+
+    <!-- SOCIAL NETWORKS -->
+    <div class="card">
+      <div class="social-icons">
+        <span>📸</span>
+        <span>🐦</span>
+        <span>f</span>
+      </div>
+      <h2>Social networks</h2>
+
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
+    </div>
+
+  </div>
+</div>
+<div class="container">
+  <div class="cards">
+
+    <!-- FORUMS -->
+    <div class="card">
+      <div class="icon"><img src="Img2/V.jpg"></div>
+      <h2>Meetups</h2>
+
+      <a href="#">Bitcoin Conferences And Events</a>
+      <a href="#">Bitcoin Meetup Groups</a>
+      <a href="#">Bitcoin Meetups On BitcoinTalk(Q&amp;A)</a>
+      <a href="#">Bitcoin Meetups On The Wiki</a>
+    </div>
+
+    <!-- SOCIAL NETWORKS -->
+    <div class="card">
+      <div class="social-icons">
+        <span>📸</span>
+        <span>🐦</span>
+        <span>f</span>
+      </div>
+      <h2>IRC Chat</h2>
+
+      <a href="#">IRC Channel #bitcoin-core-dev on Libera</a>
+      <p>#bitcoin(General Bitcoin-related)<br>
+        #bitcoin-core-dev(Development and technical)<br>
+        #bitcoin-otc(Over The Counter exchange)
+
+      </p>
+    </div>
+
+  </div>
+</div>
+<div class="container">
+  <hr>
+  <h2>Non-profit organizations</h2>
+
+  <div class="grid">
+
+    <div class="item">
+      <div class="flag">Ar</div>
+
+      <div>
+        <div class="country">Argentina</div>
+        <a href="https://www.bitcoinargentina.org" target="_blank">
+          Fundación Bitcoin Argentina
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇦🇺</div>
+      <div>
+        <div class="country">Australia</div>
+        <a href="https://bitcoinindustrybody.org.au" target="_blank">
+          Australian Bitcoin Industry Body
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇦🇹</div>
+      <div>
+        <div class="country">Austria</div>
+        <a href="https://www.bitcoin-austria.at" target="_blank">
+          Bitcoin Austria
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇨🇱</div>
+      <div>
+        <div class="country">Chile</div>
+        <a href="https://www.bitcoinchile.cl" target="_blank">
+          Asociación Bitcoin Chile
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇩🇪</div>
+      <div>
+        <div class="country">Germany</div>
+        <a href="https://www.bundesverband-bitcoin.de" target="_blank">
+          Bundesverband Bitcoin e.V.
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇮🇪</div>
+      <div>
+        <div class="country">Ireland</div>
+        <a href="https://bitcoinassociationni.com" target="_blank">
+          Bitcoin Association of Northern Ireland
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇮🇱</div>
+      <div>
+        <div class="country">Israel</div>
+        <a href="https://bitcoin.org.il" target="_blank">
+          איגוד הביטקוין הישראלי
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇮🇹</div>
+      <div>
+        <div class="country">Italy</div>
+        <a href="https://www.bitcoinfoundation.it" target="_blank">
+          Bitcoin Foundation Italia
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇳🇱</div>
+      <div>
+        <div class="country">Netherlands</div>
+        <a href="https://stichtingbitcoin.nl" target="_blank">
+          Stichting Bitcoin Nederland
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇵🇱</div>
+      <div>
+        <div class="country">Poland</div>
+        <a href="https://bitcoin.org.pl" target="_blank">
+          Polish Bitcoin Association
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇸🇮</div>
+      <div>
+        <div class="country">Slovenia</div>
+        <a href="https://bitcoin-drustvo.si" target="_blank">
+          Bitcoin Društvo Slovenije
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇪🇸</div>
+      <div>
+        <div class="country">Spain</div>
+        <a href="https://avalbit.org" target="_blank">
+          Avalbit
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="flag">🇨🇭</div>
+      <div>
+        <div class="country">Switzerland</div>
+        <a href="https://bitcoinassociation.ch" target="_blank">
+          Bitcoin Association Switzerland
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-link">
+    Visit the <a href="https://en.bitcoin.it/wiki/Community" target="_blank">
+    Community portal</a> on the wiki.
+  </div>
+</div>
+<footer class="footer">
+
+  <!-- LOGO -->
+  <div class="footer-logo">
+    <span>₿</span>Bitcoin
+  </div>
+
+  <!-- CONTENT -->
+  <div class="footer-content">
+
+    <!-- DONATE -->
+    <div class="donate">
+      <h4>Support Bitcoin.org:</h4>
+      <button>Donate</button>
+      <a href="#">bc1qpe6jw8ptj9l9pkscmlf8fhhkrrjeawgpjvtq8</a>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="footer-col">
+      <h4>Introduction:</h4>
+      <ul>
+        <li><a href="#">Individuals</a></li>
+        <li><a href="#">Businesses</a></li>
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Getting started</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">You need to know</a></li>
+        <li><a href="#">White paper</a></li>
+      </ul>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-col">
+      <h4>Resources:</h4>
+      <ul>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Exchanges</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Vocabulary</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Bitcoin Core</a></li>
+      </ul>
+    </div>
+
+    <!-- PARTICIPATE -->
+    <div class="footer-col">
+      <h4>Participate:</h4>
+      <ul>
+        <li><a href="#">Support Bitcoin</a></li>
+        <li><a href="#">Buy Bitcoin</a></li>
+        <li><a href="#">Sell Bitcoin</a></li>
+        <li><a href="#">Running a full node</a></li>
+        <li><a href="#">Development</a></li>
+      </ul>
+    </div>
+
+    <!-- OTHER -->
+    <div class="footer-col">
+      <h4>Other:</h4>
+      <ul>
+        <li><a href="#">Avoid Scams</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">About bitcoin.org</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <span>© Bitcoin Project 2009–2025 Released under the MIT license</span>
+    <span><div class="dot"></div> Network Status &nbsp; English</span>
+  </div>
+
+</footer>
+  </body>
+</html>

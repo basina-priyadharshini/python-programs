@@ -1,0 +1,311 @@
+<html >
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+body{
+    background:#000;
+}
+/* ================= HEADER ================= */
+.top-bar{
+    background:#1a0f0a;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    height:80px;
+}
+
+/* LOGO */
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+.logo .gold{
+    color:gold;
+}
+.logo small{
+    display:block;
+    font-size:12px;
+    color:#ccc;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+
+/* LINKS */
+nav a{
+    text-decoration:none;
+    color:gold;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+    color:#000;
+}
+
+/* ARROW */
+.arrow{
+    font-size:12px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+
+.dropdown-menu a{
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* 🔥 CLICK BASED (NO JS) */
+.dropdown:focus-within .dropdown-menu{
+    display:flex;
+}
+
+/*Section*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body{
+    background: linear-gradient(120deg,#e3f2fd,#ffffff);
+    padding:0px;
+}
+/* ================= TITLE ================= */
+h1{
+    text-align:center;
+    color:#672a10;
+    margin-bottom:20px;
+    animation: zoomFade 1s ease;
+}
+@keyframes zoomFade{
+    from{opacity:0; transform:scale(0.8);}
+    to{opacity:1; transform:scale(1);}
+}
+/* ================= INTRO ================= */
+.intro{
+    max-width:900px;
+    margin: auto;
+    background:#ffffff;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    animation: slideUp 1s ease;
+}
+@keyframes slideUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+/* ================= CARDS ================= */
+.container{
+    max-width:1100px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+.card{
+    background:#fff;
+    padding:22px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    transition: transform 0.5s;
+    animation: floatCard 4s ease-in-out infinite;
+}
+/* floating card animation */
+@keyframes floatCard{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+.card:hover{
+    transform:scale(1.05);
+}
+/* glow bar */
+.card::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:5px;
+    width:100%;
+    background:linear-gradient(90deg,#90a41f,#b0e042);
+    animation: glowMove 2s linear infinite;
+}
+@keyframes glowMove{
+    from{background-position:0%;}
+    to{background-position:100%;}
+}
+.card i{
+    font-size:40px;
+    color:#f3bb21;
+    margin-bottom:10px;
+}
+.card h3{
+    margin-bottom:10px;
+    color:#a1750d;
+}
+/* ================= DETAILS ================= */
+.details{
+    display:none;
+    color:#444;
+    line-height:1.6;
+    animation: reveal 0.5s ease;
+}
+@keyframes reveal{
+    from{opacity:0; transform:rotateX(90deg);}
+    to{opacity:1; transform:rotateX(0);}
+}
+</style>
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">
+        <span class="gold">LORD SHIVA 🕉</span>
+        <small>Kēdāranātha Temple</small>
+    </div>
+       <nav>
+        <ul>
+            <li><a href="Kedarnath.html">Home</a></li>
+
+            <!-- ABOUT -->
+            <li class="dropdown">
+                <a href="#">About <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="History.html">History</a>
+                    <a href="Temple Significance.html">Temple Significance</a>
+                    <a href="Deity.html">Deity</a>
+                    <a href="Administration.html">Administration</a>
+                </div>
+            </li>
+
+            <!-- POOJA -->
+            <li class="dropdown">
+                <a href="#">Pooja <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Daily.html">Daily Poojas</a>
+                    <a href="Special-Pooja.html">Special Poojas</a>
+                    <a href="Virtual-Queue.html">Virtual Q</a>
+                    <a href="Pooja Timimg.html">Pooja Timings</a>
+                    <a href="Offers.html">Offerings</a>
+                </div>
+            </li>
+
+            <!-- HOW TO REACH -->
+            <li class="dropdown">
+                <a href="#">How to Reach <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Bus.html">🚗 By Bus</a>
+                    <a href="Train.html">🚆 By Rail</a>
+                    <a href="Air.html">✈️ By Air</a>
+                </div>
+            </li>
+
+            <li><a href="Facilities.html">Pilgrim Facilities</a></li>
+            <li><a href="Help.html">Help Line</a></li>
+            <li><a href="T-Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+<h1><i class="fa-solid fa-bus"></i> By Bus Traveling to Kedarnath</h1>
+<div class="intro">
+    <p>
+        Traveling to Kedarnath by bus is one of the most economical and popular options for pilgrims.
+        Government and private buses operate regularly up to <strong>Gaurikund</strong>,
+        which is the last motorable point before Kedarnath.
+        From Gaurikund, devotees must trek or use pony/palki services to reach the temple.
+    </p>
+</div>
+<div class="container">
+    <div class="card" onclick="toggle(this)">
+        <i class="fa-solid fa-route"></i>
+        <h3>Main Bus Routes</h3>
+        <div class="details">
+            • Haridwar → Rishikesh → Rudraprayag → Sonprayag → Gaurikund<br>
+            • Dehradun → Rishikesh → Sonprayag → Gaurikund
+        </div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+        <i class="fa-solid fa-bus-simple"></i>
+        <h3>Bus Types</h3>
+        <div class="details">
+            • Uttarakhand Roadways Buses<br>
+            • Private Buses & Shared Jeeps<br>
+            • Early morning services recommended
+        </div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Travel Time</h3>
+        <div class="details">
+            • Haridwar to Gaurikund: 10–12 hours<br>
+            • Rishikesh to Gaurikund: 9–11 hours
+        </div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+        <i class="fa-solid fa-person-hiking"></i>
+        <h3>After Bus Journey</h3>
+        <div class="details">
+            From Gaurikund, pilgrims must trek around 16 km to Kedarnath Temple.
+        </div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+        <i class="fa-solid fa-circle-info"></i>
+        <h3>Important Tips</h3>
+        <div class="details">
+            • Carry warm clothes<br>
+            • Start early in the morning<br>
+            • Check weather conditions
+        </div>
+    </div>
+</div>
+<script>
+function toggle(card){
+    const details = card.querySelector(".details");
+    details.style.display = details.style.display === "block" ? "none" : "block";
+}
+</script>
+</body>
+</html>

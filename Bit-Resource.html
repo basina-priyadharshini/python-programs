@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bitcoin for Individuals</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- INTER FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+/* ORANGE BAR */
+.top-bar{
+  background:#f7931a;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 70px;
+  background:#fff;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.nav-item > a{
+  text-decoration:none;
+  color:#111;
+  font-size:15px;
+  padding:8px 0;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:36px;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  border-radius:6px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:0.3s;
+  z-index:10;
+}
+
+.dropdown a{
+  display:block;
+  padding:12px 18px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+
+.dropdown a:hover{
+  background:#f2f2f2;
+}
+
+.nav-item:hover .dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* HERO IMAGE SECTION */
+.hero{
+  height:420px;
+  background:
+    url("Img2/Bit2.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:goldenrod;
+}
+
+.hero h1{
+  font-size:44px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  color:gold;
+}
+/* CARDS SECTION */
+.cards{
+  padding:80px 60px;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(380px,1fr));
+  gap:40px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  padding:40px 30px;
+  text-align:center;
+}
+
+.card img{
+  height:60px;
+  margin-bottom:25px;
+}
+
+.card h3{
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+.card p{
+  font-size:15px;
+  line-height:1.7;
+  color:#6b7280;
+}
+
+.card a{
+  color:#3b82f6;
+  text-decoration:none;
+}
+
+.card a:hover{
+  text-decoration:underline;
+}
+/* FOOTER */
+.footer{
+  background:linear-gradient(to bottom, #0b0f14, #070a0f);
+  color:#cbd5e1;
+  padding:80px 90px 30px;
+}
+
+/* LOGO */
+.footer-logo{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:26px;
+  font-weight:600;
+}
+
+.footer-logo span{
+  color:#f7931a;
+}
+
+/* CONTENT */
+.footer-content{
+  display:grid;
+  grid-template-columns: 1.2fr repeat(4,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+/* DONATE */
+.donate h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.donate button{
+  background:#f7931a;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  margin:10px 0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.donate a{
+  display:block;
+  color:#3b82f6;
+  font-size:14px;
+  word-break:break-all;
+  margin-top:8px;
+}
+
+/* FOOTER COLUMNS */
+.footer-col h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:14px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin-bottom:10px;
+}
+
+.footer-col a{
+  color:#9ca3af;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  border-top:1px solid #1f2937;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+.footer-bottom span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:#22c55e;
+  border-radius:50%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ORANGE BAR -->
+<div class="top-bar">
+  Bitcoin.org needs your support!
+</div>
+
+<!-- NAVBAR -->
+  <nav class="navbar">
+  <div class="logo"><span>₿</span> Bitcoin</div>
+
+  <div class="nav-links">
+
+    <div class="nav-item">
+      <a href="">Introduction ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Individual.html">Individuals</a>
+        <a href="Bit-Business.html">Businesses</a>
+        <a href="Bit-Developer.html">Developers</a>
+        <a href="Bit-Started.html">Getting started</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-Resource.html">Resources ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Community.html">Community</a>
+        <a href="Bit-Vocabulary.html">Vocabulary</a>
+        <a href="Bit-Events.html">Events</a>
+        <a href="#">Exchanges</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="Innovation.html">Innovation</a>
+    </div>
+    <div class="nav-item">
+      <a href="#">Participate ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Suppport.html">Support Bitcoin</a>
+        <a href="Bit-Buy.html">Buy Bitcoin</a>
+        <a href="Bit-Sell.html">Sell Bitcoin</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-FAQ.html">FAQ</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="hero">
+  <div>
+    <h1>Learn Resources</h1>
+    <p>Bitcoin is a very secure and inexpensive way to handle payments.</p>
+  </div>
+</section>
+<section class="cards">
+  <div class="card-grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <img src="https://bitcoin.org/img/icons/mobile.svg" alt="">
+      <h3>Choose your own fees</h3>
+      <p>
+        Bitcoin Wiki<br>
+         Khan Academy <br>
+         Let's Talk Bitcoin<br>
+        .Bitcoin Knowledge Podacast<br>
+        WeUseCoins.com <br>
+        BitcoinMining.com <br>
+        IamSatoshi <br>
+        Bitcoin Information & Educational <br>
+        Resources.
+      </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <img src="https://bitcoin.org/img/icons/lock.svg" alt="">
+      <h3>Directories</h3>
+      <p>
+        Wallets - bitcoin.org<br>
+
+Merchants - btcmap.org<br>
+
+Merchants - BitcoinWide.com<br>
+
+Merchants - coinmap.org<br>
+
+Merchants - spendabit.co<br>
+
+Merchants - 99Bitcoins.com<br>
+
+Exchanges - buybitcoinworldwide.com<br>
+
+Exchanges - bitrawr.com<br>
+
+Merchant tools - en.bitcoin.it<br>
+
+Projects - BitcoinProjects.net
+      </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <img src="https://bitcoin.org/img/icons/global.svg" alt="">
+      <h3>Charts & Statistics</h3>
+      <p>
+        Statoshi.info <br>
+        Bitaps.com <br>
+        BlockCypher<br>
+        Mempool.space <br>
+        Bitcoincharts.com
+    </div>
+
+     <div class="card">
+      <img src="https://bitcoin.org/img/icons/mobile.svg" alt="">
+      <h3>Documentaries</h3>
+      <p>
+        Ulterior States <br>
+        The Bitcoin Phenomenon <br>
+        Bitcoin:Beyond The Bubble<br>
+        Magic Money:The Bitcoin Revolution.
+    </div>
+
+     <div class="card">
+      <img src="https://bitcoin.org/img/icons/mobile.svg" alt="">
+      <h3>Vouchers</h3>
+      <p>
+       Bitrefill<br>
+       Fold<br>
+       Gyft<br>
+       Opendime
+    </div>
+
+     <div class="card">
+      <img src="https://bitcoin.org/img/icons/mobile.svg" alt="">
+      <h3>Guides</h3>
+      <p>
+        ColdCard<br>
+        Bitcoiner.Guide<br>
+        Node.Guide
+      </p>
+    </div>
+
+  </div>
+</section>
+<footer class="footer">
+
+  <!-- LOGO -->
+  <div class="footer-logo">
+    <span>₿</span>bitcoin
+  </div>
+
+  <!-- CONTENT -->
+  <div class="footer-content">
+
+    <!-- DONATE -->
+    <div class="donate">
+      <h4>Support Bitcoin.org:</h4>
+      <button>Donate</button>
+      <a href="#">bc1qpe6jw8ptj9l9pkscmlf8fhhkrrjeawgpjvtq8</a>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="footer-col">
+      <h4>Introduction:</h4>
+      <ul>
+        <li><a href="#">Individuals</a></li>
+        <li><a href="#">Businesses</a></li>
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Getting started</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">You need to know</a></li>
+        <li><a href="#">White paper</a></li>
+      </ul>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-col">
+      <h4>Resources:</h4>
+      <ul>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Exchanges</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Vocabulary</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Bitcoin Core</a></li>
+      </ul>
+    </div>
+
+    <!-- PARTICIPATE -->
+    <div class="footer-col">
+      <h4>Participate:</h4>
+      <ul>
+        <li><a href="#">Support Bitcoin</a></li>
+        <li><a href="#">Buy Bitcoin</a></li>
+        <li><a href="#">Sell Bitcoin</a></li>
+        <li><a href="#">Running a full node</a></li>
+        <li><a href="#">Development</a></li>
+      </ul>
+    </div>
+
+    <!-- OTHER -->
+    <div class="footer-col">
+      <h4>Other:</h4>
+      <ul>
+        <li><a href="#">Avoid Scams</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">About bitcoin.org</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <span>© Bitcoin Project 2009–2025 Released under the MIT license</span>
+    <span><div class="dot"></div> Network Status &nbsp; English</span>
+  </div>
+
+</footer>
+
+</body>
+</html>

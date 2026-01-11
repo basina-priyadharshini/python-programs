@@ -1,0 +1,655 @@
+<html>
+    <style>
+        .top-bar{
+  background:#f7931a;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 70px;
+  background:#fff;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.nav-item  a{
+  text-decoration:none;
+  color:#111;
+  font-size:15px;
+  padding:8px 0;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:36px;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  border-radius:6px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:0.3s;
+  z-index:10;
+}
+
+.dropdown a{
+  display:block;
+  padding:12px 18px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+
+.dropdown a:hover{
+  background:#f2f2f2;
+}
+
+.nav-item:hover .dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* HERO IMAGE SECTION */
+.hero{
+  height:420px;
+  background:
+    url("Img2/Bit2.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:goldenrod;
+}
+
+.hero h1{
+  font-size:44px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  color:gold;
+}
+/* LAYOUT */
+.wrapper{
+  display:flex;
+  width:90%;
+  max-width:1200px;
+  margin:40px auto;
+}
+
+/* LEFT MENU */
+.left{
+  width:30%;
+  position:sticky;
+  top:20px;
+  height:calc(100vh - 40px);
+  overflow-y:auto;
+  border-right:1px solid #ddd;
+  padding-right:20px;
+}
+
+.left ul{
+  list-style:none;
+}
+
+.left li{
+  padding:10px 0;
+  font-weight:bold;
+  font-size: 30px;
+  cursor:pointer;
+}
+
+.left li:hover{
+  color:#f7931a;
+}
+
+/* RIGHT CONTENT */
+.right{
+  width:70%;
+  padding-left:40px;
+}
+
+.section{
+  padding:30px 0;
+  border-bottom:1px solid #eee;
+}
+
+.section h1{
+  color:#f7931a;
+  margin-bottom:15px;
+  font-size: 30px;
+}
+
+.section p{
+  line-height:1.6;
+  color:#333;
+  font-size: 20px;
+}
+.question{
+  font-size:25px;
+  font-weight:bold;
+  margin:30px 0 10px;
+}
+
+.answer{
+  font-size:20px;
+  line-height:1.8;
+  color:#444;
+  max-width:800px;
+}
+/* SCROLL BAR NICE */
+.left::-webkit-scrollbar{
+  width:6px;
+}
+.left::-webkit-scrollbar-thumb{
+  background:#ccc;
+  border-radius:5px;
+}
+/* FOOTER */
+.footer{
+  background:linear-gradient(to bottom, #0b0f14, #070a0f);
+  color:#cbd5e1;
+  padding:80px 90px 30px;
+}
+
+/* LOGO */
+.footer-logo{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:26px;
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.footer-logo span{
+  color:#f7931a;
+}
+
+/* CONTENT */
+.footer-content{
+  display:grid;
+  grid-template-columns: 1.2fr repeat(4,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+/* DONATE */
+.donate h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.donate button{
+  background:#f7931a;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  margin:10px 0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.donate a{
+  display:block;
+  color:#3b82f6;
+  font-size:14px;
+  word-break:break-all;
+  margin-top:8px;
+}
+
+/* FOOTER COLUMNS */
+.footer-col h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:14px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin-bottom:10px;
+}
+
+.footer-col a{
+  color:#9ca3af;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  border-top:1px solid #1f2937;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+.footer-bottom span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:#22c55e;
+  border-radius:50%;
+}
+    </style>
+    <body>
+    <div class="top-bar">
+  Bitcoin.org needs your support!
+</div>
+
+<!-- NAVBAR -->
+ <nav class="navbar">
+  <div class="logo"><span>₿</span> Bitcoin</div>
+
+  <div class="nav-links">
+
+    <div class="nav-item">
+      <a href="">Introduction ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Individual.html">Individuals</a>
+        <a href="Bit-Business.html">Businesses</a>
+        <a href="Bit-Developer.html">Developers</a>
+        <a href="Bit-Started.html">Getting started</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-Resource.html">Resources ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Community.html">Community</a>
+        <a href="Bit-Vocabulary.html">Vocabulary</a>
+        <a href="Bit-Events.html">Events</a>
+        <a href="#">Exchanges</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="Innovation.html">Innovation</a>
+    </div>
+    <div class="nav-item">
+      <a href="#">Participate ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Suppport.html">Support Bitcoin</a>
+        <a href="Bit-Buy.html">Buy Bitcoin</a>
+        <a href="Bit-Sell.html">Sell Bitcoin</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-FAQ.html">FAQ</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="hero">
+  <div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to recurring questions and myths about Bitcoin. </p>
+  </div>
+</section>
+<section class="sec1">
+<div class="wrapper">
+
+<!-- LEFT FIXED MENU -->
+<div class="left">
+  <ul>
+    <li onclick="go('general')">General</li>
+    <li onclick="go('legal')">Legal</li>
+    <li onclick="go('economy')">Economy</li>
+    <li onclick="go('transactions')">Transactions</li>
+    <li onclick="go('mining')">Mining</li>
+    <li onclick="go('security')">Security</li>
+    <li onclick="go('help')">Help</li>
+  </ul>
+</div>
+
+<!-- RIGHT SCROLL CONTENT -->
+<div class="right">
+
+<!-- GENERAL -->
+<div class="section" id="general">
+<h1>General</h1>
+
+<div class="question">What is Bitcoin?</div>
+<div class="answer">
+Bitcoin is a consensus network that enables a new payment system and a completely 
+digital money. It is the first decentralized peer-to-peer payment network that is 
+powered by its users with no central authority or middlemen. From a user perspective, 
+Bitcoin is pretty much like cash for the Internet. Bitcoin can also be seen as the most 
+prominent triple entry bookkeeping system in existence.
+</div>
+
+<div class="question">Who created Bitcoin?</div>
+<div class="answer">
+Bitcoin is the first implementation of a concept called "cryptocurrency", which was 
+first described in 1998 by Wei Dai on the cypherpunks mailing list, suggesting the 
+idea of a new form of money that uses cryptography to control its creation and 
+transactions, rather than a central authority. The first Bitcoin specification and 
+proof of concept was published in 2009 in a cryptography mailing list by Satoshi 
+Nakamoto. Satoshi left the project in late 2010 without revealing much about himself. 
+The community has since grown exponentially with many developers working on Bitcoin.<br>
+Satoshi's anonymity often raised unjustified concerns, many of which are linked to 
+misunderstanding of the open-source nature of Bitcoin. The Bitcoin protocol and 
+software are published openly and any developer around the world can review the 
+code or make their own modified version of the Bitcoin software. Just like current 
+developers, Satoshi's influence was limited to the changes he made being adopted by 
+others and therefore he did not control Bitcoin. As such, the identity of Bitcoin's 
+inventor is probably as relevant today as the identity of the person who invented paper.
+</div>
+
+<div class="question">Who controls the Bitcoin network?</div>
+<div class="answer">
+Nobody owns the Bitcoin network much like no one owns the technology behind email. 
+Bitcoin is controlled by all Bitcoin users around the world. While developers are 
+improving the software, they can't force a change in the Bitcoin protocol because all 
+users are free to choose what software and version they use. In order to stay compatible 
+with each other, all users need to use software complying with the same rules. Bitcoin 
+can only work correctly with a complete consensus among all users. Therefore, all users 
+and developers have a strong incentive to protect this consensus.
+</div>
+
+<div class="question">How does Bitcoin work?</div>
+<div class="answer">
+    From a user perspective, Bitcoin is nothing more than a mobile app or computer 
+    program that provides a personal Bitcoin wallet and allows a user to send and 
+    receive bitcoins with them. This is how Bitcoin works for most users.
+</div>
+<!-- LEGAL -->
+<div class="section" id="legal">
+<h1>Legal</h1>
+
+<div class="question">Is Bitcoin legal?</div>
+<div class="answer">
+To the best of our knowledge, Bitcoin has not been made illegal by legislation in most jurisdictions.
+However, some jurisdictions (such as Argentina and Russia) severely restrict or ban foreign currencies. 
+Other jurisdictions (such as Thailand) may limit the licensing of certain entities such as Bitcoin exchanges.<br>
+Regulators from various jurisdictions are taking steps to provide individuals and businesses 
+with rules on how to integrate this new technology with the formal, regulated financial system. 
+For example, the Financial Crimes Enforcement Network (FinCEN), a bureau in the United States 
+Treasury Department, issued non-binding guidance on how it characterizes certain activities involving virtual currencies.
+</div>
+
+<div class="question">Is Bitcoin useful for illegal activities?</div>
+<div class="answer">
+Bitcoin is money, and money has always been used both for legal and illegal purposes. Cash, 
+credit cards and current banking systems widely surpass Bitcoin in terms of their use to finance crime. 
+Bitcoin can bring significant innovation in payment systems and the benefits of such innovation are 
+often considered to be far beyond their potential drawbacks.<br>
+Bitcoin is designed to be a huge step forward in making money more secure and could also act 
+as a significant protection against many forms of financial crime. For instance, bitcoins are 
+completely impossible to counterfeit. Users are in full control of their payments and cannot 
+receive unapproved charges such as with credit card fraud. Bitcoin transactions are irreversible 
+and immune to fraudulent chargebacks. Bitcoin allows money to be secured against theft and loss 
+using very strong and useful mechanisms such as backups, encryption, and multiple signatures.
+</div>
+</div>
+
+<!-- ECONOMY -->
+<div class="section" id="economy">
+<h1>Economy</h1>
+
+<div class="question">How are bitcoins created?</div>
+<div class="answer">
+New bitcoins are generated by a competitive and decentralized process called "mining". 
+This process involves that individuals are rewarded by the network for their services. 
+Bitcoin miners are processing transactions and securing the network using specialized 
+hardware and are collecting new bitcoins in exchange.<br>
+The Bitcoin protocol is designed in such a way that new bitcoins are created at a fixed rate. 
+This makes Bitcoin mining a very competitive business. When more miners join the network, it 
+becomes increasingly difficult to make a profit and miners must seek efficiency to cut their 
+operating costs. No central authority or developer has any power to control or manipulate the 
+system to increase their profits. Every Bitcoin node in the world will reject anything that 
+does not comply with the rules it expects the system to follow.
+</div>
+
+<div class="question">Why do bitcoins have value?</div>
+<div class="answer">
+Bitcoins have value because they are useful as a form of money. Bitcoin has the 
+characteristics of money (durability, portability, fungibility, scarcity, divisibility, 
+and recognizability) based on the properties of mathematics rather than relying on physical 
+properties (like gold and silver) or trust in central authorities (like fiat currencies). 
+In short, Bitcoin is backed by mathematics. With these attributes, all that is required for 
+a form of money to hold value is trust and adoption. In the case of Bitcoin, this can be 
+measured by its growing base of users, merchants, and startups. As with all currency, bitcoin's 
+value comes only and directly from people willing to accept them as payment.
+</div>
+
+<div class="question">What determines bitcoin’s price?</div>
+<div class="answer">
+    The price of a bitcoin is determined by supply and demand. When demand for bitcoins increases, 
+    the price increases, and when demand falls, the price falls. There is only a limited number of 
+    bitcoins in circulation and new bitcoins are created at a predictable and decreasing rate, which 
+    means that demand must follow this level of inflation to keep the price stable. Because Bitcoin 
+    is still a relatively small market compared to what it could be, it doesn't take significant 
+    amounts of money to move the market price up or down, and thus the price of a bitcoin is still very volatile.
+</div>
+</div>
+
+<!-- TRANSACTIONS -->
+<div class="section" id="transactions">
+<h1>Transactions</h1>
+
+<div class="question">Why do I have to wait for confirmation?</div>
+<div class="answer">
+Receiving notification of a payment is almost instant with Bitcoin. However, there is a delay 
+before the network begins to confirm your transaction by including it in a block. A confirmation 
+means that there is a consensus on the network that the bitcoins you received haven't been sent 
+to anyone else and are considered your property. Once your transaction has been included in one block, 
+it will continue to be buried under every block after it, which will exponentially consolidate this 
+consensus and decrease the risk of a reversed transaction. Each confirmation takes between a few 
+seconds and 90 minutes, with 10 minutes being the average. If the transaction pays too low a fee or 
+is otherwise atypical, getting the first confirmation can take much longer. Every user is free to 
+determine at what point they consider a transaction sufficiently confirmed, but 6 confirmations is 
+often considered to be as safe as waiting 6 months on a credit card transaction.
+</div>
+
+<div class="question">What if I receive a bitcoin when my computer is powered off?</div>
+<div class="answer">
+This works fine. The bitcoins will appear next time you start your wallet application. Bitcoins 
+are not actually received by the software on your computer, they are appended to a public ledger 
+that is shared between all the devices on the network. If you are sent bitcoins when your wallet 
+client program is not running and you later launch it, it will download blocks and catch up with 
+any transactions it did not already know about, and the bitcoins will eventually appear as if they 
+were just received in real time. Your wallet is only needed when you wish to spend bitcoins.
+</div>
+</div>
+
+<!-- MINING -->
+<div class="section" id="mining">
+<h1>Mining</h1>
+
+<div class="question">What is Bitcoin mining?</div>
+<div class="answer">
+Mining is the process of spending computing power to process transactions, secure the network, 
+and keep everyone in the system synchronized together. It can be perceived like the Bitcoin data 
+center except that it has been designed to be fully decentralized with miners operating in all 
+countries and no individual having control over the network. This process is referred to as "mining" 
+as an analogy to gold mining because it is also a temporary mechanism used to issue new bitcoins. 
+Unlike gold mining, however, Bitcoin mining provides a reward in exchange for useful services 
+required to operate a secure payment network. Mining will still be required after the last bitcoin is issued.
+</div>
+
+<div class="question">How does Bitcoin mining work?</div>
+<div class="answer">
+Anybody can become a Bitcoin miner by running software with specialized hardware.
+ Mining software listens for transactions broadcast through the peer-to-peer network 
+ and performs appropriate tasks to process and confirm these transactions. Bitcoin miners 
+ perform this work because they can earn transaction fees paid by users for faster transaction 
+ processing, and newly created bitcoins issued into existence according to a fixed formula.
+</div>
+</div>
+
+<!-- SECURITY -->
+<div class="section" id="security">
+<h1>Security</h1>
+
+<div class="question">Is Bitcoin secure?</div>
+<div class="answer">
+The Bitcoin technology - the protocol and the cryptography - has a strong security track
+ record, and the Bitcoin network is probably the biggest distributed computing project 
+ in the world. Bitcoin's most common vulnerability is in user error. Bitcoin wallet files 
+ that store the necessary private keys can be accidentally deleted, lost or stolen. This is 
+ pretty similar to physical cash stored in a digital form. Fortunately, users can employ 
+ sound security practices to protect their money or use service providers that offer good 
+ levels of security and insurance against theft or loss.
+</div>
+
+<div class="question">Hasn't Bitcoin been hacked in the past?</div>
+<div class="answer">
+The rules of the protocol and the cryptography used for Bitcoin are still working years after 
+its inception, which is a good indication that the concept is well designed. However, 
+security flaws have been found and fixed over time in various software implementations. 
+Like any other form of software, the security of Bitcoin software depends on the speed 
+with which problems are found and fixed. The more such issues are discovered, the more 
+Bitcoin is gaining maturity.
+</div>
+
+<!-- HELP -->
+<div class="section" id="help">
+<h1>Help</h1>
+<div class="answer">I'd like to learn more. Where can I get help?
+You can find more information and help on the resources and community pages or on the Wiki FAQ.</div>
+<div class="question">Where can I get Bitcoin?</div>
+<div class="answer">
+You can buy Bitcoin from exchanges or receive it as payment.
+</div>
+
+<div class="question">Where can I learn more?</div>
+<div class="answer">
+Bitcoin.org provides guides, documentation, and community resources.
+</div>
+</div>
+</div>
+</div>
+<script>
+function go(id){
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+</script>
+</div>
+</div>
+</section>
+<footer class="footer">
+
+  <!-- LOGO -->
+  <div class="footer-logo">
+    <span>₿</span>Bitcoin
+  </div>
+
+  <!-- CONTENT -->
+  <div class="footer-content">
+
+    <!-- DONATE -->
+    <div class="donate">
+      <h4>Support Bitcoin.org:</h4>
+      <button>Donate</button>
+      <a href="#">bc1qpe6jw8ptj9l9pkscmlf8fhhkrrjeawgpjvtq8</a>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="footer-col">
+      <h4>Introduction:</h4>
+      <ul>
+        <li><a href="#">Individuals</a></li>
+        <li><a href="#">Businesses</a></li>
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Getting started</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">You need to know</a></li>
+        <li><a href="#">White paper</a></li>
+      </ul>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-col">
+      <h4>Resources:</h4>
+      <ul>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Exchanges</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Vocabulary</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Bitcoin Core</a></li>
+      </ul>
+    </div>
+
+    <!-- PARTICIPATE -->
+    <div class="footer-col">
+      <h4>Participate:</h4>
+      <ul>
+        <li><a href="#">Support Bitcoin</a></li>
+        <li><a href="#">Buy Bitcoin</a></li>
+        <li><a href="#">Sell Bitcoin</a></li>
+        <li><a href="#">Running a full node</a></li>
+        <li><a href="#">Development</a></li>
+      </ul>
+    </div>
+
+    <!-- OTHER -->
+    <div class="footer-col">
+      <h4>Other:</h4>
+      <ul>
+        <li><a href="#">Avoid Scams</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">About bitcoin.org</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <span>© Bitcoin Project 2009–2025 Released under the MIT license</span>
+    <span><div class="dot"></div> Network Status &nbsp; English</span>
+  </div>
+</footer>
+  </body>
+</html>

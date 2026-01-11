@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tourism – Srikakulam</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #222;
+        }
+                body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+/* ---------------- HEADER ---------------- */
+.header {
+    width:100%;
+    background-image: url("Img/Sri6.jpg");
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #ddd;
+}
+.header-left img{
+    height:90px;
+}
+.header-center {
+    text-align:center;
+    flex:1;
+}
+.header-center h2 {
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+.header-center h3 {
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+.header-right img{
+    height:70px;
+}
+/* ---------------- NAVIGATION ---------------- */
+.navbar{
+    background:#09033f;
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:absolute;
+    top:20%;
+    width:100%;
+    z-index:1000;
+}
+
+/* MARQUEE */
+.marquee-box{
+    width:300px;
+    overflow:hidden;
+}
+
+.marquee-text{
+    color:white;
+    font-weight:bold;
+    white-space:nowrap;
+    animation:marquee 8s linear infinite;
+}
+
+@keyframes marquee{
+    from{ transform:translateX(100%); }
+    to{ transform:translateX(-100%); }
+}
+
+/* NAV LINKS */
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+/* HIDE RADIO */
+.nav-item input{
+    display:none;
+}
+
+/* LINKS & LABEL */
+.nav-links a,
+.nav-item label{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+    position:absolute;
+    top:38px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    display:none;
+    flex-direction:column;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    border-radius:6px;
+    overflow:hidden;
+}
+
+/* DROPDOWN LINKS */
+.dropdown-menu a{
+    color:#000;
+    padding:12px 15px;
+    text-decoration:none;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* OPEN ON CLICK */
+.nav-item input:checked ~ .dropdown-menu{
+    display:flex;
+}
+
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 30px 0;
+        }
+        /* Breadcrumb */
+        .breadcrumb {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        /* Headings */
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 40px;
+            font-size: 26px;
+        }
+        /* Flex Layout for IMAGE + TEXT */
+        .section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .section img {
+            width: 350px;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .text {
+            flex: 1;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        /* Reverse layout (image on right) */
+        .reverse {
+            flex-direction: row-reverse;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section, .reverse {
+                flex-direction: column;
+            }
+            .section img {
+                width: 100%;
+            }
+        }
+        .img{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+        <!--Top-->
+    <div class="header">
+    <div class="header-left">
+        <img src="Img/I8.png">
+    </div>
+    <div class="header-center">
+        <h2>శ్రీకాకుళం జిల్లా</h2>
+        <h3>SRIKAKULAM DISTRICT</h3>
+    </div>
+    <div class="header-right">
+        <img src="img/O8.png">
+    </div>
+</div>
+<!-- -------- NAVIGATION -------- -->
+<nav class="navbar">
+    <div class="marquee-box">
+        <div class="marquee-text">Welcome to SRIKAKULAM</div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="Smart.html">HOME</a></li>
+        <li><a href="#sec2">ABOUT</a></li>
+        <li><a href="Festival.html">FESTIVALS</a></li>
+
+        <li class="nav-item">
+            <input type="radio" name="menu" id="tourism">
+            <label for="tourism">TOURISM ▾</label>
+            <div class="dropdown-menu">
+                <a href="Eco.html">ECO-TOURISM</a>
+                <a href="Forest.html">FOREST-TOURISM</a>
+                <a href="Engineering.html">ENGINEERING-TOURISM</a>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <input type="radio" name="menu" id="food">
+            <label for="food">FOOD ▾</label>
+            <div class="dropdown-menu">
+                <a href="Kova.html">KOVA</a>
+                <a href="S-Product.html">PRODUCT</a>
+            </div>
+        </li>
+
+        <li><a href="G3.html">GALLERY</a></li>
+        <li><a href="Sklm.html">MAP</a></li>
+
+        <li class="nav-item">
+            <input type="radio" name="menu" id="contact">
+            <label for="contact">CONTACT ▾</label>
+            <div class="dropdown-menu">
+                <a href="#sec6">CONTACT DETAILS</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">HOME > TOURISM > Eco Tourism</div>
+        <!-- Main Heading -->
+        <h1>Eco Tourism</h1>
+        <!-- 1st Section (Image on right) -->
+        <h2>Kalingapatnam</h2>
+        <div class="section reverse">
+            <div class="text">
+                <p>
+                    Kalingapatnam has a history, which dates back to the advent of western invaders into India. 
+                    European merchants disembarked from their ships and made it their port. Until 1958, huge ships 
+                    from Malaysia and Singapore arrived at this port wherein perfumes, clothes and many other items 
+                    were exported. During British rule, the port was closed to avoid other invaders entering the 
+                    country. The lighthouse constructed during British times still exists near the port.
+                </p>
+            </div>
+            <img src="Img/Sri14.jpg" alt="Kalingapatnam">
+        </div>
+        <!-- 2nd Section (Image on left) -->
+        <h2>Kaviti</h2>
+        <div class="section">
+            <img src="Img/Sri13.webp" alt="Kaviti" class="img">
+            <div class="text">
+                <p>
+                    Kaviti village is located at a distance of 130 KMs from the district headquarters between two 
+                    towns Viz Sompeta and Ichapuram, towards the east. The area is popularly known as Uddanam. 
+                    The coastal belt presents a pleasant appearance, covered with coconut, cashew, jack and 
+                    other fruit trees. It is also a scenic spot for travelers.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

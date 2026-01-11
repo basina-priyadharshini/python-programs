@@ -1,0 +1,581 @@
+<html>
+    <style>
+/* ORANGE BAR */
+.top-bar{
+  background:#f7931a;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 70px;
+  background:#fff;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:600;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.nav-item > a{
+  text-decoration:none;
+  color:#111;
+  font-size:15px;
+  padding:8px 0;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:36px;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  border-radius:6px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:0.3s;
+  z-index:10;
+}
+
+.dropdown a{
+  display:block;
+  padding:12px 18px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+
+.dropdown a:hover{
+  background:#f2f2f2;
+}
+
+.nav-item:hover .dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+/* HERO IMAGE SECTION */
+.hero{
+  height:420px;
+  background:
+    url("Img2/Bit2.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:goldenrod;
+}
+
+.hero h1{
+  font-size:44px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  color:gold;
+}
+
+/* TITLE */
+.page-title{
+  text-align:center;
+  font-size:32px;
+  color:#f7931a;
+  margin:50px 0;
+  font-weight:500;
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  max-width:1000px;
+  margin:0 auto 80px;
+}
+
+/* CENTER LINE */
+.timeline::before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:2px;
+  background:repeating-linear-gradient(
+    to bottom,
+    #ccc,
+    #ccc 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+/* ITEM */
+.step{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:100px;
+  position:relative;
+}
+
+/* LEFT & RIGHT */
+.left, .right{
+  width:45%;
+}
+
+.left{
+  text-align:right;
+  padding-right:40px;
+}
+
+.right{
+  text-align:left;
+  padding-left:40px;
+}
+
+/* NUMBER */
+.number{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:44px;
+  height:44px;
+  border:2px solid #ccc;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+}
+
+/* HEADING */
+.step h3{
+  font-size:25px;
+  font-weight:500;
+  margin-bottom:15px;
+}
+
+/* TEXT */
+.step p{
+  font-size:20px;
+  line-height:1.7;
+  color:#555;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 22px;
+  background:#f7931a;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-radius:2px;
+}/* FOOTER */
+.footer{
+  background:linear-gradient(to bottom, #0b0f14, #070a0f);
+  color:#cbd5e1;
+  padding:80px 90px 30px;
+}
+
+/* LOGO */
+.footer-logo{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:26px;
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.footer-logo span{
+  color:#f7931a;
+}
+
+/* CONTENT */
+.footer-content{
+  display:grid;
+  grid-template-columns: 1.2fr repeat(4,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+/* DONATE */
+.donate h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.donate button{
+  background:#f7931a;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  margin:10px 0;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.donate a{
+  display:block;
+  color:#3b82f6;
+  font-size:14px;
+  word-break:break-all;
+  margin-top:8px;
+}
+
+/* FOOTER COLUMNS */
+.footer-col h4{
+  color:#fff;
+  font-size:15px;
+  margin-bottom:14px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  margin-bottom:10px;
+}
+
+.footer-col a{
+  color:#9ca3af;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  border-top:1px solid #1f2937;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#9ca3af;
+}
+
+.footer-bottom span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:#22c55e;
+  border-radius:50%;
+}
+    </style>
+<body>
+   <!-- ORANGE BAR -->
+<div class="top-bar">
+  Bitcoin.org needs your support!
+</div>
+
+<!-- NAVBAR -->
+  <nav class="navbar">
+  <div class="logo"><span>₿</span> Bitcoin</div>
+
+  <div class="nav-links">
+
+    <div class="nav-item">
+      <a href="">Introduction ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Individual.html">Individuals</a>
+        <a href="Bit-Business.html">Businesses</a>
+        <a href="Bit-Developer.html">Developers</a>
+        <a href="Bit-Started.html">Getting started</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-Resource.html">Resources ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Community.html">Community</a>
+        <a href="Bit-Vocabulary.html">Vocabulary</a>
+        <a href="Bit-Events.html">Events</a>
+        <a href="#">Exchanges</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="Innovation.html">Innovation</a>
+    </div>
+    <div class="nav-item">
+      <a href="#">Participate ▾</a>
+      <div class="dropdown">
+        <a href="Bit-Suppport.html">Support Bitcoin</a>
+        <a href="Bit-Buy.html">Buy Bitcoin</a>
+        <a href="Bit-Sell.html">Sell Bitcoin</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="Bit-FAQ.html">FAQ</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="hero">
+  <div>
+    <h1>Bitcoin for Businesses</h1>
+    <p>Bitcoin is a very secure and inexpensive way to handle payments.</p>
+  </div>
+</section>
+<h1 class="page-title">How to use Bitcoin</h1>
+<section class="sec1">
+<div class="timeline">
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="left">
+      <h3>Inform yourself</h3>
+      <p>
+        Bitcoin is different than what you know and use every day.
+        Before you start using Bitcoin, there are a few things that you
+        need to know in order to use it securely and avoid common pitfalls.
+      </p>
+      <a href="#" class="btn">Read more</a>
+    </div>
+
+    <div class="number">1</div>
+
+    <div class="right"></div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="left"></div>
+
+    <div class="number">2</div>
+
+    <div class="right">
+      <h3>Choose your wallet</h3>
+      <p>
+        Free bitcoin wallets are available for all major operating systems
+        and devices to serve a variety of your needs. For example, you can
+        install an app on your mobile device for everyday use or you can
+        have a wallet only for online payments on your computer. In any case,
+        choosing a wallet is easy and can be done in minutes.
+      </p>
+      <a href="#" class="btn">Choose your wallet</a>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="left">
+      <h3>Get Bitcoin</h3>
+      <p>
+        You can get Bitcoin by accepting it as a payment for goods and services.
+        There are also several ways you can buy Bitcoin.
+      </p>
+      <a href="#" class="btn">Choose your wallet</a>
+    </div>
+
+    <div class="number">3</div>
+
+    <div class="right"></div>
+  </div>
+  
+  <div class="step">
+    <div class="left"></div>
+
+    <div class="number">4</div>
+
+    <div class="right">
+      <h3>Spread bitcoin</h3>
+      <p>
+        There are a growing number of services and merchants accepting 
+        Bitcoin all over the world. Use Bitcoin to pay them and rate 
+        your experience to help them gain more visibility.
+      </p>
+      <a href="#" class="btn">Choose your wallet</a>
+    </div>
+  </div>
+</div>
+</section>
+<h1 class="page-title">How to access Bitcoin</h1>
+<section class="sec1">
+<div class="timeline">
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="left">
+      <h3>Inform yourself</h3>
+      <p>
+        Bitcoin does not require merchants to change their habits. However, 
+        Bitcoin is different than what you know and use every day. Before you 
+        start using Bitcoin, there are a few things that you need to know in
+         order to use it securely and avoid common pitfalls.
+      </p>
+      <a href="#" class="btn">Read more</a>
+    </div>
+
+    <div class="number">1</div>
+
+    <div class="right"></div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="left"></div>
+
+    <div class="number">2</div>
+
+    <div class="right">
+      <h3>Processing Payment</h3>
+      <p>
+        You can process payments and invoices by yourself or you can use merchant 
+        services and deposit money in your local currency or bitcoins. Most point 
+        of sales businesses use a tablet or a mobile phone to let customers pay with their mobile phones.
+      </p>
+      <a href="#" class="btn">Choose your wallet</a>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="left">
+      <h3>Accounting & taxes</h3>
+      <p>
+        Merchants often deposit and display prices in their local currency. 
+        In other cases, Bitcoin works similarly to a foreign currency. To get 
+        appropriate guidance regarding tax compliance for your own jurisdiction, 
+        you should contact a qualified accountant.
+      </p>
+      <a href="#" class="btn">Choose your wallet</a>
+    </div>
+
+    <div class="number">3</div>
+
+    <div class="right"></div>
+  </div>
+  
+  <div class="step">
+    <div class="left"></div>
+
+    <div class="number">4</div>
+
+    <div class="right">
+      <h3>Gaining visibility</h3>
+      <p>
+        There is a growing number of users searching for ways to spend their bitcoins.
+         You can submit your business in online directories to help them easily find you.
+          You can also display the Bitcoin logo on your website or your brick and mortar business.
+      </p>
+      <a href="#" class="btn">Choose your wallet</a>
+    </div>
+  </div>
+</div>
+</section>
+<footer class="footer">
+
+  <!-- LOGO -->
+  <div class="footer-logo">
+    <span>₿</span>Bitcoin
+  </div>
+
+  <!-- CONTENT -->
+  <div class="footer-content">
+
+    <!-- DONATE -->
+    <div class="donate">
+      <h4>Support Bitcoin.org:</h4>
+      <button>Donate</button>
+      <a href="#">bc1qpe6jw8ptj9l9pkscmlf8fhhkrrjeawgpjvtq8</a>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="footer-col">
+      <h4>Introduction:</h4>
+      <ul>
+        <li><a href="#">Individuals</a></li>
+        <li><a href="#">Businesses</a></li>
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Getting started</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">You need to know</a></li>
+        <li><a href="#">White paper</a></li>
+      </ul>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-col">
+      <h4>Resources:</h4>
+      <ul>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Exchanges</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Vocabulary</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Bitcoin Core</a></li>
+      </ul>
+    </div>
+
+    <!-- PARTICIPATE -->
+    <div class="footer-col">
+      <h4>Participate:</h4>
+      <ul>
+        <li><a href="#">Support Bitcoin</a></li>
+        <li><a href="#">Buy Bitcoin</a></li>
+        <li><a href="#">Sell Bitcoin</a></li>
+        <li><a href="#">Running a full node</a></li>
+        <li><a href="#">Development</a></li>
+      </ul>
+    </div>
+
+    <!-- OTHER -->
+    <div class="footer-col">
+      <h4>Other:</h4>
+      <ul>
+        <li><a href="#">Avoid Scams</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">About bitcoin.org</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <span>© Bitcoin Project 2009–2025 Released under the MIT license</span>
+    <span><div class="dot"></div> Network Status &nbsp; English</span>
+  </div>
+
+</footer>
+
+</body>
+</html>

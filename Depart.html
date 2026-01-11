@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GG Hospital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ================= BODY RESET ================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+}
+
+/* ================= TOP BAR ================= */
+.top-bar {
+    width: 100%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-family: Arial;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar .social span {
+    font-weight: bold;
+}
+
+.top-bar img {
+    width: 24px;
+    margin: 0 6px;
+}
+
+.top-bar i {
+    font-size: 18px;
+    margin-right: 0px;
+}
+
+/* ================= NAV BAR ================= */
+nav.nav {
+    background: white;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 60px; /* navbar below top-bar */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 999;
+}
+
+/* LOGO IMAGES */
+.gg, .g1 {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+}
+
+.gg {
+    left: 5%;
+}
+
+.g1 {
+    right: 5%;
+}
+
+/* NAVBAR LINKS */
+.navbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: rgb(17, 15, 15);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background: rgba(221,118,62,0.2);
+    border-radius: 5px;
+}
+
+/* CUSTOM DROPDOWN */
+.custom-select1 {
+    width: 180px;
+    position: relative;
+    cursor: pointer;
+}
+
+.selected1 {
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    color: rgb(24, 22, 22);
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.options1 {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.options1 a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.options1 a:hover {
+    background: #f5f5f5;
+}
+
+.custom-select1.active .options1 {
+    display: block;
+}
+
+/* ================= PAGE CONTENT ================= */
+.section {
+    padding: 150px 10%;
+    font-size: 18px;
+}
+
+.section h1{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.head{
+    display: flex;
+    gap:50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.head p{
+    font-size:18px;
+    max-width: 600px;
+}
+
+.img{
+    width: 280px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.btn-box {
+    text-align: center;
+    margin: 30px;
+}
+
+.btn-box button {
+    background: #008c7d;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* ================= DOCTORS ================= */
+#doctors {
+    display: none;
+    padding: 30px 10%;
+    text-align: center;
+}
+
+.doctor-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.doctor-card {
+    width: 330px;
+    text-align: center;
+    position: relative;
+}
+
+.doctor-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.overlay a {
+    background: #00c8a3;
+    padding: 10px 18px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.doctor-card:hover .overlay {
+    opacity: 1;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.small-text {
+    font-size: 15px;
+    color: #555;
+    margin-top: 3px;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+    width:100%;
+    background:#f5f5f5;
+    padding:50px 80px;
+    box-sizing:border-box;
+}
+
+.footer-row{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:50px;
+}
+
+.footer-about{
+    width:35%;
+    line-height:1.7;
+    color:#333;
+    font-size:16px;
+}
+
+.footer-legal, .footer-terms{
+    font-size:16px;
+}
+
+.footer-legal h3, .footer-terms h3{
+    margin-bottom:15px;
+}
+
+.footer-legal a{
+    display:block;
+    text-decoration:none;
+    color:#000;
+    margin-top:10px;
+}
+
+.bottom{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    margin-top:40px;
+    padding-top:40px;
+    border-top:1px solid #ccc;
+}
+
+.contact-box{
+    display:flex;
+    gap:60px;
+}
+
+.c-item{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.c-item i{
+    font-size:22px;
+    margin-right:10px;
+}
+
+.social-area{
+    text-align:left;
+}
+
+.social-area h2{
+    margin:0;
+}
+
+.social-icons{
+    margin-top:10px;
+    display:flex;
+    gap:20px;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="social">
+        <span>Follow us on:</span>
+        <a href="#"><img src="Img/Insta.png" alt=""></a>
+        <a href="#"><img src="Img/Face.png" alt=""></a>
+        <a href="#"><img src="Img/youtube.png" alt=""></a>
+    </div>
+    <div class="contact">
+        <i class='bx bx-phone'></i>
+        0471 2779100 | 0471 2779101 | 0471 4299299
+    </div>
+    <div class="email">
+        <i class='bx bx-envelope'></i>
+        feedback@gg-hospital.com | mdoffice@gg-hospital.com
+    </div>
+    <div class="email1">
+        <i class='bx bx-envelope'></i>
+        gg-hospital@1.com| giri-ganesh@gmail.com
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+<nav class="nav">
+    <img src="Img/GG.png" class="gg">
+    <div class="navbar">
+        <a href="Hospital.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Doct.html">Doctors</a>
+
+        <div class="custom-select1" tabindex="0" onclick="this.classList.toggle('active')">
+            <div class="selected1">Departments</div>
+            <div class="options1">
+                <a href="Depart.html">Emergency-Medicine</a>
+                <a href="Dept2.html">Dermatology</a>
+            </div>
+        </div>
+
+        <a href="#News">News and Media</a>
+        <a href="#contact">Contact Us</a>
+        <img src="Img/hospital.jpeg" class="g1">
+    </div>
+</nav>
+</header>
+
+<!-- MAIN SECTION -->
+<div class="section">
+    <h1>Emergency Medicine</h1>
+    <div class="head">
+        <div><img src="Img/hospital8.jpg" class="img"></div>
+        <div>
+            <p>
+                We have a state-of-the-art emergency department manned by qualified and 
+                trained emergency physicians, nurses and supporting staff round the clock
+                to cater all types of emergencies including neonatal pediatric toxicology 
+                and genetics. We also provide comprehensive trauma care around the clock. 
+                We have 24*7 lab, pharmacy, and radiology support. We have 24*7 consultant 
+                support of relevant specialties for completion of patient care. We are 
+                backed by a state-of-the-art critical care unit with experts in the field
+                who are capable of treating all critically ill patients with good outcomes.
+            </p>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button onclick="showDoctors()">Show Doctors</button>
+    </div>
+
+    <!-- DOCTORS SECTION -->
+    <div id="doctors">
+        <div class="doctor-container">
+            <div class="doctor-card">
+                <img src="Img/doc1.jpg">
+                <div class="overlay">
+                    <a href="#">Book Appointment</a>
+                </div>
+                <div class="name">Dr. Antony</div>
+                <div class="small-text">Senior Consultant</div>
+                <div class="small-text">Department: Ophthalmology</div>
+            </div>
+            <div class="doctor-card">
+                <img src="Img/Doc.jpg">
+                <div class="overlay">
+                    <a href="#">Book Appointment</a>
+                </div>
+                <div class="name">Dr. Mahadevan</div>
+                <div class="small-text">Vitreoretinal Surgeon</div>
+                <div class="small-text">Department: Ophthalmology</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-row">
+        <div class="footer-about">
+            <p>
+                GG Hospital (Paragon Hospital Kerala Pvt. Ltd) is the flagship hospital of 
+                the Sree Gokulam Group of Companies.
+            </p>
+        </div>
+        <div class="footer-legal">
+            <h3>Legal</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Documentation</a>
+        </div>
+        <div class="footer-terms">
+            <h3>Terms of Services</h3>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="contact-box">
+            <div class="c-item">
+                <i class="fas fa-home"></i><br>
+                Medical College, Pattom<br>
+                Kumarapuram Rd,<br>
+                Murinjapalam,<br>
+                Thiruvananthapuram,<br>
+                Kerala 695011
+            </div>
+            <div class="c-item">
+                <i class="fas fa-phone"></i><br>
+                0471 2779100<br>
+                0471 2779101<br>
+                0471 4299299
+            </div>
+            <div class="c-item">
+                <i class="fas fa-envelope"></i><br>
+                feedback@gg-hospital.com<br>
+                mdoffice@gg-hospital.com
+            </div>
+        </div>
+        <div class="social-area">
+            <h2>We are on Social Media</h2>
+            <div class="social-icons">
+                <a href="#"><img src="Img/Insta.png" alt=""></a>
+                <a href="#"><img src="Img/Face.png" alt=""></a>
+                <a href="#"><img src="Img/youtube.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showDoctors() {
+    document.getElementById("doctors").style.display = "block";
+    window.scrollTo(0, 300);  // automatic scroll down when doctors show
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<html >
+<head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+body{
+    background:#000;
+}
+/* ================= HEADER ================= */
+.top-bar{
+    background:#1a0f0a;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    height:80px;
+}
+
+/* LOGO */
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+.logo .gold{
+    color:gold;
+}
+.logo small{
+    display:block;
+    font-size:12px;
+    color:#ccc;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+
+/* LINKS */
+nav a{
+    text-decoration:none;
+    color:gold;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+    color:#000;
+}
+
+/* ARROW */
+.arrow{
+    font-size:12px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+
+.dropdown-menu a{
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* 🔥 CLICK BASED (NO JS) */
+.dropdown:focus-within .dropdown-menu{
+    display:flex;
+}
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    margin:0;
+    padding:0;
+}
+/* HEADER */
+.header{
+    background:#804825;
+    color:white;
+    padding:25px;
+    text-align:center;
+    animation: fadeDown 1s ease;
+}
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+/* CONTAINER */
+.container{
+    max-width:900px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:8px;
+    animation: zoomIn 0.8s ease;
+}
+@keyframes zoomIn{
+    from{opacity:0; transform:scale(0.95);}
+    to{opacity:1; transform:scale(1);}
+}
+h2{
+    color:#efc640;
+    margin-bottom:10px;
+}
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    animation: slideUp 1s ease;
+}
+@keyframes slideUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+table th, table td{
+    border:1px solid #ccc;
+    padding:12px;
+    text-align:left;
+}
+table th{
+    background:#e8eaf6;
+}
+/* ROW HOVER */
+table tr:hover{
+    background:#f1f3ff;
+    transition:0.3s;
+}
+/* NOTE */
+.note{
+    margin-top:20px;
+    font-size:14px;
+    color:#555;
+    animation: fadeIn 1.2s ease;
+}
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+</style>
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">
+        <span class="gold">LORD SHIVA 🕉</span>
+        <small>Kēdāranātha Temple</small>
+    </div>
+       <nav>
+        <ul>
+            <li><a href="Kedarnath.html">Home</a></li>
+
+            <!-- ABOUT -->
+            <li class="dropdown">
+                <a href="#">About <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="History.html">History</a>
+                    <a href="Temple Significance.html">Temple Significance</a>
+                    <a href="Deity.html">Deity</a>
+                    <a href="Administration.html">Administration</a>
+                </div>
+            </li>
+
+            <!-- POOJA -->
+            <li class="dropdown">
+                <a href="#">Pooja <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Daily.html">Daily Poojas</a>
+                    <a href="Special-Pooja.html">Special Poojas</a>
+                    <a href="Virtual-Queue.html">Virtual Q</a>
+                    <a href="Pooja Timimg.html">Pooja Timings</a>
+                    <a href="Offers.html">Offerings</a>
+                </div>
+            </li>
+
+            <!-- HOW TO REACH -->
+            <li class="dropdown">
+                <a href="#">How to Reach <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Bus.html">🚗 By Bus</a>
+                    <a href="Train.html">🚆 By Rail</a>
+                    <a href="Air.html">✈️ By Air</a>
+                </div>
+            </li>
+
+            <li><a href="Facilities.html">Pilgrim Facilities</a></li>
+            <li><a href="Help.html">Help Line</a></li>
+            <li><a href="T-Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="header">
+    <h1>Kedarnath Yatra Help Line</h1>
+    <p>Emergency & Pilgrim Support Numbers</p>
+</div>
+
+<div class="container">
+    <h2>Important Help Line Numbers</h2>
+
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Contact Number</th>
+        </tr>
+        <tr>
+            <td>Yatra Information</td>
+            <td>1364</td>
+        </tr>
+        <tr>
+            <td>Police Help Line</td>
+            <td>112</td>
+        </tr>
+        <tr>
+            <td>Medical Emergency</td>
+            <td>108</td>
+        </tr>
+        <tr>
+            <td>Disaster Management (SDRF)</td>
+            <td>1070</td>
+        </tr>
+        <tr>
+            <td>Tourism Department</td>
+            <td>0135-2559898</td>
+        </tr>
+    </table>
+
+    <div class="note">
+        <strong>Note:</strong> These help line numbers are provided for pilgrims
+        during the Kedarnath Yatra for safety and emergency assistance.
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>All Products</title>
+
+<style>
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+ background:#f6efe6;
+}
+
+/* HEADER */
+.offer-bar{
+ background:#c84c0c;
+ color:#fff;
+ text-align:center;
+ padding:10px;
+ font-size:15px;
+}
+.header{
+ background:#f6efe7;
+ display:flex;
+ align-items:center;
+ padding:15px 20px;
+ position:sticky;
+ top:0;
+}
+.logo{
+ margin:auto;
+ font-size:32px;
+ color:#c84c0c;
+ font-weight:600;
+}
+.menu-icon span{
+ display:block;
+ width:24px;
+ height:3px;
+ background:#000;
+ margin:5px 0;
+}
+
+/* PRODUCTS */
+.products{
+ max-width:1300px;
+ margin:40px auto;
+ padding:20px;
+ display:flex;          /* ⭐ important */
+ gap:40px;              /* sidebar & grid madhya gap */
+ align-items:flex-start;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:30px;
+ flex:1;                /* ⭐ remaining space occupy */
+}
+
+
+/* CARD */
+.card{
+ background:#ececec;
+ padding:25px;
+ cursor:pointer;
+ transition:0.3s;
+}
+.card:hover{
+ transform:translateY(-6px);
+}
+.card img{
+ width:100%;
+ height:220px;
+ object-fit:contain;
+ margin-bottom:20px;
+}
+.info{
+ background:#f6efe6;
+ padding:10px;
+}
+.info h4{
+ font-size:16px;
+ margin-bottom:6px;
+}
+.price{
+ font-size:15px;
+ font-weight:bold;
+ color:#2e7d32;
+}
+.sidebar{
+    width:220px;
+}
+
+.sidebar h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-bottom:40px;
+}
+
+.sidebar ul li{
+    margin-bottom:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.sidebar ul li:hover{
+    text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="offer-bar">
+ Free shipping on orders over $75 | Get 15% off your first purchase
+</div>
+
+<header class="header">
+ <div class="menu-icon">
+  <span></span><span></span><span></span>
+ </div>
+ <div class="logo">Goody - All Products</div>
+</header>
+
+<section class="products">
+  <aside class="sidebar">
+        <h3>Browse by</h3>
+        <ul>
+            <li><a href="All Products.html">All Products</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Home&Living.html">Home & Living</a></li>
+            <li><a href="Stationary.html">Stationary</a></li>
+            <li>Sale</li>
+        </ul>
+        <h3>Filter by</h3>
+        <div class="price"><p>Price</p>
+        <input type="range" class="range"></div>
+    </aside>
+<div class="grid">
+
+  <div class="card">
+   <img src="Img/P13.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P14.webp">
+   <div class="info">
+    <h4>Alovera</h4>
+    <div class="price">$32</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P17.webp">
+   <div class="info">
+    <h4>Gold Jewel</h4>
+    <div class="price">$45</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P20.webp">
+   <div class="info">
+    <h4>SAMSUNG TV</h4>
+    <div class="price">$240</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P17.webp">
+   <div class="info">
+    <h4>Watch</h4>
+    <div class="price">$32</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P18.webp">
+   <div class="info">
+    <h4>Cosmetic Case</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P19.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P20.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P21.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P22.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P23.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P24.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P25.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P26.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P27.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P28.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P29.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+  <div class="card">
+   <img src="Img/P30.webp">
+   <div class="info">
+    <h4>Lipstick</h4>
+    <div class="price">$24</div>
+   </div>
+  </div>
+
+</div>
+</section>
+
+<!-- FUNCTIONALITY -->
+<script>
+document.querySelectorAll(".card").forEach(card=>{
+ card.addEventListener("click",()=>{
+
+  let name = card.querySelector("h4").innerText;
+  let price = card.querySelector(".price").innerText.replace("$","");
+  let image = card.querySelector("img").src;
+
+  localStorage.setItem("p_name", name);
+  localStorage.setItem("p_price", price);
+  localStorage.setItem("p_image", image);
+
+  window.location.href="product.html";
+ });
+});
+</script>
+
+</body>
+</html>

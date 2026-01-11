@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dining at Disneyland Paris</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body{
+    background:#ffffff;
+    color:#1d2b4f;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:#fff;
+    padding:18px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #eee;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#3b4cca;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1d2b4f;
+    font-size:15px;
+    font-weight:600;
+}
+
+.btn-blue{
+    background:#1a73e8;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:25px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ===== HERO ===== */
+.hero{
+    position:relative;
+    height:420px;
+    background:
+        linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.35)),
+        url("https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* curved bottom */
+.hero::after{
+    content:"";
+    position:absolute;
+    bottom:-1px;
+    left:0;
+    width:100%;
+    height:80px;
+    background:#fff;
+    border-top-left-radius:100% 80px;
+    border-top-right-radius:100% 80px;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:42px;
+    font-weight:700;
+    z-index:2;
+}
+
+/* ===== CATEGORY CARD ===== */
+.categories{
+    position:relative;
+    margin-top:-60px;
+    display:flex;
+    justify-content:center;
+    z-index:5;
+}
+
+.cat-box{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    padding:25px 35px;
+    display:flex;
+    gap:40px;
+}
+
+.cat{
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+    color:#1d2b4f;
+    position:relative;
+}
+
+.cat span{
+    display:block;
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.cat.active::after{
+    content:"";
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:40px;
+    height:4px;
+    background:#1a73e8;
+    border-radius:4px;
+}
+
+/* ===== CONTENT ===== */
+.content{
+    max-width:900px;
+    margin:70px auto;
+    text-align:center;
+    padding:0 20px;
+}
+
+.content h2{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.content p{
+    font-size:16px;
+    color:#555;
+    line-height:1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    header{
+        padding:15px 30px;
+    }
+    nav{
+        display:none;
+    }
+    .hero h1{
+        font-size:28px;
+        text-align:center;
+        padding:0 15px;
+    }
+    .cat-box{
+        flex-direction:column;
+        gap:20px;
+        width:90%;
+    }
+}
+/* ===== SECTION WRAPPER ===== */
+.magic-section{
+    max-width:1200px;
+    margin:80px auto;
+    padding:20px;
+}
+
+/* ===== TOP TITLE ===== */
+.magic-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.magic-title h1{
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.magic-title p{
+    font-size:18px;
+    color:#333;
+    max-width:850px;
+    margin:0 auto;
+    line-height:1.6;
+}
+
+/* ===== CONTENT ROW ===== */
+.magic-content{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+/* ===== IMAGE ===== */
+.magic-image{
+    flex:1;
+}
+
+.magic-image img{
+    width:100%;
+    border-radius:18px;
+}
+
+/* ===== TEXT AREA ===== */
+.magic-text{
+    flex:1;
+}
+
+.magic-text h2{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.magic-text p{
+    font-size:16px;
+    line-height:1.7;
+    color:#444;
+    margin-bottom:30px;
+}
+
+/* ===== BUTTON ===== */
+.magic-btn{
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:30px;
+    border:2px solid #0a46e4;
+    color:#0a46e4;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.magic-btn:hover{
+    background:#0a46e4;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(10,70,228,0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .magic-content{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+/* ===== PAGE CONTAINER ===== */
+.container{
+    max-width:1200px;
+    margin:60px auto;
+    padding:20px;
+}
+
+/* ===== TITLE ===== */
+.page-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.page-title h1{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.page-title p{
+    font-size:18px;
+    color:#333;
+}
+
+/* ===== SECTION ===== */
+.section{
+    display:flex;
+    gap:50px;
+    align-items:center;
+    margin-bottom:90px;
+}
+
+.section.reverse{
+    flex-direction:row-reverse;
+}
+
+/* ===== IMAGE ===== */
+.section img{
+    width:100%;
+    border-radius:16px;
+}
+
+/* ===== TEXT ===== */
+.text{
+    flex:1;
+}
+
+.image{
+    flex:1;
+}
+
+.text h2{
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.text p{
+    font-size:16px;
+    color:#444;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    display:inline-block;
+    padding:14px 36px;
+    border-radius:30px;
+    border:2px solid #0a46e4;
+    color:#0a46e4;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0a46e4;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(10,70,228,0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .section,
+    .section.reverse{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+/* ===== SECTION ===== */
+.experience-section{
+    max-width:1200px;
+    margin:80px auto;
+    padding:20px;
+    text-align:center;
+}
+
+.experience-section h1{
+    font-size:34px;
+    margin-bottom:14px;
+}
+
+.experience-section p{
+    font-size:18px;
+    color:#333;
+    max-width:900px;
+    margin:0 auto 60px;
+    line-height:1.6;
+}
+
+/* ===== CARDS ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* ===== CARD ===== */
+.card{
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 12px 28px rgba(0,0,0,0.12);
+    overflow:hidden;
+    text-align:left;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+}
+
+/* CONTENT */
+.card-content{
+    padding:28px;
+}
+
+.card-content h3{
+    font-size:22px;
+    margin-bottom:14px;
+}
+
+.card-content p{
+    font-size:15px;
+    color:#444;
+    line-height:1.6;
+    margin-bottom:22px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    border-radius:30px;
+    border:2px solid #0a46e4;
+    color:#0a46e4;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0a46e4;
+    color:#fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:700px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .experience-section h1{
+        font-size:28px;
+    }
+}
+/* ===== COMMON ===== */
+.section1{
+    max-width:1200px;
+    margin:90px auto;
+    padding:0 20px;
+}
+
+.row{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+/* ===== IMAGE ===== */
+.image-box img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* ===== CONTENT ===== */
+.content h2{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.content p{
+    font-size:16px;
+    color:#333;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:30px;
+    border:2px solid #0a46e4;
+    color:#0a46e4;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0a46e4;
+    color:#fff;
+}
+
+/* ===== APP SECTION ===== */
+.app-section{
+    background:#ffffff;
+}
+
+.app-box{
+    background:linear-gradient(135deg,#241a60,#3b2aa6);
+    border-radius:26px;
+    padding:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.app-box img{
+    width:260px;
+    filter:drop-shadow(0 18px 40px rgba(0,0,0,0.4));
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .row{
+        flex-direction:column;
+    }
+
+    .content h2{
+        font-size:26px;
+    }
+
+    .app-box{
+        margin-top:30px;
+    }
+}
+/* ===== SECTION ===== */
+.advantages{
+    max-width:1200px;
+    margin:90px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+/* TITLE */
+.advantages h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.advantages .subtitle{
+    font-size:17px;
+    color:#333;
+    max-width:800px;
+    margin:0 auto 60px;
+    line-height:1.6;
+}
+
+/* GRID */
+.adv-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:50px;
+}
+
+/* CARD */
+.adv-card{
+    text-align:left;
+}
+
+.icon{
+    width:60px;
+    height:60px;
+    margin-bottom:22px;
+    fill:#0b2a6f;
+}
+
+.adv-card h3{
+    font-size:20px;
+    margin-bottom:14px;
+}
+
+.adv-card p{
+    font-size:15px;
+    color:#333;
+    line-height:1.7;
+}
+
+/* BUTTON */
+.btn-wrap{
+    margin-top:60px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 36px;
+    border-radius:30px;
+    border:2px solid #0a46e4;
+    color:#0a46e4;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0a46e4;
+    color:#fff;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+    .adv-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:40px;
+    }
+}
+
+@media(max-width:600px){
+    .adv-grid{
+        grid-template-columns:1fr;
+    }
+
+    .advantages h2{
+        font-size:26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Disneyland Paris</div>
+    <nav>
+        <a href="Entertainment.html">Disney</a>
+        <a href="Disney-Hotel.html">Places to stay</a>
+        <a href="Disney-Dinning.html">Dining</a>
+        <a href="Disney-Booking.html">Book now</a>
+        <a href="Disney-Land.html">Before you arrive</a>
+        <a class="btn-blue" href="#">Tickets</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Our Disney Hotels</h1>
+</section>
+
+<!-- CATEGORIES -->
+<div class="categories">
+    <div class="cat-box">
+        <div class="cat active">
+            <span>🍽️</span>
+            Themed restaurants
+        </div>
+        <div class="cat">
+            <span>👨‍🍳</span>
+            Our Disney Hostels
+        </div>
+        <div class="cat">
+            <span>🐭</span>
+            Restarants and more!
+        </div>
+        <div class="cat">
+            <span>🍱</span>
+            Book your stay
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<section class="content">
+    <h2>Make the magic last around the clock!</h2>
+    <p>
+        When you stay at a Disney Hotel,you'll enjoy a fully immersive experience and unique
+          benefits .It's the perfect choice for all ages.
+    </p>
+</section>
+<section class="magic-section">
+
+    <!-- TOP HEADING -->
+    <div class="magic-title">
+        <h1>Make the magic last around the clock!</h1>
+        <p>
+            When you stay at a Disney Hotel, you'll enjoy a fully immersive experience
+            and unique benefits. It's the perfect choice for all ages.
+        </p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="magic-content">
+
+        <!-- IMAGE -->
+        <div class="magic-image">
+            <img src="Img2/D3.jpg" alt="Disneyland Hotel">
+        </div>
+
+        <!-- TEXT -->
+        <div class="magic-text">
+            <h2>Discover Disneyland Hotel!</h2>
+            <p>
+                Live the life of royalty at Disneyland Hotel, the ultimate 5-star royal
+                residence at the entrance to Disneyland Park. Be our Guest and you’ll be
+                just a few steps from our magical attractions, shows, parades and Disney
+                Character Encounters! It doesn’t get any closer than this!
+            </p>
+
+            <a href="#" class="magic-btn">Discover the Hotel</a>
+        </div>
+
+    </div>
+
+</section>
+<!-- CONTENT -->
+<div class="container">
+
+    <!-- TITLE -->
+    <div class="page-title">
+        <h1>Find the ideal accommodation for you!</h1>
+        <p>
+            Whether you're looking for a room, bungalow or Disney suite,
+            there's something for all tastes and budgets!
+        </p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section">
+        <div class="image">
+            <img src="Img2/D4.jpg" alt="Family Room">
+        </div>
+
+        <div class="text">
+            <h2>Family rooms and cabins</h2>
+            <p>
+                Choose from our family rooms, single rooms, with or without
+                lakeside view or garden terrace, or even a cosy cabin in the
+                forest… whichever you choose, you're sure to enjoy a unique
+                Disney experience!
+            </p>
+        </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section reverse">
+        <div class="image">
+            <img src="Img2/D5.jpg" alt="Club Rooms">
+        </div>
+
+        <div class="text">
+            <h2>Club Rooms and Suites</h2>
+            <p>
+                Join the club and benefit from premium rooms and exclusive services.
+                Choose a Club Room or Suite and enjoy Disney VIP treatment with
+                private check-in, a dedicated lounge, valet services and more!
+            </p>
+
+            <a href="#" class="btn">Find out more</a>
+        </div>
+    </div>
+
+</div>
+<section class="experience-section">
+    <h1>Enjoy a fully immersive Disney experience</h1>
+    <p>
+        The magic doesn't stop when you leave the Disney Parks!
+        With unique benefits, every moment is filled with fun
+        when you stay in a Disney Hotel.
+    </p>
+
+    <div class="cards">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="Img2/D7.jpg" alt="">
+            <div class="card-content">
+                <h3>Disney-themed restaurants and bars</h3>
+                <p>
+                    Enjoy Disneylicious dining in your hotel with uniquely
+                    themed restaurants and bars!
+                </p>
+                <a href="#" class="btn">See all restaurants</a>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="Img2/D6.jpeg" alt="">
+            <div class="card-content">
+                <h3>Character Encounters in your hotel</h3>
+                <p>
+                    Cross paths with beloved Disney, Pixar or Marvel Characters
+                    depending on your Hotel and share a moment you'll cherish forever!
+                </p>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="Img2/D8.jpeg" alt="">
+            <div class="card-content">
+                <h3>A feast for the eyes</h3>
+                <p>
+                    Keep your eyes peeled! Our hotels are adorned with subtle
+                    Disney-themed details everywhere you look.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- ===== FACILITIES SECTION ===== -->
+<section class="section1">
+    <div class="row">
+        <div class="image-box">
+            <img src="Img2/D9.jpg" alt="">
+        </div>
+
+        <div class="content">
+            <h2>Take time out in your hotel with exceptional facilities</h2>
+            <p>
+                Each hotel is equipped with leisure facilities so you can prolong
+                the magic. From pools, fitness centres, spas to kids corners,
+                the fun never stops!
+            </p>
+            <a href="#" class="btn">See all leisure facilities</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== APP SECTION ===== -->
+<section class="section1">
+    <div class="row">
+        <div class="content">
+            <h2>Get ready for your trip with our official mobile app!</h2>
+            <p>
+                Find practical information about your stay, check in between
+                1 and 7 days prior to arrival, and access your digital MagicPass
+                so you can head straight to the Disney Parks when you arrive!
+            </p>
+            <a href="#" class="btn">Discover the app</a>
+        </div>
+
+        <div class="app-box">
+            <img src="Img2/D10.jpg" alt="">
+        </div>
+    </div>
+</section>
+<section class="advantages">
+
+    <h2>Unlock unique Disney advantages</h2>
+    <p class="subtitle">
+        Book a stay in a Disney Hotel and benefit from special advantages
+        that keep you close to the magic night and day!
+    </p>
+
+    <div class="adv-grid">
+
+        <!-- CARD 1 -->
+        <div class="adv-card">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 2l2.4 4.9L20 9l-4 3.9L17 18l-5-2.7L7 18l1-5.1L4 9l5.6-2.1z"/>
+            </svg>
+            <h3>Extra Magic Time</h3>
+            <p>
+                Enter the Parks before they open and greet Disney Characters
+                at your hotel.
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="adv-card">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 5h18v14H3zM7 5v14M17 5v14"/>
+            </svg>
+            <h3>Access to both Parks</h3>
+            <p>
+                Enjoy the Parks from morning until night for every day
+                of your stay.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="adv-card">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 12h18v9H3zM5 3h14v7H5z"/>
+            </svg>
+            <h3>Close to the Parks</h3>
+            <p>
+                Stay in an enchanting hotel just a short walk (or shuttle)
+                away from the Parks.
+            </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="adv-card">
+            <svg class="icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <text x="8" y="16" font-size="10" fill="#fff">P</text>
+            </svg>
+            <h3>Free parking</h3>
+            <p>
+                Take advantage of free parking right by your accommodation
+                and the Park entrances.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="btn-wrap">
+        <a href="#" class="btn">Learn more</a>
+    </div>
+
+</section>
+
+</body>
+</html>

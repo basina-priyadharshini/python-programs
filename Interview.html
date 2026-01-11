@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sonu Sood | Interviews</title>
+
+<style>
+:root{
+  --bg:#0f0f0f;
+  --card:#1c1c1c;
+  --accent:#e50914;
+  --text:#f4f4f4;
+  --muted:#bdbdbd;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* HERO */
+.hero1{
+  height:80vh;
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+    url("https://placehold.co/1600x900/111/fff?text=Sonu+Sood+Interview");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  padding:0 10%;
+}
+
+.hero1 h1{
+  font-size:52px;
+}
+
+.hero1 span{color:var(--accent);}
+
+.hero1 p{
+  margin-top:15px;
+  max-width:600px;
+  color:var(--muted);
+}
+
+/* SECTION */
+.section{
+  padding:90px 10%;
+}
+
+.section-title{
+  font-size:36px;
+  margin-bottom:40px;
+  position:relative;
+}
+
+.section-title::after{
+  content:"";
+  width:80px;
+  height:4px;
+  background:var(--accent);
+  position:absolute;
+  left:0;
+  bottom:-10px;
+}
+
+/* GRID */
+.interviews{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  transition:.6s;
+}
+
+.card:hover{
+  transform:translateY(-15px);
+}
+
+/* VIDEO */
+.card iframe{
+  width:100%;
+  height:220px;
+  border:none;
+}
+
+/* CONTENT */
+.card-content{
+  padding:25px;
+}
+
+.card-content h3{
+  font-size:22px;
+}
+
+.card-content span{
+  font-size:14px;
+  color:var(--accent);
+}
+
+.card-content p{
+  margin-top:12px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+/* QUOTE */
+.quote{
+  background:linear-gradient(135deg,#111,#1e1e1e);
+  padding:80px 10%;
+  text-align:center;
+}
+
+.quote p{
+  font-size:28px;
+  font-style:italic;
+}
+
+.quote span{
+  display:block;
+  margin-top:20px;
+  color:var(--accent);
+  font-size:18px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  text-align:center;
+  padding:25px;
+  color:#aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero h1{font-size:34px;}
+  .quote p{font-size:22px;}
+  .card iframe{height:200px;}
+}
+/* Q&A */
+.qa{
+  max-width:900px;
+  margin:auto;
+}
+
+.q{
+  color:var(--accent);
+  font-weight:bold;
+  margin-top:30px;
+}
+
+.a{
+  color:var(--muted);
+  margin-top:8px;
+}
+    @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+          
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== TOP HEADER ===== */
+.top-header{
+    background:#fff;
+    display:flex;
+    align-items:center;
+    padding:15px 40px;
+    font-family: "Whisper",cursive;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-circle{
+    width:55px;
+    height:55px;
+    background:#332bc1;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.logo-text{
+    font-size:70px;
+    color:rgb(202, 57, 20);
+    text-shadow: 0 0 15px rgb(211, 72, 233),
+                0 0 20px rgb(99, 25, 124),
+                0 0 20px rgb(80, 22, 88);
+    font-weight:bold;
+    font-family: "whisper",cursive;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero{
+    width:100%;
+    height:300px;
+    background:url("Img/Sonu2.png") no-repeat center right;
+    background-size:100% auto; 
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.4);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#050715;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    padding:0 40px;
+}
+
+.navbar ul li{
+    position:relative;
+}
+
+.navbar ul li a{
+    display:block;
+    padding:15px 18px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar ul li:hover{
+    background:#37383a;
+    color:#000;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background: #db5a2b;
+    min-width:200px;
+    display:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    z-index:999;
+    color:black;
+}
+
+.dropdown a{
+    color:#fff;
+    padding:12px 15px;
+    display:block;
+    font-weight:normal;
+}
+
+.dropdown a:hover{
+    background:#f2f2f2;
+    color:#000;
+}
+
+/* STABLE HOVER */
+.navbar ul li:hover .dropdown{
+    display:block;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+    padding:15px 40px;
+    background:#fff;
+    color:#555;
+}
+
+.breadcrumb span{
+    color:#3f8cf2;
+}
+.offer-bar{
+  background:#db5a2b;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+}
+
+
+</style>
+</head>
+
+<body>
+    <div class="offer-bar">
+  Free shipping on orders over $75 &nbsp; | &nbsp; Get 15% off your first purchase
+</div>
+<!-- HEADER -->
+<div class="top-header">
+    <div class="logo">
+        
+        <div class="logo-text">SONU</div>
+    </div>
+    <div class="hero"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <ul>
+        <li><a href="Hero.html">HOME</a></li>
+
+        <li>
+            <a href="#">SONU SOOD ▼</a>
+            <div class="dropdown">
+                <a href="Bio.html">Biography</a>
+                <a href="Photo.html">Photos</a>
+                <a href="Videos.html">Videos</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">MOVIES ▼</a>
+            <div class="dropdown">
+                <a href="Hindi.html">Hindi Movies</a>
+                <a href="Telugu.html">Telugu Movies</a>
+                <a href="Tamil.html">Tamil Movies</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">GALLERY ▼</a>
+            <div class="dropdown">
+                <a href="Photo.html">Photos</a>
+                <a href="#">Wallpapers</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">VIDEOS ▼</a>
+            <div class="dropdown">
+                <a href="Interview.html">Interviews</a>
+                <a href="Trailer.HTML">Trailers</a>
+            </div>
+        </li>
+
+        <li><a href="Social.html">SOCIAL</a></li>
+        <li><a href="Blog.html">BLOG</a></li>
+    </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <span>Home</span> / Social
+</div>
+
+<!-- HERO -->
+<section class="hero1">
+  <div>
+    <h1><span>SONU</span> SOOD</h1>
+    <p>Powerful interviews that reflect his journey, struggles, humanity, and success.</p>
+  </div>
+</section>
+
+<!-- INTERVIEWS -->
+<section class="section">
+  <h2 class="section-title">Interview Videos</h2>
+
+  <div class="interviews">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <iframe  src="https://www.youtube.com/embed/84OShnO5_QU?si=6MRa-aDCjReOjoEj" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+      clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="card-content">
+        <h3>On Life & Struggles</h3>
+        <span>Motivational Interview</span>
+        <p>
+          Sonu Sood talks about rejection, discipline, and how struggles shaped his mindset.
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <iframe  src="https://www.youtube.com/embed/Ce-e_VB4EEY?si=hrKupaUc124pCS9_" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+       clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="card-content">
+        <h3>On Helping People</h3>
+        <span>Humanitarian Interview</span>
+        <p>
+          He explains why helping people is a responsibility and not an act of publicity.
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <iframe src="https://www.youtube.com/embed/D7yhO6wpF2I?si=src7u0ckwb1BMu8Y"
+       title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="card-content">
+        <h3>On Cinema & Success</h3>
+        <span>Film Industry Talk</span>
+        <p>
+          A deep conversation about meaningful roles, fame, and staying grounded.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <p>“If you can help someone without expecting anything, that is real success.”</p>
+  <span>— Sonu Sood</span>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Interview Q & A</h2>
+
+  <div class="qa">
+    <div class="q">Q: What motivates you every day?</div>
+    <div class="a">
+      Helping people and seeing hope in their eyes motivates me more than awards or fame.
+    </div>
+
+    <div class="q">Q: How do you handle criticism?</div>
+    <div class="a">
+      I listen, learn, and move forward. Criticism helps you grow if taken positively.
+    </div>
+
+    <div class="q">Q: Advice for young generation?</div>
+    <div class="a">
+      Be disciplined, respect time, and never lose humanity in the race for success.
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Sonu Sood | Interview Videos
+</footer>
+
+</body>
+</html>

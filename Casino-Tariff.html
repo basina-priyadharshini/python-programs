@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Entry Packages | Casino Gold</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+    background:#000;
+    color:#fff;
+}
+
+/* ===== HEADER ===== */
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    padding:25px 60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    height:42px;
+}
+/* NAV */
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:50vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("Img2/Casi3.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+/* HERO TEXT */
+.hero h1{
+    font-size:72px;
+    letter-spacing:6px;
+    font-weight:300;
+}
+
+/* SCROLL ICON */
+.scroll-icon{
+    position:absolute;
+    top:50%;
+    width:28px;
+    height:48px;
+    border:2px solid #fff;
+    border-radius:20px;
+}
+
+.scroll-icon::after{
+    content:"";
+    width:6px;
+    height:10px;
+    background:#fff;
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:3px;
+    animation:scroll 1.5s infinite;
+}
+
+@keyframes scroll{
+    0%{ opacity:0; top:10px; }
+    50%{ opacity:1; }
+    100%{ opacity:0; top:25px; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    header{
+        padding:20px;
+    }
+
+    nav ul{
+        gap:18px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        letter-spacing:3px;
+    }
+}
+/* ===== SECTION ===== */
+.package-section{
+    padding:80px 8%;
+}
+.package-badge{
+    position:absolute;
+    bottom:60px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:18px 70px;
+    background:linear-gradient(135deg,#b4005a,#6d0037);
+    color:#fff;
+    font-size:32px;
+    font-weight:700;
+    border-radius:50px;
+    border:3px solid #d4af37;
+    letter-spacing:2px;
+}
+.package-wrap{
+    display:flex;
+    gap:60px;
+    align-items:flex-start;
+}
+
+/* ===== LEFT IMAGE ===== */
+.package-image{
+    position:relative;
+    width:420px;
+    height:520px;
+    border-radius:4px;
+    overflow:hidden;
+}
+
+.package-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(2px);
+    transform:scale(1.1);
+}
+/* ===== RIGHT CONTENT ===== */
+.package-content{
+    flex:1;
+}
+
+.package-title{
+    color:#d4af37;
+    font-size:34px;
+    margin-bottom:40px;
+}
+
+/* PRICE GRID */
+.price-grid{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    gap:30px;
+    margin-bottom:30px;
+}
+
+.price-box{
+    line-height:1.8;
+}
+
+.price-box h4{
+    font-weight:400;
+    font-size:18px;
+}
+
+.price-box span{
+    color:#d4af37;
+    font-size:22px;
+    font-weight:600;
+}
+
+.divider{
+    width:2px;
+    background:#d4af37;
+}
+
+/* DESCRIPTION */
+.package-desc{
+    margin:30px 0;
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* DRINK LIST */
+.drink-list p{
+    margin-bottom:14px;
+    font-size:15px;
+}
+
+.drink-list b{
+    color:#d4af37;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+    .package-wrap{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .package-image{
+        width:100%;
+        max-width:420px;
+    }
+}
+      /* ===== HERO1 SECTION ===== */
+.section{
+    height:80%;
+    width:100%;
+}
+.hero1{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("Img2/Casi1.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ===== PLAY BUTTON ===== */
+.play-btn{
+    width:90px;
+    height:90px;
+    background:rgba(255,255,255,0.25);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:0.3s;
+    backdrop-filter: blur(6px);
+}
+
+.play-btn:hover{
+    transform:scale(1.1);
+}
+
+.play-btn span{
+    width:0;
+    height:0;
+    border-left:28px solid white;
+    border-top:18px solid transparent;
+    border-bottom:18px solid transparent;
+    margin-left:5px;
+}
+
+/* ===== VIDEO OVERLAY ===== */
+.video-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+/* ===== VIDEO BOX ===== */
+.video-box{
+    position:relative;
+    width:85%;
+    max-width:900px;
+}
+
+video{
+    width:100%;
+    border-radius:8px;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn{
+    position:absolute;
+    top:-40px;
+    right:0;
+    font-size:32px;
+    color:white;
+    cursor:pointer; 
+    }
+
+    /* ===== CONTACT SECTION ===== */
+.contact-section{
+    padding:80px 60px;
+    background:linear-gradient(to right,#0b0b0b,#111);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:60px;
+    align-items:flex-start;
+}
+
+/* LEFT */
+.contact-label{
+    color:#caa24d;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.contact-line{
+    width:60px;
+    height:2px;
+    background:#caa24d;
+}
+
+/* CENTER */
+.contact-title{
+    color:#caa24d;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    line-height:1.7;
+    margin-bottom:15px;
+    color:#ddd;
+}
+
+.contact-info a{
+    color:#caa24d;
+    text-decoration:none;
+}
+
+/* SOCIAL */
+.social-icons{
+    margin-top:25px;
+}
+
+.social-icons a{
+    display:inline-flex;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    justify-content:center;
+    align-items:center;
+    margin-right:10px;
+    font-size:18px;
+    color:#fff;
+}
+
+.fb{ background:#1877f2; }
+.yt{ background:#ff0000; }
+.ig{ background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+
+/* RIGHT */
+.links h3{
+    color:#caa24d;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.links ul{
+    list-style:none;
+}
+
+.links li{
+    margin-bottom:15px;
+}
+
+.links li::before{
+    content:"•";
+    color:#caa24d;
+    margin-right:10px;
+}
+
+.links a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.links a:hover{
+    color:#caa24d;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+    padding:20px;
+    text-align:center;
+    font-size:14px;
+    color:#aaa;
+    border-top:1px solid #222;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+}
+.page-zoom h1{
+    font-size: 50px;
+    text-align: center;
+    color:gold;
+    margin-top: 10%;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <!-- replace logo.png -->
+        <img src="Img2/Casino.avif" alt="Casino Gold">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Casino.html">Home</a></li>
+            <li><a href="Casino-Tariff.html">Tariff</a></li>
+            <li><a href="Casino-Game.html">Casino Games</a></li>
+            <li><a href="Casino-Gallery.html">Gallery</a></li>
+            <li><a href="Casino-About.html">About</a></li>
+            <li><a href="Casino-Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>ENTRY PACKAGES</h1>
+    <div class="scroll-icon"></div>
+</section>
+<section class="package-section">
+    <div class="package-wrap">
+
+        <!-- LEFT IMAGE -->
+        <div class="package-image">
+            <img src="Img2/H10.jpeg" alt="Regular Package">
+            <div class="package-badge">REGULAR</div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="package-content">
+            <h2 class="package-title">REGULAR PACKAGE</h2>
+
+            <div class="price-grid">
+                <div class="price-box">
+                    <h4>STAG</h4>
+                    <span>₹2000</span>
+
+                    <h4 style="margin-top:25px;">Couple</h4>
+                    <span>₹2500</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="price-box">
+                    <h4>OTPC</h4>
+                    <span>1000</span>
+
+                    <h4 style="margin-top:25px;">NO</h4>
+                    <span>OTPC</span>
+                </div>
+            </div>
+
+            <div class="package-desc">
+                STARTER + UNLIMITED BUFFET + LIVE ENTERTAINMENT + 2 ALCOHOLIC DRINK COUPONS PER HEAD: 30 ML EACH
+            </div>
+
+            <div class="drink-list">
+                <p><b>WHISKEY:</b> Signature, Blenders Pride, Roulette, Maltage (House Brands).</p>
+                <p><b>VODKA:</b> Magic Moments.</p>
+                <p><b>RUM:</b> Old Monk, Bacardi White/Black, Cabo.</p>
+                <p><b>GIN:</b> Blue Riband.</p>
+                <p><b>BRANDY:</b> Honey Bee, Mansion House.</p>
+                <p><b>BEER:</b> Kingfisher Pint.</p>
+                <p><b>FENI:</b> Big Boss Coconut / Cashew.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="package-section">
+    <div class="package-wrap">
+
+        <!-- LEFT IMAGE -->
+        <div class="package-image">
+            <img src="Img2/H10.jpeg" alt="Premium Package">
+            <div class="package-badge premium-badge">PREMIUM</div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="package-content">
+            <h2 class="package-title">PREMIUM PACKAGE</h2>
+
+            <div class="price-grid">
+                <div class="price-box">
+                    <h4>STAG</h4>
+                    <span>₹2500</span>
+
+                    <h4 style="margin-top:25px;">Couple</h4>
+                    <span>₹3500</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="price-box">
+                    <h4>OTPC</h4>
+                    <span>1000</span>
+
+                    <h4 style="margin-top:25px;">NO</h4>
+                    <span>OTPC</span>
+                </div>
+            </div>
+
+            <div class="package-desc">
+                STARTER + UNLIMITED BUFFET + LIVE ENTERTAINMENT + 3 ALCOHOLIC DRINK COUPONS PER HEAD: 30 ML EACH
+            </div>
+
+            <div class="drink-list">
+                <p><b>WHISKEY:</b> House Brands, Red Label, Ballantine, Black & White, 100 Pipers, VAT 69, Grants Distinction, Grants Triple Wood, Passport Scotch, Black Dog, Dewar’s White Label, Budweiser Magnum Whiskey, Royal Ranthambore.</p>
+
+                <p><b>VODKA:</b> Smirnoff Regular.</p>
+
+                <p><b>GIN:</b> Gordons / Stranger & Sons, Sector Gin.</p>
+
+                <p><b>BRANDY:</b> Morpheus.</p>
+
+                <p><b>BEER:</b> Kingfisher Ultra, Carlsberg.</p>
+
+                <p><b>WINE:</b> L’Angoor / Fratelli Sidus (R&W), Rose Wine.</p>
+
+                <p><b>BREEZERS:</b> Jamaican Passion, Cranberry, Blackberry, Orange.</p>
+
+                <p><b>ENERGY DRINKS:</b> In addition to regular F&B package drinks.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="package-section">
+    <div class="package-wrap">
+
+        <!-- LEFT IMAGE -->
+        <div class="package-image">
+            <img src="Img2/H10.jpeg" alt="VIP Package">
+            <div class="package-badge vip-badge">VIP</div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="package-content">
+            <h2 class="package-title">VIP PACKAGE</h2>
+
+            <div class="price-grid">
+                <div class="price-box">
+                    <h4>STAG</h4>
+                    <span>₹3000</span>
+
+                    <h4 style="margin-top:25px;">Couple</h4>
+                    <span>₹5000</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="price-box">
+                    <h4>NO</h4>
+                    <span>OTPC</span>
+
+                    <h4 style="margin-top:25px;">NO</h4>
+                    <span>OTPC</span>
+                </div>
+            </div>
+
+            <div class="package-desc">
+                STARTER + UNLIMITED BUFFET + LIVE ENTERTAINMENT + 4 ALCOHOLIC DRINK COUPONS PER HEAD: 30 ML EACH
+            </div>
+
+            <div class="drink-list">
+                <p><b>WHISKEY:</b> Single Malt, Black Label, Chivas 12yrs, Dewar’s 12yrs, Paul John Nirvana.</p>
+
+                <p><b>VODKA:</b> Absolut, Ketel One.</p>
+
+                <p><b>GIN:</b> Bombay Sapphire.</p>
+
+                <p><b>BEER:</b> Heineken.</p>
+
+                <p><b>WINE:</b> The Source / Jacob’s Creek (R&W), PienoSud (R&W).</p>
+
+                <p><b>SPARKLING WINE:</b> Zampa Soirée Brut.</p>
+
+                <p><b>LIQUOR:</b> Bailey’s, Triple Sec.</p>
+
+                <p><b>BREEZERS:</b> Jamaican Passion, Cranberry, Blackberry, Orange.</p>
+
+                <p><b>ENERGY DRINKS:</b> In addition to premium F&B package drinks.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<div class="section">
+<!-- ===== HERO SECTION ===== -->
+<div class="hero1">
+    <div class="play-btn" onclick="openVideo()">
+        <span></span>
+    </div>
+</div>
+
+<!-- ===== VIDEO POPUP ===== -->
+<div class="video-overlay" id="videoOverlay">
+    <div class="video-box">
+        <div class="close-btn" onclick="closeVideo()">✖</div>
+        <video id="promoVideo" controls>
+            <source src="Img/Vedio.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+    </div>
+</div>
+</div>
+<script>
+function openVideo(){
+    document.getElementById("videoOverlay").style.display = "flex";
+    document.getElementById("promoVideo").play();
+}
+
+function closeVideo(){
+    let video = document.getElementById("promoVideo");
+    video.pause();
+    video.currentTime = 0;
+    document.getElementById("videoOverlay").style.display = "none";
+}
+</script>
+<!-- ===== CONTACT ===== -->
+<section class="contact-section">
+    <div class="contact-grid">
+
+        <!-- LEFT -->
+        <div>
+            <div class="contact-label">• CONTACT US!</div>
+            <div class="contact-line"></div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="contact-info">
+            <div class="contact-title">Get in touch</div>
+
+            <p>
+                Casino Gold, SinQ Prive, Aguada – Siolim Rd,<br>
+                opposite Taj Holiday Village,<br>
+                Candolim, Goa 403515
+            </p>
+
+            <p><strong>+91 72630 73333</strong></p>
+
+            <p>
+                <a href="mailto:info@casinogoldgoa.com">
+                    info@casinogoldgoa.com
+                </a>
+            </p>
+
+            <div class="social-icons">
+                <a href="#" class="fb">F</a>
+                <a href="#" class="yt">▶</a>
+                <a href="#" class="ig">◎</a>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="links">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Refund and Returns Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+© Copyright 2025 | Casino Gold Candolim Goa. Managed by Future Mercury
+</div>
+</body>
+</html>

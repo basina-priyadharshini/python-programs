@@ -1,0 +1,218 @@
+<html >
+<head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+body{
+    background:#000;
+}
+/* ================= HEADER ================= */
+.top-bar{
+    background:#1a0f0a;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    height:80px;
+}
+
+/* LOGO */
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+.logo .gold{
+    color:gold;
+}
+.logo small{
+    display:block;
+    font-size:12px;
+    color:#ccc;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+
+/* LINKS */
+nav a{
+    text-decoration:none;
+    color:gold;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+    color:#000;
+}
+
+/* ARROW */
+.arrow{
+    font-size:12px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+
+.dropdown-menu a{
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* 🔥 CLICK BASED (NO JS) */
+.dropdown:focus-within .dropdown-menu{
+    display:flex;
+}
+ body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e6f2ff, #ffffff);
+            background-image: url("Img/K3.jpeg");
+            background-size: cover;
+        }
+        .container{
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        h1{
+            text-align: center;
+            color: #2c3e50;
+        }
+        .image-box{
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-box img{
+            width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .image-box img:hover{
+            transform: scale(1.05);
+        }
+        p{
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+        .highlight{
+            background: #f0f8ff;
+            padding: 15px;
+            border-left: 5px solid #1e90ff;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+</style>
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">
+        <span class="gold">LORD SHIVA 🕉</span>
+        <small>Kēdāranātha Temple</small>
+    </div>
+        <nav>
+        <ul>
+            <li><a href="Kedarnath.html">Home</a></li>
+
+            <!-- ABOUT -->
+            <li class="dropdown">
+                <a href="#">About <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="History.html">History</a>
+                    <a href="Temple Significance.html">Temple Significance</a>
+                    <a href="Deity.html">Deity</a>
+                    <a href="Administration.html">Administration</a>
+                </div>
+            </li>
+
+            <!-- POOJA -->
+            <li class="dropdown">
+                <a href="#">Pooja <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Daily.html">Daily Poojas</a>
+                    <a href="Special-Pooja.html">Special Poojas</a>
+                    <a href="Virtual-Queue.html">Virtual Q</a>
+                    <a href="Pooja Timimg.html">Pooja Timings</a>
+                    <a href="Offers.html">Offerings</a>
+                </div>
+            </li>
+
+            <!-- HOW TO REACH -->
+            <li class="dropdown">
+                <a href="#">How to Reach <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Bus.html">🚗 By Bus</a>
+                    <a href="Train.html">🚆 By Rail</a>
+                    <a href="Air.html">✈️ By Air</a>
+                </div>
+            </li>
+
+            <li><a href="Facilities.html">Pilgrim Facilities</a></li>
+            <li><a href="Help.html">Help Line</a></li>
+            <li><a href="T-Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+    <h1>Deity of Kedarnath</h1>
+    <div class="image-box">
+        <!-- Replace image path if needed -->
+        <img src="Img/K1.jpg" alt="Kedarnath Temple">
+    </div>
+    <p>
+        The deity of the Kedarnath Temple is <strong>Lord Shiva</strong>.
+        He is worshipped here in the form of a <strong>Shiva Lingam</strong>.
+        Kedarnath is one of the twelve <strong>Jyotirlingas</strong> of Lord Shiva,
+        which are considered the most sacred.
+    </p>
+    <div class="highlight">
+        <p>
+            Lord Shiva is known as the <strong>Destroyer of Evil</strong> and
+            the <strong>Protector of the Universe</strong>.  
+            Devotees believe that visiting Kedarnath helps in attaining
+            peace, forgiveness of sins, and spiritual growth.
+        </p>
+    </div>
+</div>
+</body>
+</html>

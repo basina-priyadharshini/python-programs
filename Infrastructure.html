@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Challenge: Optimizing Shipyard Infrastructure</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#fff;
+}
+/* ===== HEADER WRAPPER ===== */
+.header-wrap{
+    position:absolute;
+    top:55px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    z-index:10;
+}
+
+/* ===== NAV BOX ===== */
+.nav-box{
+    width:100%;
+    padding:30px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.12); /* transparent */
+    backdrop-filter: blur(10px);       /* glass effect */
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+/* LOGO */
+.logo{
+    font-size:66px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+.logo-wrap img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+/* ================= NAVBAR ================= */
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:black;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#c93434;
+}
+span{
+    font-size: 26PX;
+    font-weight: bold;
+}
+
+/* ===== HERO SECTION ===== */
+.hero{
+    height:100vh;
+    background:
+        linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+        url("Img/Ship2.jpg");
+    background-size:cover;
+    background-position:center;
+    color:#fff;
+    position:relative;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    position:absolute;
+    top:0;
+    width:100%;
+    padding:25px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+/* ===== HERO CONTENT ===== */
+.hero-content{
+    max-width:1200px;
+    padding:0 60px;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+}
+.hero h1{
+    font-size:52px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:550px;
+    line-height:1.8;
+    opacity:.9;
+    margin-bottom:35px;
+}
+
+/* ===== BUTTON ===== */
+.hero a{
+    display:inline-block;
+    padding:14px 36px;
+    background:#1e90ff;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.hero a:hover{
+    background:#1674d8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .navbar{
+        padding:20px;
+    }
+    .menu{
+        display:none;
+    }
+    .hero-content{
+        padding:0 20px;
+    }
+    .hero h1{
+        font-size:38px;
+    }
+    .circle{
+        display:none;
+    }
+}
+body{
+    background:#fff;
+    color:#222;
+}
+
+/* CONTAINER */
+.wrapper{
+    max-width:1200px;
+    margin:90px auto;
+    padding:0 20px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:60% 40%;
+    gap:50px;
+}
+
+/* LEFT CONTENT */
+.left h1{
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.left p{
+    font-size:16px;
+    line-height:1.75;
+    margin-bottom:18px;
+    color:#333;
+}
+
+.left strong{
+    font-weight:600;
+}
+
+.left a{
+    color:#0b5ed7;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.left a:hover{
+    text-decoration:underline;
+}
+
+/* VIDEO CARD */
+.video-card{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 18px 45px rgba(0,0,0,0.3);
+}
+
+/* VIDEO */
+.video-card video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* DARK OVERLAY */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.7)
+    );
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-align:center;
+}
+
+/* TITLE */
+.overlay h3{
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+/* PLAY BUTTON */
+.play-btn{
+    width:70px;
+    height:70px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.play-btn:hover{
+    transform:scale(1.1);
+}
+
+.play-btn::before{
+    content:"▶";
+    font-size:26px;
+    color:#0b5ed7;
+    margin-left:4px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+    .left h1{
+        font-size:30px;
+    }
+}
+.section{
+    max-width:1200px;
+    margin:80px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+.section h1{
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.section p.subtitle{
+    font-size:17px;
+    color:#555;
+    margin-bottom:50px;
+}
+
+/* CARD GRID */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+}
+
+/* CARD */
+.card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+/* IMAGE */
+.card-img{
+    height:240px;
+    background-size:cover;
+    background-position:center;
+}
+
+/* CONTENT */
+.card-content{
+    padding:30px 28px 35px;
+}
+
+.card-content h2{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.card-content p{
+    font-size:16px;
+    color:#444;
+    line-height:1.7;
+    margin-bottom:28px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#0b6bdc;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#084fa8;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+    .section h1{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <div class="header-wrap">
+    <div class="nav-box">
+        <div class="logo-wrap">
+       <img src="logo.png" alt="Shipcon Logo">
+       <span>SHIPCON CHENNAI</span></div>
+        <nav>
+            <a href="Ship-H.html">HOME</a>
+            <a href="Ship-About.html">ABOUT US</a>
+            <a href="Infrastructure.html">INFRASTUCTURE</a>
+            <a href="Services.html">PRODUCTS & SERVICES</a>
+            <a href="Projects.html">PROJECTS</a>
+            <a href="Ship-Gallery.html">GALLERY</a>
+            <a href="Ship-Career.html">CAREERS</a>
+            <a href="Ship-Tender.html">TENDERS</a>
+            <a href="Ship-Contact.html">CONTACT</a>
+        
+        </nav>
+    </div>
+</div>
+
+<section class="hero">
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content">
+    
+        <h1>Challenge: Optimizing Shipyard<br>Infrastructure</h1>
+
+        <p>
+            Optimize shipyard infrastructure capacity to improve productivity
+            and margin.
+        </p>
+
+        <a href="#">Get a demo</a>
+    </div>
+</section>
+<section class="wrapper">
+    <div class="grid">
+
+        <!-- LEFT CONTENT -->
+        <div class="left">
+            <h1>Digital Manufacturing To Overcome Challenges</h1>
+
+            <p>
+                Large order books, ship complexity and limited shipyard infrastructure are key challenges that shipyards must resolve daily.
+                Powered by the <strong>3DEXPERIENCE®</strong> platform, Dassault Systèmes’
+                <strong>digital manufacturing solutions</strong> support shipyard optimization.
+            </p>
+
+            <p>
+                Optimization can be done virtually in a <strong>smart shipyard</strong> by combining the virtual twins of the shipyard and the ship,
+                improving assembly operations and material flow.
+            </p>
+
+            <p>
+                <a href="#">Build For Sea Industry Solution Experience</a> supports
+                <strong>supply chain planning and optimization</strong> by improving production planning,
+                scheduling, and resource management.
+            </p>
+        </div>
+
+        <!-- RIGHT VIDEO -->
+        <div class="video-card">
+            <!-- Replace with your real shipyard video -->
+            <video poster="" muted>
+                <source src="Img/Ship-port.mp4" type="video/mp4">
+            </video>
+
+            <div class="overlay">
+                <h3>Shipyard<br>Layout and Simulation</h3>
+                <div class="play-btn" onclick="playVideo(this)"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function playVideo(btn){
+    const card = btn.closest('.video-card');
+    const video = card.querySelector('video');
+    const overlay = card.querySelector('.overlay');
+
+    video.play();
+    video.controls = true;
+    overlay.style.display = "none";
+}
+</script>
+<section class="section">
+    <h1>Ship Manufacturing Challenges</h1>
+    <p class="subtitle">
+        Today's shipyards face challenges on many fronts and must transform their process to stay competitive.
+    </p>
+
+    <div class="cards">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <div class="card-img"
+                 style="background-image:url('Img/Ship3.webp');">
+            </div>
+
+            <div class="card-content">
+                <h2>Challenge: On-Time Delivery of Ships</h2>
+                <p>
+                    Delivering on time is not an option, it's a must for shipyards to stay profitable and remain competitive.
+                </p>
+                <a href="#" class="btn">Discover more</a>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <div class="card-img"
+                 style="background-image:url('Img/Ship5.webp');">
+            </div>
+
+            <div class="card-content">
+                <h2>Challenge: Workforce Management</h2>
+                <p>
+                    The shipbuilding industry requires an experienced workforce to undertake highly complex projects
+                    like submarines or commercial vessels.
+                </p>
+                <a href="#" class="btn">Discover more</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>

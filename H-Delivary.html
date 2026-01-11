@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home Delivery | Sarovar Hotels</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: white;
+    color:black;
+}
+.top-bar{
+    background:#0b4ea2;
+    color:#fff;
+    text-align:center;
+    padding:8px;
+    font-size:14px;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#fff;
+    position:relative;
+    z-index:100;
+    border-bottom: 5px solid blue;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b4ea2;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0b4ea2;
+    font-size:15px;
+    cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:28px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    z-index:200;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-content a:hover{
+    background:#f2f2f2;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.book-btn{
+    background:#0b4ea2;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Main content */
+.container{
+    width:80%;
+    margin:50px auto;
+    text-align:center;
+}
+
+.container h1{
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:25px;
+    border-bottom: #0b5aa6;
+    color:#0b5aa6;
+}
+
+.tags{
+    color:#444;
+    margin-bottom:25px;
+}
+
+.description{
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+/* Delivery section */
+.delivery-title{
+    font-size:26px;
+    margin:50px 0 30px;
+}
+
+.delivery-box{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+}
+
+.list-box{
+    width:40%;
+    background:#fff;
+    padding:25px 30px;
+    border:1px solid #eee;
+    box-shadow:0 0 8px rgba(0,0,0,0.05);
+    text-align:left;
+}
+
+.list-box ul{
+    list-style:disc;
+    padding-left:20px;
+}
+
+.list-box li{
+    margin-bottom:14px;
+}
+
+.list-box a{
+    text-decoration:none;
+    color:#0b5aa6;
+    font-size:15px;
+}
+
+.list-box a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .delivery-box{
+        flex-direction:column;
+    }
+    .list-box{
+        width:100%;
+    }
+    nav{
+        display:none;
+    }
+}
+/*section*/
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+}
+.slide.active{
+    opacity:1;
+}
+/* Arrows */
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:36px;
+    color:#fff;
+    background:rgba(0,0,0,0.4);
+    padding:10px 16px;
+    cursor:pointer;
+    border-radius:50%;
+    user-select:none;
+}
+.nav:hover{
+    background:rgba(0,0,0,0.7);
+}
+.prev{ left:15px;
+       margin-bottom: 10PX; }
+.next{ right:15px; }
+.container{
+    width:80%;
+    margin:40px auto;
+    text-align:center;
+}
+.container h1{
+    font-size:26px;
+    margin-bottom:20px;
+}
+.desc{
+    line-height:1.7;
+    font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+Welcome to the Official Website of Taj Banjara Hotels. Always ensure you are on www.tajhotels.com
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">TAJ BANJARA HOTELS</div>
+
+    <nav>
+        <a href="Hotel.html">Home</a>
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'hotelDD')">Our Hotels ▾</a>
+            <div class="dropdown-content" id="hotelDD">
+                <a href="#">Hyderabad</a>
+                <a href="#">Goa</a>
+                <a href="#">Mumbai</a>
+                <a href="#">Vizag</a>
+            </div>
+        </div>
+
+        <a href="H-About.html">About Us</a>
+        <a href="H-Offers.html">Offers</a>
+        <a href="Wedding.html">Weddings</a>
+        <a href="Discrimination.html">Discrimination</a>
+
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'expDD')">Food ▾</a>
+            <div class="dropdown-content" id="expDD">
+                <a href="H-Delivary.html">Home Delivary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-right">
+        <div>Call Us: +91 98 8680 0049</div>
+        <a href="#" class="book-btn">BOOK MY STAY</a>
+    </div>
+</header>
+<script>
+function toggleDropdown(e,id){
+    e.preventDefault();
+    document.querySelectorAll('.dropdown-content').forEach(d=>{
+        if(d.id!==id){ d.style.display='none'; }
+    });
+    let box=document.getElementById(id);
+    box.style.display = box.style.display==='block' ? 'none':'block';
+}
+
+document.addEventListener('click',function(e){
+    if(!e.target.closest('.dropdown')){
+        document.querySelectorAll('.dropdown-content').forEach(d=>{
+            d.style.display='none';
+        });
+    }
+});
+</script>
+
+<!-- Main Content -->
+<div class="container">
+    <h1>Home Delivery Service At Taj Hotels - India's Leading Hotel Chain</h1>
+
+    <div class="tags">#staysafe #stayhome</div>
+
+    <div class="description">
+        <strong>WE CARE FOR YOUR WELLBEING WHILE YOU ARE AT HOME.</strong>
+        We are introducing touchless home delivery meals for you from our below mentioned hotels.
+        <br><br>
+        Call on the below respected hotels to order your food.
+        <br><br>
+        #Happydiningathome
+    </div>
+
+    <div class="delivery-title">Home delivery is available at:</div>
+
+    <div class="delivery-box">
+        <div class="list-box">
+            <ul>
+                <li><a href="#">Golden Sarovar Portico, Amritsar</a></li>
+                <li><a href="#">Balaji Sarovar Premiere, Solapur</a></li>
+                <li><a href="#">Davanam Sarovar Portico Suites, Bangalore</a></li>
+                <li><a href="#">Nirvana Sarovar Portico, Gorakhpur</a></li>
+            </ul>
+        </div>
+
+        <div class="list-box">
+            <ul>
+                <li><a href="#">Park Plaza, Faridabad</a></li>
+                <li><a href="#">Park Plaza, Zirakpur</a></li>
+                <li><a href="#">Le Lac Sarovar Portico, Ranchi</a></li>
+                <li><a href="#">Paradigm Sarovar Portico, Kakinada</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="slider">
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" class="slide active">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="slide">
+    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" class="slide">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="slide">
+
+    <div class="nav prev" onclick="prevSlide()"></div>
+    <div class="nav next" onclick="nextSlide()"></div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+    <h1>Home Delivery Service At Taj Hotels</h1>
+    <div class="desc">
+        WE CARE FOR YOUR WELLBEING WHILE YOU ARE AT HOME.<br>
+        Touchless home delivery meals from Taj-Banjara Hotels.<br>
+        #staysafe #stayhome #happydiningathome
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function showSlide(i){
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[i].classList.add('active');
+}
+
+function nextSlide(){
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+function prevSlide(){
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+}
+
+/* Auto slide */
+setInterval(nextSlide, 4000);
+</script>
+
+
+</body>
+</html>

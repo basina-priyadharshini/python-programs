@@ -1,0 +1,211 @@
+<html>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 35px;
+            font-size: 10px;
+            margin-bottom: 300px;
+            margin-left:320px;
+            width:400px;
+            padding-bottom: 10px;
+        }
+        .container{
+            display:flex;
+        }
+        .card{
+            display:inline-block;
+            vertical-align: top;
+            width:500px;
+            margin:10px;
+            height: 350px;
+            border:2px solid #000;
+            border-radius: 7px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0,2);
+        }
+    header{ 
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom:2px solid orange;
+        padding-top:1px;
+    }
+    .head{
+        display:flex;
+        font-size: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         justify-items: baseline;
+        justify-content: center;
+        font-size:10px;
+        font-weight: bold;
+        color:black;
+    }
+    .orange{
+        background:#FF9933;height:4%;width:100%;
+    }
+    .orange2{
+        background:#FF9933;height:4%;width:100%;   
+    }
+    .green{
+        background: #138808;height:4%; width:100%;
+    }
+    .green2{
+        background: #138808;height:4%; width:100%;
+    }
+    .logo{
+        width:50px;
+        margin-right:70px;
+    }
+    .aadhaar{
+        width:60px;
+        margin-left:50px;
+    }
+    .aadhaar2{
+        width:60px;
+    }
+    .image{
+        display: flex;
+        }
+    .profile{
+        width: 100px;
+        height: 120px;
+        border:2px solid #444;
+        margin-top: 50px;
+    }
+    .details-row{
+        display: grid;
+        grid-template-columns: 1fr 190px;
+        gap:20px;
+        margin-top: 18px;
+        align-items: start;
+    }
+    .text-section{
+        hyphens:auto;
+        word-break: break-word;
+        font-size: 9px;
+        font-weight: bold;
+        line-height: 1.6;
+    }
+    .qr-section{
+        width:200px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0px;
+
+    }
+    .qr-section img{
+        width:160px;
+        height:160px;
+       display: block;
+        
+    }
+    .info{ 
+        margin-left:10px;
+    }
+    .info p{
+        margin:2px 0;
+        font-size:10px;
+    }
+    footer{
+        margin-top:20px;
+        font-size:10px;
+        color:#333;
+        border:1px solid red;
+        padding-top:10px;    
+    }
+    .hel{
+        margin-bottom:15px;
+        align-items: center;
+        justify-content: center;
+    }
+    .border{
+        border-top: 2px solid red;
+        text-align: center;
+    }
+
+    .num2{
+        border-top: 1px dotted gray;
+        text-align: center;
+        width:40%;
+        margin-left:160px;
+    }
+    .num1 , .num{
+        text-align: center;
+    }
+    .cell{
+        border-top: 2px solid red;
+        text-align: center;
+    }
+    .footer{
+        margin-top:10px;
+        border-top: 2px solid red;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .footer span{
+      margin: 0 20px;
+    }
+    </style>
+    <body>
+    <div class="container">
+    <div class="card">
+        <header>
+        <img src="img/India2.jpg" class="logo"> 
+        <div class="hel"> <h2 class="orange">భారత ప్రభుత్వం</h2>
+        <h2 class="green">Government of India</h2></div>
+        <img src="img/logo-aadhaar2.png" class="aadhaar">
+        </header>
+        <div class="image">
+        <img src="img/priya2.jpg" class="profile">
+        <div class="info">
+        <p><h5>బాసిన ప్రియ దర్శిని
+        </h5><h5>Basina Priya Dharshini</h5></p>
+        <p><h5>పుట్టిన తేదీ/DOB:20/07/2007</h5></p>
+        <p><h5>స్త్రీ/FEMALE</h5></p>
+        <footer>
+        ఆధార్ అనేది గుర్తింపు రుజువు మాత్రమే. పౌరసత్వం లేదా పుట్టిన తేదీ శ కాదు. ఇది ధృవీకరణలో మాత్రమే ఉపయోగించాలి (ఆసిల్లన్ ప్రమాణిcon లేదా QR కోడ్ / ఆన్ XML యొక్క స్కానింగ్),<p>
+        Aadhaar is proof of identity,not of citizenship or date of birth.It should be used with verification (onlilne 
+        authentication,or scanning of QR code/offline XML).</p>
+        </footer></div></div>
+        <h1 class="num">XXXX XXXX XXXX</h1>
+        <h3 class="border">నా ఆధార్, నా గుర్తింపు</h3> 
+    </div>
+    <div class="card">
+    <header>
+    <div class="head">
+    <img src="img/India2.jpg" class="logo2">
+    <div class="hel"><h2 class="orange2">భారత విశిష్ట గుర్తింపు ప్రాధికార సంస్థ</h2>
+    <h2 class="green2">Unique Identification Authority of India</h2></div>
+    <img src="img/logo-aadhaar2.png" class="aadhaar2"></div></header>
+    <!--Text+QR-->
+    <div class="details-row">
+    <div class="text-section"><h3>చిరునామా:
+    <p>D/O బసిన వెంకట రమణ, 3-3/47, ఎన్ ఎన్ కొలొమి,<br>
+         కర్ణిమ్మ, కొత్తూరు, శ్రీకాకుళం,<br>
+          ఆంధ్ర ప్రదేశ్- 532455</p></h3>
+    <h3>D/O Basina Venkata Ramana, 3-3/47, N N Colony,<br>
+         Karlemma, PO Kotturu, DIST: Srikakulam,<br>
+          Andhra Pradesh-532455</h3></div>
+     <div class="qr-section"><img src="img/QR-code.png" class="scan"></div>
+    </div>
+    <!--Aadhaar Number-->
+    <h1 class="num1">XXXX XXXX XXXX</h1>
+    <h2 class="num2">VID:9113 XXXX XXXX XXXX</h2>
+    <div class="footer">
+        <span>📞 1947</span>
+        <span>✉️ help@uidai.gov.in</span>
+        <span>🌐 www.uidai.gov.in</span></div>
+    </div>
+</body>
+</html>
+    

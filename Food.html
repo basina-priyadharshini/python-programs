@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FoodGully | Sarovar Hotels</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+.top-bar{
+    background:#0b4ea2;
+    color:#fff;
+    text-align:center;
+    padding:8px;
+    font-size:14px;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#fff;
+    position:relative;
+    z-index:100;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b4ea2;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0b4ea2;
+    font-size:15px;
+    cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:28px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    z-index:200;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-content a:hover{
+    background:#f2f2f2;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.book-btn{
+    background:#0b4ea2;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+h1, h2 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+header {
+    background: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+header img {
+    height: 45px;
+}
+
+header button {
+    background: #0b5ed7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ======================
+   MAIN SECTION
+====================== */
+.foodgully-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 50px;
+    display: flex;
+    gap: 40px;
+    border-radius: 10px;
+}
+
+/* ======================
+   LEFT CONTENT
+====================== */
+.content-box {
+    flex: 1;
+}
+
+.content-box h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.content-box p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.content-box strong {
+    color: #0b5ed7;
+}
+
+/* ======================
+   RIGHT IMAGE
+====================== */
+.image-box {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+/* Overlay text */
+.overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ======================
+   ANIMATIONS
+====================== */
+.fade-left,
+.fade-right,
+.fade-up {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.fade-left {
+    animation: fadeLeft 1s ease forwards;
+}
+
+.fade-right {
+    animation: fadeRight 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.fade-up {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover Effects */
+.image-box:hover img {
+    transform: scale(1.08);
+}
+
+.content-box:hover {
+    transform: translateY(-6px);
+    transition: 0.4s;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media(max-width: 900px) {
+    .foodgully-section {
+        flex-direction: column;
+        padding: 30px;
+    }
+}
+/*Food Section*/
+.gallery-wrapper{
+    max-width:1200px;
+    margin:40px auto;
+    padding:10px;
+}
+
+/* GRID */
+.food-grid{
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-auto-rows: 200px;
+    gap:15px;
+}
+
+/* IMAGE BOX */
+.food-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:14px;
+}
+
+/* IMAGE */
+.food-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.7s ease;
+}
+
+/* HOVER ZOOM */
+.food-item:hover img{
+    transform:scale(1.08);
+}
+
+/* BIG IMAGE */
+.big{
+    grid-row: span 2;
+}
+
+/* MEDIUM IMAGE */
+.medium{
+    grid-row: span 1;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .food-grid{
+        grid-template-columns:1fr 1fr;
+    }
+    .big{
+        grid-column: span 2;
+    }
+}
+
+@media(max-width:600px){
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="top-bar">
+Welcome to the Official Website of Sarovar Hotels. Always ensure you are on www.sarovarhotels.com
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">SAROVAR HOTELS</div>
+
+    <nav>
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'hotelDD')">Our Hotels ▾</a>
+            <div class="dropdown-content" id="hotelDD">
+                <a href="#">Luxury Hotels</a>
+                <a href="#">Resorts</a>
+                <a href="#">Business Hotels</a>
+            </div>
+        </div>
+
+        <a href="#">About Us</a>
+        <a href="#">Offers</a>
+        <a href="#">Weddings</a>
+
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'expDD')">Experiences ▾</a>
+            <div class="dropdown-content" id="expDD">
+                <a href="#">Dining</a>
+                <a href="#">Spa</a>
+                <a href="#">Meetings</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-right">
+        <div>Call Us: +91 98 8680 0049</div>
+        <a href="#" class="book-btn">BOOK MY STAY</a>
+    </div>
+</header>
+<section class="foodgully-section">
+
+    <!-- LEFT -->
+    <div class="content-box fade-left">
+        <h2>Ghar Mehfil by FoodGully!</h2>
+        <p>
+            Whether you're planning a formal dinner, a small party, a big celebration,
+            or an unplanned bash, we bring the five-star experience to your home.
+            Enjoy signature Sarovar hospitality with expert chefs, seamless service staff,
+            and bespoke menus that are nothing short of culinary art.
+        </p>
+
+        <p>
+            <strong>Plan Your Mehfil</strong><br><br>
+            WhatsApp: <strong>+91 99 5864 4223</strong><br>
+            Call Us: <strong>+91 98 8680 0049</strong>
+        </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="image-box fade-right">
+        <img src="https://images.unsplash.com/photo-1529692236671-f1dcf9d3f7c1" alt="FoodGully Chefs">
+        <div class="overlay-text fade-up">
+            Chefs who have delighted dignitaries, superstars, and royalty
+        </div>
+    </div>
+
+</section>
+<div class="gallery-wrapper">
+
+    <div class="food-grid">
+
+        <!-- BIG LEFT IMAGE -->
+        <div class="food-item big">
+            <img src="https://images.unsplash.com/photo-1604908554164-7c9a5c9b8c92" alt="">
+        </div>
+
+        <!-- RIGHT TOP -->
+        <div class="food-item medium">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0" alt="">
+        </div>
+
+        <div class="food-item medium">
+            <img src="https://images.unsplash.com/photo-1605475128023-4c98dce4d56b" alt="">
+        </div>
+
+        <!-- RIGHT MIDDLE -->
+        <div class="food-item medium">
+            <img src="https://images.unsplash.com/photo-1600628422019-5ef5d61a45d8" alt="">
+        </div>
+
+        <div class="food-item medium">
+            <img src="https://images.unsplash.com/photo-1546069901-eacef0df6022" alt="">
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="food-item medium">
+            <img src="https://images.unsplash.com/photo-1606755962773-0c8f84b89a63" alt="">
+        </div>
+
+        <div class="food-item medium">
+            <img src="https://images.unsplash.com/photo-1617196034183-421b4917c92b" alt="">
+        </div>
+
+        <div class="food-item medium">
+            <img src="https://images.unsplash.com/photo-1604908177225-6c3bb5a7e13a" alt="">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

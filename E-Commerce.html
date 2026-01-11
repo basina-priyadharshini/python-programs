@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Goody – Gift Shop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* OFFER BAR */
+.offer-bar{
+  background:#c84c0c;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+}
+
+/* HEADER */
+.header{
+  background:#f6efe7;
+  display:flex;
+  align-items:center;
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  margin:auto;
+  font-size:60px;
+  color:#c84c0c;
+  font-weight:600;
+}
+
+.menu-icon{
+  cursor:pointer;
+}
+
+.menu-icon span{
+  display:block;
+  width:24px;
+  height:3px;
+  background:#000;
+  margin:5px 0;
+}
+
+/* SIDE MENU */
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-280px;
+  width:280px;
+  height:100%;
+  background:#fff;
+  box-shadow:2px 0 15px rgba(0,0,0,0.2);
+  transition:0.4s ease;
+  padding-top:70px;
+  z-index:1000;
+}
+
+.side-menu a{
+  display:block;
+  padding:15px 25px;
+  font-size:18px;
+  color:#333;
+  text-decoration:none;
+}
+
+.side-menu a:hover{
+  background:#f4f4f4;
+}
+
+.close{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:30px;
+  cursor:pointer;
+}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  display:none;
+  z-index:999;
+}
+
+/* ================= AUTO IMAGE SLIDER ================= */
+.auto-slider{
+  width:100%;
+  overflow:hidden;
+  background:#f6efe7;
+  height: 100vh;
+}
+
+.auto-track{
+  display:flex;
+  transition:transform 0.8s ease;
+}
+
+.auto-track img{
+  min-width:100%;
+  height:80vh;
+  object-fit:cover;
+}
+
+/* BODY CONTENT */
+.body-section{
+  background:#f6efe7;
+  padding:50px 30px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.product{
+  background:#fff;
+  padding:20px;
+  text-align:center;
+  border-radius:8px;
+}
+
+.product img{
+  width:100%;
+  border-radius:8px;
+}
+
+.product h3{
+  margin:15px 0 5px;
+}
+
+.product p{
+  color:#777;
+  font-size:14px;
+}
+
+/*SECTION2*/
+
+/* PAGE BG */
+body{
+  background:#f6efe7;
+}
+
+/* HERO SECTION */
+.hero{
+  padding:70px 90px 40px;
+  height:100vh;
+}
+
+/* TOP TEXT AREA */
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+
+/* LEFT BIG HEADING */
+.hero-left h1{
+  font-size:72px;
+  font-weight:800;
+  color:#c84c0c;
+  line-height:1.05;
+}
+
+/* RIGHT CONTENT */
+.hero-right{
+  max-width:350px;
+  color:#c84c0c;
+  font-size:22px;
+  line-height:1.5;
+}
+
+.hero-right a{
+  display:inline-block;
+  margin-top:18px;
+  color:#c84c0c;
+  text-decoration:none;
+  font-weight:600;
+  font-size:18px;
+}
+
+.hero-right a span{
+  margin-left:8px;
+}
+
+/* IMAGE SECTION */
+.hero-image{
+  margin-top:40px;
+}
+
+.hero-image img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:2px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    padding:40px 20px;
+  }
+
+  .hero-left h1{
+    font-size:46px;
+  }
+
+  .hero-right{
+    margin-top:25px;
+    font-size:18px;
+  }
+
+  .hero-image img{
+    height:400px;
+  }
+}
+.img{
+    height:500%;
+    width:100%;
+}
+/*SECTION*/
+.title h1{
+  font-size: 80px;
+  margin-top: 10%;
+  font-weight:800;
+  color:#c84c0c;
+  line-height:1.05;
+  text-align: center;
+}
+/*SECTION4*/
+.section{
+  padding:50px;
+}
+
+/* TITLE */
+.title{
+  color:#c84c0c;
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+/* SLIDER VIEW */
+.slider-view{
+  position:relative;
+  overflow:hidden;
+}
+
+/* TRACK */
+.track{
+  display:flex;
+  transition:transform 0.5s ease;
+}
+
+/* GRID */
+.grid{
+  min-width:100%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+/* CARD */
+.card{
+  background:#eee;
+  padding:25px;
+}
+
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:contain;
+}
+
+.info{
+  margin-top:15px;
+}
+
+.old{
+  text-decoration:line-through;
+  color:#777;
+}
+
+/* ARROWS */
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:white;
+  border:none;
+  font-size:28px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  z-index:10;
+}
+
+.left{
+  left:10px;
+}
+
+.right{
+  right:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/*SESCTION5*/
+.h{
+    display:flex;
+    min-height:100vh;
+}
+
+/* LEFT CONTENT */
+.h-left{
+    flex:1;
+    background:#efe6ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px;
+}
+
+.h-text{
+    max-width:420px;
+}
+
+.h-text small{
+    font-size:18px;
+    color:#222;
+    display:block;
+    margin-bottom:20px;
+}
+
+.h-text h1{
+    font-size:64px;
+    line-height:1.05;
+    color:#d64500;
+    font-weight:800;
+    margin-bottom:30px;
+}
+
+.h-text a{
+    text-decoration:none;
+    font-size:18px;
+    color:#000;
+    border-bottom:2px solid #000;
+    padding-bottom:4px;
+    transition:0.3s;
+}
+
+.h-text a:hover{
+    color:#d64500;
+    border-color:#d64500;
+}
+
+/* RIGHT IMAGE */
+.h-right{
+    flex:1;
+    background:url("Img/P1.avif") center/cover no-repeat;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .h{
+        flex-direction:column;
+    }
+
+    .h-left{
+        text-align:center;
+    }
+
+    .h-text h1{
+        font-size:44px;
+    }
+
+    .h-right{
+        min-height:400px;
+    }
+}
+/*SECTION6*/
+.text{
+  font-size: 80px;
+  margin-top: 10%;
+  color:#c84c0c;
+}
+/*SECTION7*/
+/* SECTION */
+.section{
+  padding:50px;
+}
+
+/* TITLE */
+.title{
+  color:#c84c0c;
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+/* SLIDER VIEW */
+.slider-view{
+  position:relative;
+  overflow:hidden;
+}
+
+/* TRACK */
+.track{
+  display:flex;
+  transition:transform 0.5s ease;
+}
+
+/* GRID */
+.grid{
+  min-width:100%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+/* CARD */
+.card{
+  background:#eee;
+  padding:25px;
+}
+
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:contain;
+}
+
+.info{
+  margin-top:15px;
+}
+
+.old{
+  text-decoration:line-through;
+  color:#777;
+}
+
+/* ARROWS */
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:white;
+  border:none;
+  font-size:28px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  z-index:10;
+}
+
+.left{
+  left:10px;
+}
+
+.right{
+  right:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+/*SECTION8*/
+.newsletter{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    background:#efe6ff;
+}
+
+.content{
+    width:100%;
+    max-width:600px;
+}
+
+/* HEADING */
+.content h1{
+    font-size:64px;
+    color:#d64500;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+/* SUBTEXT */
+.content p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:40px;
+    color:#000;
+}
+
+/* FORM */
+.form-group{
+    text-align:left;
+    margin-bottom:20px;
+}
+
+label{
+    font-size:14px;
+    display:block;
+    margin-bottom:6px;
+}
+
+input[type="email"]{
+    width:100%;
+    padding:14px 16px;
+    border-radius:6px;
+    border:none;
+    background:#f8f1e8;
+    font-size:15px;
+    outline:none;
+}
+
+/* CHECKBOX */
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* SUBMIT */
+.submit-btn{
+    background:none;
+    border:none;
+    font-size:14px;
+    letter-spacing:1px;
+    cursor:pointer;
+    border-bottom:1px solid #000;
+    padding-bottom:3px;
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    color:#d64500;
+    border-color:#d64500;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .content h1{
+        font-size:42px;
+    }
+
+    .content p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="offer-bar">
+  Free shipping on orders over $75 &nbsp; | &nbsp; Get 15% off your first purchase
+</div>
+
+<header class="header">
+  <div class="menu-icon" onclick="openMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="logo">Goody</div>
+</header>
+
+<!-- ===== AUTO SLIDER ADDED HERE ===== -->
+<section class="auto-slider">
+  <div class="auto-track" id="autoTrack">
+    <img src="Img/P50.webp">
+    <img src="Img/P51.webp">
+    <img src="Img/P52.webp">
+    <img src="Img/P53.webp">
+    <img src="Img/P54.webp">
+  </div>
+</section>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+  <div class="close" onclick="closeMenu()">×</div>
+  <a href="E-Commerce.html">Home</a>
+  <a href="Shop.html">Shop</a>
+  <a href="orders.html"> My Orders</a>
+  <a href="wishlist.html">Wishlist</a>
+  <a href="card.html">Cart</a>
+  <a href="#">Contact</a>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<!-- BODY -->
+<section class="body-section">
+  <div class="product-grid">
+
+    <div class="product">
+      <img src="Img/Towels.avif" alt="">
+      <h3>Soft Towels</h3>
+      <p>Premium cotton comfort</p>
+    </div>
+
+    <div class="product">
+      <img src="Img/Lemon.avif" alt="">
+      <h3>Ceramic Bowl</h3>
+      <p>Minimal kitchen decor</p>
+    </div>
+
+    <div class="product">
+      <img src="Img/pillows.avif" alt="">
+      <h3>Flower Cushions</h3>
+      <p>Soft & stylish pillows</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.left="0";
+  document.getElementById("overlay").style.display="block";
+}
+
+function closeMenu(){
+  document.getElementById("sideMenu").style.left="-280px";
+  document.getElementById("overlay").style.display="none";
+}
+/*AUTO SLIDER JS*/
+let autoIndex = 0;
+const autoTrack = document.getElementById("autoTrack");
+const total = autoTrack.children.length;
+
+setInterval(()=>{
+  autoIndex++;
+  if(autoIndex >= total) autoIndex = 0;
+  autoTrack.style.transform = `translateX(-${autoIndex*100}%)`;
+},3000);
+</script>
+<section class="hero">
+
+  <div class="hero-top">
+    <div class="hero-left">
+      <h1>
+        THE GIFT OF<br>
+        GOOD STYLE
+      </h1>
+    </div>
+
+    <div class="hero-right">
+      <p>
+        Unique designs you<br>
+        won't find anywhere else
+      </p>
+
+      <a href="#">
+        Shop Now <span>↘</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="Img/big pic.avif" alt="Plant Image" class="img">
+  </div>
+
+</section>
+<!--SECTION-->
+<div class="title">
+    <h1>GET UP TO $ 50</h1>
+</div>
+<!--SECTION4-->
+<!-- ==SLIDE1== -->
+<section class="section">
+
+  <div class="title">Shop Now ↘</div>
+  <div class="slider-view">
+
+    <!-- ARROWS -->
+    <button class="arrow left" onclick="prev1()">‹</button>
+    <button class="arrow right" onclick="next1()">›</button>
+
+    <div class="track" id="track1">
+
+      <!-- SLIDE 1 -->
+      <div class="grid">
+        <div class="card">
+          <img src="Img/P4.avif">
+          <div class="info">
+            <h4>Tapered Candles</h4>
+            <p>$15.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+          <div class="info">
+            <h4>Pitcher Vase</h4>
+            <p><span class="old">$35.00</span> $29.75</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P3.avif">
+          <div class="info">
+            <h4>Mirror</h4>
+            <p><span class="old">$80.00</span> $72.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/Note.avif">
+          <div class="info">
+            <h4>Note Book</h4>
+            <p><span class="old">$35.00</span> $21.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36">
+          <div class="info">
+            <h4>Wall Art</h4>
+            <p>$40.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P2.avif">
+          <div class="info">
+            <h4>Plant Pot</h4>
+            <p>$22.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/Cosmatic.avif">
+          <div class="info">
+            <h4>Cosmatic Case</h4>
+            <p>$18.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/Calender.avif">
+          <div class="info">
+            <h4>Calender</h4>
+            <p>$32.00</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<script>
+/* SLIDER 1 */
+let index1 = 0;
+const track1 = document.getElementById("track1");
+
+function next1(){
+  if(index1 < track1.children.length - 1){
+    index1++;
+    track1.style.transform = `translateX(-${index1 * 100}%)`;
+  }
+}
+function prev1(){
+  if(index1 > 0){
+    index1--;
+    track1.style.transform = `translateX(-${index1 * 100}%)`;
+  }
+}
+</script>
+
+
+<!--SECTION5-->
+<section class="h">
+    <!-- LEFT -->
+    <div class="h-left">
+        <div class="h-text">
+            <small>Year-Round Sale</small>
+            <h1>
+                MUST-HAVES<br>
+                ON SALE
+            </h1>
+            <a href="#">Explore Deals ↘</a>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="h-right"></div>
+</section>
+<!--SECTION6-->
+<section>
+  <div class="text">
+    <marquee direction="left">
+      <h1>
+      GOOD VIBES / GOOD VIBES
+      </h1>
+    </marquee>
+  </div>
+</section>
+<!--SECTION7-->
+<section class="section">
+
+  <div class="title">Shop Now ↘</div>
+
+  <div class="slider-view">
+
+    <!-- ARROWS -->
+    <button class="arrow left" onclick="prev2()">‹</button>
+    <button class="arrow right" onclick="next2()">›</button>
+
+    <div class="track" id="track2">
+
+      <!-- SLIDE 1 -->
+      <div class="grid">
+        <div class="card">
+          <img src="Img/P5.webp">
+          <div class="info">
+            <h4>Wrist Watches</h4>
+            <p>$100.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P6.webp">
+          <div class="info">
+            <h4>Men's SweatSharts</h4>
+            <p><span class="old">$50.00</span> $29.75</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P7.webp">
+          <div class="info">
+            <h4>kitchen Rocks</h4>
+            <p><span class="old">$80.00</span> $72.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P8.webp">
+          <div class="info">
+            <h4>Sofa & Sections</h4>
+            <p><span class="old">$150.00</span> $100.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="grid">
+        <div class="card">
+          <img src="Img/P9.webp">
+          <div class="info">
+            <h4>Perfume</h4>
+            <p>$40.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P10.webp">
+          <div class="info">
+            <h4>Laptop Table</h4>
+            <p>$45.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P11.webp">
+          <div class="info">
+            <h4>Dry Fruits & Nuts</h4>
+            <p>$70.00</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Img/P12.webp">
+          <div class="info">
+            <h4>Camera Bag</h4>
+            <p>$32.00</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!--SLIDER2-->
+<script>
+  let index2 = 0;
+const track2 = document.getElementById("track2");
+
+function next2(){
+  if(index2 < track2.children.length - 1){
+    index2++;
+    track2.style.transform = `translateX(-${index2 * 100}%)`;
+  }
+}
+function prev2(){
+  if(index2 > 0){
+    index2--;
+    track2.style.transform = `translateX(-${index2 * 100}%)`;
+  }
+}
+</script>
+      <!--SECTION8-->
+<section class="newsletter">
+    <div class="content">
+        <h1>ONLY GOOD NEWS</h1>
+
+        <p>
+            Subscribe to our newsletter to hear about new arrivals<br>
+            and special offers
+        </p>
+
+        <form>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="yourmail@gmail.com">
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox">
+                <span>Yes, subscribe me to your newsletter.</span>
+            </div>
+
+            <button class="submit-btn" type="submit">SUBMIT</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<html>
+    <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* HEADER */
+.top-header {
+    width: 100%;
+    background: #e498be;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-logo img {
+    width: 110px;
+}
+.center-text {
+    text-align: center;
+}
+.center-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color:rgb(152, 55, 113);
+}
+.center-text h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    color: rgb(15, 15, 135);
+}
+.icons img {
+    width: 75px;
+    margin: 10px;
+}
+.right-image {
+    text-align: center;
+}
+.right-image img {
+    width: 160px;
+    height: 100%;
+    border-radius: 6px;
+}
+/* NAVBAR */
+nav{
+    background:#507be7;
+    padding:15px 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+nav a{
+    text-decoration:none;
+    color:#000;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+/* Dropdown Arrow */
+.arrow{
+    font-size:12px;
+}
+/* Dropdown Menu */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:white;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+.dropdown-menu a{
+    padding:12px;
+    display:block;
+}
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu{
+    display:flex;
+}
+/* Hover for main menu */
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+}
+/*body*/
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+}
+/* PAGE MAIN HEADING */
+.top-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+.top-heading h1 {
+    color: #1e66d1;
+    text-align: center;
+    font-size: 28px;
+    line-height: 34px;
+    margin: 0 15px;
+}
+.left-bar, .right-bar {
+    width: 120px;
+    height: 15px;
+    background: #a9c7f5;
+    border-radius: 20px;
+}
+/* DOWNLOAD LINKS */
+.download-links {
+    margin: 20px 30px;
+    font-size: 17px;
+}
+.download-links span {
+    font-weight: bold;
+}
+.download-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #1e66d1;
+    font-weight: 600;
+}
+.download-links a:hover {
+    text-decoration: underline;
+}
+/* YEAR TITLE */
+.year-title {
+    color: #d31313;
+    font-size: 28px;
+    margin-left: 30px;
+}
+/* TABLE */
+.table-container {
+    width: 100%;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+th {
+    background: #ededed;
+    padding: 12px;
+    border: 1px solid #c9c9c9;
+    font-size: 14px;
+}
+td {
+    padding: 10px;
+    border: 1px solid #c9c9c9;
+    font-size: 14px;
+}
+tr:nth-child(even) {
+    background: #f4f4f4;
+}
+    </style>
+<body>
+    <!-- TOP HEADER WITH LOGOS -->
+<header class="top-header">
+    <div class="left-logo">
+        <img src="Img/I8.png" alt="AP Govt Logo">
+    </div>
+    <div class="left-logo">
+    <img src="Img/O6.png" alt="">
+    </div>
+    <div class="center-text">
+        <h2>Women Development and Child Welfare Department</h2>
+        <h3>Government of Andhra Pradesh</h3>
+    </div>
+    <div class="right-image">
+        <img src="Img/O8.png" alt="CM">
+    </div>
+    <div class="right-image">
+        <img src="Img/O9.png" alt="Minister">
+    </div>
+    <div class="right-image">
+            <img src="Img/O5.png" alt=""></div>
+</header>
+<!-- NAVIGATION BAR -->
+<nav>
+    <ul>
+       <!-- HOME DROPDOWN -->
+        <li><a href="Orphans.html">HOME</a></li>
+        <li><a href="Orphans.html">MISSION & VISION</a></li>
+        <li class="dropdown">
+            <a href="#">SCHEME's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Scheme1.html">Saksham Anganwadi</a>
+                <a href="Scheme2.html">Mission Sakti</a>
+            </div>
+        </li>
+        <li><a href="G2.html">GALLERY</a></li>
+        <!-- ABOUT DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">ACT's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="RTI.html">RTI Act</a>
+                <a href="#">Vision & Mission</a>
+            </div>
+        </li>
+        <!-- SERVICES DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">INSTITUTES <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Home.html">Children-Home</a>
+                <a href="Shakti.html">Sakhi Nivas</a>
+                <a href="Hostel.html">Hostels</a>
+            </div>
+        </li>
+        <!-- SIMPLE MENU WITHOUT DROPDOWN -->
+        <li><a href="">CONTACTS</a></li>
+    </ul>
+</nav>
+<body>
+<!-- MAIN HEADING -->
+<div class="top-heading">
+    <div class="left-bar"></div>
+    <h1>Hostels, Homes and Educational Institutions-<br>
+    run by Differently Abled, Transgender & Sr. Citizens</h1>
+    <div class="right-bar"></div>
+</div>
+<!-- DOWNLOAD LINKS -->
+<div class="download-links">
+    <span>Download Details</span>
+    <a href="#">2024-2025</a>
+    <a href="#">2023-2024</a>
+    <a href="#">2022-2023</a>
+</div>
+<!-- YEAR TITLE -->
+<h2 class="year-title">2024-2025</h2>
+<!-- TABLE -->
+<div class="table-container">
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>Name & address of the Hostel/ Institution</th>
+        <th>Contact details/ year of establishment</th>
+        <th>Total capacity</th>
+        <th>Present Strength</th>
+        <th>SC</th>
+        <th>ST</th>
+        <th>OBC</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Govt. Hostel for Differently Abled Girls, Srikakulam</td>
+        <td>9912741163 / 1986</td>
+        <td>50</td>
+        <td>43</td>
+        <td>6</td>
+        <td>1</td>
+        <td>36</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Govt. Hostel for Differently Abled Girls, Vizianagaram</td>
+        <td>9494593926 / 1991</td>
+        <td>100</td>
+        <td>70</td>
+        <td>5</td>
+        <td>9</td>
+        <td>56</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Govt. Hostel for Differently Abled Boys, Visakhapatnam</td>
+        <td>9866734444 / 1986</td>
+        <td>100</td>
+        <td>40</td>
+        <td>3</td>
+        <td>4</td>
+        <td>33</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Children Home - Vizianagaram</td>
+        <td>9866734444 / 1980</td>
+        <td>75</td>
+        <td>39</td>
+        <td>8</td>
+        <td>1</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Govt. Hostel for Deaf Boys, Kakinada</td>
+        <td>9885388796 / 1985</td>
+        <td>150</td>
+        <td>39</td>
+        <td>10</td>
+        <td>3</td>
+        <td>26</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Govt. Hostel for Deaf Girls, Kakinada</td>
+        <td>9885388796 / 1986</td>
+        <td>50</td>
+        <td>11</td>
+        <td>1</td>
+        <td>0</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Govt. Hostel for Differently Abled Boys, Eluru.</td>
+        <td>9440664161/1984	</td>
+        <td>50</td>
+        <td>48</td>
+        <td>14</td>
+        <td>0</td>
+        <td>34</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Govt. Hostel for Differently Abled Girls, Eluru</td>
+        <td>9440664161/1984</td>
+        <td>100</td>
+        <td>70</td>
+        <td>13</td>
+        <td>6</td>
+        <td>52</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Govt. Hostel for Differently Abled Boys, Vijayawada.</td>
+        <td>9059774529/1989</td>
+        <td>100</td>
+        <td>31</td>
+        <td>16</td>
+        <td>5</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Govt. Hostel for Differently Abled Boys, Guntur</td>
+        <td>9542958956/1986</td>
+        <td>100</td>
+        <td>45</td>
+        <td>16</td>
+        <td>5</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Govt. Hostel for the blind, Narasaraopet</td>
+        <td>9542958956/1986</td>
+        <td>100</td>
+        <td>50</td>
+        <td>17</td>
+        <td>0</td>
+        <td>33</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Govt. Hostel for Differently Abled Boys & Girls, Challagundla, Nekarikallu(M)</td>
+        <td>9849347904/19875</td>
+        <td>100</td>
+        <td>80</td>
+        <td>34</td>
+        <td>6</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Govt. Hostel for Differently Abled Boys, Ongole</td>
+        <td>9247897484/2006</td>
+        <td>100</td>
+        <td>37</td>
+        <td>16</td>
+        <td>0</td>
+        <td>21</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>Govt. Hostel for Differently Abled Girls, Nellore</td>
+        <td>9912205985/ 1994</td>
+        <td>50</td>
+        <td>25</td>
+        <td>8</td>
+        <td>1</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Govt. Hostel for Differently Abled Girls, Chittoor</td>
+        <td>9440990698/1987</td>
+        <td>50</td>
+        <td>30</td>
+        <td>8</td>
+        <td>0</td>
+        <td>22</td>
+    </tr>
+
+</table>
+</div>

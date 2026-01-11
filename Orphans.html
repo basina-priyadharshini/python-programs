@@ -1,0 +1,827 @@
+
+<html>
+<head>
+<title>Women Development & Child Welfare Dept</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* HEADER */
+.top-header {
+    width: 100%;
+    background: #e498be;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-logo img {
+    width: 110px;
+}
+.center-text {
+    text-align: center;
+}
+.center-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color:rgb(152, 55, 113);
+}
+.center-text h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    color: rgb(15, 15, 135);
+}
+.icons img {
+    width: 75px;
+    margin: 10px;
+}
+.right-image {
+    text-align: center;
+}
+.right-image img {
+    width: 160px;
+    height: 100%;
+    border-radius: 6px;
+}
+/* NAVBAR */
+nav{
+    background:#ffffff;
+    padding:15px 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+nav a{
+    text-decoration:none;
+    color:#000;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+/* Dropdown Arrow */
+.arrow{
+    font-size:12px;
+}
+/* Dropdown Menu */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:white;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+.dropdown-menu a{
+    padding:12px;
+    display:block;
+}
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu{
+    display:flex;
+}
+/* Hover for main menu */
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+}
+/*Images sliding*/
+        .slider {
+            width: 100%;
+            height: 500px;   /* adjust size */
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slides {
+           width: 100%; /* 4 images */
+           height: 90%;
+           display: flex;
+           animation: slide 12s infinite;
+        }
+        .slides img {
+           width: 120%;
+           height: 80%;
+           object-fit: cover;
+        }
+        @keyframes slide {
+          0% { margin-left: 0; }
+          20% { margin-left: 0; }
+
+          25% { margin-left: -100%; }
+          45% { margin-left: -100%; }
+
+          50% { margin-left: -200%; }
+          70% { margin-left: -200%; }
+
+          75% { margin-left: -300%; }
+          100% { margin-left: -300%; }
+        }
+        /*section1*/
+        .sec1{
+            padding: 20px 25px;
+            border-left: 5px solid #46b14c;
+            background: white;
+            border-radius: 6px;
+            width:80%;
+            margin-left: 10%;
+            transition: 0.3s ease;
+        }
+        .sec1:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        }
+        .sec1 p{
+            Padding:20px 15px;
+            margin:5px 0;
+            border-left: 3px solid orange;
+            background: rgb(254, 246, 246);
+            border-radius: 6px;
+            font-size: 15px;
+            transform: 0.3s ease;
+        }
+        .sec1 p:hover{
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        }
+        /*Section-2*/
+        .sec2{
+            Padding:20px 15px;
+            margin:5px 0;
+            border-left: 5px solid #fca82a;
+            background: rgb(255, 254, 254);
+            border-radius: 6px;
+            font-size: 15px;
+            transform: 0.3s ease;
+            width:80%;
+            margin-left: 10%;
+            margin-top: 5%;
+        }
+        .sec2:hover{
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px)
+        }
+        .sec2 h1{
+            color:blue;
+        }
+    /* SECTION TITLE */
+    .sec1{
+            Padding:20px 15px;
+            margin:5px 0;
+            border-left: 5px solid #fca82a;
+            background: rgb(255, 254, 254);
+            border-radius: 6px;
+            font-size: 15px;
+            transform: 0.3s ease;
+            width:80%;
+            margin-left: 10%;
+            margin-top: 5%;
+        }
+    .section-title {
+        background: #cfe1ff;
+        padding: 20px;
+        font-size: 22px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        border: 1px solid #bcd3ff;
+    }
+    .section-title i {
+        font-size: 18px;
+    }
+    /* COLLAPSIBLE CONTENT */
+    .content-box {
+        display: none;
+        padding: 30px;
+        background:white;
+    }
+    /* TIMELINE */
+    .timeline {
+        position: relative;
+        margin: 20px auto;
+        width: 90%;
+        padding-left: 30%;
+    }
+    /* CENTER LINE */
+    .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 36%;
+        width: 4px;
+        height: 100%;
+        background: #bcbcbc;
+        transform: translateX(-50%);
+    }
+    /* TIMELINE ITEM */
+    .timeline-item {
+        position: relative;
+        margin: 30px 0;
+        width: 100%;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+    }
+    /* DOT */
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #f4d03f;
+        border: 3px solid #fff;
+        left: -10px;
+        transform: translateX(-50%);
+    }
+    /* LEFT & RIGHT ALTERNATE */
+    .left {
+        left: -52%;
+    }
+    .right {
+        left: 2%;
+    }
+    /* YEAR */
+    .year {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .section-title {
+        background: #cfe1ff;
+        padding: 20px;
+        font-size: 22px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #bcd3ff;
+        cursor: pointer;
+    }
+    .section-title img {
+        width: 35px;
+        margin-right: 15px;
+    }
+    .title-row {
+        display: flex;
+        align-items: center;
+    }
+    /* HIDE / SHOW */
+    .duties-box {
+        display: none;
+        padding: 25px 10px;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+    }
+    /* GREEN GRID */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0;
+        margin-top: 20px;
+    }
+    .grid-item {
+        background: #00b56a;
+        padding: 25px 5px;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        border-right: 1px solid rgba(255,255,255,0.3);
+        cursor: pointer;
+    }
+    .grid-item:last-child {
+        border-right: none;
+    }
+    /* POPUP CARD */
+    .popup-card {
+        width: 350px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #dcdcdc;
+        position: absolute;
+        display: none;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+        z-index: 10;
+    }
+    /* Popup arrow */
+    .popup-arrow {
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid white;
+        margin-left: 20px;
+        margin-top: -1px;
+    }
+    .popup-title {
+        background: #e7e7e7;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px 5px 0 0;
+    }
+    /*section4*/
+        h1 {
+        text-align: center;
+        font-size: 40px;
+        color: #063a63;
+        margin-bottom: 30px;
+    }
+    /* Accordion Header */
+    .accordion-header {
+        background: #cfe1ff;
+        padding: 18px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        border: 1px solid #bcd3ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+    /* Arrow */
+    .arrow {
+        font-size: 20px;
+        transition: 0.3s;
+    }
+    /* Content Box */
+    .accordion-content {
+        background: #ffffff;
+        padding: 20px;
+        border: 1px solid #e7e7e7;
+        border-top: none;
+        display: none;
+        margin-bottom: 10px;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.07);
+    }
+    .sector{
+            Padding:20px 15px;
+            margin:5px 0;
+            border-left: 5px solid #fca82a;
+            background: rgb(255, 254, 254);
+            border-radius: 6px;
+            font-size: 15px;
+            transform: 0.3s ease;
+            width:80%;
+            margin-left: 10%;
+            margin-top: 5%;
+        }
+        /*contact-section*/
+         .container {
+        margin: 40px auto;
+        padding: 40px;
+        width: 80%;
+        background: white;
+        border-left: 6px solid orange;
+        border-radius: 12px;
+        box-shadow: 0px 5px 20px rgba(0,0,50,0.1);
+    }
+    .title {
+        font-size: 30px;
+        color: orange;
+        margin-bottom: 30px;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+    .contact-boxes {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .box {
+        flex: 1;
+        min-width: 260px;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    }
+    .icon {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .address-icon { color: #2ecc71; }
+    .phone-icon { color: #f39c12; }
+    .mail-icon { color: #e74c3c; }
+    .box-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #000;
+    }
+    .box-text {
+        font-size: 15px;
+        color: #333;
+        line-height: 1.5;
+    }
+</style>
+</head>
+<body>
+<!-- TOP HEADER WITH LOGOS -->
+<header class="top-header">
+    <div class="left-logo">
+        <img src="Img/I8.png" alt="AP Govt Logo">
+    </div>
+    <div class="left-logo">
+    <img src="Img/O6.png" alt="">
+    </div>
+    <div class="center-text">
+        <h2>Women Development and Child Welfare Department</h2>
+        <h3>Government of Andhra Pradesh</h3>
+    </div>
+    <div class="right-image">
+        <img src="Img/O8.png" alt="CM">
+    </div>
+    <div class="right-image">
+        <img src="Img/O9.png" alt="Minister">
+    </div>
+    <div class="right-image">
+            <img src="Img/O5.png" alt=""></div>
+</header>
+<!-- NAVIGATION BAR -->
+<nav>
+    <ul>
+       <!-- HOME DROPDOWN -->
+        <li><a href="Orphans.html">HOME</a></li>
+        <li><a href="#sec2">MISSION & VISION</a></li>
+        <li class="dropdown">
+            <a href="#">SCHEME's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Scheme1.html">Saksham Anganwadi</a>
+                <a href="Scheme2.html">Mission Sakti</a>
+            </div>
+        </li>
+        <li><a href="G2.html">GALLERY</a></li>
+        <!-- ABOUT DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">ACT's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="RTI.html">RTI Act</a>
+                <a href="#">Vision & Mission</a>
+            </div>
+        </li>
+        <!-- SERVICES DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">INSTITUTES <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Home.html">Children-Home</a>
+                <a href="Shakti.html">Sakhi Nivas</a>
+                <a href="Hostel.html">Hostels</a>
+            </div>
+        </li>
+        <!-- SIMPLE MENU WITHOUT DROPDOWN -->
+        <li><a href="">CONTACTS</a></li>
+    </ul>
+</nav>
+<!--Sliding Section-->
+<body>
+<div class="slider">
+    <div class="slides">
+        <img src="Img/O10.jpg" alt="">
+        <img src="Img/O11.jpg" alt="">
+        <img src="Img/O12.jpg" alt="">
+        <img src="Img/O4.jpg" alt="">
+    </div>
+</div>
+<div class="sec1">
+    <h1>Welcome To Our Website</h1>
+    <p>Andhra Pradesh Government has accorded high priority to the
+       issue of malnutrition and is making serious efforts to address
+       this issue through 257 ICDS Projects with 55607 Anganwadis across
+       26 Districts in convergence with line departments. The Integrated
+       Child Development and Anganwadi Services schemes were re-evaluated 
+       in respect of programme design, implementation process, outcome and 
+       impact for re-assessing the relevance of the programme in achieving
+       its aims and goals.</p>
+</div>
+<section id="sec2">
+<div class="sec2">
+    <h1>Mission & vission</h1><br>
+    <p>
+    <strong>Vision:</strong>Empowered women living with dignity and contributing as equal
+    partners in development in an environment free from violence and 
+    discrimination. And, wellnurtured children with full opportunities 
+    for growth and development in a safe and protective environment.</p><br>
+    <p><strong>Mission:</strong>Promoting social and economic empowerment of women through
+      cross-cuting policies and programmes, mainstreaming gender concerns, 
+      creating awareness about their rights and facilitating institutional 
+      and legislative support for enabling them realize their human rights 
+      and develop to their full potential.Ensuring development, care and 
+      protection of children through cross-cutting policies and programmes,
+      spreading awareness about their rights and facilitating access to 
+      learning,nutrition,institutional and legislative support for enabling 
+      them to grow and develop to their full potential.
+    </p>
+</div>
+</section>
+<section>
+
+<div class="sec1">
+<!-- TITLE BAR / BUTTON -->
+<div class="section-title" onclick="toggleBox(0)">
+    <span>🔄 History</span>
+    <i id="arrow">▼</i>
+</div>
+
+<!-- COLLAPSIBLE CONTENT -->
+<div class="content-box" id="historyBox">
+    <div class="timeline">
+        <!-- 1952 -->
+        <div class="timeline-item left">
+            <div class="year">1952</div>
+            <p>
+                The Women's Welfare Department was established in the erstwhile  
+                Madras State in 1952 with special programs for Women and Children  
+                by converting the activities of the Indian Women's Civil Corps.
+            </p>
+        </div>
+        <!-- 1953 -->
+        <div class="timeline-item right">
+            <div class="year">1953</div>
+            <p>
+                With reorganization of States Andhra State came into existence in  
+                1953 and the Women Welfare Department in Andhra was established  
+                with the existing services.
+            </p>
+        </div>
+        <div class="timeline-item left">
+            <div class="year">1973</div>
+            <p>
+               The original name of Women's Welfare Department was changed as the
+                Women and Child Welfare Department in the year 1973.
+            </p>
+        </div>
+        <div class="timeline-item right">
+            <div class="year">1987</div>
+            <p>
+               A separate Department in the Secretariat was created for effective
+               formation and implementation of policies for Women and Children and
+               evaluated various programs intended for their Welfare.
+            </p>
+        </div>
+        <div class="timeline-item left">
+            <div class="year">1989</div>
+            <p>
+               Recognizing the need for a holistic approach for higher participation
+               of Women in the Development process, the Department has shifted focus 
+               from Welfare to Development. The Department thus was renamed as Women 
+               Development and Child Welfare Department in the year 1989.
+            </p>
+        </div>
+        <div class="timeline-item right">
+            <div class="year">At Present</div>
+            <p>
+               Department is striving to achieve Women Empowerment through increased 
+               Gender Sensitization, addressing Gender inequalities in Education and 
+               Employment, increasing Gender Sensitivity to Health, Welfare and Building 
+               capacities to promote Women's Participation in all aspects of Development.
+            </p>
+        </div>   
+    </div>
+</div>
+
+<script>
+function toggleBox() {
+    let box = document.getElementById("historyBox");
+    let arrow = document.getElementById("arrow");
+
+    if (box.style.display === "block") {
+        box.style.display = "none";
+        arrow.innerHTML = "▼";
+    } else {
+        box.style.display = "block";
+        arrow.innerHTML = "▲";
+    }
+}
+</script>
+<div class="section-title" onclick="toggleDuties(1)">
+    <div class="title-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/1827/1827951.png">
+        Duties
+    </div>
+    <span id="arrow">▼</span>
+</div>
+<!-- DUTIES CONTENT -->
+<div class="duties-box" id="dutiesBox">
+    <!-- POPUP CARD -->
+    <div class="popup-card" id="popup">
+        <div class="popup-title" id="popTitle"></div>
+        <div class="popup-content" id="popContent"></div>
+        <div class="popup-arrow"></div>
+    </div>
+    <!-- GREEN BUTTON GRID -->
+    <div class="grid">
+        <div class="grid-item" onclick="openPopup(this, 'Implementation', 'Implementing welfare schemes and programmes effectively')">
+            ≡<br>Implementation
+        </div>
+        <div class="grid-item" onclick="openPopup(this, 'Management', 'Management of institutions for the welfare of women and children')">
+            ≡<br>Management
+        </div>
+        <div class="grid-item" onclick="openPopup(this, 'Fund Releases', 'Releasing funds for implementing schemes and programmes')">
+            ≡<br>Fund Releases
+        </div>
+        <div class="grid-item" onclick="openPopup(this, 'Issuing Guidelines', 'Issuing instructions and guidelines to departments and institutions')">
+            ≡<br>Issuing guidelines
+        </div>
+        <div class="grid-item" onclick="openPopup(this, 'Monitoring', 'Monitoring the implementation of schemes.')">
+            ≡<br>Monitoring
+        </div>
+        <div class="grid-item" onclick="openPopup(this, 'Reporting', 'Submitting reports on progress and performance of schemes.')">
+            ≡<br>Reporting
+        </div>
+    </div>
+</div>
+<script>
+/* SHOW / HIDE DUTIES */
+function toggleDuties() {
+    let box = document.getElementById("dutiesBox");
+    let arrow = document.getElementById("arrow");
+    if (box.style.display === "block") {
+        box.style.display = "none";
+        arrow.textContent = "▼";
+    } else {
+        box.style.display = "block";
+        arrow.textContent = "▲";
+    }
+}
+/* SHOW POPUP ABOVE CLICKED GREEN BOX */
+function openPopup(el, title, content) {
+    let popup = document.getElementById("popup");
+    document.getElementById("popTitle").innerText = title;
+    document.getElementById("popContent").innerText = content;
+    // Calculate position
+    let rect = el.getBoundingClientRect();
+    popup.style.left = rect.left + "px";
+    popup.style.top = (rect.top - 150) + "px";
+    popup.style.display = "block";
+}
+</script>
+</div>
+</section>
+<!--Section4-->
+<div class="sector">
+<h1>Celebrations</h1>
+
+<!-- ACCORDION START -->
+<div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(0)">
+        Breast Feeding Week
+        <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+        Every year from August 1st to August 7th the Breast Feeding week celebrations 
+        are organized in all Anganwadi Centers to create awareness regarding importance 
+        of Breast Feeding through Rallies, Mothers Meetings, Quiz competitions, Workshops etc., 
+        by involving mothers, community, public representatives, Health personal, NGOs etc.
+    </div>
+</div>
+
+<div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(1)">
+        Nutrition Month
+        <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+        Nutrition Month is celebrated to promote awareness on nutrition, 
+        healthy eating habits, and health programs in communities.
+    </div>
+</div>
+
+<div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(2)">
+        International Women’s Day
+        <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+        International Women's Day celebrates achievements of women 
+        and promotes gender equality through awareness programs.
+    </div>
+</div>
+<div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(3)">
+        Children day
+        <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+        Every year November 14th the Children Day celebrations 
+        are organized in all Anganwadi Centers create awareness 
+        regarding rights of children, importance of education 
+        through Rallies, Mothers Meetings, Quiz competitions, 
+        Workshops etc., by involving mothers, community, public 
+        representatives, Health personal, NGOs etc.
+
+    </div>
+</div>
+<div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(4)">
+        Girl Child Day
+        <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+       Every year January 24th the Girl Day celebration are 
+       organized in all Anganwadi Centers create awareness 
+       regarding gender sensitisation, rights of children, 
+       importance of girl child education and PCPNDT Act 
+       through Rallies, Mothers Meetings, Quiz competitions, 
+       Workshops etc., by involving mothers, community, public 
+       representatives, Health personal, NGOs etc
+    </div>
+</div>
+<div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(5)">
+       Other Celebrations
+        <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+        Srimanthalu, Annaprasanalu, Uyyala Vedukalu, Balintha
+        Darshanam, Birth Day organized at Gram Panchayat level, 
+        involving community, beneficiaries and line departments 
+        for effective communication on Nutrition and Health services.
+    </div>
+</div>
+
+<script>
+function toggleAccordion(index) {
+    const allContent = document.querySelectorAll(".accordion-content");
+    const allArrows = document.querySelectorAll(".arrow");
+
+    // Close all content first
+    allContent.forEach((content, i) => {
+        if (i !== index) {
+            content.style.display = "none";
+            allArrows[i].textContent = "▼";
+        }
+    });
+
+    // Toggle selected one
+    let content = allContent[index];
+    let arrow = allArrows[index];
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        arrow.textContent = "▼";
+    } else {
+        content.style.display = "block";
+        arrow.textContent = "▲";
+    }
+}
+</script>
+</div>
+<div class="container">
+    <div class="title">Contact Us</div>
+    <div class="contact-boxes">
+        <!-- ADDRESS -->
+        <div class="box">
+            <div class="icon address-icon">📍</div>
+            <div class="box-title">ADDRESS</div>
+            <div class="box-text">
+                Jampani Towers, Amaravathi Road,<br>
+                Guntur - 522006
+            </div>
+        </div>
+        <!-- PHONE -->
+        <div class="box">
+            <div class="icon phone-icon">📞</div>
+            <div class="box-title">CONTACT</div>
+            <div class="box-text">
+                0863-2332587
+            </div>
+        </div>
+        <!-- EMAIL -->
+        <div class="box">
+            <div class="icon mail-icon">✉️</div>
+            <div class="box-title">EMAIL ADDRESS</div>
+            <div class="box-text">
+                apwdcw@ap.gov.in
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

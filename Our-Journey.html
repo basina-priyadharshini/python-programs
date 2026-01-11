@@ -1,0 +1,466 @@
+<html>
+<style>
+     .top-bar {
+    width: 100%;
+    background: rgb(10, 10, 96);
+    display: flex;
+    align-items: center;
+    gap:40px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-family: Arial;
+}
+.top-bar .social span {
+    font-weight: bold;
+    color:white;
+}
+.top-bar img {
+    width: 24px;
+    margin: 0 6px;
+}
+.top-bar i {
+    font-size: 18px;
+    margin-right: 0px;
+}
+.head{
+    font-size: 30px;
+    color:blue;
+    background-color: rgb(139, 191, 237);
+    font-weight: bold;
+    text-align: center;
+}
+.head1{
+    display: flex;
+    background: white;
+}
+/*navigation bar*/
+.navbar{
+            padding: 15px;
+            margin-top: 0%;
+            margin-left:30%;
+            width:100%;
+            display: flex;
+            gap: 10px;
+        }
+        .navbar a{
+            color: rgb(17, 15, 15);
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            top:10px;
+            font-weight: bold;
+        }
+        .custom-select1,.custom-select {
+        width: 170px;
+        position: relative;
+        font-size: 18px;
+    }
+    .selected1 {
+        padding: 10px;
+        background: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:rgb(24, 22, 22);
+        font-size:18px;
+        font-weight: bold;
+    }
+    .selected {
+        padding: 10px;
+        background: white;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top:1px;
+        color:rgb(39, 37, 37);
+        font-size:18px;
+        font-weight: bold;
+    }
+    .options1{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background:white;
+        border: 1px solid white;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options{
+        display: none;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 90%;
+        background:white;
+        border: 1px solid white;
+        border-radius: 5px;
+        z-index: 999;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .options1 a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid white;
+    }
+    .options a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid white;
+    }
+    .options1, a:hover {
+        background: white;
+    }
+    .custom-select1.active .options1 {
+        display: block;
+    }
+    .options, a:hover {
+        background: white;
+    }
+    .custom-select.active .options {
+        display: block;
+    }
+    .gg{
+        width:150px;
+        height:90px;
+    }
+    .g1{
+        width:150px;
+        height:70px;
+    }
+    .link{
+        color:orange;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /*section*/
+    .sec1{
+        margin-top:0;
+        background-color: antiquewhite;  
+        height: 28%;
+        border-top:15px solid black;
+    }
+    .sec1 h1{
+        font-size: 25px;
+        font-weight: bold;
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+    .sec1 p{
+        font-size: 20px;
+        margin-left:10%;
+        margin-top:2%;
+    }
+    /*section2*/
+    .sec2{
+         margin: 0;
+        padding: 0;
+        background: #000814;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+    .timeline {
+        position: relative;
+        width: 90%;
+        margin: 50px auto;
+    }
+    /* Vertical line */
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50px;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: white;
+        border-radius: 10px;
+    }
+    /* YEAR ICON */
+    .icon {
+        width: 50px;
+        height: 50px;
+        background: #0c1221;
+        border: 4px solid white;
+        border-radius: 50%;
+        position: absolute;
+        left: 27px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+    }
+    .box {
+        margin-left: 100px;
+        background: #1c2239;
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 40px;
+        border: 1px solid #ffffff30;
+        transition: 0.3s;
+    }
+    .box:hover {
+        transform: translateX(10px);
+        background: #222a45;
+    }
+    .year {
+        color: #ff5722;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    /*contact-sect*/
+    .contact-section {
+        padding: 60px 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+        background: #0b3664;
+    }
+    .left {
+        width: 300px;
+    }
+    .left img {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+    .left p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .left .phone {
+        margin-top: 15px;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .social-icons {
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+    }
+    .social-icons img {
+        width: 35px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .social-icons img:hover {
+        transform: scale(1.1);
+    }
+    .middle, .right {
+        width: 250px;
+    }
+    .middle h3, .right h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .middle p, .right p {
+        margin: 8px 0;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .middle p:hover, .right p:hover {
+        color: #ddd;
+        transform: translateX(5px);
+    }
+    .visitor-box {
+        background: white;
+        color: black;
+        padding: 8px 12px;
+        display: inline-block;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .qr-box {
+        margin-top: 20px;
+        padding: 10px;
+        background: white;
+        width: 140px;
+        border-radius: 10px;
+        height:25%;
+    }
+    .qr-box img {
+        width: 100%;
+    }
+</style>
+<body>
+<head>
+    <div class="top-bar">
+    <div class="social">
+        <span>follow us on:</span>
+        <a href="https://www.instagram.com/find_dav005?utm_source=qr&igsh=dHF2bjhwdnQxdWNr"><img src="Img/Insta.png" alt=""></a>
+        <a href="https://www.facebook.com/share/1CdX6aN3Y8/"><img src="Img/Face.png" alt=""></a>
+        <a href="https://youtube.com/@basinapriya?si=09JiXUFDWnVk3foz"><img src="Img/youtube.png"></a>
+        <img src="facebook.png" alt="">
+    </div>
+       <a href="https://www.nicdc.in/" class="link">Public Grievance Open VC link</a>
+    </div>
+    </head>
+         <header>
+            <DIV class="head">Andhra Pradesh Industrial Infrastructure Corporation<br><small style="font-size:20px;color:gray">A Government of AP Enterprises</small></DIV>
+            <hr>
+            <div class="head1">
+            <div><img src="Img/I3.png" class="gg">
+                <img src="Img/I2.webp" class="g1"></div>
+           <div><div class="navbar">
+           <a href="IIC.html">HOME  </a>
+           <div class="custom-select1">
+           <div class="selected1">ABOUT US ▼</div>
+           <div class="options1"> 
+           <a href="Overview.html">OVERVIEW</a>
+           <a href="Our-Journey.html">OUR JOURNEY</a>
+           <a href="Mission&V.html">MISSION & VISION</a>
+           <a href="Directors.html">BOARD OF DIRECTORS</a>
+           <a href="">CORPORATE PROFILE</a>
+           </div></div>
+           <a href="Trade.html">TENDERS </a>
+           <div class="custom-select">
+           <div class="selected">INFORMATION▼</div>
+           <div class="options">
+           <a href="Right.html">RIGHT TO INFORMATION</a>
+           <a href="Career.html">CAREER</a>
+           <a href="Citi.html">CITIZENS DETAILS</a>
+           </div></div>
+           <a href="#News">NEWS</a>
+           <a href="#contact">CONTACT US</a></div></div>
+           </div>
+        <script>
+        // open/close dropdown on click
+       document.querySelector(".selected1").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+      <script>
+        // open/close dropdown on click
+       document.querySelector(".selected").addEventListener("click", function () {
+        this.parentElement.classList.toggle("active");
+      });
+      </script>
+      <section class="sec1">
+        <h1>APIIC – Our Journey</h1>
+        <p>Andhra Pradesh Industrial Infrastructure Corporation (APIIC)
+             has played a pivotal role in shaping the industrial landscape
+              of Andhra Pradesh. Since its establishment, APIIC has focused
+               on developing world-class infrastructure, enabling investments,
+                and creating employment opportunities across the state.</p>
+      </section>
+      <section class="sec2">
+        <div class="timeline">
+    <!-- 1 -->
+    <div class="icon" style="top:0px;">•</div>
+    <div class="box">
+        <div class="year">1973</div>
+        Andhra Pradesh Industrial Infrastructure Corporation (APIIC) was established to promote industrial
+        development across the state.
+    </div>
+    <!-- 2 -->
+    <div class="icon" style="top:150px;">•</div>
+    <div class="box">
+        <div class="year">1980</div>
+        APIIC expanded major industrial estates and created planned industrial layouts with essential infrastructure.
+    </div>
+    <!-- 3 -->
+    <div class="icon" style="top:300px;">•</div>
+    <div class="box">
+        <div class="year">1992</div>
+        APIIC became a key facilitator of Public–Private Partnerships (PPP) and attracted national & international industries.
+    </div>
+    <!-- 4 -->
+    <div class="icon" style="top:450px;">•</div>
+    <div class="box">
+        <div class="year">2000</div>
+        Supported the development of HITEC City expansions and strengthened the IT sector growth in Andhra Pradesh.
+    </div>
+    <!-- 5 -->
+    <div class="icon" style="top:600px;">•</div>
+    <div class="box">
+        <div class="year">2005</div>
+        Launched Special Economic Zones (SEZs) including IT/ITES SEZs, Pharma SEZ, and Multiproduct SEZs.
+    </div>
+    <!-- 6 -->
+    <div class="icon" style="top:750px;">•</div>
+    <div class="box">
+        <div class="year">2010</div>
+        Started major Industrial Corridor Development aligned with national initiatives.
+    </div>
+    <!-- 7 -->
+    <div class="icon" style="top:900px;">•</div>
+    <div class="box">
+        <div class="year">2014</div>
+        Post-bifurcation, APIIC reorganized and focused on new industrial planning for Andhra Pradesh.
+    </div>
+    <!-- 8 -->
+    <div class="icon" style="top:1050px;">•</div>
+    <div class="box">
+        <div class="year">2017</div>
+        Developed Mega Industrial Parks like Sri City Expansion & Orvakal Mega Industrial Hub.
+    </div>
+    <!-- 9 -->
+    <div class="icon" style="top:1200px;">•</div>
+    <div class="box">
+        <div class="year">2020</div>
+        Introduced Single Desk System for transparent, fast industrial approvals.
+    </div>
+    <!-- 10 -->
+    <div class="icon" style="top:1350px;">•</div>
+    <div class="box">
+        <div class="year">2023</div>
+        Led development under VCIC & CBIC industrial corridors, boosting ports, MSME zones & logistics hubs.
+    </div>
+</div>
+      </section>
+      <section class="contact-section">
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <img src="Img/AP-Logo.jpg" alt="APIIC Logo">
+        <p>
+            APIIC Towers, Plot No–1 (9th, 10th & 11th floors),<br>
+            IT Park, Mangalagiri, Guntur (Dist),<br>
+            AP – 522503
+        </p>
+        <p>If you have any questions or need help,<br>
+        feel free to contact our team.</p>
+        <p class="phone">+91-863-2381850</p>
+        <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384017.png" alt="Twitter">
+        </div>
+    </div>
+    <!-- MIDDLE -->
+    <div class="middle">
+        <h3>APIIC – At a glance</h3>
+        <p>Term of use</p>
+        <p>Sitemap</p>
+        <p>ERP</p>
+        <p>Privacy Policy</p>
+        <p>Feedback</p>
+        <p>Contact Us</p>
+        <h3 style="margin-top:25px;">Related Links</h3>
+        <p>Department of Industries</p>
+        <p>A.P. State Financial Corporation</p>
+        <p>DTCP</p>
+        <p>Careers</p>
+    </div>
+    <!-- RIGHT -->
+    <div class="right">
+        <h3>Visitors Count:</h3>
+        <div class="visitor-box">1750833</div>
+        <p style="margin-top:20px;">
+            Last updated on: 2025-12-08 12:37:14
+        </p>
+        <p>Site best viewed on: Chrome, IE9 & IE10</p>
+        <div class="qr-box">
+            <img src="Img/QR-code.png" alt="QR Code">
+        </div>
+    </div>
+</section>
+    </header>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disney Adventure</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* ================= DISNEYLAND PARIS NAV ================= */
+.dp-header{
+    background:#ffffff;
+    padding:18px 50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+}
+
+.dp-logo{
+    font-size:26px;
+    font-weight:700;
+    color:#3a4ce1;
+    letter-spacing:0.3px;
+}
+
+.dp-nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.dp-nav a{
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    color:#111;
+    position:relative;
+}
+
+/* Hover underline animation */
+.dp-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#3a4ce1;
+    transition:0.3s;
+}
+
+.dp-nav a:hover::after{
+    width:100%;
+}
+
+/* Ticket Button */
+.dp-ticket-btn{
+    background:#1e73ff;
+    color:#fff !important;
+    padding:10px 22px;
+    border-radius:25px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.dp-ticket-btn::after{
+    display:none;
+}
+
+.dp-ticket-btn:hover{
+    background:#1559cc;
+    transform:translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    .dp-nav{
+        display:none;
+    }
+}
+
+/* HERO SECTION */
+.hero1{
+    width:100%;
+    height:100vh;
+    background:url("Screenshot 2025-12-29 143736.png") 
+    center/cover no-repeat;
+    position:relative;
+}
+
+/* DARK OVERLAY */
+.hero1::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+
+/* CONTENT */
+.content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-align:center;
+}
+
+/* LOGO */
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+/* TITLE */
+.title{
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+/* BUTTONS */
+.buttons{
+    display:flex;
+    gap:20px;
+}
+
+.btn{
+    padding:14px 34px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    border:none;
+    transition:0.3s;
+}
+
+/* PLAY BUTTON */
+.play{
+    background:#fff;
+    color:#0aa1c0;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.play span{
+    font-size:14px;
+}
+
+/* BOOK BUTTON */
+.book{
+    background:#0aa1c0;
+    color:#fff;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* BOTTOM WATER EFFECT */
+.water{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:120px;
+}
+.hero{
+  background:#081a4b;
+  padding:80px 60px;
+  color:#fff;
+  position:relative;
+}
+
+.hero h1{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:900px;
+  margin:0 auto 30px;
+  text-align:center;
+  line-height:1.6;
+}
+
+.hero .btn{
+  display:block;
+  margin:0 auto;
+  padding:14px 30px;
+  border-radius:30px;
+  border:none;
+  background:#0aa1c0;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section-title{
+  font-size:26px;
+  margin:60px 0 20px;
+}
+
+/* SLIDER */
+.slider-wrapper{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+}
+
+.cards{
+  display:flex;
+  gap:25px;
+  transition:transform 0.6s ease;
+}
+
+.card{
+  min-width:280px;
+  background:#fff;
+  color:#000;
+  border-radius:15px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+/* ARROW */
+.arrow{
+  position:absolute;
+  right:-10px;
+  top:50%;
+  transform:translateY(-50%);
+  width:42px;
+  height:42px;
+  background:#0aa1c0;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  cursor:pointer;
+}
+/* SECTION */
+.entertainment{
+  padding:80px 60px;
+  background:#081a4b;
+}
+
+/* IMAGE GRID */
+.image-grid{
+  display:grid;
+  grid-template-columns:3fr 1.2fr;
+  gap:25px;
+  margin-bottom:60px;
+}
+
+/* LEFT BIG IMAGE */
+.big-img{
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.big-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* RIGHT IMAGES */
+.side-images{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.side-images img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+/* TEXT */
+.content{
+  text-align:center;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.content h1{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.content p{
+  font-size:18px;
+  line-height:1.7;
+  color:#e6ecff;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .image-grid{
+    grid-template-columns:1fr;
+  }
+}
+.sec1{
+  background:#081a4b ;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.sec2 h1{
+  font-size: 42px;
+  margin-bottom: 20px;
+  margin-top: 5%;
+  color: #e6ecff;
+}
+.sec2 p{
+  font-size: 18px;
+  line-height: 1.7;
+  color:#e6ecff;
+}
+.sec3{
+  background:#081a4b ;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.sec3 img{
+  margin-top: 5%;
+}
+.sec4 h1{
+  font-size: 42px;
+  margin-bottom: 20px;
+  margin-top: 5%;
+  color: #e6ecff;
+  text-align: center;
+}
+.sec4 p{
+  font-size: 18px;
+  line-height: 1.7;
+  color:#e6ecff;
+  text-align: center;
+}
+.last{
+  text-align: center;
+  background: #0aa1c0;
+}
+.last img{
+  height:20%;
+  width:30%;
+}
+.cont h1{
+  color:#e6ecff;
+  font-size: 20px;
+}
+.cont p{
+  color:#e6ecff;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+  <header class="dp-header">
+    <div class="dp-logo">Disneyland Paris</div>
+
+    <nav class="dp-nav">
+        <a href="Entertainment.html">Disney</a>
+        <a href="Disney-Hotel.html">Places to stay</a>
+        <a href="Disney-Dinning.html">Dining</a>
+        <a href="Disney-Booking.html">Book now</a>
+        <a href="Disney-Land.html">Before you arrive</a>
+        <a href="#" class="dp-ticket-btn">Tickets</a>
+    </nav>
+</header>
+
+
+<div class="hero1">
+
+    <div class="content">
+        <div class="logo">Disney Adventure</div>
+
+        <div class="title">
+            Book now—and join the adventure!
+        </div>
+
+        <div class="buttons">
+            <button class="btn play">
+                ▶ <span>Play Video</span>
+            </button>
+
+            <button class="btn book">
+                Book Now
+            </button>
+        </div>
+    </div>
+
+    <div class="water"></div>
+
+</div>
+<!-- HERO -->
+<div class="hero">
+
+  <h1>Maximize Your Fun in 7 Themed Areas</h1>
+  <p>
+    Sail away on a magical adventure as you explore 7 imaginatively themed
+    areas across the ship.
+  </p>
+
+  <button class="btn">Explore the Areas</button>
+
+  <div class="section-title">New Experiences</div>
+
+  <div class="slider-wrapper">
+
+    <div class="cards" id="cardSlider">
+
+      <div class="card">
+        <img src="Img2/S1.webp">
+        <div class="card-content">
+          <h3>Marvel Style Studio</h3>
+          <p>Suit up with Marvel-inspired looks.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Img2/S2.jpg">
+        <div class="card-content">
+          <h3>Royal Society for Friendship</h3>
+          <p>Magical gathering with Princesses.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Img2/S3.avif">
+        <div class="card-content">
+          <h3>Duffy and Friends Shop</h3>
+          <p>Plush, apparel and accessories.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Img2/S4.webp">
+        <div class="card-content">
+          <h3>Duffy and The Friend Ship</h3>
+          <p>Heartwarming journey for families.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Img2/S5.webp">
+        <div class="card-content">
+          <h3>Marvel Style Studio</h3>
+          <p>Suit up with Marvel-inspired looks.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Img2/S6.webp">
+        <div class="card-content">
+          <h3>Marvel Style Studio</h3>
+          <p>Suit up with Marvel-inspired looks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow" onclick="slideCards()">›</div>
+
+  </div>
+
+</div>
+
+<!-- JS -->
+<script>
+const slider = document.getElementById("cardSlider");
+const cards = document.querySelectorAll(".card");
+const gap = 25;
+
+let index = 0;
+
+function slideCards(){
+  const cardWidth = cards[0].offsetWidth + gap;
+  const visibleCards = Math.floor(
+    slider.parentElement.offsetWidth / cardWidth
+  );
+
+  index++;
+
+  if(index > cards.length - visibleCards){
+    index = 0;
+  }
+
+  slider.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+/* AUTO SLIDE */
+setInterval(slideCards, 3000);
+</script>
+<section class="entertainment">
+
+  <!-- IMAGES -->
+  <div class="image-grid">
+
+    <div class="big-img">
+      <img src="Img2/S7.webp" alt="Main Show">
+    </div>
+
+    <div class="side-images">
+      <img src="Img2/S8.jpg" alt="Deck Party">
+      <img src="Img2/S9.avif" alt="Stage Show">
+    </div>
+
+  </div>
+
+  <!-- TEXT -->
+  <div class="content">
+    <h1>Legendary Entertainment</h1>
+    <p>
+      Experience the magic of Disney with dazzling Broadway-style shows,
+      upbeat deck parties, movie screenings, and unforgettable meet and
+      greets with favorite pals from Disney, Pixar and Marvel.
+    </p>
+  </div>
+
+</section>
+<section class="sec1">
+  <img src="Img2/S10.webp">
+  <div class="sec2">
+  <h1>Dining with Character</h1>
+<p>Savor everything from elegant culinary journeys to made-to-order casual fare 
+  at magically themed restaurants throughout the ship.</p>
+  </div>
+</section>
+
+<section class="sec3">
+  <img src="Img2/S11.avif">
+  <div class="sec4">
+  <h1>Action-Packed Kids Clubs</h1>
+  <p>Kids, tweens and teens can embark on new adventures of their 
+    own at unique, dedicated spaces overflowing with interactive fun.
+  </p>
+  </div>
+</section>
+
+<section class="sec3">
+  <img src="Img2/S12.avif">
+  <div class="sec4">
+  <h1>Fun & Relaxation for Adults</h1>
+  <p>While the kids are off having the time of their lives in clubs created just for them, treat yourself to elevated<br>
+     adult experiences. Enjoy luxurious spa treatments, intimate dining, specialty shopping and captivating lounges.</p>
+  </div>
+</section>
+
+<section class="sec3">
+  <img src="Img2/S13.jpg">
+  <div class="sec4">
+  <h1>Onboard Shopping</h1>
+  <p>Bring the adventure home with you. Guests can shop the magic of Disney and Disney Cruise Line merchandise, plus<br>
+     a special collection of culturally inspired merchandise at World of Disney® and World of Disney® Too, alongside a curated<br>
+      selection of National Geographic apparel and Duffy and Friends plush. What’s more, Guests of all ages can suit up in<br>
+       Marvel-inspired costumes of favorite Super Heroes for immersive experiences.</div>
+</section>
+<section class="entertainment">
+  <div class="image-grid">
+
+    <div class="big-img">
+      <img src="Img2/S14.avif" alt="Main Show">
+    </div>
+
+    <div class="side-images">
+      <img src="Img2/S15.avif" alt="Deck Party">
+      <img src="Img2/S16.avif" alt="Stage Show">
+    </div>
+
+  </div>
+  <div class="sec4">
+    <h1>Artful Accommodations</h1>
+    <p>Whether you’re planning a fun-filled family vacation, a friends getaway or a couples escape, Disney staterooms and suites<br>
+       ensure your relaxation and comfort. Each accommodation features magical touches, including artwork inspired by Disney,<br>
+       Pixar or Marvel stories.</p>
+  </div>
+</section>
+<section class="last">
+  <img src="Img2/S17.svg">
+  <div class="cont">
+    <h1>Don't Miss Out!</h1>
+    <p>Be sure to check back here as more exciting details about the Disney Adventure are revealed.<br>
+       Or sign up now to be among the first to receive email updates on new experiences,<br>
+        sailing dates and more.</p>
+  </div>
+</section>
+</body>
+</html>
