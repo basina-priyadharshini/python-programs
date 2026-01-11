@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Srikakulam District Header</title>
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+.container{
+    background: #07274b;
+}
+.body{
+    background-image: url(Img/.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:150%;
+}
+/* ---------------- HEADER ---------------- */
+.header {
+    width:100%;
+    background-image: url("Img/Sri6.jpg");
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #ddd;
+}
+.header-left img{
+    height:90px;
+}
+.header-center {
+    text-align:center;
+    flex:1;
+}
+.header-center h2 {
+    font-size:26px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+.header-center h3 {
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+.header-right img{
+    height:70px;
+}
+/* NAVBAR */
+.navbar{
+    background:#09033f;
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:absolute;
+    top:15%;
+    width:100%;
+    z-index:1000;
+}
+
+/* MARQUEE */
+.marquee-box{
+    width:300px;
+    overflow:hidden;
+}
+
+.marquee-text{
+    color:white;
+    font-weight:bold;
+    white-space:nowrap;
+    animation:marquee 8s linear infinite;
+}
+
+@keyframes marquee{
+    from{ transform:translateX(100%); }
+    to{ transform:translateX(-100%); }
+}
+
+/* NAV LINKS */
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+/* HIDE RADIO */
+.nav-item input{
+    display:none;
+}
+
+/* LINKS & LABEL */
+.nav-links a,
+.nav-item label{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+    position:absolute;
+    top:38px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    display:none;
+    flex-direction:column;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    border-radius:6px;
+    overflow:hidden;
+}
+
+/* DROPDOWN LINKS */
+.dropdown-menu a{
+    color:#000;
+    padding:12px 15px;
+    text-decoration:none;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* OPEN ON CLICK */
+.nav-item input:checked ~ .dropdown-menu{
+    display:flex;
+}
+/* ---------------- BODY ---------------- */
+.wrapper{
+    margin-top:0px; /* space below navbar */
+    display:flex;
+    justify-content: center;
+    height:200%;
+    background-image: url("Img/Sri6.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box{
+    width:850px;
+    height:450px;
+    overflow:hidden;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.05);
+    padding:10px;
+    position:relative;
+    margin-top: 9%;
+    bottom: 10%;
+}
+.slide{
+    position:absolute;
+    top:100%;
+    opacity:0;
+    width:100%;
+    display:flex;
+    gap:15px;
+    align-items:center;
+    transition:all 1s ease;
+}
+.slide.active{
+    top:0;
+    opacity:1;
+}
+.left-img img{
+    width:400px;
+    height:450px;
+    object-fit:cover;
+    border-radius:12px;
+}
+.text-box{
+    flex:1;
+    background:rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:12px;
+    color:#fff;
+    font-size:20px;
+    line-height:1.4;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+/*SECTION*/
+    header {
+      background:rgb(83, 5, 66);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .about-section {
+      max-width: 1000px;
+      margin-top: 10%;
+      margin: 0px auto;
+      background-color: wheat;
+      padding: 30px;
+      border-radius: 12px;
+      background: #07274b;
+      width:100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .about-section h2 {
+      color: yellow;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .about-section , p {
+      font-size: 16px;
+      line-height: 1.6;
+      color:white;
+      margin-bottom: 20px;
+    }
+    .about-section1 p{
+        color:black;
+    }
+    .about-section2 p{
+        color:#000;
+    }
+    .about-section h3 {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      color: #003f88;
+      font-size: 20px;
+    }
+    ul {
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+    li {
+      margin-bottom: 8px;
+      color:black;
+    }
+    /*about*/
+    .about-section1 {
+      max-width: 1000px;
+      margin-top: 20%;
+      margin: 0px auto;
+      background-color: white;
+      padding: 20px;
+      border-left: 5px solid green;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .about-section2 {
+      max-width: 1000px;
+      margin-top: 10%;
+      margin: 0px auto;
+      background-color: white;
+      padding: 20px;
+      border-left: 5px solid green;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    /*Contact Section*/
+    .container1 {
+        width: 100%;
+        max-width: 1300px;
+        margin: 40px auto;
+        display: flex;
+        gap: 40px;
+        background: #07274b;
+        height:100%;
+    }
+    .gallery-box {
+        background: #fff;
+        color: #000;
+        flex: 1.4;
+        margin-top:10%;
+        border-radius: 6px;
+        padding-bottom: 5px;
+        height:10%;
+    }
+    .tabs {
+        display: flex;
+        border-bottom: 2px solid #e5e5e5;
+    }
+    .tab {
+        padding: 14px 24px;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .tab.active {
+        background: #007efc;
+        color: #fff;
+    }
+    .gallery-header {
+        background: #d3d3d3;
+        padding: 18px 25px;
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+    }
+    .view-all-btn {
+        background: #f58220;
+        color: #fff;
+        padding: 6px 15px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .gallery-images {
+        display: flex;
+        gap: 12px;
+        padding: 18px;
+    }
+    .gallery-images img {
+        width: 33.1%;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    .sidebar {
+        flex: 1;
+    }
+    .sidebar h2 {
+        font-size: 26px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        color:white;
+    }
+    .quick-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 40px;
+        margin-bottom: 40px;
+    }
+    .quick-links a {
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .helpline-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 40px;
+        color:white;
+    }
+    .help-btn {
+        margin-top: 20px;
+        background: #f58220;
+        padding: 10px 25px;
+        color: #fff;
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        padding-bottom: 10px;
+    }
+    /* Popup Gallery */
+    .popup-container {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        box-sizing: border-box;
+        z-index: 9999;
+    }
+    .popup-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        width: 90%;
+        max-height: 90%;
+        overflow-y: auto;
+    }
+    .popup-gallery img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform .2s;
+    }
+    .popup-gallery img:hover {
+        transform: scale(1.05);
+    }
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        background: #f44336;
+        color: white;
+        padding: 10px 18px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    /*Vedio*/
+    .hero{
+        display:flex;
+        background-image: url(Img/bg3.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .hero-text p{
+        font-family: "Whisper", cursive;
+        color:white;
+        text-shadow:0 0 5px  #9eaecf,
+                     0 0 15px #8c5ad1,
+                     0 0 25px #8536d3;
+        font-size: 40px;
+    }
+    .hero-text h1{
+        font-family: "whisper",cursive;
+        color:#8536d3;
+        text-shadow:0 0 5px  #c969d2,
+                         0 0 15px #c34ebf,
+                         0 0 25px #a9399a;
+        font-size: 50px;
+        text-align: center;
+    }
+    .video-box {
+      width: 200%;
+      height: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #c0d1eb;
+      padding: 10px;
+      background-image: url(Img/bg3.jpg);
+    }
+    .video-box video {
+      width: 110%;
+      height: 110%;
+      border-radius: 15px;
+      background-size: cover;
+    }
+</style>
+</head>
+<body>
+<!-- -------- HEADER -------- -->
+<div class="header">
+    <div class="header-left">
+        <img src="Img/I8.png">
+    </div>
+    <div class="header-center">
+        <h2>శ్రీకాకుళం జిల్లా</h2>
+        <h3>SRIKAKULAM DISTRICT</h3>
+    </div>
+    <div class="header-right">
+        <img src="Img/O8.png">
+    </div>
+</div>
+<!-- -------- NAVIGATION -------- -->
+<nav class="navbar">
+    <div class="marquee-box">
+        <div class="marquee-text">Welcome to SRIKAKULAM</div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="Smart.html">HOME</a></li>
+        <li><a href="#sec2">ABOUT</a></li>
+        <li><a href="Festival.html">FESTIVALS</a></li>
+
+        <li class="nav-item">
+            <input type="radio" name="menu" id="tourism">
+            <label for="tourism">TOURISM ▾</label>
+            <div class="dropdown-menu">
+                <a href="Eco.html">ECO-TOURISM</a>
+                <a href="Forest.html">FOREST-TOURISM</a>
+                <a href="Engineering.html">ENGINEERING-TOURISM</a>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <input type="radio" name="menu" id="food">
+            <label for="food">FOOD ▾</label>
+            <div class="dropdown-menu">
+                <a href="Kova.html">KOVA</a>
+                <a href="S-Product.html">PRODUCT</a>
+            </div>
+        </li>
+
+        <li><a href="G3.html">GALLERY</a></li>
+        <li><a href="Sklm.html">MAP</a></li>
+
+        <li class="nav-item">
+            <input type="radio" name="menu" id="contact">
+            <label for="contact">CONTACT ▾</label>
+            <div class="dropdown-menu">
+                <a href="#sec6">CONTACT DETAILS</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+</script>
+<!-- -------- BODY SECTION -------- -->
+<div class="wrapper">
+<div class="box">
+    <div class="slide active">
+        <div class="left-img">
+            <img src="Img/Sri3.jpg">
+        </div>
+        <div class="text-box">Srimukhalingam Temple is an ancient and sacred 
+                              shrine dedicated to Lord Shiva, famous for its 
+                              unique Oriya-style architecture.</div>
+    </div>
+    <div class="slide">
+        <div class="left-img">
+            <img src="Img/Sri7.jpg">
+        </div>
+        <div class="text-box">Kalingapatnam Beach is a peaceful and scenic 
+                              coastline known for its golden sands and calm waves.</div>
+    </div>
+    <div class="slide">
+        <div class="left-img">
+            <img src="Img/Sri8.jpg">
+        </div>
+        <div class="text-box">Salihundam is an important Buddhist heritage site 
+            known for its ancient stupas, viharas, and beautifully carved relics.</div>
+    </div>
+    <div class="slide">
+        <div class="left-img">
+            <img src="Img/Sri9.webp">
+        </div>
+        <div class="text-box">The peaceful surroundings and spiritual atmosphere 
+            attract devotees throughout the year.</div>
+    </div>
+</div>
+</div>
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+function nextSlide(){
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}
+setInterval(nextSlide, 3000);
+</script>
+</body>
+<!--SECTION1-->
+<section id="sec2">
+ <header>Smart City Srikakulam – About</header>
+  <section class="about-section">
+    <h2>About Smart City Srikakulam</h2>
+    <p>
+      Smart City Srikakulam is focused on building a modern, efficient, and sustainable urban environment using advanced technologies and citizen‑centric solutions. Though not officially listed under the Government of India’s Smart Cities Mission, Srikakulam continues to adopt smart practices through local development initiatives.
+    </p>
+    <div class="about-section1">
+    <h3>Vision:</h3>
+    <p>
+      To create a clean, green, and technologically empowered city that enhances the lifestyle of citizens through innovation, digital services, and smart infrastructure.
+    </p>
+    </div>
+    <div class="about-section2">
+    <h3>Objectives:</h3>
+    <ul>
+      <li>Improve infrastructure with smart and sustainable solutions.</li>
+      <li>Enhance transparency and efficiency in governance.</li>
+      <li>Strengthen public services using digital platforms.</li>
+      <li>Promote environmental safety and urban cleanliness.</li>
+      <li>Adopt technology for smarter mobility and safety.</li>
+    </ul>
+    </div>
+    <div class="about-section1">
+    <h3>Focus Areas:</h3>
+    <p><ul>
+      <li>Smart mobility & traffic management</li>
+      <li>Digital governance & e‑services</li>
+      <li>Clean & green urban initiatives</li>
+      <li>Energy‑efficient smart lighting</li>
+      <li>Public safety surveillance systems</li>
+    </ul></p>
+    <p>
+      Srikakulam continues to grow as a forward‑thinking city, implementing sustainable and citizen‑focused innovations to prepare for the future.
+    </p>
+    </div>
+  </section>
+  </section>
+  <!--VEDIO-->
+  <section id="sec3" class="hero">
+  <div class="hero-text">
+    <h1>SRIKAKULAM</h1>
+    <p>“The land of sea breeze and warm-hearted people.
+    Srikakulam is a coastal district in Andhra Pradesh 
+    known for its serene beaches, historic temples, and 
+    rich cultural heritage. It is often called the 
+    “City of Light” because of its vibrant traditions 
+    and welcoming atmosphere. The region is blessed 
+    with natural beauty, from the shores of the Bay of 
+    Bengal to lush green fields and scenic rivers.</p>
+</div>
+  <div class="video-box">
+    <video autoplay muted loop>
+      <source src="Img/Vedio.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+<!--CONTACT-->
+<section id="sec6">
+  <div class="container">
+  <div class="container1">
+    <!-- LEFT PANEL -->
+    <div class="gallery-box">
+        <div class="tabs">
+            <div class="tab active">📷 PHOTOS</div>
+            <div class="tab">🎥 VIDEOS</div>
+        </div>
+        <div class="gallery-header">
+            <span>Photo Gallery</span>
+            <span class="view-all-btn" onclick="openGallery()">View All</span>
+        </div>
+        <div class="gallery-images">
+            <img src="Img/Sri10.jpg">
+            <img src="Img/Sri5.jpg">
+            <img src="Img/Sri11.jpg">
+        </div>
+    </div>
+    <!-- RIGHT PANEL -->
+    <div class="sidebar">
+        <h2>🔗 Quick Links</h2>
+        <div class="quick-links">
+            <a>Arogya Setu IVRS : 1921</a>
+            <a>e-Office</a>
+            <a>Aadhaar Enabled PDS</a>
+            <a>Right to Information Act</a>
+            <a>Spandana Public Grievance Portal</a>
+            <a>Mee Seva</a>
+            <a>Electronic Public Distribution System</a>
+            <a>Government Orders</a>
+            <a>Mee Bhoomi</a>
+            <a>National Voters' Service Portal</a>
+            <a>Bhu Seva</a>
+        </div>
+        <h2>📞 Helpline Numbers</h2>
+        <div class="helpline-list">
+            <div>Arogya Setu-IVRS : 1921</div>
+            <div>YSR Telemedicine : 9490576658</div>
+            <div>Child Helpline : 1098</div>
+            <div>Women Helpline : 1091</div>
+            <div>Citizen's Call Center : 1100</div>
+            <div>Fire : 100</div>
+            <div>Medical Help : 108</div>
+        </div>
+        <div class="help-btn">Helpline</div>
+    </div>
+</div>
+</div>
+</section>
+<!-- POPUP GALLERY -->
+<div class="popup-container" id="popup">
+    <div class="close-btn" onclick="closeGallery()">Close ✖</div>
+    <div class="popup-gallery">
+        <img src="Img/Sri1.webp">
+        <img src="Img/Sri2.jpg">
+        <img src="Img/Sri3.jpg">
+        <img src="Img/Sri5.jpg">
+        <img src="Img/Sri9.webp">
+        <img src="Img/Sri7.jpg">
+        <img src="Img/Sri10.jpg">
+        <img src="Img/Sri8.jpg">
+    </div>
+</div>
+<script>
+function openGallery() {
+    document.getElementById("popup").style.display = "flex";
+}
+function closeGallery() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+</div>
+</html>

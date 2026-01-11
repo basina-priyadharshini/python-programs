@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weddings | Taj Banjara</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+        .top-bar{
+    background:#0b4ea2;
+    color:#fff;
+    text-align:center;
+    padding:8px;
+    font-size:14px;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#fff;
+    position:relative;
+    z-index:100;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b4ea2;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0b4ea2;
+    font-size:15px;
+    cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:28px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    z-index:200;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-content a:hover{
+    background:#f2f2f2;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.book-btn{
+    background:#0b4ea2;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+body{
+    background:#fff;
+    color:#333;
+}
+
+/* ===== HEADER ===== */
+.header{
+    text-align:center;
+    padding:30px 0 20px;
+    border-bottom:1px solid #eee;
+}
+
+.header img{
+    height:40px;
+}
+
+/* ===== CONTENT SECTION ===== */
+.wedding-section{
+    background:#fdeee7;
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.main-title{
+    color:#8b1538;
+    font-size:32px;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.sub-title{
+    font-style:italic;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.desc{
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:18px;
+    color:#444;
+}
+
+.highlight{
+    margin-top:25px;
+    font-size:16px;
+    font-weight:500;
+}
+
+.contact{
+    margin:30px 0 60px;
+    color:#8b1538;
+    font-size:18px;
+    font-weight:600;
+}
+
+/* ===== SECOND TITLE ===== */
+.section-title{
+    margin-top:40px;
+    color:#8b1538;
+    font-size:28px;
+    font-weight:600;
+}
+
+.section-sub{
+    margin-top:10px;
+    font-style:italic;
+    font-size:18px;
+}
+
+/* ===== QUERY FORM TAB ===== */
+.query-tab{
+    position:fixed;
+    right:0;
+    top:45%;
+    background:#8b1538;
+    color:#fff;
+    padding:14px 10px;
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    font-size:14px;
+    border-radius:6px 0 0 6px;
+    cursor:pointer;
+}
+
+/* ===== BACK TO TOP ===== */
+.back-top{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#fff;
+    border-radius:50%;
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+    cursor:pointer;
+}
+.img{
+    width:210vh;
+    height:100vh;
+}
+/*SECTION*/
+body{
+    background:#fdeee7;
+}
+
+.essence-section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.essence-section h2{
+    color:#8b1538;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.essence-section p{
+    font-style:italic;
+    font-size:18px;
+    margin-bottom:40px;
+}
+
+.slider-wrapper{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    background:#f9dccc;
+    padding:40px 60px 60px;
+    overflow:hidden;
+}
+
+.slider{
+    display:flex;
+    transition:transform 0.6s ease;
+}
+
+.card{
+    min-width:33.33%;
+    padding:0 15px;
+}
+
+.card-box{
+    background:#fff;
+    padding:20px;
+    border-radius:4px;
+}
+
+.card-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.card-box h3{
+    margin-top:15px;
+    color:#8b1538;
+    font-size:15px;
+    letter-spacing:1px;
+}
+
+/* arrows */
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:30px;
+    color:#8b1538;
+    cursor:pointer;
+    user-select:none;
+}
+.arrow.left{left:20px;}
+.arrow.right{right:20px;}
+
+/* dots */
+.dots{
+    margin-top:25px;
+}
+.dot{
+    width:10px;
+    height:10px;
+    border:1px solid #8b1538;
+    border-radius:50%;
+    display:inline-block;
+    margin:0 5px;
+}
+.dot.active{
+    background:#8b1538;
+}
+/*SECTION*/
+body{
+    background:#fdeee7;
+}
+
+/* SECTION */
+.destination-section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+.destination-section h2{
+    color:#8b1538;
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.destination-section h3{
+    font-style:italic;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.destination-section p{
+    max-width:1000px;
+    margin:0 auto 50px;
+    line-height:1.7;
+}
+
+/* SLIDER */
+.slider-container{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    background:#f9dccc;
+    padding:40px 60px;
+    overflow:hidden;
+}
+
+.slider-track{
+    display:flex;
+    transition:transform 0.6s ease-in-out;
+}
+
+.slide-card{
+    min-width:33.33%;
+    padding:0 15px;
+}
+
+.card-inner{
+    background:#fff;
+    padding:20px;
+    border-radius:4px;
+}
+
+.card-inner img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.card-inner h4{
+    margin-top:15px;
+    color:#8b1538;
+    letter-spacing:1px;
+    font-size:15px;
+}
+
+/* ARROWS */
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:32px;
+    color:#8b1538;
+    cursor:pointer;
+    user-select:none;
+}
+
+.arrow.left{ left:20px; }
+.arrow.right{ right:20px; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .slide-card{ min-width:100%; }
+}
+</style>
+</head>
+
+<body>
+    <div class="top-bar">
+Welcome to the Official Website of Taj Banjara Hotels. Always ensure you are on www.tajhotels.com
+</div>
+<header>
+    <div class="logo">TAJ BANJARA HOTELS</div>
+
+    <nav>
+        <a href="Hotel.html">Home</a>
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'hotelDD')">Our Hotels ▾</a>
+            <div class="dropdown-content" id="hotelDD">
+                <a href="#">Hyderabad</a>
+                <a href="#">Goa</a>
+                <a href="#">Mumbai</a>
+                <a href="#">Vizag</a>
+            </div>
+        </div>
+
+        <a href="H-About.html">About Us</a>
+        <a href="H-Offers.html">Offers</a>
+        <a href="Wedding.html">Weddings</a>
+        <a href="Discrimination.html">Discrimination</a>
+
+        <div class="dropdown">
+            <a onclick="toggleDropdown(event,'expDD')">Food ▾</a>
+            <div class="dropdown-content" id="expDD">
+                <a href="H-Delivary.html">Home Delivary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-right">
+        <div>Call Us: +91 98 8680 0049</div>
+        <a href="#" class="book-btn">BOOK MY STAY</a>
+    </div>
+</header><script>
+function toggleDropdown(e,id){
+    e.preventDefault();
+    document.querySelectorAll('.dropdown-content').forEach(d=>{
+        if(d.id!==id){ d.style.display='none'; }
+    });
+    let box=document.getElementById(id);
+    box.style.display = box.style.display==='block' ? 'none':'block';
+}
+
+document.addEventListener('click',function(e){
+    if(!e.target.closest('.dropdown')){
+        document.querySelectorAll('.dropdown-content').forEach(d=>{
+            d.style.display='none';
+        });
+    }
+});
+</script>
+    <section>
+        <img src="Img/H2.avif" class="img">
+    </section>
+<!-- WEDDING CONTENT -->
+<section class="wedding-section">
+    <div class="container">
+
+        <h1 class="main-title">Crafted With Care. Celebrated Your Way.</h1>
+        <p class="sub-title">Weddings that reflect your story, culture, and dreams.</p>
+
+        <p class="desc">
+            Plan your dream wedding at Taj Banjara Hotels – one of the best wedding hotel chains in India,
+            offering unique venues, heartfelt service, and customised celebrations.
+        </p>
+
+        <p class="desc">
+            At Sarovar Hotels, we believe your wedding celebration should reflect your story,
+            your traditions, and your dreams. That’s why our weddings aren’t one-size-fits-all –
+            they are thoughtfully crafted with warmth, love, and personal attention to every little detail.
+        </p>
+
+        <p class="highlight">
+            This is your love story—let’s write it your way.
+        </p>
+
+        <p class="contact">
+            Get in touch to speak with our wedding expert: <span style="color:#ff4b4b;">+91 99 5859 2240</span>
+        </p>
+    </div>
+</section>
+
+<!-- QUERY FORM TAB -->
+<div class="query-tab">Query Form</div>
+
+<!-- BACK TO TOP -->
+<div class="back-top">↑</div>
+
+<!--SECTION-->
+<section class="essence-section">
+    <h2>The Essence of Your Story</h2>
+    <p>Design Your Love Story Your Way</p>
+
+    <div class="slider-wrapper">
+        <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+        <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+
+        <div class="slider" id="slider">
+
+            <div class="card">
+                <div class="card-box">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+                    <h3>ABSOLUTELY FILMY</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-box">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+                    <h3>EVERYTHING ELEGANT</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-box">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+                    <h3>CULTURAL FUSION</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-box">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+                    <h3>ROYAL CELEBRATIONS</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-box">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc">
+                    <h3>INTIMATE MOMENTS</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="dots" id="dots"></div>
+</section>
+
+<script>
+const slider = document.getElementById("slider");
+const dotsContainer = document.getElementById("dots");
+const totalSlides = 5;
+const visible = 3;
+let index = 0;
+
+/* create dots */
+for(let i=0;i<=totalSlides-visible;i++){
+    const d = document.createElement("span");
+    d.className = "dot";
+    if(i===0) d.classList.add("active");
+    dotsContainer.appendChild(d);
+}
+
+const dots = document.querySelectorAll(".dot");
+
+function updateDots(){
+    dots.forEach(d=>d.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+function moveSlide(step){
+    index += step;
+    if(index < 0) index = totalSlides-visible;
+    if(index > totalSlides-visible) index = 0;
+
+    slider.style.transform = `translateX(-${index * 33.33}%)`;
+    updateDots();
+}
+
+/* auto slide */
+setInterval(()=>{
+    moveSlide(1);
+},4000);
+</script>
+<!--SECTION3-->
+<section class="destination-section">
+
+    <h2>Explore Our Wedding Destinations Across India, Nepal, and Africa</h2>
+    <h3>Begin Your Story in Our Scenic Locations</h3>
+
+    <p>
+        Looking for a royal wedding in Rajasthan, a serene celebration in Jim Corbett,
+        or a breezy beach wedding at Estuary Island? With over 140 hotels across India,
+        Nepal & Africa, Taj Hotels offers versatile and picturesque wedding venues.
+    </p>
+
+    <div class="slider-container">
+
+        <div class="arrow left" onclick="slideMove(-1)">&#10094;</div>
+        <div class="arrow right" onclick="slideMove(1)">&#10095;</div>
+
+        <div class="slider-track" id="sliderTrack">
+
+            <div class="slide-card">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+                    <h4>MAGICAL BACKWATERS</h4>
+                </div>
+            </div>
+
+            <div class="slide-card">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220">
+                    <h4>SERENE HILLSIDE</h4>
+                </div>
+            </div>
+
+            <div class="slide-card">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+                    <h4>ROMANTIC BEACHES</h4>
+                </div>
+            </div>
+
+            <div class="slide-card">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da">
+                    <h4>ROYAL PALACES</h4>
+                </div>
+            </div>
+
+            <div class="slide-card">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+                    <h4>NATURE RETREATS</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+const slide = document.getElementById("sliderTrack");
+let i = 0;
+const total = 5;
+const v = 3;
+
+function slideMove(step){
+    index += step;
+
+    if(index < 0) index = total - visible;
+    if(index > total - visible) index = 0;
+
+    slider.style.transform = `translateX(-${index * 33.33}%)`;
+}
+
+/* AUTO SLIDE */
+setInterval(()=>{
+    slideMove(1);
+},4000);
+</script>
+</body>
+</html>

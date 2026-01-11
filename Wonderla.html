@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wonderla Parks & Resorts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0e1b2c;
+    color:#fff;
+}
+
+
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#ffcc00;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+}
+
+.btn-yellow{
+    background:#ffcc00;
+    color:#000;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* ===== HERO SECTION ===== */
+.hero{
+    height:100vh;
+    background:
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1563841930606-67e2bce48b78?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding-top:80px;
+}
+
+.hero h1{
+    font-size:64px;
+    font-weight:900;
+    color:#ffcc00;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:16px;
+    opacity:.9;
+}
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+/* ===== PARK SECTION ===== */
+.parks{
+    background:#0e1b2c;
+    padding:60px 80px;
+}
+
+.parks h3{
+    text-align:center;
+    color:#ffcc00;
+    margin-bottom:40px;
+    letter-spacing:1px;
+}
+
+.cards3{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card3{
+    background:#16263f;
+    width:200px;
+    border-radius:18px;
+    overflow:hidden;
+    text-align:center;
+    transition:.4s;
+}
+
+.card3 img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card3 h4{
+    margin:15px 0 5px;
+    font-size:18px;
+}
+
+.card3 span{
+    font-size:13px;
+    opacity:.7;
+    margin-bottom:15px;
+    display:block;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .hero h1{
+        font-size:42px;
+    }
+    header{
+        padding:15px 30px;
+    }
+}
+
+/* ================= HEADER ================= */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 40px;
+}
+
+.header-bar{
+    background:#fff;
+    border-radius:30px;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#ffcc00;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 15px;
+    color:#1f3556;
+    font-weight:600;
+}
+
+.book-btn{
+    background:#ffcc00;
+    border:none;
+    padding:10px 22px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+      url("Img2/W2.webp")
+      center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding-top:120px;
+}
+
+.hero h1{
+    font-size:64px;
+    font-weight:900;
+}
+
+.hero-btn{
+    margin-top:25px;
+    background:#ffcc00;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= FEATURES SLIDER ================= */
+.features{
+    margin-top:-90px;
+    padding:40px 0 60px;
+}
+
+.features-slider{
+    max-width:1200px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.features-track{
+    display:flex;
+    gap:20px;
+    width:max-content;
+    animation: slideFeatures 18s linear infinite;
+}
+
+/* Pause on hover */
+.features-slider:hover .features-track{
+    animation-play-state: paused;
+}
+
+@keyframes slideFeatures{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+/* Feature Card */
+.feature{
+    background:#fff;
+    border-radius:20px;
+    padding:18px;
+    width:280px;
+    flex-shrink:0;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.feature img{
+    width:100%;
+    height:120px;
+    border-radius:14px;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.feature h3{
+    font-size:18px;
+    color:#1f3556;
+    margin-bottom:8px;
+}
+
+.feature p{
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    nav{display:none;}
+    .hero h1{font-size:42px;}
+}
+/* ===== STATS ===== */
+.stats{
+    background:#1f3556;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    padding:18px 0;
+}
+
+.stat{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.stat span{
+    font-size:36px;
+    font-weight:800;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    background:#ffcc00;
+    border-radius:50%;
+}
+
+/* ===== OFFERS ===== */
+.offers{
+    background:#ffde00;
+    padding:60px 40px;
+    overflow:hidden;
+}
+
+.offers-wrap{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+/* ===== LEFT IMAGE ===== */
+.offers-left img{
+    width:320px;
+}
+
+/* ===== RIGHT ===== */
+.offers-right{
+    flex:1;
+}
+
+.offers-right h1{
+    font-size:48px;
+    font-weight:900;
+    color:#1f3556;
+    margin-bottom:30px;
+}
+
+/* ===== CARD SLIDER ===== */
+.card-slider{
+    width:100%;
+    overflow:hidden;
+}
+
+.cards{
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation: slideCards 10s linear infinite;
+}
+
+/* Pause on hover */
+.card-slider:hover .cards{
+    animation-play-state: paused;
+}
+
+@keyframes slideCards{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+.card{
+    width:260px;
+    height:160px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:900;
+    color:#fff;
+    white-space:nowrap;
+}
+
+.blue{ background:#0b5ed7; }
+.purple{ background:#6f42c1; }
+.red{ background:#dc3545; }
+
+/* ===== BUTTON ===== */
+.explore-btn{
+    margin-top:30px;
+    background:#1f3556;
+    color:#fff;
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .offers-wrap{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+/* ===== HEADER (simple placeholder) ===== */
+header{
+    background:#fff;
+    padding:15px 40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* ===== SECTION ===== */
+.desi-section{
+    position:relative;
+    padding:80px 40px 100px;
+    overflow:hidden;
+}
+
+/* Curved yellow accent */
+.desi-section::before{
+    content:"";
+    position:absolute;
+    left:-300px;
+    top:-200px;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    border:2px solid #ffd400;
+}
+
+/* ===== LAYOUT ===== */
+.desi-wrap{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    gap:60px;
+    align-items:center;
+}
+
+/* ===== LEFT CONTENT ===== */
+.desi-left{
+    width:30%;
+}
+
+.desi-left h1{
+    font-size:56px;
+    font-weight:900;
+    color:#1f3556;
+    line-height:1.1;
+}
+
+.desi-btn{
+    margin-top:30px;
+    background:#ffd400;
+    border:none;
+    padding:16px 34px;
+    border-radius:40px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* ===== SLIDER AREA ===== */
+.desi-right{
+    width:70%;
+    overflow:hidden;
+}
+
+/* Track */
+.food-track{
+    display:flex;
+    gap:20px;
+    width:max-content;
+    animation: foodSlide 22s linear infinite;
+}
+
+/* Pause on hover */
+.desi-right:hover .food-track{
+    animation-play-state:paused;
+}
+
+/* Animation */
+@keyframes foodSlide{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+}
+
+/* ===== FOOD CARD ===== */
+.food-card{
+    width:140px;
+    height:140px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    background:#fff;
+    flex-shrink:0;
+}
+
+.food-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ===== BOTTOM YELLOW STRIP ===== */
+.bottom-strip{
+    height:60px;
+    background:#ffd400;
+    margin-top:80px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .desi-wrap{
+        flex-direction:column;
+        text-align:center;
+    }
+    .desi-left, .desi-right{
+        width:100%;
+    }
+}
+/* ===== SECTION ===== */
+.section1{
+    padding:60px 0;
+    background: #ffd400;
+}
+
+.section1 h1{
+    text-align:center;
+    font-size:48px;
+    font-weight:800;
+    color:#0b1c3d;
+    margin-bottom:40px;
+}
+
+/* ===== SLIDER ===== */
+.slider-wrapper{
+    width:92%;
+    margin:auto;
+    overflow:hidden;
+    position:relative;
+}
+
+.slider-track{
+    display:flex;
+    gap:25px;
+    transition:transform .6s ease;
+}
+
+/* ===== CARD ===== */
+.card1{
+    background:#f4f6fb;
+    border-radius:20px;
+    min-width:360px;
+    box-shadow:0 12px 30px rgba(0,0,0,.2);
+    overflow:hidden;
+}
+
+.card1-img{
+    height:210px;
+    position:relative;
+}
+
+.card1-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.tag{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#555;
+    color:#fff;
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+.card1-content{
+    color: #000;
+    padding:20px;
+}
+
+.card1-content h3{
+    font-size:22px;
+    color:black;
+    margin-bottom:6px;
+}
+
+.location{
+    font-size:14px;
+    color:black;
+    margin-bottom:12px;
+}
+
+.desc{
+    font-size:15px;
+    color:#110e0e;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:#3652d9;
+    color:#fff;
+    padding:14px;
+    border-radius:12px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* ===== DOTS ===== */
+.r-dots1{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+    gap:12px;
+}
+
+.r-dot1{
+    width:12px;
+    height:12px;
+    background:#aaa;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.r-dot1.active{
+    background:#3652d9;
+}
+/* ===== SECTION ===== */
+.comforts{
+    background: #3a50c9;
+    padding:80px 30px;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+}
+
+.comforts h1{
+    font-size:48px;
+    font-weight:800;
+}
+
+.comforts p{
+    font-size:18px;
+    margin:15px 0 60px;
+    opacity:.9;
+}
+
+/* ===== SLIDER ===== */
+.slider1-wrapper{
+    width:100%;
+    overflow:hidden;
+}
+
+.slider1-track{
+    display:flex;
+    gap:40px;
+    transition:transform .6s ease;
+}
+
+/* ===== ICON BOX ===== */
+.icon-box{
+    min-width:130px;
+    text-align:center;
+}
+
+.icon-circle{
+    width:120px;
+    height:120px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+    position:relative;
+}
+
+.icon-circle::after{
+    content:"";
+    width:12px;
+    height:12px;
+    background:#ffe16a;
+    border-radius:50%;
+    position:absolute;
+    top:18px;
+    right:26px;
+}
+
+.icon-circle img{
+    width:48px;
+}
+
+.icon-box h4{
+    margin-top:14px;
+    font-size:16px;
+    font-weight:600;
+}
+
+/* ===== DOTS ===== */
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:40px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    background:#bfc6ff;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:#ffd800;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    display:inline-block;
+    margin-top:50px;
+    background:#ffd800;
+    color:#1a1a1a;
+    padding:18px 42px;
+    border-radius:40px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:18px;
+}
+/* ===== ICON SLIDER FIX ===== */
+.icon-slider{
+    width:100%;
+    overflow:hidden;
+}
+
+.icon-track{
+    display:flex;
+    gap:40px;
+    transition:transform .6s ease;
+    width:max-content;
+}
+/* ===== TITLE ===== */
+.title{
+    text-align:center;
+    margin:50px 0 10px;
+}
+
+.title h1{
+    font-size:56px;
+    color:#ffd800;
+    letter-spacing:2px;
+}
+
+.title p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+/* ===== MERCH GRID ===== */
+.merch-container{
+    width:100%;
+    background: #ffd800;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:25px;
+}
+
+/* ===== LARGE CARD ===== */
+.big-card2{
+    grid-column: span 2;
+    background:#ffd800;
+    color:#222;
+    border-radius:30px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.big-card2 h2{
+    font-size:38px;
+}
+
+.big-card2 p{
+    margin:15px 0;
+    font-size:18px;
+}
+
+.big-card2 button{
+    background:#3550c8;
+    color:#fff;
+    border:none;
+    padding:12px 22px;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+/* ===== NORMAL CARD ===== */
+.card2{
+    background:#4260e0;
+    border-radius:25px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    height:320px;
+    position:relative;
+}
+
+.card2 img{
+    width:100%;
+    height:100%;
+    object-fit:scale-down;          /* IMAGE FIT */
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:0;
+}
+
+.card2 h3{
+    font-size:20px;
+}
+
+.card2 span{
+    font-size:16px;
+    margin-top:5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+    .merch-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .big-card2{
+        grid-column: span 2;
+    }
+}
+
+@media(max-width:600px){
+    nav{ display:none; }
+    .merch-container{
+        grid-template-columns:1fr;
+    }
+    .big-card2{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+}
+/* ===== SECTION ===== */
+.section3{
+    max-width:1200px;
+    margin:80px auto;
+    padding:0 20px;
+    text-align:center;
+}
+
+.section3 h1{
+    font-size:48px;
+    font-weight:800;
+}
+
+.section3 p{
+    margin-top:12px;
+    font-size:18px;
+    color:#5f6c85;
+}
+
+/* ===== VIDEO CARDS ===== */
+.video-wrapper{
+    margin-top:50px;
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.video-card{
+    position:relative;
+    width:260px;
+    height:420px;
+    border-radius:22px;
+    overflow:hidden;
+    background:#000;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.video-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+/* ===== VIDEO ===== */
+.video-card video{
+    width:100%;
+    height:100%;
+    object-fit:cover;   /* IMPORTANT: card ki fit */
+}
+
+/* ===== PLAY BUTTON ===== */
+.play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:60px;
+    height:60px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    pointer-events:none;
+}
+
+.play-btn::before{
+    content:'';
+    border-style:solid;
+    border-width:10px 0 10px 16px;
+    border-color:transparent transparent transparent #1f2a44;
+    margin-left:4px;
+}
+
+/* ===== TEXT OVERLAY ===== */
+.video-text{
+    position:absolute;
+    top:18px;
+    left:18px;
+    right:18px;
+    font-size:20px;
+    font-weight:800;
+    color:#ffb703;
+    text-shadow:0 4px 8px rgba(0,0,0,.6);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .section h1{ font-size:36px; }
+}
+
+@media(max-width:600px){
+    .video-card{
+        width:90%;
+        max-width:320px;
+    }
+}
+/*FOOTER SECTION*/
+/* ===== FOOTER WRAPPER ===== */
+.wl-footer{
+    background:#1e2f4d;
+    color:#ffffff;
+    padding:70px 60px;
+}
+
+/* ===== GRID ===== */
+.wl-footer-grid{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr 1.5fr;
+    gap:60px;
+}
+
+/* ===== BRAND ===== */
+.wl-brand img{
+    width:150px;
+    margin-bottom:20px;
+}
+
+.wl-brand p{
+    font-size:15px;
+    line-height:1.6;
+    color:#d6d9e0;
+    margin-bottom:20px;
+}
+
+/* ===== SOCIAL ===== */
+.wl-socials{
+    display:flex;
+    gap:18px;
+}
+
+.wl-socials span{
+    width:36px;
+    height:36px;
+    background:#ffd800;
+    color:#1e2f4d;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ===== NEWSLETTER ===== */
+.wl-news{
+    margin-top:35px;
+}
+
+.wl-news h3{
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.wl-news input{
+    width:100%;
+    padding:14px 18px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+    margin-bottom:15px;
+}
+
+.wl-news button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:#ffd800;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* ===== LINKS ===== */
+.wl-links h4{
+    font-size:18px;
+    margin-bottom:18px;
+}
+
+.wl-links ul{
+    list-style:none;
+}
+
+.wl-links li{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    display:flex;
+    justify-content:space-between;
+    cursor:pointer;
+}
+
+.wl-links li span{
+    font-size:20px;
+    opacity:.7;
+}
+
+/* ===== CONTACTS ===== */
+.wl-contacts{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.wl-place h4{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.wl-place p{
+    font-size:14px;
+    color:#d6d9e0;
+    line-height:1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+    .wl-footer-grid{
+        grid-template-columns:1fr;
+    }
+    .wl-contacts{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">WONDERLA</div>
+    <nav>
+        <a href="#">Park</a>
+        <a href="#">Resorts</a>
+        <a href="#">Offers</a>
+        <a href="#">Rides</a>
+        <a href="#">Restaurants</a>
+        <a href="#">Events</a>
+        <a href="#">Login</a>
+        <a class="btn-yellow" href="#">Book Tickets</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>India’s Largest<br>Amusement Park Chain!</h1>
+        <p>Cheers to 25 years of smiles, memories, and joy 🎉</p>
+    </div>
+</section>
+
+<!-- PARKS -->
+<section class="parks">
+    <h3>SELECT YOUR WONDER PARK</h3>
+
+    <div class="cards3">
+        <div class="card3">
+            <img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=600&q=80">
+            <h4>Chennai</h4>
+            <span>Park</span>
+        </div>
+
+        <div class="card3">
+            <img src="https://images.unsplash.com/photo-1602339752474-65f3c2a68c74?auto=format&fit=crop&w=600&q=80">
+            <h4>Kochi</h4>
+            <span>Park</span>
+        </div>
+
+        <div class="card3">
+            <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=600&q=80">
+            <h4>Bengaluru</h4>
+            <span>Resort + Park</span>
+        </div>
+
+        <div class="card3">
+            <img src="https://images.unsplash.com/photo-1588413335653-7e83b8cc7b27?auto=format&fit=crop&w=600&q=80">
+            <h4>Hyderabad</h4>
+            <span>Park</span>
+        </div>
+
+        <div class="card3">
+            <img src="https://images.unsplash.com/photo-1600209144535-51e7a0e4d9d2?auto=format&fit=crop&w=600&q=80">
+            <h4>Bhubaneswar</h4>
+            <span>Park</span>
+        </div>
+    </div>
+</section>
+<header>
+    <div class="header-bar">
+        <div class="logo">WONDERLA</div>
+        <nav>
+            <a href="Wonderla.html">Park</a>
+            <a href="Wonder-Offers.html">Offers</a>
+            <a href="Wonder-Ride.html">Rides</a>
+            <a href="Wonder-Restarent.html">Restaurants</a>
+            <a href="Wonder-Events.html">Events</a>
+        </nav>
+        <button class="book-btn">Book Tickets</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>ISLE BY<br>WONDERLA</h1>
+        <button class="hero-btn">EXPLORE THE ISLE →</button>
+    </div>
+</section>
+
+<!-- FEATURES SLIDER -->
+<section class="features">
+    <div class="features-slider">
+        <div class="features-track">
+
+            <!-- ORIGINAL -->
+            <div class="feature">
+                <img src="Img2/W6.webp">
+                <h3>Pet-Friendly Design</h3>
+                <p>Among India’s few upscale resorts with inviting pet-friendly zones.</p>
+            </div>
+
+            <div class="feature">
+                <img src="Img2/W3.webp">
+                <h3>Campfire Courtyard</h3>
+                <p>Unwind with acoustic music, storytelling & marshmallow nights.</p>
+            </div>
+
+            <div class="feature">
+                <img src="Img2/W4.webp">
+                <h3>Temperature Controlled Pool</h3>
+                <p>Year-round pool designed for leisure & relaxation.</p>
+            </div>
+
+            <div class="feature">
+                <img src="Img2/W5.webp">
+                <h3>Spa by Therapy Tree</h3>
+                <p>Premium spa therapies for rejuvenation and calm.</p>
+            </div>
+
+            <!-- DUPLICATE FOR LOOP -->
+            <div class="feature">
+                <img src="Img2/W6.webp">
+                <h3>Pet-Friendly Design</h3>
+                <p>Among India’s few upscale resorts with inviting pet-friendly zones.</p>
+            </div>
+
+            <div class="feature">
+                <img src="Img2/W3.webp">
+                <h3>Campfire Courtyard</h3>
+                <p>Unwind with acoustic music, storytelling & marshmallow nights.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<body>
+<section class="stats">
+    <div class="stat"><span>11</span><p>Banquet Halls</p></div>
+    <div class="dot"></div>
+    <div class="stat"><span>5</span><p>Food Courts</p></div>
+    <div class="dot"></div>
+    <div class="stat"><span>1</span><p>Lounge Bar</p></div>
+</section>
+
+<section class="offers">
+    <div class="offers-wrap">
+
+        <div class="offers-left">
+            <img src="Img2/W1.webp">
+        </div>
+
+        <div class="offers-right">
+            <h1>JAW-DROPPING OFFERS!</h1>
+
+            <!-- SLIDING CARDS -->
+            <div class="card-slider">
+                <div class="cards">
+                    <div class="card blue">Mind Blowing Christmas</div>
+                    <div class="card purple">Wonderla NYE Bash</div>
+                    <div class="card red">Blockbuster Summer</div>
+
+                    <!-- Duplicate for smooth loop -->
+                    <div class="card blue">Mind Blowing Christmas</div>
+                    <div class="card purple">Wonderla NYE Bash</div>
+                    <div class="card red">Blockbuster Summer</div>
+                </div>
+            </div>
+
+            <button class="explore-btn">Explore Mind-Blowing Offers</button>
+        </div>
+    </div>
+</section>
+<section class="desi-section">
+
+    <div class="desi-wrap">
+
+        <!-- LEFT -->
+        <div class="desi-left">
+            <h1>DESI<br>DELIGHTS</h1>
+            <button class="desi-btn">Choose Your Perfect Meal</button>
+        </div>
+
+        <!-- RIGHT SLIDER -->
+        <div class="desi-right">
+            <div class="food-track">
+
+                <!-- ORIGINAL -->
+                <div class="food-card"><img src="Img2/W6.webp"></div>
+                <div class="food-card"><img src="Img2/w7.webp"></div>
+                <div class="food-card"><img src="Img2/w8.webp"></div>
+                <div class="food-card"><img src="Img2/w9.webp"></div>
+                <div class="food-card"><img src="Img2/w10.webp"></div>
+                <div class="food-card"><img src="Img2/w12.webp"></div>
+
+                <!-- DUPLICATE FOR LOOP -->
+                <div class="food-card"><img src="Img2/w11.webp"></div>
+                <div class="food-card"><img src="Img2/w13.webp"></div>
+                <div class="food-card"><img src="Img2/w14.webp"></div>
+                <div class="food-card"><img src="Img2/w14.webp"></div>
+                <div class="food-card"><img src="Img2/w15.webp"></div>
+                <div class="food-card"><img src="Img2/w8.webp"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="bottom-strip"></div>
+<section class="section1">
+<h1>RESTAURANTS</h1>
+
+<div class="slider-wrapper">
+    <div class="slider-track" id="restaurantTrack">
+
+      <div class="card1">
+     <div class="card1-img"> 
+        <img src="Img2/R2.webp" alt="">
+         <span class="tag">Quick bites</span> </div>
+          <div class="card1-content"> 
+            <h3>Waves Restaurant</h3>
+            <div class="location">Hyderabad</div> 
+            <p class="desc">A modern restaurant inspired by spice lovers with aromatic dishes.</p> 
+            <a href="#" class="btn">EXPLORE MENU</a> 
+        </div> 
+    </div>
+
+
+        <!-- CARD 2 -->
+        <div class="card1">
+            <div class="card1-img">
+                <img src="Img2/R2.webp" alt="">
+                <span class="tag">Quick bites</span>
+            </div>
+            <div class="card1-content">
+                <h3>Waves Restaurant</h3>
+                <div class="location">Hyderabad</div>
+                <p class="desc">A modern restaurant inspired by spice lovers with aromatic dishes.</p>
+                <a href="#" class="btn">EXPLORE MENU</a>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card1">
+            <div class="card1-img">
+                <img src="Img2/R3.webp" alt="">
+                <span class="tag">Veg & Non-Veg</span>
+            </div>
+            <div class="card1-content">
+                <h3>Spice Garden Restaurant</h3>
+                <div class="location">Hyderabad</div>
+                <p class="desc">Located near Rocking tug and Jumping horses ride serves special thali meals</p>
+                <a href="#" class="btn">EXPLORE MENU</a>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card1">
+            <div class="card1-img">
+                <img src="Img2/R4.webp" alt="">
+                <span class="tag">Biryani & Grills</span>
+            </div>
+            <div class="card1-content">
+                <h3>Vintage Kitchen Restaurant</h3>
+                <div class="location">Hyderabad</div>
+                <p class="desc">Beat the heat, unwind in our Air conditioned Restaurant 
+                     buffet-style dining experience offers an array .</p>
+                <a href="#" class="btn">EXPLORE MENU</a>
+            </div>
+        </div>
+        <!--CARDS-->
+        <div class="card1">
+            <div class="card1-img">
+                <img src="Img2/R5.webp" alt="">
+                <span class="tag">Biryani & Grills</span>
+            </div>
+            <div class="card1-content">
+                <h3>Wood House Restaurant</h3>
+                <div class="location">Hyderabad</div>
+                <p class="desc">Located near cinemagic Theatre is a cozy restaurant
+                     to grab Aromatic Biryani and Chinese delicacies</p>
+                <a href="#" class="btn">EXPLORE MENU</a>
+            </div>
+        </div>
+        <!--CARDS-->
+        <div class="card1">
+            <div class="card1-img">
+                <img src="Img2/R6.webp" alt="">
+                <span class="tag">Biryani & Grills</span>
+            </div>
+            <div class="card1-content">
+                <h3>Valley View Restaurant</h3>
+                <div class="location">Hyderabad</div>
+                <p class="desc">An iconic restaurantoverlooking the beautiful valley offers a breath taking view alongside armotic Biryani...</p>
+                <a href="#" class="btn">EXPLORE MENU</a>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="card1-img">
+                <img src="Img2/R7.webp" alt="">
+                <span class="tag">Biryani & grills</span>
+            </div>
+            <div class="card1-content">
+                <h3>Park View Restaurant</h3>
+                <div class="location">Hyderabad</div>
+                <p class="desc">Kickstart your day right with our delicious breakfast options at park View Restaurant!From fluffy idlis..</p>
+                <a href="#" class="btn">EXPLORE MENU</a>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="card1-img">
+                <img src="Img2/R8.webp" alt="">
+                <span class="tag">Biryani & grills</span>
+            </div>
+            <div class="card1-content">
+                <h3>Greens Restaurant</h3>
+                <div class="location">Hyderabad</div>
+                <p class="desc">Discover the vibrant world of veg Cuisine at our Exclusive Veg Cuisine at our Exclusive veg Restaurant.From classic Biryanis..</p>
+                <a href="#" class="btn">EXPLORE MENU</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="r-dots1">
+    <span class="r-dot1 active"></span>
+    <span class="r-dot1"></span>
+    <span class="r-dot1"></span>
+    <span class="r-dot1"></span>
+</div>
+
+</section>
+
+<script>
+/* ===== ELEMENTS ===== */
+const trackEl = document.getElementById("restaurantTrack");
+const cardEls = document.querySelectorAll("#restaurantTrack .card1");
+
+/* ===== SETTINGS ===== */
+let activeIndex = 0;
+const gapSize = 25;
+const slideInterval = 3000;
+
+/* ===== WIDTH CALC ===== */
+const cardSize =
+    cardEls[0].offsetWidth + gapSize;
+
+/* ===== SLIDE FUNCTION ===== */
+function slideRestaurants(){
+    activeIndex++;
+
+    if(activeIndex >= cardEls.length){
+        activeIndex = 0;
+    }
+
+    trackEl.style.transform =
+        `translateX(-${activeIndex * cardSize}px)`;
+}
+
+/* ===== AUTO SLIDE START ===== */
+setInterval(slideRestaurants, slideInterval);
+</script>
+<section class="comforts">
+    <h1>PARKSIDE COMFORTS</h1>
+    <p>Our easy-to-access facilities ensure a smooth, seamless and stress-free experience!</p>
+
+    <div class="icon-slider">
+        <div class="icon-track" id="comfortTrack">
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3208/3208676.png">
+                </div>
+                <h4>Lost & Found</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png">
+                </div>
+                <h4>Student Briefing</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png">
+                </div>
+                <h4>EZ Pay</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
+                </div>
+                <h4>Lockers</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png">
+                </div>
+                <h4>Changing Rooms</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917242.png">
+                </div>
+                <h4>Drinking Water</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png">
+                </div>
+                <h4>First Aid</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1534/1534959.png">
+                </div>
+                <h4>Wheelchair</h4>
+            </div>
+            <div class="icon-box">
+                <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/854/854894.png"></div>
+                <h4>Parking</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/3079/3079164.png"></div>
+                <h4>ATM</h4>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png"></div>
+                <h4>Information Desk</h4>
+            </div>
+
+            <div class="icon-box">
+            <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/3208/3208676.png"></div>
+            <h4>Lost & Found</h4>
+            </div>
+
+            <div class="icon-box">
+            <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png"></div>
+            <h4>First Aid</h4>
+            </div>
+
+            <div class="icon-box">
+            <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/2917/2917242.png"></div>
+            <h4>Drinking Water</h4>
+            </div>
+
+            <div class="icon-box">
+            <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/1534/1534959.png"></div>
+            <h4>Wheelchair Access</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="dots comforts-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <a href="#" class="btn">Explore Our Facilities</a>
+</section>
+
+<script>
+/* ===== ICON CARD SLIDER ===== */
+const comfortTrack = document.getElementById("comfortTrack");
+const comfortDots = document.querySelectorAll(".comforts-dots .dot");
+const iconCards = document.querySelectorAll(".icon-box");
+
+let cIndex = 0;
+const iconWidth = iconCards[0].offsetWidth + 40;
+const visibleIcons = 5;
+const maxIndex = iconCards.length - visibleIcons;
+
+/* MOVE SLIDER */
+function moveComfort(index){
+    comfortTrack.style.transform = `translateX(-${index * iconWidth}px)`;
+
+    comfortDots.forEach(d => d.classList.remove("active"));
+    comfortDots[Math.floor(index / visibleIcons) % comfortDots.length]
+        .classList.add("active");
+}
+
+/* AUTO SLIDE */
+setInterval(()=>{
+    cIndex++;
+    if(cIndex > maxIndex){
+        cIndex = 0;
+    }
+    moveComfort(cIndex);
+},2500);
+
+/* DOT CLICK */
+comfortDots.forEach((dot, i)=>{
+    dot.addEventListener("click", ()=>{
+        cIndex = i * visibleIcons;
+        moveComfort(cIndex);
+    });
+});
+</script>
+<div class="title">
+    <h1>WONDERLA MERCH</h1>
+    <p>Flaunt your style</p>
+</div>
+
+<!-- MERCH GRID -->
+<section class="merch-container">
+
+    <!-- BIG CARD -->
+    <div class="big-card2">
+        <div>
+            <h2>UNISEX COSTUMES</h2>
+            <p>Starting at ₹ 350</p>
+            <button>KNOW MORE</button>
+        </div>
+        <img src="Img2/V1.webp" width="200">
+    </div>
+
+    <!-- CARD -->
+    <div class="card2">
+        <img src="Img2/V2.webp">
+    </div>
+
+    <!-- CARD -->
+    <div class="card2">
+        <img src="Img2/V3.webp">
+    </div>
+
+    <!-- CARD -->
+    <div class="card2">
+        <img src="Img2/V4.webp">
+    </div>
+
+    <!-- CARD -->
+    <div class="card2">
+        <img src="Img2/V5.webp">
+    </div>
+
+</section>
+<section class="section3">
+    <h1>HEAR FROM WONDERLANDERS!</h1>
+    <p>Get all the inside scoop from loyal-thrill seekers who are spilling the tea.</p>
+
+    <div class="video-wrapper">
+
+        <!-- CARD 1 -->
+        <div class="video-card" onclick="toggleVideo(this)">
+            <video src="Img/Wonder1.mp4"></video>
+            <div class="video-text">Weekdays Ticket<br>Price: ₹1119</div>
+            <div class="play-btn"></div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="video-card" onclick="toggleVideo(this)">
+            <video src="Img/Wonder2.mp4"></video>
+            <div class="play-btn"></div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="video-card" onclick="toggleVideo(this)">
+            <video src="Img/Wonder3.mp4"></video>
+            <div class="play-btn"></div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="video-card" onclick="toggleVideo(this)">
+            <video src="Img/Wonder4.mp4"></video>
+            <div class="play-btn"></div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function toggleVideo(card){
+    const video = card.querySelector("video");
+    const playBtn = card.querySelector(".play-btn");
+
+    if(video.paused){
+        video.play();
+        playBtn.style.display = "none";
+    }else{
+        video.pause();
+        playBtn.style.display = "flex";
+    }
+}
+</script>
+<footer class="wl-footer">
+    <div class="wl-footer-grid">
+
+        <!-- LEFT -->
+        <div class="wl-brand">
+            <img src="https://www.wonderla.com/images/logo.svg" alt="">
+            <p>
+                We dream of creating a world of thrilling experiences
+                that bring endless joy to adventurers of all age groups!
+            </p>
+
+            <div class="wl-socials">
+                <span>I</span>
+                <span>X</span>
+                <span>Y</span>
+                <span>F</span>
+            </div>
+
+            <div class="wl-news">
+                <h3>Stay Looped Into Fun & Thrills!</h3>
+                <input type="email" placeholder="Enter email address">
+                <button>Subscribe To Our Newsletter</button>
+            </div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="wl-links">
+            <h4>Parks & Resorts</h4>
+            <ul>
+                <li>Guest Services <span>+</span></li>
+                <li>Corporate <span>+</span></li>
+                <li>Legal <span>+</span></li>
+                <li>News & Resources <span>+</span></li>
+                <li>Contact Us</li>
+                <li>FAQs</li>
+            </ul>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="wl-contacts">
+
+            <div class="wl-place">
+                <h4>Wonderla Chennai</h4>
+                <p>mail.che@wonderla.com<br>044-35024300</p>
+            </div>
+
+            <div class="wl-place">
+                <h4>Wonderla Kochi</h4>
+                <p>mail.cok@wonderla.com<br>0484 351 4001</p>
+            </div>
+
+            <div class="wl-place">
+                <h4>Wonderla Bengaluru</h4>
+                <p>mail.blr@wonderla.com<br>080 372 30333</p>
+            </div>
+
+            <div class="wl-place">
+                <h4>Wonderla Hyderabad</h4>
+                <p>mail.hyd@wonderla.com<br>084 146 76333</p>
+            </div>
+
+            <div class="wl-place">
+                <h4>Wonderla Bhubaneswar</h4>
+                <p>mail.bhu@wonderla.com<br>+91 67553 50200</p>
+            </div>
+
+            <div class="wl-place">
+                <h4>The Isle, Bengaluru</h4>
+                <p>theisle@wonderla.com<br>7026700011</p>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>

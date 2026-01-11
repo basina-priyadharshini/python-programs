@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Confirmed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    background:#0a8f5a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    color:#fff;
+}
+
+/* SUCCESS BOX */
+.success{
+    text-align:center;
+    animation:fadeIn 1.2s ease;
+}
+
+/* CHECK */
+.check{
+    width:120px;
+    height:120px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    animation:pop 0.6s ease;
+}
+.check span{
+    font-size:60px;
+    color:#0a8f5a;
+}
+
+h1{ font-size:32px; margin-bottom:10px; }
+p{ opacity:0.9; }
+
+/* CONFETTI */
+.confetti span{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:yellow;
+    animation:fall 3s infinite;
+}
+
+/* ANIMATIONS */
+@keyframes pop{
+    0%{transform:scale(0);}
+    80%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+@keyframes fall{
+    0%{top:-10%; opacity:1;}
+    100%{top:110%; opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="confetti">
+    <span style="left:20%;animation-delay:0s"></span>
+    <span style="left:40%;animation-delay:0.5s"></span>
+    <span style="left:60%;animation-delay:1s"></span>
+    <span style="left:80%;animation-delay:1.5s"></span>
+</div>
+
+<div class="success">
+    <div class="check"><span>✓</span></div>
+    <h1>Order Confirmed!</h1>
+    <p>Your order has been placed successfully</p>
+</div>
+<script>
+// PRICE.HTML → SUCCESS.HTML → ORDERS.HTML
+
+let item = JSON.parse(localStorage.getItem("checkoutItem"));
+
+if(item){
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+  orders.push({
+    name: item.name,
+    price: item.price,
+    image: item.image,
+    date: new Date().toLocaleString()
+  });
+
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  // order complete ayyaka checkout clear
+  localStorage.removeItem("checkoutItem");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sabarimala Page</title>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+    }
+    .container{
+        width:90%;
+        margin:40px auto;
+        display:flex;
+        gap:30px;
+    }
+    /* LEFT SECTION */
+    .about-box{
+        flex:1;
+        background:#fff;
+        padding:20px;
+        border-radius:6px;
+    }
+    .about-box h2{
+        margin-bottom:15px;
+    }
+    .about-content{
+        background:#f7efd9;
+        display:flex;
+        align-items:center;
+        padding:20px;
+        border-left:5px solid #d8c28d;
+    }
+    .about-content img{
+        width:140px;
+        margin-right:20px;
+    }
+    .about-text{
+        font-style:italic;
+        font-size:17px;
+        line-height:1.6;
+    }
+    .view-more{
+        margin-top:10px;
+        color:red;
+        cursor:pointer;
+        font-size:14px;
+    }
+    /* RIGHT SECTION */
+    .slider-box{
+        flex:1;
+        background:#fff;
+        padding:20px;
+        border-radius:6px;
+        position:relative;
+    }
+    .slider-box h2{
+        margin-bottom:15px;
+    }
+    .slider{
+        overflow:hidden;
+        height:300px;
+        border-radius:4px;
+    }
+    .slides{
+        display:flex;
+        width:400%;
+        animation:slide 12s infinite;
+    }
+    .slides img{
+        width:100%;
+        height:300px;
+        object-fit:cover;
+    }
+    @keyframes slide{
+        0%{margin-left:0%;}
+        25%{margin-left:0%;}
+        30%{margin-left:-100%;}
+        50%{margin-left:-100%;}
+        55%{margin-left:-200%;}
+        75%{margin-left:-200%;}
+        80%{margin-left:-300%;}
+        100%{margin-left:-300%;}
+    }
+    .caption{
+        margin-top:8px;
+        color:red;
+        font-size:14px;
+    }
+    .dots{
+        text-align:center;
+        margin-top:10px;
+    }
+    .dots span{
+        display:inline-block;
+        width:10px;
+        height:10px;
+        background:#999;
+        border-radius:50%;
+        margin:0 4px;
+    }
+    .dots span.active{
+        background:#000;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- LEFT -->
+    <div class="about-box">
+        <h2>About Sabarimala</h2>
+        <div class="about-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Ayyappa.jpg">
+            <div class="about-text">
+                Millions of devotees visit Kedarnath seeking moksha (liberation), 
+                inner peace, and blessings of Kedarnath Mahadev, making it one of 
+                the holiest pilgrimage destinations in India. 🕉️
+            </div>
+        </div>
+        <div class="view-more">view more</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="slider-box">
+        <h2>Nearest Places</h2>
+
+        <div class="slider">
+            <div class="slides">
+                <img src="Img/K1.jpg">
+                <img src="Img/k2.jpg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Nilakkal.jpg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Pamba_River.jpg">
+            </div>
+        </div>
+        <div class="caption">Kedarnath Temple</div>
+
+        <div class="dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

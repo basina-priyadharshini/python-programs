@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wonderla Rides</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 40px;
+}
+
+.header-bar{
+    background:#fff;
+    border-radius:30px;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#ffcc00;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 15px;
+    color:#1f3556;
+    font-weight:600;
+}
+
+.book-btn{
+    background:#ffcc00;
+    border:none;
+    padding:10px 22px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+      url("Img2/F10.webp")
+      center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding-top:120px;
+}
+
+.hero h1{
+    font-size:64px;
+    font-weight:900;
+}
+
+.hero-btn{
+    margin-top:25px;
+    background:#ffcc00;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* GRID */
+.grid{
+  padding:20px 40px 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.tags{
+  position:absolute;
+  display:flex;
+  gap:8px;
+  padding:15px;
+}
+
+.tag{
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  padding:5px 10px;
+  border-radius:15px;
+  font-size:12px;
+}
+
+.image-box{
+  position:relative;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card-content h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.location{
+  color:#777;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.desc{
+  font-size:14px;
+  color:#555;
+  margin-bottom:15px;
+}
+
+.btn{
+  background:#3b4fd8;
+  color:#ffd800;
+  text-align:center;
+  padding:12px;
+  border-radius:25px;
+  font-weight:bold;
+  font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+  background:#1f2f49;
+  color:#fff;
+  padding:70px 60px;
+}
+
+.footer-container{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1.5fr;
+  gap:60px;
+}
+
+/* LEFT */
+.footer-left img{
+  width:140px;
+  margin-bottom:20px;
+}
+
+.footer-left p{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:20px;
+  color:#d7dce3;
+}
+
+.social-icons span{
+  display:inline-block;
+  margin-right:15px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* NEWSLETTER */
+.newsletter h3{
+  font-size:20px;
+  margin:30px 0 15px;
+}
+
+.newsletter input{
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  border:none;
+  margin-bottom:15px;
+  outline:none;
+}
+
+.newsletter button{
+  width:100%;
+  padding:15px;
+  background:#ffd800;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* MIDDLE LINKS */
+.footer-links div{
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding:15px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* RIGHT CONTACT */
+.footer-contact h4{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.contact-box{
+  margin-bottom:25px;
+  font-size:14px;
+  color:#d7dce3;
+}
+
+.contact-box p{
+  margin:6px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+    <header>
+    <div class="header-bar">
+        <div class="logo">WONDERLA</div>
+        <nav>
+            <a href="Wonderla.html">Park</a>
+            <a href="Wonder-Offers.html">Offers</a>
+            <a href="Wonder-Ride.html">Rides</a>
+            <a href="Wonder-Restarent.html">Restaurants</a>
+            <a href="Wonder-Events.html">Events</a>
+        </nav>
+        <button class="book-btn">Book Tickets</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>ISLE BY<br>WONDERLA</h1>
+        <button class="hero-btn">EXPLORE THE ISLE →</button>
+    </div>
+</section>
+
+<!-- GRID -->
+<div class="grid">
+
+  <!-- CARD 1 -->
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Fairy Tale Theme</div>
+        <div class="tag">Spinning Adventure</div>
+      </div>
+      <img src="Img2/F1.webp">
+    </div>
+    <div class="card-content">
+      <h3>PARK VIEW RESTAURANTS</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Kickstart your day right with our delicious breakfast options at Park View Restaurant! From fluffy idlis, Crispy dos..
+      </div>
+      <div class="btn">EXPLORE MENU</div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Mini Vehicles</div>
+        <div class="tag">Hilly Track</div>
+      </div>
+      <img src="Img2/F2.webp">
+    </div>
+    <div class="card-content">
+      <h3>WAVES RESTAURANTS</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Indulge in a culinary adventure at Waves Restaurant, where every meal is a celebration of flavor and variety! Situate..
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F3.webp">
+    </div>
+    <div class="card-content">
+      <h3>SPICE GARDEN RESTAURANT</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Located near Rocking tug and Jumping horses ride serves special thali meals.
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F4.webp">
+    </div>
+    <div class="card-content">
+      <h3>VINTAGE KITCHEN RESTARENT</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Beat the heat, unwind in our Air conditioned Restaurant opposite to Air Racer ride. Indulge in a culinary..
+      </div>
+     <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F5.webp">
+    </div>
+    <div class="card-content">
+      <h3>WOOD HOUSE RESTARENT</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Located near cinemagic Theatre is a cozy restaurant to grab Aromatic Biryani and Chinese delicacies.
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F6.webp">
+    </div>
+    <div class="card-content">
+      <h3>VALLEY VIEW RESTARENT</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        An iconic restauarnt overlooking the beautiful valley offers a breath taking view alongside aromatic Biryanis, Chatt..
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F7.webp">
+    </div>
+    <div class="card-content">
+      <h3>SMOKE & GRILLS</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Experience the tantalizing aromas and flavors of the grill at Smoke & Grill, your destination for authentic tandoori..
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F8.webp">
+    </div>
+    <div class="card-content">
+      <h3>WWF (Wonderla World of Fries)</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Juicy, Crispy Fried chicken and burgers are always a crowd favorite. Located at the Food court opposite Valley View..
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F9.webp">
+    </div>
+    <div class="card-content">
+      <h3>Namma Pizza</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+       Experience the taste of Italy at Namma Pizza located at the food court opposite to Valley view restaurant. Whether you'..
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F10.webp">
+    </div>
+    <div class="card-content">
+      <h3>MUNCHIES</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Our Munchies counter located at Food court serves quick bites like Momo's, Sandwiches and pasta.
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F11.webp">
+    </div>
+    <div class="card-content">
+      <h3>KAVERI KITCHEN</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Discover the vibrant world of Veg Cuisine at our Exclusive Veg Counter. From classic Biryanis, Wholesome Meals,and...
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-box">
+      <div class="tags">
+        <div class="tag">Merry-Go-Round</div>
+        <div class="tag">Spinning Elephants</div>
+      </div>
+      <img src="Img2/F12.webp">
+    </div>
+    <div class="card-content">
+      <h3>THATTUKADA</h3>
+      <div class="location">Kochi</div>
+      <div class="desc">
+        Immerse yourself in the world of Malabar snacks like Pazham pori, Chatti Pathiri, Shawarma Pocket etc paired with hot..
+      </div>
+      <div class="btn">EXPLORE-MENU</div>
+    </div>
+  </div>
+
+</div>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <img src="Img2/WONDER.webp" alt="Wonderla">
+
+      <p>
+        We dream of creating a world of thrilling experiences that bring endless joy to adventurers of all age groups!
+      </p>
+
+      <div class="social-icons">
+        <span>📷</span>
+        <span>✖</span>
+        <span>▶</span>
+        <span>f</span>
+      </div>
+
+      <div class="newsletter">
+        <h3>Stay Looped Into Fun & Thrills!</h3>
+        <input type="email" placeholder="Enter email address">
+        <button>Subscribe To Our Newsletter</button>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="footer-links">
+      <div>Parks & Resorts <span>+</span></div>
+      <div>Guest Services <span>+</span></div>
+      <div>Corporate <span>+</span></div>
+      <div>Legal <span>+</span></div>
+      <div>News & Resources <span>+</span></div>
+      <div>Contact Us <span>+</span></div>
+      <div>FAQs</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-contact">
+
+      <div class="contact-box">
+        <h4>Wonderla Chennai</h4>
+        <p>✉ mail.che@wonderla.com</p>
+        <p>📞 044-35024300</p>
+        <p>📞 044-35024242</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Kochi</h4>
+        <p>✉ mail.cok@wonderla.com</p>
+        <p>📞 0484 351 4001</p>
+        <p>📞 +91 75938 53107</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Bengaluru</h4>
+        <p>✉ mail.blr@wonderla.com</p>
+        <p>📞 080 372 30333</p>
+        <p>📞 080 350 73966</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Hyderabad</h4>
+        <p>✉ mail.hyd@wonderla.com</p>
+        <p>📞 084 146 76333</p>
+        <p>📞 +91 91000 63636</p>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>

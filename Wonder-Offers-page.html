@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wonderla – Plan Your Adventure</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+  color:#222;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  padding:20px;
+}
+
+.header img{
+  height:55px;
+}
+
+/* STEPS */
+.steps{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-bottom:30px;
+  font-size:14px;
+}
+
+.steps span{
+  color:#999;
+}
+
+.steps .active{
+  color:#000;
+  font-weight:bold;
+  border-bottom:3px solid #f4c400;
+  padding-bottom:6px;
+}
+
+/* MAIN LAYOUT */
+.container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  gap:30px;
+  padding:0 20px 40px;
+}
+
+/* LEFT CARD */
+.left-card{
+  flex:1;
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+}
+
+.title-row{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.back{
+  background:#f4c400;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.city{
+  margin-left:auto;
+  background:#f4c400;
+  padding:6px 16px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.left-card h2{
+  margin:20px 0 10px;
+  font-size:26px;
+}
+
+.subtitle{
+  color:#555;
+  margin-bottom:25px;
+}
+
+.info-box{
+  background:#f7f7f7;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.info-box h4{
+  margin-bottom:15px;
+}
+
+.timing{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  row-gap:12px;
+  font-size:15px;
+}
+
+.note{
+  margin-top:20px;
+  background:#f7f7f7;
+  padding:15px;
+  border-radius:15px;
+  font-weight:bold;
+}
+
+/* RIGHT CARD */
+.right-card{
+  width:420px;
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+}
+
+.month{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.arrow{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#f1f1f1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.calendar{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:10px;
+}
+
+.calendar div{
+  text-align:center;
+  padding:14px 0;
+  border-radius:12px;
+  font-size:14px;
+}
+
+.day{
+  color:#888;
+  font-weight:bold;
+}
+
+.date{
+  background:#f7f7f7;
+}
+
+.selected{
+  background:#3b4fd8;
+  color:#fff;
+}
+
+.proceed{
+  margin-top:25px;
+  background:#3b4fd8;
+  color:#ffd800;
+  text-align:center;
+  padding:16px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="Img2/WONDER.webp">
+</div>
+
+<div class="steps">
+  <span>Location</span>
+  <span class="active">Visit Date</span>
+  <span>Tickets</span>
+  <span>Add-ons</span>
+  <span>Billing</span>
+</div>
+
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="left-card">
+    <div class="title-row">
+      <div class="back">&#8592;</div>
+      <h2>PLAN YOUR ADVENTURE</h2>
+      <div class="city">Chennai</div>
+    </div>
+
+    <p class="subtitle">7 hours of non-stop thrills, twists, and unforgettable excitement!</p>
+
+    <div class="info-box">
+      <h4>PARK / WATER TIMINGS TILL 4th JANUARY</h4>
+      <div class="timing">
+        <strong></strong>
+        <strong>Park Timings</strong>
+        <strong>Water Timings</strong>
+
+        <strong>Weekdays</strong>
+        <span>11 AM to 7 PM</span>
+        <span>12 PM to 6 PM</span>
+
+        <strong>Weekends</strong>
+        <span>11 AM to 7 PM</span>
+        <span>12 PM to 6 PM</span>
+      </div>
+    </div>
+
+    <div class="note">
+      Upcoming Holidays Perfect For A Wonderla Trip<br>
+      We Are Open All 365 Days!
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right-card">
+    <div class="month">
+      <div class="arrow">&#8249;</div>
+      <h3>JANUARY 2026</h3>
+      <div class="arrow">&#8250;</div>
+    </div>
+
+    <div class="calendar">
+      <div class="day">SUN</div>
+      <div class="day">MON</div>
+      <div class="day">TUE</div>
+      <div class="day">WED</div>
+      <div class="day">THU</div>
+      <div class="day">FRI</div>
+      <div class="day">SAT</div>
+
+      <div class="date">28</div>
+      <div class="date">29</div>
+      <div class="date">30</div>
+      <div class="date">31</div>
+      <div class="date">1</div>
+      <div class="date">2</div>
+      <div class="date">3</div>
+
+      <div class="date">4</div>
+      <div class="date selected">5</div>
+      <div class="date">6</div>
+      <div class="date">7</div>
+      <div class="date">8</div>
+      <div class="date">9</div>
+      <div class="date">10</div>
+
+      <div class="date">11</div>
+      <div class="date">12</div>
+      <div class="date">13</div>
+      <div class="date">14</div>
+      <div class="date">15</div>
+      <div class="date">16</div>
+      <div class="date">17</div>
+
+      <div class="date">18</div>
+      <div class="date">19</div>
+      <div class="date">20</div>
+      <div class="date">21</div>
+      <div class="date">22</div>
+      <div class="date">23</div>
+      <div class="date">24</div>
+
+      <div class="date">25</div>
+      <div class="date">26</div>
+      <div class="date">27</div>
+      <div class="date">28</div>
+      <div class="date">29</div>
+      <div class="date">30</div>
+      <div class="date">31</div>
+    </div>
+
+    <div class="proceed">Proceed</div>
+  </div>
+
+</div>
+<script>
+  const dates = document.querySelectorAll('.date');
+
+  dates.forEach(date => {
+    date.addEventListener('click', () => {
+
+      // remove blue from all dates
+      dates.forEach(d => d.classList.remove('selected'));
+
+      // add blue to clicked date
+      date.classList.add('selected');
+
+    });
+  });
+</script>
+
+</body>
+</html>

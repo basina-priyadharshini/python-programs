@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Service and Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+   background:
+        linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+        url("Img/Ship2.jpg")no-repeat,center;
+        background-size: cover;
+    color:#333;
+}
+
+/* TOP NAV TEXT */
+.top-bar{
+    max-width:1200px;
+    margin:170px auto 40px; /* HEADER kinda ki vasthundi */
+    padding:0 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+    color:#1a5fb4;
+}
+
+.top-bar a{
+    color:#1a5fb4;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* TITLE */
+.page-title{
+    text-align:center;
+    margin:40px 0 50px;
+}
+
+.page-title h1{
+    font-size:30px;
+    font-weight:700;
+    color:#eeeff1;
+    position:relative;
+    display:inline-block;
+}
+
+.page-title h1::after{
+    content:"";
+    width:60px;
+    height:2px;
+    background:#cfd6df;
+    display:block;
+    margin:12px auto 0;
+}
+
+/* GRID */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px 80px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+/* CARD */
+.card{
+    border:1px solid #e5e7eb;
+    padding:25px 25px 30px;
+    background:#fff;
+}
+
+/* CARD TITLE */
+.card h2{
+    font-size:20px;
+    margin-bottom:15px;
+    color:#000;
+}
+
+/* CONTENT WITH BLUE LINE */
+.card-content{
+    border-left:3px solid #2f80ed;
+    padding-left:15px;
+    font-size:15px;
+    line-height:1.7;
+    color:#555;
+    margin-bottom:22px;
+}
+
+/* BUTTON */
+.read-more{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid #cfd6df;
+    text-decoration:none;
+    color:#1a5fb4;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.read-more:hover{
+    background:#1a5fb4;
+    color:#fff;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+/* ===== HEADER WRAPPER ===== */
+.header-wrap{
+    position:absolute;
+    top:55px;
+    color:gold;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    z-index:10;
+}
+
+/* ===== NAV BOX ===== */
+.nav-box{
+    width:100%;
+    padding:30px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.12); /* transparent */
+    backdrop-filter: blur(10px);       /* glass effect */
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+/* LOGO */
+.logo{
+    font-size:66px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+.logo-wrap img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+/* ================= NAVBAR ================= */
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:gold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#c93434;
+}
+span{
+    font-size: 26PX;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <a href="#">← Go Back</a>
+    <span></span>
+</div>
+<div class="header-wrap">
+    <div class="nav-box">
+        <div class="logo-wrap">
+       <img src="logo.png" alt="Shipcon Logo">
+       <span>SHIPCON CHENNAI</span></div>
+        <nav>
+            <a href="Ship-H.html">HOME</a>
+            <a href="Ship-About.html">ABOUT US</a>
+            <a href="Infrastructure.html">INFRASTUCTURE</a>
+            <a href="Services.html">PRODUCTS & SERVICES</a>
+            <a href="Projects.html">PROJECTS</a>
+            <a href="Ship-Gallery.html">GALLERY</a>
+            <a href="Ship-Career.html">CAREERS</a>
+            <a href="Ship-Tender.html">TENDERS</a>
+            <a href="Ship-Contact.html">CONTACT</a>
+        
+        </nav>
+    </div>
+</div>
+
+<!-- TITLE -->
+<div class="page-title">
+    <h1>SERVICE AND PRODUCTS</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+    <div class="grid">
+
+        <!-- Ship Building -->
+        <div class="card">
+            <h2>Ship Building</h2>
+            <div class="card-content">
+                CSL, the first Greenfield and presently the most modern shipbuilding
+                yard in India, has an enviable reputation for building high quality ships.
+                Cochin Shipyard has delivered a wide range of vessels...
+            </div>
+            <a href="Shio-Built.html" class="read-more">Read More</a>
+        </div>
+
+        <!-- Ship Repair -->
+        <div class="card">
+            <h2>Ship Repair</h2>
+            <div class="card-content">
+                CSL started offering ship repair services in 1982 and has undertaken
+                upgrades and repairs for all types of vessels including bulk carriers,
+                container ships and offshore vessels...
+            </div>
+            <a href="ship-repair.html" class="read-more">Read More</a>
+        </div>
+
+        <!-- Facilities -->
+        <div class="card">
+            <h2>Facilities</h2>
+            <div class="card-content">
+                CSL has always focused on the continuous and sustainable improvisation
+                of infrastructure, which is a key element in ensuring quality, efficiency
+                and timely completion of projects...
+            </div>
+            <a href="Ship-Faci.html" class="read-more">Read More</a>
+        </div>
+
+        <!-- Financials -->
+        <div class="card">
+            <h2>Financials</h2>
+            <div class="card-content">
+                As the biggest shipyard in India, CSL believes not only in the quantity
+                of products and services but also in value creation. The performance and
+                financial growth reflects operational excellence...
+            </div>
+            <a href="Financial.html" class="read-more">Read More</a>
+        </div>
+        <!-- Marine Engineering -->
+        <div class="card">
+            <h2>Marine Engineering</h2>
+            <div class="card-content">
+                The Marine Engineering Training Institute (METI) commenced the Graduate
+                Mechanical Engineers (GME) Course in 1993. This 12 months course is mandatory
+                for candidates aspiring to become marine engineers...
+            </div>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sonu Sood | Profile & Recognition</title>
+
+<style>
+:root{
+  --primary:#e50914;
+  --bg:#0c0c0c;
+  --panel:#161616;
+  --text:#f2f2f2;
+  --muted:#9a9a9a;
+  --border:#262626;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", system-ui, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:130px 10% 100px;
+  background:radial-gradient(circle at top right,#1c1c1c,#000);
+  background-image: url(Img/Sonu3.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1{
+  font-size:58px;
+  letter-spacing:3px;
+  transform:translateX(-60px);
+  opacity:0;
+  animation:slideReveal 1.2s ease forwards;
+}
+
+.hero span{color:var(--primary);}
+
+.hero p{
+  margin-top:22px;
+  max-width:820px;
+  font-size:19px;
+  color:var(--muted);
+  transform:translateX(-40px);
+  opacity:0;
+  animation:slideReveal 1.5s ease forwards;
+}
+
+/* ================= SECTION ================= */
+.section{
+  padding:95px 10%;
+}
+
+.title{
+  font-size:34px;
+  margin-bottom:60px;
+  position:relative;
+}
+
+.title::after{
+  content:"";
+  width:60px;
+  height:4px;
+  background:var(--primary);
+  position:absolute;
+  bottom:-12px;
+  left:0;
+}
+
+/* ================= CONTENT BLOCK ================= */
+.content-box{
+  max-width:900px;
+  margin-bottom:70px;
+  opacity:0;
+  transform:translateY(40px);
+  animation:riseLine 1.3s ease forwards;
+}
+
+.content-box p{
+  margin-bottom:18px;
+  color:var(--muted);
+}
+
+/* ================= AWARDS ================= */
+.awards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:45px;
+}
+
+.award{
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:45px;
+  border-radius:20px;
+  position:relative;
+  overflow:hidden;
+  transform:scale(.92);
+  opacity:0;
+  animation:zoomEnter 1.2s ease forwards;
+}
+
+.award::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(229,9,20,.12),transparent);
+  transform:translateX(-100%);
+  transition:.8s;
+}
+
+.award:hover::before{
+  transform:translateX(100%);
+}
+
+.award h3{font-size:23px;}
+.award span{color:var(--primary); display:block; margin-top:8px;}
+.award p{margin-top:16px; color:var(--muted);}
+
+/* ================= TIMELINE ================= */
+.timeline{
+  max-width:900px;
+  margin:auto;
+  border-left:2px solid var(--border);
+  padding-left:40px;
+}
+
+.point{
+  margin-bottom:55px;
+  position:relative;
+  opacity:0;
+  transform:translateY(50px);
+  animation:riseLine 1.3s ease forwards;
+}
+
+.point::before{
+  content:"";
+  width:14px;
+  height:14px;
+  background:var(--primary);
+  border-radius:50%;
+  position:absolute;
+  left:-48px;
+  top:5px;
+}
+
+.point h4{font-size:22px;}
+.point p{margin-top:12px; color:var(--muted);}
+
+/* ================= STATS ================= */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+  text-align:center;
+}
+
+.stat{
+  background:#111;
+  border:1px solid var(--border);
+  padding:50px 20px;
+  border-radius:22px;
+  opacity:0;
+  transform:rotateX(90deg);
+  animation:flipOpen 1.4s ease forwards;
+}
+
+.stat h2{font-size:46px; color:var(--primary);}
+.stat p{margin-top:10px; color:var(--muted);}
+
+/* ================= QUOTE ================= */
+.quote{
+  padding:100px 12%;
+  text-align:center;
+  background:linear-gradient(180deg,#111,#000);
+}
+
+.quote p{
+  font-size:30px;
+  max-width:900px;
+  margin:auto;
+  opacity:0;
+  animation:textGlow 1.8s ease forwards;
+}
+
+.quote span{
+  display:block;
+  margin-top:20px;
+  color:var(--primary);
+  font-size:18px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+  font-size:14px;
+  color:#888;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideReveal{to{opacity:1; transform:translateX(0);}}
+@keyframes zoomEnter{to{opacity:1; transform:scale(1);}}
+@keyframes riseLine{to{opacity:1; transform:translateY(0);}}
+@keyframes flipOpen{to{opacity:1; transform:rotateX(0);}}
+@keyframes textGlow{to{opacity:1; text-shadow:0 0 20px rgba(229,9,20,.35);}}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:600px){
+  .hero h1{font-size:40px;}
+  .title{font-size:26px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1><span>SONU</span> SOOD</h1>
+  <p>
+    Actor. Humanitarian. Leader.  
+    Sonu Sood is widely respected not only for his powerful screen presence
+    but also for his unwavering commitment to social responsibility and public service.
+  </p>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2 class="title">About Sonu Sood</h2>
+
+  <div class="content-box">
+    <p>
+      Sonu Sood is one of India’s most admired public figures, known for balancing
+      a successful film career with extraordinary humanitarian initiatives.
+      Over the years, he has earned immense respect for standing with people
+      during times of crisis.
+    </p>
+
+    <p>
+      While cinema brought him fame, his actions beyond the screen defined his legacy.
+      During national emergencies, Sonu Sood emerged as a symbol of hope,
+      personally coordinating logistics, resources, and relief efforts.
+    </p>
+
+    <p>
+      His work reflects a philosophy rooted in empathy, accountability,
+      and long-term impact — proving that leadership is measured by service.
+    </p>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section">
+  <h2 class="title">Awards & Honors</h2>
+
+  <div class="awards">
+    <div class="award">
+      <h3>Humanitarian Excellence Award</h3>
+      <span>United Nations Association – 2020</span>
+      <p>Recognized for exceptional humanitarian leadership and crisis response.</p>
+    </div>
+
+    <div class="award">
+      <h3>Champion of Change</h3>
+      <span>Government of India – 2021</span>
+      <p>Awarded for national service, compassion, and public leadership.</p>
+    </div>
+
+    <div class="award">
+      <h3>Global Social Impact Honor</h3>
+      <span>International Recognition</span>
+      <p>Honored for creating sustainable social change across India.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section">
+  <h2 class="title">Journey of Impact</h2>
+
+  <div class="timeline">
+    <div class="point">
+  <p>
+    The journey of impact for Sonu Sood began during one of the most challenging
+    periods in modern history. As uncertainty spread across the nation, he
+    emerged as a symbol of hope by extending immediate support to those left
+    vulnerable and unheard.
+  </p>
+</div>
+
+    <div class="point">
+      <p>
+    During the nationwide lockdown, Sonu Sood personally coordinated the safe
+    transportation of migrant workers, arranged food supplies, medical aid,
+    and temporary shelter — often responding directly to calls for help.
+    His actions reflected not publicity, but purpose.
+  </p>
+    </div>
+
+    <div class="point">
+      <p>
+    Recognizing the need for sustainable change, his mission gradually expanded
+    beyond emergency relief. Education assistance programs were launched to
+    ensure students could continue learning, while healthcare initiatives
+    provided access to critical treatment and resources.
+  </p>
+    </div>
+
+    <div class="point">
+        <p>
+    Today, his journey of impact stands as a structured and transparent model
+    of social leadership — built on trust, responsibility, and the belief
+    that true success lies in uplifting others.
+  </p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <h2 class="title">Impact at a Glance</h2>
+
+  <div class="stats">
+    <div class="stat"><h2>10L+</h2><p>Lives Supported</p></div>
+    <div class="stat"><h2>20+</h2><p>States Reached</p></div>
+    <div class="stat"><h2>25+</h2><p>National & Global Honors</p></div>
+    <div class="stat"><h2>∞</h2><p>Hope Inspired</p></div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <p>“Success has meaning only when it is shared with those in need.”</p>
+  <span>— Sonu Sood</span>
+</section>
+
+<footer>
+  © 2025 Sonu Sood | Official Profile
+</footer>
+
+</body>
+</html>

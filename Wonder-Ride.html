@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wonderla Offers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+}
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 40px;
+}
+
+.header-bar{
+    background:#fff;
+    border-radius:30px;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#ffcc00;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 15px;
+    color:#1f3556;
+    font-weight:600;
+}
+
+.book-btn{
+    background:#ffcc00;
+    border:none;
+    padding:10px 22px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+      url("Img2/P15.jpeg")
+      center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding-top:120px;
+}
+
+.hero h1{
+    font-size:64px;
+    font-weight:900;
+}
+
+.hero-btn{
+    margin-top:25px;
+    background:#ffcc00;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+/* ===== PAGE WRAP ===== */
+.offer-page{
+    padding:60px 40px;
+}
+
+/* ===== GRID ===== */
+.offer-grid{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* ===== CARD ===== */
+.offer-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    display:flex;
+    flex-direction:column;
+}
+
+/* IMAGE */
+.offer-image{
+    height:200px;
+}
+
+.offer-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* CONTENT */
+.offer-body{
+    padding:18px;
+    flex:1;
+}
+
+.offer-title{
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:#0b1c3d;
+}
+
+/* TAGS */
+.offer-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:12px;
+}
+
+.offer-tags span{
+    background:#e6efff;
+    color:#3567ff;
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:8px;
+}
+
+/* DESC */
+.offer-desc{
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+}
+
+/* FOOTER BUTTONS */
+.offer-actions{
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.book-btn{
+    background:#3a57d7;
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    border-radius:10px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.view-btn{
+    background:#3a57d7;
+    color:#0b1c3d;
+    text-align:center;
+    padding:14px;
+    border-radius:10px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1200px){
+    .offer-grid{ grid-template-columns:repeat(320,1fr); }
+}
+
+@media(max-width:650px){
+    .offer-grid{ grid-template-columns:1fr; }
+}
+.yellow-section{
+  background:#ffd800;
+  padding:60px 40px;
+}
+
+.yellow-section h1{
+  text-align:center;
+  font-size:42px;
+  font-weight:900;
+  color:#1c2b39;
+}
+
+.yellow-section p{
+  text-align:center;
+  margin:10px 0 40px;
+}
+
+/* CAROUSEL */
+.carousel-wrapper{
+  position:relative;
+  overflow:hidden;
+}
+
+.carousel-track{
+  display:flex;
+  gap:25px;
+  transition:0.5s ease;
+}
+
+/* ARROWS */
+.carousel-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#fff;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.arrow-left{ left:-10px; }
+.arrow-right{ right:-10px; }
+
+/* ENGINEERING CARDS */
+.safety-card{
+  min-width:230px;
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+}
+
+.card-icon{
+  font-size:40px;
+  margin-bottom:15px;
+  color:#3b4fd8;
+}
+
+/* CERTIFICATE CARDS */
+.certificate-card{
+  min-width:260px;
+  background:#fff;
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+}
+
+.certificate-card img{
+  width:100%;
+  height:140px;
+  object-fit:contain;
+}
+
+.certificate-text{
+  min-width:340px;
+  text-align:left;
+}
+/* FAQ SECTION */
+.faq-section{
+  background:#ffd800;
+  padding:80px 60px;
+}
+
+.faq-container{
+  display:flex;
+  gap:60px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* LEFT CONTENT */
+.faq-left{
+  width:40%;
+}
+
+.faq-left h1{
+  font-size:64px;
+  font-weight:900;
+  color:#1b2b3a;
+  line-height:1;
+}
+
+.faq-left p{
+  margin:20px 0 40px;
+  color:#1b2b3a;
+  font-size:16px;
+}
+
+.faq-btn{
+  background:#3b4fd8;
+  color:#fff;
+  padding:16px 35px;
+  border-radius:30px;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* RIGHT FAQ BOXES */
+.faq-right{
+  width:60%;
+}
+
+.faq-item{
+  background:#fff;
+  border-radius:14px;
+  padding:22px 25px;
+  margin-bottom:18px;
+  cursor:pointer;
+}
+
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:17px;
+  font-weight:600;
+  color:#1b2b3a;
+}
+
+.faq-icon{
+  font-size:22px;
+  transition:0.3s;
+}
+
+/* ANSWER */
+.faq-answer{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:all 0.4s ease;
+  margin-top:0;
+  color:#444;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.faq-item.active .faq-answer{
+  max-height:200px;
+  opacity:1;
+  margin-top:15px;
+}
+
+.faq-item.active .faq-icon{
+  transform:rotate(45deg);
+}
+
+/* FOOTER */
+.footer{
+  background:#1f2f49;
+  color:#fff;
+  padding:70px 60px;
+}
+
+.footer-container{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1.5fr;
+  gap:60px;
+}
+
+/* LEFT */
+.footer-left img{
+  width:140px;
+  margin-bottom:20px;
+}
+
+.footer-left p{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:20px;
+  color:#d7dce3;
+}
+
+.social-icons span{
+  display:inline-block;
+  margin-right:15px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* NEWSLETTER */
+.newsletter h3{
+  font-size:20px;
+  margin:30px 0 15px;
+}
+
+.newsletter input{
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  border:none;
+  margin-bottom:15px;
+  outline:none;
+}
+
+.newsletter button{
+  width:100%;
+  padding:15px;
+  background:#ffd800;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* MIDDLE LINKS */
+.footer-links div{
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding:15px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* RIGHT CONTACT */
+.footer-contact h4{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.contact-box{
+  margin-bottom:25px;
+  font-size:14px;
+  color:#d7dce3;
+}
+
+.contact-box p{
+  margin:6px 0;
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div class="header-bar">
+        <div class="logo">WONDERLA</div>
+        <nav>
+            <a href="Wonderla.html">Park</a>
+            <a href="Wonder-Offers.html">Offers</a>
+            <a href="Wonder-Ride.html">Rides</a>
+            <a href="Wonder-Restarent.html">Restaurants</a>
+            <a href="Wonder-Events.html">Events</a>
+        </nav>
+        <button class="book-btn">Book Tickets</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>ISLE BY<br>WONDERLA</h1>
+        <button class="hero-btn">EXPLORE THE ISLE →</button>
+    </div>
+</section>
+
+<section class="offer-page">
+
+    <div class="offer-grid">
+
+        <!-- CARD 1 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P1.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">CASTLE JEL</h3>
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                    <span>Kochi</span>
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                    Meet Aladdin & his mysterious genie on a magical joyride!
+                </p>
+            </div>
+            <div class="offer-actions">
+                
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P2.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">CONVOY</h3>
+                <div class="offer-tags">
+                    <span>Chennai</span>
+                </div>
+                <p class="offer-desc">
+                    Pick your favourite ride and go zooming over an exciting hilly terrain!
+                </p>
+            </div>
+            <div class="offer-actions">
+                
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P3.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">Flying Jumbo</h3>
+                <div class="offer-tags">
+                    <span>Chennai</span>
+                </div>
+                <p class="offer-desc">
+                    Climb aboard a friendly elephant that takes you on a playful spin!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P4.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">CAROUEL</h3>
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                    <span>Kochi</span>
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                   Gallop around on colourful horses like a seasoned cowboy!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P5.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">HAPPY KANGAROO</h3>
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                </div>
+                <p class="offer-desc">
+                    Plummet into a safe freefall with a tall & cheerful kangaroo!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P6.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">KIDDIES WHEEL</h3>
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                </div>
+                <p class="offer-desc">
+                    A miniature giant wheel designed to give your children a taste of real thrill without being half as scary.
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P7.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">MINI PIRATE SHIP</h3>
+                <div class="offer-tags">
+                    <span>Kochi</span>
+                </div>
+                <p class="offer-desc">
+                    Sail like a pirate on a miniature, adrenaline-filled flying boat!.
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P8.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">MAGIC-PLANE</h3>
+                <div class="offer-tags">
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                    Pedal through the sky on a glider that gives you full control!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P9.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">PONY TRAIN</h3>
+                <div class="offer-tags">
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                    Hop onto a chariot-pulled pony ride through the world of fantasy!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P10.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">NET WALK</h3>
+                <div class="offer-tags">
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                   Navigate through an adventurous, elevated maze of nylon ropes!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P11.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">VR COASTER</h3>
+                <div class="offer-tags">
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                    Strap into a heart-pounding, immersive VR-enhanced rollercoaster experience!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P12.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">WONDER SPLASH</h3>
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                </div>
+                <p class="offer-desc">
+                    Race up a steep incline and hurtle down into a big splash!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P13.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">MYSTIC SAUCER</h3>
+                <div class="offer-tags">
+                    <span>Hyderabad</span>
+                </div>
+                <p class="offer-desc">
+                    Spin around in a thrilling pot placed on a rotating turntable floor!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P14.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">SKY RING</h3>
+                <div class="offer-tags">
+                    <span>Bengaluru</span></div>
+                <p class="offer-desc">
+                    Shoot up a sky-high tower for a birds-eye view of Wonderla Kochi!
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE DETAILS</a>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/P15.jpeg">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">SKY WHEEL</h3>
+                <div class="offer-tags">
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                    Firmly straddled atop a 443 meters tall building, the Sky Wheel at Wonderla Amusement Park, Hyderabad
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="#" class="view-btn">RIDE  DETAILS</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ===== ENGINEERING THRILLS ===== -->
+<div class="yellow-section">
+  <h1>ENGINEERING THRILLS WITH SAFETY & PRECISION</h1>
+  <p>Experience stress-free, non-stop thrill with our safe rides.</p>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-arrow arrow-left" onclick="moveSafety(-1)">&#8249;</div>
+    <div class="carousel-arrow arrow-right" onclick="moveSafety(1)">&#8250;</div>
+
+    <div class="carousel-track" id="safetyTrack">
+      <div class="safety-card"><div class="card-icon">🎟️</div>Advanced safety technology</div>
+      <div class="safety-card"><div class="card-icon">🎧</div>Global regulations compliant</div>
+      <div class="safety-card"><div class="card-icon">⬇️</div>Regular inspections</div>
+      <div class="safety-card"><div class="card-icon">👤</div>Continuous monitoring</div>
+      <div class="safety-card"><div class="card-icon">✅</div>24x7 emergency response</div>
+      <div class="safety-card"><div class="card-icon">🎓</div>Staff training</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CERTIFICATES ===== -->
+<div class="yellow-section">
+  <h1>CERTIFICATES</h1>
+
+  <div class="carousel-wrapper" style="margin-top:40px;">
+    <div class="carousel-arrow arrow-left" onclick="moveCert(-1)">&#8249;</div>
+    <div class="carousel-arrow arrow-right" onclick="moveCert(1)">&#8250;</div>
+
+    <div class="carousel-track" id="certTrack">
+      <div class="certificate-card"><img src="Img2/G1.webp"></div>
+      <div class="certificate-card"><img src="Img2/G2.webp"></div>
+      <div class="certificate-card certificate-text">
+        <h2>Product Innovation</h2>
+        <img src="Img2/G5.webp">
+      </div>
+      <div class="certificate-card"><img src="Img2/G3.webp"></div>
+      <div class="certificate-card"><img src="Img2/G4.webp"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== JS AUTO SLIDE ===== -->
+<script>
+let safetyIndex = 0;
+let certIndex = 0;
+
+const safetyTrack = document.getElementById("safetyTrack");
+const certTrack = document.getElementById("certTrack");
+
+const safetyVisible = 3;
+const certVisible = 2;
+
+function moveSafety(dir){
+  safetyIndex += dir;
+  if(safetyIndex < 0) safetyIndex = safetyTrack.children.length - safetyVisible;
+  if(safetyIndex > safetyTrack.children.length - safetyVisible) safetyIndex = 0;
+  safetyTrack.style.transform = `translateX(${-safetyIndex * 260}px)`;
+}
+
+function moveCert(dir){
+  certIndex += dir;
+  if(certIndex < 0) certIndex = certTrack.children.length - certVisible;
+  if(certIndex > certTrack.children.length - certVisible) certIndex = 0;
+  certTrack.style.transform = `translateX(${-certIndex * 300}px)`;
+}
+
+/* AUTO SLIDE */
+setInterval(()=> moveSafety(1),3000);
+setInterval(()=> moveCert(1),3500);
+</script>
+<section class="faq-section">
+  <div class="faq-container">
+
+    <!-- LEFT -->
+    <div class="faq-left">
+      <h1>FREQUENTLY<br>ASKED<br>QUESTIONS</h1>
+      <p>Find the answers to all your questions about tickets, rides, safety and more!</p>
+      <button class="faq-btn">Explore All FAQs</button>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="faq-right">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Are all the rides included in the entry ticket?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, all rides and attractions inside the park are included in the entry ticket unless mentioned otherwise.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you offer individual ride tickets?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          No, individual ride tickets are not available. All rides are included with the entry ticket.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Should I make reservations before coming?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Online booking is recommended for faster entry, but tickets are also available at the counter.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What is the minimum age for full ticket entry?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Children above a specified height are required to purchase a full ticket.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Are lockers or changing rooms available?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, lockers and changing rooms are available near water rides.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item=>{
+  item.addEventListener("click",()=>{
+    faqItems.forEach(i=>{
+      if(i !== item){
+        i.classList.remove("active");
+      }
+    });
+    item.classList.toggle("active");
+  });
+});
+</script>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <img src="https://www.wonderla.com/images/logo.svg" alt="Wonderla">
+
+      <p>
+        We dream of creating a world of thrilling experiences that bring endless joy to adventurers of all age groups!
+      </p>
+
+      <div class="social-icons">
+        <span>📷</span>
+        <span>✖</span>
+        <span>▶</span>
+        <span>f</span>
+      </div>
+
+      <div class="newsletter">
+        <h3>Stay Looped Into Fun & Thrills!</h3>
+        <input type="email" placeholder="Enter email address">
+        <button>Subscribe To Our Newsletter</button>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="footer-links">
+      <div>Parks & Resorts <span>+</span></div>
+      <div>Guest Services <span>+</span></div>
+      <div>Corporate <span>+</span></div>
+      <div>Legal <span>+</span></div>
+      <div>News & Resources <span>+</span></div>
+      <div>Contact Us <span>+</span></div>
+      <div>FAQs</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-contact">
+
+      <div class="contact-box">
+        <h4>Wonderla Chennai</h4>
+        <p>✉ mail.che@wonderla.com</p>
+        <p>📞 044-35024300</p>
+        <p>📞 044-35024242</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Kochi</h4>
+        <p>✉ mail.cok@wonderla.com</p>
+        <p>📞 0484 351 4001</p>
+        <p>📞 +91 75938 53107</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Bengaluru</h4>
+        <p>✉ mail.blr@wonderla.com</p>
+        <p>📞 080 372 30333</p>
+        <p>📞 080 350 73966</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Hyderabad</h4>
+        <p>✉ mail.hyd@wonderla.com</p>
+        <p>📞 084 146 76333</p>
+        <p>📞 +91 91000 63636</p>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

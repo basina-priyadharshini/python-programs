@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shipcon Chennai | Tenders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+    background:
+        linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+        url("Img/Ship2.jpg") no-repeat center;
+    background-size:cover;
+    color:#333;
+}
+
+/* ===== HEADER WRAPPER ===== */
+.header-wrap{
+    position:relative;
+    top:25px;
+    width:100%;
+    display:flex;
+    color:gold;
+    justify-content:center;
+    z-index:100;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-100px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+/* ===== NAV BOX ===== */
+.nav-box{
+    width:100%;
+    padding:22px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.25);
+}
+
+/* LOGO */
+.logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.logo-wrap img{
+    width:40px;
+}
+.logo-wrap span{
+    font-size:26px;
+    font-weight:bold;
+}
+
+/* NAV LINKS */
+nav a{
+    margin-left:22px;
+    text-decoration:none;
+    color:gold;
+    font-size:14px;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#ff9800;
+    bottom:-5px;
+    left:0;
+    transition:0.3s;
+}
+nav a:hover::after{
+    width:100%;
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title{
+    margin-top:160px;
+    text-align:center;
+    color:#fff;
+    animation: fadeUp 1.2s ease;
+}
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.page-title h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
+.page-title p{
+    font-size:15px;
+    opacity:0.9;
+}
+
+/* ===== MAIN CONTENT BOX ===== */
+.main{
+    max-width:1100px;
+    margin:40px auto 80px;
+    padding:40px;
+    background:#fff;
+    border-radius:14px;
+    animation: zoomIn 1s ease;
+}
+@keyframes zoomIn{
+    from{opacity:0;transform:scale(0.95);}
+    to{opacity:1;transform:scale(1);}
+}
+
+/* INTRO TEXT */
+.main h2{
+    color:#0b3c5d;
+    margin-bottom:12px;
+}
+.main p{
+    line-height:1.7;
+    margin-bottom:15px;
+    color:#444;
+}
+
+/* ===== TABLE ===== */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:25px;
+}
+
+thead{
+    background:#0b3c5d;
+    color:#fff;
+}
+th, td{
+    padding:14px;
+    font-size:14px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+tbody tr{
+    transition:0.3s;
+}
+tbody tr:hover{
+    background:#f1f6fb;
+    transform:scale(1.01);
+}
+
+/* STATUS */
+.status{
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+.open{background:#e8f5e9;color:#2e7d32;}
+.closed{background:#fdecea;color:#c62828;}
+
+/* DOWNLOAD */
+.download{
+    text-decoration:none;
+    color:#0b3c5d;
+    font-weight:bold;
+}
+.download:hover{
+    text-decoration:underline;
+}
+
+/* ===== ELIGIBILITY ===== */
+.eligibility{
+    margin-top:40px;
+}
+.eligibility h3{
+    color:#0b3c5d;
+    margin-bottom:12px;
+}
+.eligibility ul{
+    padding-left:20px;
+    line-height:1.8;
+    color:#444;
+}
+
+/* ===== NOTICE ===== */
+.notice{
+    margin-top:35px;
+    padding:18px;
+    background:#fff3cd;
+    border-left:6px solid #ff9800;
+    color:#7a4b00;
+    border-radius:8px;
+    font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    nav{display:none;}
+    .page-title h1{font-size:28px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="header-wrap">
+    <div class="nav-box">
+        <div class="logo-wrap">
+            <img src="logo.png" alt="Shipcon Logo">
+            <span>SHIPCON CHENNAI</span>
+        </div>
+        <nav>
+            <a href="Ship-H.html">HOME</a>
+            <a href="Ship-About.html">ABOUT US</a>
+            <a href="Infrastructure.html">INFRASTRUCTURE</a>
+            <a href="Services.html">PRODUCTS & SERVICES</a>
+            <a href="Projects.html">PROJECTS</a>
+            <a href="Ship-Gallery.html">GALLERY</a>
+            <a href="Ship-Career.html">CAREERS</a>
+            <a href="Ship-Tender.html">TENDERS</a>
+            <a href="Ship-Contact.html">CONTACT</a>
+        </nav>
+    </div>
+</div>
+
+<!-- TITLE -->
+<div class="page-title">
+    <h1>TENDERS</h1>
+    <p>Notice Inviting Tenders – Shipcon Chennai</p>
+</div>
+
+<!-- CONTENT -->
+<div class="main">
+    <h2>Notice Inviting Tenders (NIT)</h2>
+    <p>
+        Shipcon Chennai invites sealed and online tenders from eligible and
+        experienced contractors for shipbuilding, ship repair, offshore
+        fabrication and marine engineering works.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tender No</th>
+                <th>Description</th>
+                <th>Closing Date</th>
+                <th>Status</th>
+                <th>Document</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SC/2025/001</td>
+                <td>Supply of Marine Grade Steel Plates</td>
+                <td>05-02-2025</td>
+                <td><span class="status open">OPEN</span></td>
+                <td><a href="#" class="download">Download</a></td>
+            </tr>
+            <tr>
+                <td>SC/2025/003</td>
+                <td>Fabrication of Hull Blocks for Offshore Vessels</td>
+                <td>12-02-2025</td>
+                <td><span class="status open">OPEN</span></td>
+                <td><a href="#" class="download">Download</a></td>
+            </tr>
+            <tr>
+                <td>SC/2024/091</td>
+                <td>Annual Maintenance Contract for Heavy Cranes</td>
+                <td>10-12-2024</td>
+                <td><span class="status closed">CLOSED</span></td>
+                <td><a href="#" class="download">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="eligibility">
+        <h3>Eligibility & Instructions</h3>
+        <ul>
+            <li>Registered firms with relevant shipyard experience.</li>
+            <li>Valid GST, PAN, and statutory licenses mandatory.</li>
+            <li>Similar work experience in last 3 financial years.</li>
+            <li>Shipcon Chennai reserves the right to reject any tender.</li>
+        </ul>
+    </div>
+
+    <div class="notice">
+        <strong>Important Notice:</strong><br>
+        Corrigendum / Addendum if any will be hosted only on the official website.
+        Bidders are advised to check regularly.
+    </div>
+</div>
+
+</body>
+</html>

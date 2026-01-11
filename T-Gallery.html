@@ -1,0 +1,280 @@
+<html >
+<head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+body{
+    background:#000;
+}
+/* ================= HEADER ================= */
+.top-bar{
+    background:#1a0f0a;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    height:80px;
+}
+
+/* LOGO */
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+.logo .gold{
+    color:gold;
+}
+.logo small{
+    display:block;
+    font-size:12px;
+    color:#ccc;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+
+/* LINKS */
+nav a{
+    text-decoration:none;
+    color:gold;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+    color:#000;
+}
+
+/* ARROW */
+.arrow{
+    font-size:12px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+
+.dropdown-menu a{
+    padding:12px;
+    color:#000;
+}
+
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+
+/* 🔥 CLICK BASED (NO JS) */
+.dropdown:focus-within .dropdown-menu{
+    display:flex;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f4f4;
+}
+/* HEADER */
+.header{
+    background:#4a148c;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    animation: fadeDown 1s ease;
+}
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+/* SECTION */
+.section{
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+}
+.section h2{
+    color:#4a148c;
+    margin-bottom:15px;
+    animation: slideLeft 1s ease;
+}
+@keyframes slideLeft{
+    from{opacity:0; transform:translateX(-30px);}
+    to{opacity:1; transform:translateX(0);}
+}
+/* GALLERY GRID */
+.gallery{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:15px;
+}
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+    animation: zoomIn 0.8s ease;
+}
+@keyframes zoomIn{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+}
+.gallery img:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+/* LIGHTBOX */
+.lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    max-width:80%;
+    max-height:80%;
+    border-radius:10px;
+}
+
+.lightbox span{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">
+        <span class="gold">LORD SHIVA 🕉</span>
+        <small>Kēdāranātha Temple</small>
+    </div>
+           <nav>
+        <ul>
+            <li><a href="Kedarnath.html">Home</a></li>
+
+            <!-- ABOUT -->
+            <li class="dropdown">
+                <a href="#">About <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="History.html">History</a>
+                    <a href="Temple Significance.html">Temple Significance</a>
+                    <a href="Deity.html">Deity</a>
+                    <a href="Administration.html">Administration</a>
+                </div>
+            </li>
+
+            <!-- POOJA -->
+            <li class="dropdown">
+                <a href="#">Pooja <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Daily.html">Daily Poojas</a>
+                    <a href="Special-Pooja.html">Special Poojas</a>
+                    <a href="Virtual-Queue.html">Virtual Q</a>
+                    <a href="Pooja Timimg.html">Pooja Timings</a>
+                    <a href="Offers.html">Offerings</a>
+                </div>
+            </li>
+
+            <!-- HOW TO REACH -->
+            <li class="dropdown">
+                <a href="#">How to Reach <span class="arrow">▼</span></a>
+                <div class="dropdown-menu">
+                    <a href="Bus.html">🚗 By Bus</a>
+                    <a href="Train.html">🚆 By Rail</a>
+                    <a href="Air.html">✈️ By Air</a>
+                </div>
+            </li>
+
+            <li><a href="Facilities.html">Pilgrim Facilities</a></li>
+            <li><a href="Help.html">Help Line</a></li>
+            <li><a href="T-Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="header">
+    <h1>Kedarnath Photo Gallery</h1>
+    <p>Temple • Nature • Yatra</p>
+</div>
+<!-- SECTION 1 -->
+<div class="section">
+    <h2>Temple Views</h2>
+    <div class="gallery">
+        <img src="Img/K1.jpg" onclick="openImg(this)">
+        <img src="img/k2.jpg" onclick="openImg(this)">
+        <img src="img/K3.jpeg" onclick="openImg(this)">
+    </div>
+</div>
+<!-- SECTION 2 -->
+<div class="section">
+    <h2>Natural Scenery</h2>
+    <div class="gallery">
+        <img src="Img/K6.jpg" onclick="openImg(this)">
+        <img src="img/K7.jpg" onclick="openImg(this)">
+        <img src="img/K8.jpg" onclick="openImg(this)">
+    </div>
+</div>
+<!-- SECTION 3 -->
+<div class="section">
+    <h2>Yatra Journey</h2>
+    <div class="gallery">
+        <img src="img/K13.jpg" onclick="openImg(this)">
+        <img src="img/K10.jpg" onclick="openImg(this)">
+        <img src="img/K9.jpg" onclick="openImg(this)">
+    </div>
+</div>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span onclick="closeImg()">✖</span>
+    <img id="lightImg">
+</div>
+<script>
+function openImg(img){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightImg").src = img.src;
+}
+function closeImg(){
+    document.getElementById("lightbox").style.display="none";
+}
+</script>
+</body>
+</html>

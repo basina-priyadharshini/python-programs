@@ -1,0 +1,435 @@
+<html>
+<head>
+<title>Sonu Sood Official</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+          
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* ===== TOP HEADER ===== */
+.top-header{
+    background:#fff;
+    display:flex;
+    align-items:center;
+    padding:15px 40px;
+    font-family: "Whisper",cursive;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-circle{
+    width:55px;
+    height:55px;
+    background:#332bc1;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.logo-text{
+    font-size:70px;
+    color:rgb(202, 57, 20);
+    text-shadow: 0 0 15px rgb(211, 72, 233),
+                0 0 20px rgb(99, 25, 124),
+                0 0 20px rgb(80, 22, 88);
+    font-weight:bold;
+    font-family: "whisper",cursive;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero{
+    width:100%;
+    height:300px;
+    background:url("Img/Sonu2.png") no-repeat center right;
+    background-size:100% auto; 
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.4);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#050715;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    padding:0 40px;
+}
+
+.navbar ul li{
+    position:relative;
+}
+
+.navbar ul li a{
+    display:block;
+    padding:15px 18px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar ul li:hover{
+    background:#37383a;
+    color:#000;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background: e50914;
+    min-width:200px;
+    display:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    z-index:999;
+    color:black;
+}
+
+.dropdown a{
+    color:#fff;
+    padding:12px 15px;
+    display:block;
+    font-weight:normal;
+}
+
+.dropdown a:hover{
+    background:#f2f2f2;
+    color:#000;
+}
+
+/* STABLE HOVER */
+.navbar ul li:hover .dropdown{
+    display:block;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+    padding:15px 40px;
+    background:#1d1b1b;
+    color:#555;
+}
+
+.breadcrumb span{
+    color:#3f8cf2;
+}
+.offer-bar{
+  background:#e50914;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+}
+:root{
+    --dark:#0f0f0f;
+    --card:#1a1a1a;
+    --accent:#e50914;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', system-ui, sans-serif;
+}
+
+body{
+    background:var(--dark);
+    color:#fff;
+}
+
+/* HEADER */
+.header{
+    padding:80px 10%;
+    text-align:center;
+    animation:fadeDown 1.2s ease;
+}
+
+.header h1{
+    font-size:48px;
+    letter-spacing:3px;
+}
+
+.header span{
+    color:var(--accent);
+}
+
+.header p{
+    margin-top:10px;
+    font-size:18px;
+    opacity:.85;
+}
+
+/* VIDEO GRID */
+.videos{
+    padding:40px 8% 100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+}
+
+/* VIDEO CARD */
+.video-card{
+    background:var(--card);
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.6);
+    transition:.5s ease;
+    animation:fadeUp 1.2s ease;
+}
+
+.video-card:hover{
+    transform:translateY(-15px);
+}
+
+/* VIDEO */
+.video iframe{
+    width:100%;
+    height:220px;
+    border:none;
+}
+
+/* CONTENT */
+.video-content{
+    padding:25px;
+}
+
+.video-content h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.video-content p{
+    font-size:15px;
+    opacity:.8;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    color:#aaa;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .header h1{font-size:34px;}
+    .video iframe{height:200px;}
+}
+
+</style>
+</head>
+
+<body>
+    <div class="offer-bar">
+  Free shipping on orders over $75 &nbsp; | &nbsp; Get 15% off your first purchase
+</div>
+<!-- HEADER -->
+<div class="top-header">
+    <div class="logo">
+        
+        <div class="logo-text">SONU</div>
+    </div>
+    <div class="hero"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <ul>
+        <li><a href="Hero.html">HOME</a></li>
+
+        <li>
+            <a href="#">SONU SOOD ▼</a>
+            <div class="dropdown">
+                <a href="Bio.html">Biography</a>
+                <a href="Photo.html">Photos</a>
+                <a href="Videos.html">Videos</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">MOVIES ▼</a>
+            <div class="dropdown">
+                <a href="Hindi.html">Hindi Movies</a>
+                <a href="Telugu.html">Telugu Movies</a>
+                <a href="Tamil.html">Tamil Movies</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">GALLERY ▼</a>
+            <div class="dropdown">
+                <a href="Photo.html">Photos</a>
+                <a href="#">Wallpapers</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">VIDEOS ▼</a>
+            <div class="dropdown">
+                <a href="Interview.html">Interviews</a>
+                <a href="Trailer.HTML">Trailers</a>
+            </div>
+        </li>
+
+        <li><a href="Social.html">SOCIAL</a></li>
+        <li><a href="Blog.html">BLOG</a></li>
+    </ul>
+</nav>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <span>Home</span> / Social
+</div>
+<!--BODY SECTION-->
+<section class="header">
+    <h1><span>SONU</span> SOOD</h1>
+    <p>Motivational Speeches • Interviews • Inspiring Stories</p>
+</section>
+
+<!-- VIDEOS -->
+<section class="videos">
+
+    <div class="video-card">
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/67zB_v8jdLI?si=a_whlzw6IAnPMR7f"
+             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+             clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+        </div>
+        <div class="video-content">
+            <h3>Never Give Up – Motivational Speech</h3>
+            <p>
+                Sonu Sood shares a powerful message on perseverance,
+                discipline, and believing in yourself.
+            </p>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/nDCe-3uGaR4"
+                allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+            <h3>Helping Humanity</h3>
+            <p>
+                An inspiring talk about service, kindness, and standing
+                with people during difficult times.
+            </p>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video">
+            <iframe  src="https://www.youtube.com/embed/5leGU3c0R58?si=AhmFmd1DQgkSeK_J"
+             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+              clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+            <h3>Message to the Youth</h3>
+            <p>
+                Sonu Sood motivates young minds to work hard, stay humble,
+                and help others grow.
+            </p>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video">
+            <iframe  src="https://www.youtube.com/embed/BHMimyTQd5U?si=stuzfZLZjX09RLeU"
+             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+              clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+            <h3>Interview – Real Life Hero</h3>
+            <p>
+                A heartfelt interview discussing cinema, responsibility,
+                and humanitarian values.
+            </p>
+        </div>
+    </div>
+
+     <div class="video-card">
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/_qC4mq13crc"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+            <h3>Fateh (2025) – Official Trailer</h3>
+            <p>
+                Sonu Sood’s directorial debut featuring intense action,
+                emotion, and a powerful storyline.
+            </p>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video">
+            <iframe  src="https://www.youtube.com/embed/2dvuTlByUAc?si=GcQKaW782ASz1F6a"
+             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+             clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-content">
+            <h3>Jodhaa Akbar – Movie Scenes</h3>
+            <p>
+                Powerful historical drama where Sonu Sood
+                delivered a memorable performance.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Sonu Sood | Video Gallery
+</footer>
+
+</body>
+</html>

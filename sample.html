@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tamil Mannvalam - Soil Info</title>
+  <style>
+    :root{
+      --green:#21a94a;
+      --nav-green:#19a24a;
+      --blue:#0b67b2;
+      --light:#f6f6f6;
+      --muted:#777;
+      --card-bg:#ffffff;
+      --radius:18px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --pill-shadow:0 4px 10px rgba(0,0,0,0.08);
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+    *{box-sizing: border-box}
+    body{margin:0;background:#fff;color:#222}
+    /* Header */
+    header{background:#fff;border-bottom:6px solid var(--green)}
+    .topbar{display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:18px 36px}
+        .logo{
+            display:flex;
+            gap:14px;
+            align-items: center;
+            color:var(--muted);
+            font-size: 10px;
+        }
+        .logo img{
+            width: 72px;
+            height:72px;
+            object-fit: contain;
+        }
+    .brand{
+        display:flex;
+        margin-left: 0%;
+        align-items:center;
+        gap:14px}
+    .brand img{
+        width:72px;
+        height:72px;
+        object-fit:contain}
+    .brand h1{margin:0;color:var(--muted);font-size:20px}
+    .site-title{background:transparent;border:4px solid #9be59a;padding:6px 18px;border-radius:34px;color:#2c6b2f;font-weight:700}
+    /* Nav */
+    nav{background:var(--nav-green);}
+    nav ul{list-style:none;
+        margin:0;
+        padding:12px 36px;
+        display:flex;
+        gap:26px}
+    nav li{color:#fff;
+        font-weight:600}
+    /* Main container */
+    .container{display:grid;
+        grid-template-columns:1fr 1fr 320px;
+        gap:28px;
+        padding:36px 56px;
+        align-items:start}
+    /* Left column */
+    .left{padding-right:10px}
+    .section-title{color:#1b9a43;
+        font-weight:700;
+        margin:6px 0 18px;
+        font-size:20px}
+    .soil-list{list-style:none;
+        padding:0;
+        margin:0;
+        width:420px}
+    .soil-list li{display:flex;
+        align-items:center;
+        gap:14px;
+        background:var(--light);
+        padding:10px 14px;
+        border-radius:40px;
+        margin:10px 0;
+        box-shadow:var(--pill-shadow)}
+    .soil-dot{width:22px;
+        height:22px;
+        border-radius:50%;
+        display:inline-block}
+    .red{background:#c93b2b}
+    .brown{background:#8b4f18}
+    .black{background:#111}
+    .grey{background:#9a9a9a}
+    .mixed{background:#b87e3a}
+    .alluvial{background:#f3d06b}
+    .left p{color:var(--muted);
+        line-height:1.6;
+        max-width:420px}
+    /* Middle column */
+    .middle{padding:10px 28px;
+        border-left:1px solid #eaeaea;
+        border-right:1px solid #eaeaea}
+    .composition{display:flex;
+        gap:22px;
+        align-items:center}
+    .pie-card{width:320px;
+        height:320px;
+        border-radius:50%;
+        background:conic-gradient(#f8943b 0 35%, #85d7f9 35% 60%, #dedede 60% 85%, #7a4f33 85% 100%);
+        box-shadow:var(--shadow);position:relative}
+    .legend{display:flex;
+        flex-direction:column;
+        gap:12px}
+    .legend-item:hover{transform:scale(1.12);
+        box-shadow:0 6px 16px rgba(0,0,0,0.20);}
+    .legend-item{display:flex;
+        align-items:center;
+        gap:12px;
+        background:#fff;
+        padding:10px 16px;
+        border-radius:26px;
+        box-shadow:var(--pill-shadow);
+        min-width:220px;
+        transition:transform .25s ease, box-shadow .25s ease;}
+    .legend-dot{width:18px;
+        height:18px;
+        border-radius:50%}
+    .legend .mineral{background:#f8943b}
+    .legend .water{background:#85d7f9}
+    .legend .air{background:#dedede}
+    .legend .organic{background:#7a4f33}
+    .composition-text{max-width:420px}
+    .composition-text h3{color:#1b9a43;margin:0 0 8px}
+    .composition-text p{color:var(--muted);line-height:1.6}
+    /* Right column */
+    .right .btn{display:block;
+        background:var(--blue);
+        color:#fff;
+        padding:18px;
+        border-radius:6px;
+        margin:12px 0;
+        text-decoration:none;
+        font-weight:600;
+        box-shadow:var(--shadow);
+        text-align:left}
+    .right .btn::after{content:'→';
+    float:right;
+    font-weight:700}
+    /* Services bar */
+    .services{background:var(--green);
+        margin:26px 56px 60px;
+        padding:8px;
+        border-radius:4px;
+        color:#fff;
+        text-align:center;
+        font-weight:800;
+        font-size:22px}
+    /* Responsive tweaks */
+    @media (max-width:1100px){
+      .container{grid-template-columns:1fr;
+        padding:20px}
+      nav ul{flex-wrap:wrap}
+      .right{order:3}
+      .middle{order:2}
+      .left{order:1}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+        <div class="logo"><img src="img/gujarath.jpg"><div><h1>Government of Gujarat<br><small style="font-size:12px;color:var(--muted)">Department of Agriculture - Farmers Welfare</small></h1></div></div>
+      <div class="brand">
+        <img src="Img/g-logo.jpg" alt="Gov Logo">
+        <div>
+          <h1>Agriculture Department of Gujarat<br><small style="font-size:12px;color:var(--muted)">Department of Agriculture - Farmers Welfare</small></h1>
+        </div>
+      </div>
+      <div class="site-title"><a href="https://www.bing.com/ck/a?!&&p=d91f874fe27a3843ccb034e33c5c64e25a28028b986afbd9a99cdd86ee46a67bJmltdHM9MTc2NTE1MjAwMA&ptn=3&ver=2&hsh=4&fclid=30f960d7-6d4c-6cd8-3493-753a6ce16da4&u=a1aHR0cHM6Ly9jbW9ndWphcmF0Lmdvdi5pbi9lbi9ub2RlLzI5OA&ntb=1"> Gujarat Department</a></div>
+    </div>
+  </header>
+  <main>
+    <section class="container">
+      <div class="left">
+        <h2 class="section-title">Soil Classification of Gujarat</h2>
+        <ul class="soil-list">
+          <li><span class="soil-dot red"></span> Red Soils <strong style="margin-left:auto">39.34 %</strong></li>
+          <li><span class="soil-dot brown"></span> Brown soils <strong style="margin-left:auto">37.89 %</strong></li>
+          <li><span class="soil-dot black"></span> Black soils <strong style="margin-left:auto">16.38 %</strong></li>
+          <li><span class="soil-dot grey"></span> Grey soils <strong style="margin-left:auto">3.50 %</strong></li>
+          <li><span class="soil-dot mixed"></span> Mixed soils <strong style="margin-left:auto">2.03 %</strong></li>
+          <li><span class="soil-dot alluvial"></span> Alluvial soils <strong style="margin-left:auto">0.86 %</strong></li>
+        </ul>
+        <p style="margin-top:22px">Soil is one of the most important non-renewable basic resources on the earth's surface. About 39.34 percent of Tamil Nadu is occupied by the Red soil, 37.89 percent by brown soils,16.38 percent by Black soils, 3.51 percent by Grey soils, 2.03 percent by Mixed soils and 0.86 percent by Alluvial soils.</p>
+      </div>
+      <div class="middle">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <h3 style="color:var(--green);margin-top:6px">Soil Composition</h3>
+            <p style="color:var(--muted);max-width:520px">Soil composition is an important aspect of nutrient management. The basic components of soil are mineral matter, organic matter, soil air, and soil water. The typical soil consists of 45% mineral matter, 5% organic matter, 25% water and 25% air.</p>
+          </div>
+        </div>
+        <div class="composition" style="margin-top:18px">
+          <div class="pie-wrapper" style="position:relative;">
+            <div class="pie-card" aria-hidden="true"></div>
+            <!-- interactive hotspots positioned over pie segments -->
+            <div class="hotspot hs1" style="left:36px;top:18px;">
+              <span class="bubble">45% Mineral Matter</span>
+            </div>
+            <div class="hotspot hs2" style="right:46px;top:46px;">
+              <span class="bubble">25% Water</span>
+            </div>
+            <div class="hotspot hs3" style="right:38px;bottom:38px;">
+              <span class="bubble">25% Air</span>
+            </div>
+            <div class="hotspot hs4" style="left:30px;bottom:26px;">
+              <span class="bubble">5% Organic Matter</span>
+            </div>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><span class="legend-dot mineral"></span><div>45% Mineral Matter</div></div>
+            <div class="legend-item"><span class="legend-dot water"></span><div>25% Water</div></div>
+            <div class="legend-item"><span class="legend-dot air"></span><div>25% Air</div></div>
+            <div class="legend-item"><span class="legend-dot organic"></span><div>5% Organic Matter</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="services"><a href="https://www.bing.com/ck/a?!&&p=0140d2626b86393f9ee65eba8aa5b0ae003c7a57e533fd45eb84520441db1ce0JmltdHM9MTc2NTE1MjAwMA&ptn=3&ver=2&hsh=4&fclid=30f960d7-6d4c-6cd8-3493-753a6ce16da4&psq=gujarat+agriculture+Services+link&u=a1aHR0cHM6Ly9hZ3JpLmd1amFyYXQuZ292LmluL0FsbFNlcnZpY2Vz">SERVICES</a></div>
+  </main>
+</body>
+</html>

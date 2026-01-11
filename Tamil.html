@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sonu Sood | Tamil Movies</title>
+
+<style>
+:root{
+  --bg:#0d0d0d;
+  --card:#1a1a1a;
+  --accent:#e50914;
+  --text:#f5f5f5;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+.header{
+  padding:90px 10%;
+  text-align:center;
+  animation:slideDown 1.2s ease;
+}
+
+.header h1{
+  font-size:48px;
+  letter-spacing:3px;
+}
+
+.header span{color:var(--accent);}
+
+.header p{
+  margin-top:10px;
+  font-size:18px;
+  opacity:.85;
+}
+
+/* GRID */
+.movies{
+  padding:60px 8% 100px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:35px;
+}
+
+/* CARD */
+.movie{
+  background:var(--card);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.7);
+  animation:fadeUp 1s ease;
+  transition:.6s;
+}
+
+.movie:hover{
+  transform:translateY(-15px) scale(1.05);
+}
+
+/* IMAGE */
+.movie img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.movie:hover img{
+  transform:scale(1.12);
+}
+
+/* CONTENT */
+.movie-content{
+  padding:20px;
+}
+
+.movie-content h3{
+  font-size:20px;
+}
+
+.movie-content span{
+  color:var(--accent);
+  font-size:14px;
+}
+
+.movie-content p{
+  margin-top:6px;
+  font-size:14px;
+  opacity:.85;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+  color:#aaa;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(50px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideDown{
+  from{opacity:0; transform:translateY(-40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .header h1{font-size:34px;}
+  .movie img{height:300px;}
+}
+
+    @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+          
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== TOP HEADER ===== */
+.top-header{
+    background:#fff;
+    display:flex;
+    align-items:center;
+    padding:15px 40px;
+    font-family: "Whisper",cursive;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-circle{
+    width:55px;
+    height:55px;
+    background:#332bc1;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.logo-text{
+    font-size:70px;
+    color:rgb(202, 57, 20);
+    text-shadow: 0 0 15px rgb(211, 72, 233),
+                0 0 20px rgb(99, 25, 124),
+                0 0 20px rgb(80, 22, 88);
+    font-weight:bold;
+    font-family: "whisper",cursive;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero{
+    width:100%;
+    height:300px;
+    background:url("Img/Sonu2.png") no-repeat center right;
+    background-size:100% auto; 
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.4);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#050715;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    padding:0 40px;
+}
+
+.navbar ul li{
+    position:relative;
+}
+
+.navbar ul li a{
+    display:block;
+    padding:15px 18px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar ul li:hover{
+    background:#37383a;
+    color:#000;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background: #db5a2b;
+    min-width:200px;
+    display:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    z-index:999;
+    color:black;
+}
+
+.dropdown a{
+    color:#fff;
+    padding:12px 15px;
+    display:block;
+    font-weight:normal;
+}
+
+.dropdown a:hover{
+    background:#f2f2f2;
+    color:#000;
+}
+
+/* STABLE HOVER */
+.navbar ul li:hover .dropdown{
+    display:block;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+    padding:15px 40px;
+    background:#fff;
+    color:#555;
+}
+
+.breadcrumb span{
+    color:#3f8cf2;
+}
+.offer-bar{
+  background:#db5a2b;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+}
+
+
+</style>
+</head>
+
+<body>
+    <div class="offer-bar">
+  Free shipping on orders over $75 &nbsp; | &nbsp; Get 15% off your first purchase
+</div>
+<!-- HEADER -->
+<div class="top-header">
+    <div class="logo">
+        
+        <div class="logo-text">SONU</div>
+    </div>
+    <div class="hero"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <ul>
+        <li><a href="Hero.html">HOME</a></li>
+
+        <li>
+            <a href="#">SONU SOOD ▼</a>
+            <div class="dropdown">
+                <a href="Bio.html">Biography</a>
+                <a href="Photo.html">Photos</a>
+                <a href="Videos.html">Videos</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">MOVIES ▼</a>
+            <div class="dropdown">
+                <a href="Hindi.html">Hindi Movies</a>
+                <a href="Telugu.html">Telugu Movies</a>
+                <a href="Tamil.html">Tamil Movies</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">GALLERY ▼</a>
+            <div class="dropdown">
+                <a href="Photo.html">Photos</a>
+                <a href="#">Wallpapers</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">VIDEOS ▼</a>
+            <div class="dropdown">
+                <a href="Interview.html">Interviews</a>
+                <a href="Trailer.HTML">Trailers</a>
+            </div>
+        </li>
+
+        <li><a href="Social.html">SOCIAL</a></li>
+        <li><a href="Blog.html">BLOG</a></li>
+    </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <span>Home</span> / Social
+</div>
+
+<!-- HEADER -->
+<section class="header">
+  <h1><span>SONU</span> SOOD</h1>
+  <p>Tamil Movies Filmography</p>
+</section>
+
+<!-- MOVIES -->
+<section class="movies">
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Kallazhagar+1999">
+  <div class="movie-content"><h3>Kallazhagar</h3><span>1999</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Nenjinile+1999">
+  <div class="movie-content"><h3>Nenjinile</h3><span>1999</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Sandhitha+Velai+2000">
+  <div class="movie-content"><h3>Sandhitha Velai</h3><span>2000</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Majuni+2001">
+  <div class="movie-content"><h3>Majuni</h3><span>2001</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Raja+2002">
+  <div class="movie-content"><h3>Raja</h3><span>2002</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Kovilpatti+Veeralakshmi+2003">
+  <div class="movie-content"><h3>Kovilpatti Veeralakshmi</h3><span>2003</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Chandramukhi+2005">
+  <div class="movie-content"><h3>Chandramukhi</h3><span>2005</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Osthe+2011">
+  <div class="movie-content"><h3>Osthe</h3><span>2011</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Madha+Gaja+Raja+2012">
+  <div class="movie-content"><h3>Madha Gaja Raja</h3><span>2012</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Saagasam+2016">
+  <div class="movie-content"><h3>Saagasam</h3><span>2016</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Devi+2016">
+  <div class="movie-content"><h3>Devi</h3><span>2016</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Devi+2+2019">
+  <div class="movie-content"><h3>Devi 2</h3><span>2019</span></div>
+</div>
+
+<div class="movie">
+  <img src="https://placehold.co/400x600/111/fff?text=Thamilarasan+2022">
+  <div class="movie-content"><h3>Thamilarasan</h3><span>2022</span></div>
+</div>
+
+</section>
+
+<footer>
+  © 2025 Sonu Sood | Tamil Movies
+</footer>
+
+</body>
+</html>

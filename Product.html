@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Product</title>
+
+<style>
+body{
+ margin:0;
+ font-family:Arial;
+ background:linear-gradient(135deg,#fdfbfb,#ebedee);
+}
+
+/* WRAP */
+.wrap{
+ display:flex;
+ gap:40px;
+ padding:40px;
+}
+
+/* IMAGE AREA */
+.img-area{
+ position:relative;
+ display:flex;
+ gap:20px;
+}
+
+/* MAIN IMAGE */
+.main-img{
+ width:600px;
+ height:500px;
+ background:#fff;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ overflow:hidden;
+ border-radius:12px;
+ border:2px solid #e0e0e0;
+ box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.main-img img{
+ width:100%;
+ transition:0.3s;
+}
+
+/* HEART */
+.heart{
+ position:absolute;
+ top:15px;
+ left:615px;
+ font-size:28px;
+ cursor:pointer;
+ background:linear-gradient(135deg,#fff,#ffe6e6);
+ border-radius:50%;
+ padding:6px 10px;
+ color:#999;
+ box-shadow:0 4px 10px rgba(0,0,0,0.25);
+ transition:0.3s;
+}
+
+.heart.active{
+ color:#ff0033;
+ transform:scale(1.1);
+}
+
+/* ZOOM */
+.zoom-box{
+ position:absolute;
+ top:0;
+ left:680px;
+ width:600px;
+ height:500px;
+ background:#fff;
+ border-radius:12px;
+ border:2px solid #ddd;
+ overflow:hidden;
+ display:none;
+ box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.zoom-box img{
+ width:900px;
+}
+
+/* DETAILS */
+.details{
+ max-width:420px;
+ background:#fff;
+ padding:25px;
+ border-radius:14px;
+ box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+.details h2{
+ color:#212121;
+ margin-bottom:10px;
+}
+
+/* PRICE */
+.price{
+ font-size:26px;
+ font-weight:bold;
+ margin:10px 0;
+ color:#2e7d32;
+}
+
+/* DESCRIPTION */
+.desc{
+ margin:15px 0;
+ color:#555;
+ line-height:1.6;
+}
+
+/* HIGHLIGHTS */
+.highlights{
+ padding-left:18px;
+ margin-bottom:20px;
+}
+
+.highlights li{
+ margin-bottom:8px;
+ font-size:14px;
+ color:#333;
+}
+
+/* BUTTONS */
+button{
+ padding:14px 30px;
+ border:none;
+ cursor:pointer;
+ margin-right:10px;
+ font-size:15px;
+ border-radius:8px;
+ transition:0.3s;
+}
+
+.cart{
+ background:linear-gradient(135deg,#ffb347,#ff9800);
+ color:#fff;
+ box-shadow:0 6px 15px rgba(255,152,0,0.4);
+}
+
+.cart:hover{
+ transform:translateY(-2px);
+}
+
+.buy{
+ background:linear-gradient(135deg,#ff5722,#e64a19);
+ color:#fff;
+ box-shadow:0 6px 15px rgba(255,87,34,0.45);
+}
+
+.buy:hover{
+ transform:translateY(-2px);
+}
+
+/* TOAST */
+.toast{
+ position:fixed;
+ bottom:30px;
+ left:50%;
+ transform:translateX(-50%);
+ background:linear-gradient(135deg,#323232,#000);
+ color:#fff;
+ padding:12px 26px;
+ border-radius:25px;
+ font-size:14px;
+ opacity:0;
+ pointer-events:none;
+ transition:0.4s;
+ z-index:9999;
+}
+
+.toast.show{
+ opacity:1;
+ bottom:55px;
+}
+/*HEAD*/
+.offer-bar{
+  background:#c84c0c;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+}
+.header{
+  background:#f6efe7;
+  display:flex;
+  align-items:center;
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+}
+.logo{
+  margin:auto;
+  font-size:32px;
+  color:#c84c0c;
+  font-weight:600;
+}
+.menu-icon span{
+  display:block;
+  width:24px;
+  height:3px;
+  background:#000;
+  margin:5px 0;
+}
+</style>
+</head>
+
+<body>
+  <div class="offer-bar">
+Free shipping on orders over $75 | Get 15% off your first purchase
+</div>
+
+<header class="header">
+  <div class="menu-icon">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="logo">Goody</div>
+</header>
+
+<div class="wrap">
+
+  <!-- IMAGE SECTION -->
+  <div class="img-area">
+
+    <div class="heart" id="heart" onclick="toggleWishlist()">♡</div>
+
+    <div class="main-img" id="imgBox">
+      <img id="mainImg">
+    </div>
+
+    <div class="zoom-box" id="zoomBox">
+      <img id="zoomImg">
+    </div>
+
+  </div>
+
+  <!-- DETAILS -->
+  <div class="details">
+
+    <h2 id="name"></h2>
+    <div class="price">₹<span id="price"></span></div>
+
+    <p class="desc">
+      Premium quality product with stylish design. Daily use ki perfect & long lasting.
+    </p>
+
+    <ul class="highlights">
+      <li>✔ High quality material</li>
+      <li>✔ Lightweight & durable</li>
+      <li>✔ Easy to carry</li>
+      <li>✔ Best for gifting</li>
+    </ul>
+
+    <button class="cart" id="cartBtn" onclick="toggleCart()">ADD TO CART</button>
+    <button class="buy" onclick="buyNow()">BUY NOW</button>
+
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Added to Cart 🛒</div>
+
+<script>
+let n = localStorage.getItem("p_name");
+let p = localStorage.getItem("p_price");
+let i = localStorage.getItem("p_image");
+
+name.innerText = n;
+price.innerText = p;
+mainImg.src = i;
+zoomImg.src = i;
+
+/* ZOOM */
+let box = document.getElementById("imgBox");
+let zoom = document.getElementById("zoomBox");
+
+box.onmouseenter = () => zoom.style.display = "block";
+box.onmouseleave = () => zoom.style.display = "none";
+
+box.onmousemove = (e) => {
+ let x = (e.offsetX / box.offsetWidth) * 100;
+ let y = (e.offsetY / box.offsetHeight) * 100;
+ zoomImg.style.transform = `translate(-${x}%, -${y}%)`;
+};
+
+/* WISHLIST */
+let heart = document.getElementById("heart");
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+if(wishlist.some(x => x.name === n)){
+ heart.classList.add("active");
+ heart.innerText = "♥";
+}
+
+function toggleWishlist(){
+ let index = wishlist.findIndex(x => x.name === n);
+ if(index === -1){
+   wishlist.push({name:n, price:p, image:i});
+   heart.classList.add("active");
+   heart.innerText = "❤️";
+ }else{
+   wishlist.splice(index,1);
+   heart.classList.remove("active");
+   heart.innerText = "♡";
+ }
+ localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
+
+/* CART */
+const cartBtn = document.getElementById("cartBtn");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartButton(){
+ cartBtn.textContent = cart.some(x => x.name === n) ? "REMOVE FROM CART" : "ADD TO CART";
+}
+
+function toggleCart(){
+ let index = cart.findIndex(x => x.name === n);
+ if(index === -1){
+   cart.push({name:n, price:p, image:i});
+   showToast("Added to Cart 🛒");
+ }else{
+   cart.splice(index,1);
+   showToast("Removed from Cart ❌");
+ }
+ localStorage.setItem("cart", JSON.stringify(cart));
+ updateCartButton();
+}
+
+function showToast(msg){
+ let toast = document.getElementById("toast");
+ toast.innerText = msg;
+ toast.classList.add("show");
+ setTimeout(()=>toast.classList.remove("show"),2000);
+}
+updateCartButton();
+
+/* BUY NOW */
+function buyNow(){
+ let item = {name:n, price:p, image:i, qty:1};
+ localStorage.setItem("checkoutItem", JSON.stringify(item));
+ window.location.href="checkout.html";
+}
+</script>
+
+</body>
+</html>

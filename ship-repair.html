@@ -1,0 +1,400 @@
+<html>
+    <style>
+body{
+   background:
+        linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+        url("Img/Ship3.webp")no-repeat,center;
+    color:#f3f2f2;
+    background-size: cover;
+}
+        /* ===== HEADER WRAPPER ===== */
+.header-wrap{
+    position:absolute;
+    top:55px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    z-index:10;
+}
+
+/* ===== NAV BOX ===== */
+.nav-box{
+    width:100%;
+    padding:30px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.12); /* transparent */
+    backdrop-filter: blur(10px);       /* glass effect */
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+/* LOGO */
+.logo{
+    font-size:66px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+.logo-wrap img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+/* ================= NAVBAR ================= */
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:black;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#c93434;
+}
+span{
+    font-size: 26PX;
+    font-weight: bold;
+}
+/* ===== PAGE TITLE ===== */
+.page-title{
+    text-align:center;
+    margin:200px 0 30px;
+}
+
+.page-title h1{
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:#e7ebf0;
+}
+
+.page-title h1::after{
+    content:"";
+    width:70px;
+    height:2px;
+    background:#cfd6df;
+    display:block;
+    margin:12px auto 0;
+}
+
+/* ===== MAIN CONTENT ===== */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.content-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:40px;
+    align-items:flex-start;
+}
+
+/* IMAGE */
+.image-box img{
+    width:100%;
+    border-radius:4px;
+}
+
+/* TEXT CONTENT */
+.text-box{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.text-box p{
+    margin-bottom:18px;
+    font-size: 15px;
+}
+
+/* LIST */
+.text-box ul{
+    padding-left:20px;
+    margin-top:10px;
+}
+
+.text-box ul li{
+    margin-bottom:10px;
+}
+
+/* BUTTONS */
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+}
+
+.buttons a{
+    padding:12px 26px;
+    background:#0b8bbd;
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    border-radius:4px;
+    transition:0.3s;
+}
+
+.buttons a:hover{
+    background:#086a8f;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .content-grid{
+        grid-template-columns:1fr;
+    }
+}
+.header h1{
+    color:#141313;
+    font-size:28px;
+    letter-spacing:1px;
+   text-align: center;
+   margin-top:180px;
+}
+
+/* ===== MAIN SECTION ===== */
+.contact-section{
+    width:1200px;
+    margin:60px auto;
+    display:flex;
+    gap:40px;
+}
+
+/* ===== LEFT FORM ===== */
+.form-box{
+    background:#fff;
+    width:70%;
+    border-radius:25px;
+    padding:40px;
+}
+
+.form-box h2{
+    font-size:26px;
+    margin-bottom:20px;
+    color:#222;
+}
+
+.form-box hr{
+    border:none;
+    height:1px;
+    background:#eee;
+    margin-bottom:30px;
+}
+
+.form-row{
+    display:flex;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.form-row input{
+    width:100%;
+    padding:14px 20px;
+    border:none;
+    border-radius:30px;
+    background:#f6f6f6;
+    font-size:14px;
+    outline:none;
+}
+
+textarea{
+    width:100%;
+    height:160px;
+    padding:18px 20px;
+    border:none;
+    border-radius:25px;
+    background:#f6f6f6;
+    font-size:14px;
+    outline:none;
+    resize:none;
+}
+
+button{
+    margin-top:25px;
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    background:#a12b2b;
+    color:#fff;
+    font-size:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#2e99b7;
+}
+
+/* ===== RIGHT INFO BOX ===== */
+.info-box{
+    width:30%;
+    background:#2b7aa1;
+    border-radius:25px;
+    padding:35px;
+    color:#fff;
+}
+
+.info-box h4{
+    font-size:14px;
+    margin-bottom:10px;
+    opacity:.9;
+}
+
+.info-box p{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.divider{
+    height:1px;
+    background:rgba(255,255,255,.3);
+    margin:20px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+    .contact-section{
+        flex-direction:column;
+        width:95%;
+    }
+    .form-box,.info-box{
+        width:100%;
+    }
+}
+section{
+    background: white;
+}
+    </style>
+    <body><div class="header-wrap">
+    <div class="nav-box">
+        <div class="logo-wrap">
+       <img src="logo.png" alt="Shipcon Logo">
+       <span>SHIPCON CHENNAI</span></div>
+        <nav>
+            <a href="Ship-About.html">ABOUT US</a>
+            <a href="Infrastructure.html">INFRASTUCTURE</a>
+            <a href="Services.html">PRODUCTS & SERVICES</a>
+            <a href="Projects.html">PROJECTS</a>
+            <a href="Ship-Gallery.html">GALLERY</a>
+            <a href="Ship-Career.html">CAREERS</a>
+            <a href="Ship-Tender.html">TENDERS</a>
+            <a href="Ship-Contact.html">CONTACT</a>
+        
+        </nav>
+    </div>
+</div>
+<div class="page-title">
+    <h1>SHIP REPAIR</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+    <div class="content-grid">
+
+        <!-- LEFT IMAGE -->
+        <div class="image-box">
+            <img src="Img/Ship10.webp" alt="Ship Building">
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="text-box">
+            <p>
+                CSL started offering ship repair services in 1982 and 
+                has undertaken upgrades and repairs for all types of ships 
+                including ships for the oil exploration industry. CSL has 
+                very rich experience in ship repair front and has successfully 
+                completed more than 2500 ship repair projects so far of clients 
+                from Defense and Commercial sectors. CSL has been closely 
+                associating with Indian Navy for undertaking refits and 
+                maintenance of their fleet since commencement of ship repairs. 
+                CSL is the only yard in India capable of undertaking dry dock 
+                repairs of Aircraft carriers owned by Indian Navy.CSL has successfully 
+                completed refits of INS Viraat,INS Vikramaditya & INS Vikrant. 
+                Apart from repairs/ refits, CSL has also undertaken upgradation 
+                of ships of oil exploration industry as well as periodical maintenance, 
+                life extension etc.
+            </p>
+            <p><h5>Geographical Expansion & Pan India Presence</h5>
+            In the recent past CSL has expanded operations geographically and has dry-dock & 
+            associated facilities across India. CSL is the only yard in India which is capable 
+            of providing ship repair services in both West & East Coast of India.
+            Some major repair projects</p>
+
+
+            <div class="buttons">
+                <a href="#">TECHNOLOGY</a>
+                <a href="#">FACILITY</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<section>
+<!-- HEADER -->
+<div class="header">
+    <h1>CONTACT US</h1>
+</div>
+
+<!-- CONTACT AREA -->
+<div class="contact-section">
+
+    <!-- LEFT FORM -->
+    <div class="form-box">
+        <h2>LET'S GET IN TOUCH</h2>
+        <hr>
+
+        <div class="form-row">
+            <input type="text" placeholder="YOUR NAME... *">
+            <input type="email" placeholder="YOUR EMAIL...">
+            <input type="text" placeholder="SUBJECT... *">
+        </div>
+
+        <textarea placeholder="YOUR MESSAGE..."></textarea>
+
+        <button>SEND MESSAGE NOW</button>
+    </div>
+
+    <!-- RIGHT INFO -->
+    <div class="info-box">
+
+        <h4>Phone Number</h4>
+        <p>+91 9920 646 342</p>
+
+        <div class="divider"></div>
+
+        <h4>Email Address</h4>
+        <p>info@shipconindia.com</p>
+
+        <div class="divider"></div>
+
+        <h4>Registered Office:</h4>
+        <p>
+            Shipcon Enterprise<br>
+            79 Nagendra Nath Road<br>
+            KOLKATA – 700028 INDIA
+        </p>
+
+        <div class="divider"></div>
+
+        <h4>Shipyard:</h4>
+        <p>
+            Shipcon Enterprise Gangachar, Sonachura<br>
+            Nandigram PURBA MEDINIPUR – 721646<br>
+            WEST BENGAL INDIA
+        </p>
+
+    </div>
+
+</div>
+</section>
+</body>
+</html>

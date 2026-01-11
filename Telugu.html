@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sonu Sood | Telugu Movies</title>
+
+<style>
+:root{
+    --bg:#0b0b0b;
+    --card:#161616;
+    --accent:#e50914;
+    --text:#f1f1f1;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* HEADER */
+.header{
+    padding:90px 10%;
+    text-align:center;
+    animation:slideDown 1.2s ease;
+}
+
+.header h1{
+    font-size:50px;
+    letter-spacing:3px;
+}
+
+.header span{
+    color:var(--accent);
+}
+
+.header p{
+    margin-top:12px;
+    opacity:.85;
+    font-size:18px;
+}
+
+/* GRID */
+.movies{
+    padding:60px 7% 100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:40px;
+}
+
+/* CARD */
+.movie{
+    background:var(--card);
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 25px 50px rgba(0,0,0,.7);
+    animation:fadeUp 1.2s ease;
+    transition:.6s;
+}
+
+.movie:hover{
+    transform:translateY(-15px) scale(1.05);
+}
+
+/* IMAGE */
+.movie img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.movie:hover img{
+    transform:scale(1.15);
+}
+
+/* CONTENT */
+.movie-content{
+    padding:22px;
+}
+
+.movie-content h3{
+    font-size:21px;
+}
+
+.movie-content span{
+    color:var(--accent);
+    font-size:14px;
+}
+
+.movie-content p{
+    margin-top:8px;
+    font-size:14.5px;
+    opacity:.85;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    text-align:center;
+    padding:25px;
+    color:#aaa;
+    font-size:14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(60px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .header h1{font-size:36px;}
+    .movie img{height:300px;}
+}
+    @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+          
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== TOP HEADER ===== */
+.top-header{
+    background:#fff;
+    display:flex;
+    align-items:center;
+    padding:15px 40px;
+    font-family: "Whisper",cursive;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-circle{
+    width:55px;
+    height:55px;
+    background:#332bc1;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.logo-text{
+    font-size:70px;
+    color:rgb(202, 57, 20);
+    text-shadow: 0 0 15px rgb(211, 72, 233),
+                0 0 20px rgb(99, 25, 124),
+                0 0 20px rgb(80, 22, 88);
+    font-weight:bold;
+    font-family: "whisper",cursive;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero{
+    width:100%;
+    height:300px;
+    background:url("Img/Sonu2.png") no-repeat center right;
+    background-size:100% auto; 
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.4);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#050715;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    padding:0 40px;
+}
+
+.navbar ul li{
+    position:relative;
+}
+
+.navbar ul li a{
+    display:block;
+    padding:15px 18px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar ul li:hover{
+    background:#37383a;
+    color:#000;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background: #db5a2b;
+    min-width:200px;
+    display:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    z-index:999;
+    color:black;
+}
+
+.dropdown a{
+    color:#fff;
+    padding:12px 15px;
+    display:block;
+    font-weight:normal;
+}
+
+.dropdown a:hover{
+    background:#f2f2f2;
+    color:#000;
+}
+
+/* STABLE HOVER */
+.navbar ul li:hover .dropdown{
+    display:block;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+    padding:15px 40px;
+    background:#fff;
+    color:#555;
+}
+
+.breadcrumb span{
+    color:#3f8cf2;
+}
+.offer-bar{
+  background:#db5a2b;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+}
+
+
+</style>
+</head>
+
+<body>
+    <div class="offer-bar">
+  Free shipping on orders over $75 &nbsp; | &nbsp; Get 15% off your first purchase
+</div>
+<!-- HEADER -->
+<div class="top-header">
+    <div class="logo">
+        
+        <div class="logo-text">SONU</div>
+    </div>
+    <div class="hero"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <ul>
+        <li><a href="Hero.html">HOME</a></li>
+
+        <li>
+            <a href="#">SONU SOOD ▼</a>
+            <div class="dropdown">
+                <a href="Bio.html">Biography</a>
+                <a href="Photo.html">Photos</a>
+                <a href="Videos.html">Videos</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">MOVIES ▼</a>
+            <div class="dropdown">
+                <a href="Hindi.html">Hindi Movies</a>
+                <a href="Telugu.html">Telugu Movies</a>
+                <a href="Tamil.html">Tamil Movies</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">GALLERY ▼</a>
+            <div class="dropdown">
+                <a href="Photo.html">Photos</a>
+                <a href="#">Wallpapers</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">VIDEOS ▼</a>
+            <div class="dropdown">
+                <a href="Interview.html">Interviews</a>
+                <a href="Trailer.HTML">Trailers</a>
+            </div>
+        </li>
+
+        <li><a href="Social.html">SOCIAL</a></li>
+        <li><a href="Blog.html">BLOG</a></li>
+    </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <span>Home</span> / Social
+</div>
+
+<!-- HEADER -->
+<section class="header">
+    <h1><span>SONU</span> SOOD</h1>
+    <p>Complete Telugu Movie Filmography</p>
+</section>
+
+<!-- MOVIES -->
+<section class="movies">
+
+<!-- TEMPLATE CARD -->
+<!-- Replace image URLs later if needed -->
+
+<div class="movie"><img src="Img/M1.webp"><div class="movie-content"><h3>Hands Up</h3><span>2000</span><p>Sonu Sood’s Telugu debut film.</p></div></div>
+
+<div class="movie"><img src="Img/M2.jpg"><div class="movie-content"><h3>Ammayilu Abbayilu</h3><span>2003</span><p>Romantic drama with youthful energy.</p></div></div>
+
+<div class="movie"><img src="Img/M3.webp"><div class="movie-content"><h3>Super</h3><span>2005</span><p>Stylish action entertainer.</p></div></div>
+
+<div class="movie"><img src="Img/M4.jpg"><div class="movie-content"><h3>Athadu</h3><span>2005</span><p>Popular action thriller.</p></div></div>
+
+<div class="movie"><img src="Img/M5.jpg"><div class="movie-content"><h3>Ashok</h3><span>2006</span><p>Mass action drama.</p></div></div>
+
+<div class="movie"><img src="Img/M6.jpg"><div class="movie-content"><h3>Mr Medhavi</h3><span>2008</span><p>Family drama film.</p></div></div>
+
+<div class="movie"><img src="Img/M7.jpg"><div class="movie-content"><h3>Arundhati</h3><span>2009</span><p>Iconic villain role as Pasupathi.</p></div></div>
+
+<div class="movie"><img src="Img/M8.webp"><div class="movie-content"><h3>Anjaneyulu</h3><span>2009</span><p>Action-packed entertainer.</p></div></div>
+
+<div class="movie"><img src="Img/M9.webp"><div class="movie-content"><h3>Bangaru Babu</h3><span>2009</span><p>Commercial Telugu film.</p></div></div>
+
+<div class="movie"><img src="Img/M10.avif"><div class="movie-content"><h3>Ek Niranjan</h3><span>2009</span><p>Stylish action thriller.</p></div></div>
+
+<div class="movie"><img src="Img/M12.webp"><div class="movie-content"><h3>Teenmaar</h3><span>2010</span><p>Romantic drama.</p></div></div>
+
+<div class="movie"><img src="Img/M14.webp"><div class="movie-content"><h3>Sakthi</h3><span>2011</span><p>Fantasy action film.</p></div></div>
+
+<div class="movie"><img src="Img/M15.jpeg"><div class="movie-content"><h3>Kandireega</h3><span>2011</span><p>Comedy action entertainer.</p></div></div>
+
+<div class="movie"><img src="Img/M13.jpeg"><div class="movie-content"><h3>Dookudu</h3><span>2011</span><p>Blockbuster commercial hit.</p></div></div>
+
+<div class="movie"><img src="Img/M16.webp"><div class="movie-content"><h3>Uu Kodathara? Ulikki Padathara?</h3><span>2012</span><p>Fantasy thriller.</p></div></div>
+
+<div class="movie"><img src="Img/M11.webp"><div class="movie-content"><h3>Julayi</h3><span>2012</span><p>Stylish action entertainer.</p></div></div>
+
+<div class="movie"><img src="Img/M17.webp"><div class="movie-content"><h3>Bhai</h3><span>2013</span><p>Action drama.</p></div></div>
+
+<div class="movie"><img src="Img/M18.jpg"><div class="movie-content"><h3>Aagadu</h3><span>2014</span><p>Police action entertainer.</p></div></div>
+
+<div class="movie"><img src="Img/M19.jpg"><div class="movie-content"><h3>Abhinetri</h3><span>2016</span><p>Horror comedy film.</p></div></div>
+
+<div class="movie"><img src="Img/M20.jpg"><div class="movie-content"><h3>Abhinetri 2</h3><span>2019</span><p>Sequel horror entertainer.</p></div></div>
+
+<div class="movie"><img src="Img/M21.png"><div class="movie-content"><h3>Sita</h3><span>2019</span><p>Romantic drama film.</p></div></div>
+
+<div class="movie"><img src="Img/M22.avif"><div class="movie-content"><h3>Alludu Adhurs</h3><span>2021</span><p>Action comedy entertainer.</p></div></div>
+
+<div class="movie"><img src="Img/M23.webp"><div class="movie-content"><h3>Acharya</h3><span>2022</span><p>Social action drama.</p></div></div>
+
+</section>
+
+<footer>
+    © 2025 Sonu Sood | Telugu Movies
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<html>
+<head>
+<title>Sonu Sood Official</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+          
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#141313;
+}
+
+/* ===== TOP HEADER ===== */
+.top-header{
+    background:#fdfbfb;
+    display:flex;
+    align-items:center;
+    padding:15px 40px;
+    font-family: "Whisper",cursive;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-circle{
+    width:55px;
+    height:55px;
+    background:#332bc1;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.logo-text{
+    font-size:70px;
+    color:rgb(165, 41, 10);
+    text-shadow: 0 0 15px rgb(211, 72, 233),
+                0 0 20px rgb(99, 25, 124),
+                0 0 20px rgb(80, 22, 88);
+    font-weight:bold;
+    font-family: "whisper",cursive;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero{
+    width:100%;
+    height:300px;
+    background:url("Img/Sonu2.png") no-repeat center right;
+    background-size:100% auto; 
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.4);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#050715;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    padding:0 40px;
+}
+
+.navbar ul li{
+    position:relative;
+}
+
+.navbar ul li a{
+    display:block;
+    padding:15px 18px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar ul li:hover{
+    background:#37383a;
+    color:#000;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background: #e50914;
+    min-width:200px;
+    display:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    z-index:999;
+    color:black;
+}
+
+.dropdown a{
+    color:#fff;
+    padding:12px 15px;
+    display:block;
+    font-weight:normal;
+}
+
+.dropdown a:hover{
+    background:#f2f2f2;
+    color:#000;
+}
+
+/* STABLE HOVER */
+.navbar ul li:hover .dropdown{
+    display:block;
+}
+
+/* BREADCRUMB */
+.breadcrumb{
+    padding:15px 40px;
+    background:#141313;
+    color:#555;
+}
+
+.breadcrumb span{
+    color:#3f8cf2;
+}
+.offer-bar{
+  background:#e50914;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+}
+:root{
+    --dark:#0f0f0f;
+    --accent:#e50914;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', system-ui, sans-serif;
+}
+
+body{
+    background:var(--dark);
+    color:#fff;
+}
+
+/* HEADER */
+.header{
+    padding:80px 10%;
+    text-align:center;
+    animation:fadeDown 1.2s ease;
+}
+
+.header h1{
+    font-size:48px;
+    letter-spacing:3px;
+}
+
+.header span{
+    color:var(--accent);
+}
+
+.header p{
+    margin-top:10px;
+    font-size:18px;
+    opacity:.85;
+}
+
+/* GALLERY */
+.gallery{
+    padding:60px 8% 100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* PHOTO CARD */
+.photo{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    box-shadow:0 20px 40px rgba(0,0,0,.6);
+    animation:fadeUp 1.2s ease;
+}
+
+.photo img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    transition:0.7s ease;
+}
+
+/* OVERLAY */
+.photo::after{
+    content:"View Photo";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    letter-spacing:2px;
+    opacity:0;
+    transition:0.5s;
+}
+
+.photo:hover::after{
+    opacity:1;
+}
+
+.photo:hover img{
+    transform:scale(1.15);
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    color:#aaa;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .header h1{font-size:34px;}
+    .photo img{height:260px;}
+}
+
+</style>
+</head>
+
+<body>
+    <div class="offer-bar">
+  Free shipping on orders over $75 &nbsp; | &nbsp; Get 15% off your first purchase
+</div>
+<!-- HEADER -->
+<div class="top-header">
+    <div class="logo">
+        
+        <div class="logo-text">Sonu</div>
+    </div>
+    <div class="hero"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <ul>
+        <li><a href="Hero.html">HOME</a></li>
+
+        <li>
+            <a href="#">SONU SOOD ▼</a>
+            <div class="dropdown">
+                <a href="Bio.html">Biography</a>
+                <a href="Photo.html">Photos</a>
+                <a href="Videos.html">Videos</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">MOVIES ▼</a>
+            <div class="dropdown">
+                <a href="Hindi.html">Hindi Movies</a>
+                <a href="Telugu.html">Telugu Movies</a>
+                <a href="Tamil.html">Tamil Movies</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">GALLERY ▼</a>
+            <div class="dropdown">
+                <a href="Photo.html">Photos</a>
+                <a href="#">Wallpapers</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">VIDEOS ▼</a>
+            <div class="dropdown">
+                <a href="Interview.html">Interviews</a>
+                <a href="Trailer.HTML">Trailers</a>
+            </div>
+        </li>
+
+        <li><a href="Social.html">SOCIAL</a></li>
+        <li><a href="Blog.html">BLOG</a></li>
+    </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <span>Home</span> / Social
+</div>
+<!-- HEADER -->
+<section class="header">
+    <h1><span>SONU</span> SOOD</h1>
+    <p>Photo Gallery • Moments • Achievements</p>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+
+    <div class="photo">
+        <img src="Img/SS1.webp">
+    </div>
+
+    <div class="photo">
+        <img src="Img/SS2.webp">
+    </div>
+
+    <div class="photo">
+        <img src="Img/SS3.webp">
+    </div>
+
+    <div class="photo">
+        <img src="Img/SS4.webp">
+    </div>
+
+    <div class="photo">
+        <img src="Img/SS5.jpg">
+    </div>
+
+    <div class="photo">
+        <img src="Img/SS6.webp">
+    </div>
+
+    <div class="photo">
+        <img src="Img/Sonu1.jpg">
+    </div>
+
+    <div class="photo">
+        <img src="Img/Sonu4.webp">
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Sonu Sood | Photo Gallery
+</footer>
+</body>
+</html>

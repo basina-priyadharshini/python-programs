@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Careers | Shipcon Chennai</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY BACKGROUND ===== */
+body{
+    background:
+        linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+        url("Img/Ship2.jpg") no-repeat center;
+    background-size:cover;
+    color:#fff;
+}
+
+/* ===== HEADER WRAPPER ===== */
+.header-wrap{
+    position:relative;
+    top:50px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    z-index:1000;
+    color:gold;
+}
+
+/* ===== NAV BOX ===== */
+.nav-box{
+    width:100%;
+    padding:22px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+/* LOGO */
+.logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-wrap img{
+    width:42px;
+}
+
+.logo-wrap span{
+    font-size:26px;
+    font-weight:bold;
+    
+}
+
+/* NAV LINKS */
+nav a{
+    margin-left:22px;
+    text-decoration:none;
+    color:gold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#ffd369;
+}
+
+/* ===== CAREER HEADER ===== */
+.career-header{
+    text-align:center;
+    padding:180px 20px 80px;
+}
+
+.career-header h1{
+    font-size:38px;
+    letter-spacing:1px;
+}
+
+.career-header p{
+    margin-top:10px;
+    font-size:16px;
+    opacity:0.9;
+}
+
+/* ===== CONTENT ===== */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px 100px;
+}
+
+/* JOB GRID */
+.jobs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* JOB CARD */
+.job-card{
+    background:#ffffff;
+    color:#333;
+    border-radius:12px;
+    padding:28px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    transform:translateY(40px);
+    opacity:0;
+    transition:0.8s ease;
+}
+
+.job-card.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+.job-card:hover{
+    transform:translateY(-8px);
+}
+
+.job-card h3{
+    color:#0b3c5d;
+    margin-bottom:10px;
+}
+
+.job-card span{
+    display:block;
+    font-size:14px;
+    color:#777;
+    margin-bottom:15px;
+}
+
+.job-card p{
+    line-height:1.7;
+}
+
+/* APPLY BUTTON */
+.apply-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 22px;
+    background:#0b3c5d;
+    color:#fff;
+    text-decoration:none;
+    border-radius:4px;
+    font-size:14px;
+}
+
+.apply-btn:hover{
+    background:#072b42;
+}
+
+/* APPLICATION FORM */
+.form-box{
+    margin-top:90px;
+    background:#ffffff;
+    color:#333;
+    padding:40px;
+    border-radius:14px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.25);
+    transform:translateY(40px);
+    opacity:0;
+    transition:1s ease;
+}
+
+.form-box.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+.form-box h2{
+    color:#0b3c5d;
+    margin-bottom:25px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+
+.form-grid textarea{
+    resize:none;
+    height:120px;
+}
+
+.submit-btn{
+    margin-top:20px;
+    padding:12px 30px;
+    background:#0b3c5d;
+    color:#fff;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#072b42;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="header-wrap">
+    <div class="nav-box">
+        <div class="logo-wrap">
+            <img src="logo.png">
+            <span>SHIPCON CHENNAI</span>
+        </div>
+        <nav>
+            <a href="Ship-H.html">HOME</a>
+            <a href="Ship-About.html">ABOUT US</a>
+            <a href="Infrastructure.html">INFRASTRUCTURE</a>
+            <a href="Services.html">PRODUCTS & SERVICES</a>
+            <a href="Projects.html">PROJECTS</a>
+            <a href="Ship-Gallery.html">GALLERY</a>
+            <a href="Ship-Career.html">CAREERS</a>
+            <a href="Ship-Tender.html">TENDERS</a>
+            <a href="Ship-Contact.html">CONTACT</a>
+        </nav>
+    </div>
+</div>
+
+<!-- HEADER -->
+<section class="career-header">
+    <h1>Careers at Shipcon Chennai</h1>
+    <p>Build your future with India’s growing shipyard</p>
+</section>
+
+<!-- JOBS -->
+<section class="container">
+    <div class="jobs">
+        <div class="job-card">
+            <h3>Naval Architect</h3>
+            <span>Shipbuilding | Chennai</span>
+            <p>Design and structural planning of ships and offshore vessels.</p>
+            <a class="apply-btn" href="#apply">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <h3>Marine Engineer</h3>
+            <span>Engineering | Full Time</span>
+            <p>Maintenance and operation of ship propulsion and machinery.</p>
+            <a class="apply-btn" href="#apply">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <h3>Welding Supervisor</h3>
+            <span>Production | Shipyard</span>
+            <p>Supervise welding operations ensuring quality and safety.</p>
+            <a class="apply-btn" href="#apply">Apply Now</a>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-box" id="apply">
+        <h2>Apply for a Position</h2>
+        <form>
+            <div class="form-grid">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Mobile Number">
+                <select>
+                    <option>Select Position</option>
+                    <option>Naval Architect</option>
+                    <option>Marine Engineer</option>
+                    <option>Welding Supervisor</option>
+                </select>
+                <textarea placeholder="Experience Summary"></textarea>
+            </div>
+            <button class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+</section>
+
+<script>
+/* SCROLL ANIMATION */
+const revealItems = document.querySelectorAll('.job-card, .form-box');
+
+function reveal(){
+    revealItems.forEach(item=>{
+        if(item.getBoundingClientRect().top < window.innerHeight - 100){
+            item.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', reveal);
+reveal();
+</script>
+
+</body>
+</html>

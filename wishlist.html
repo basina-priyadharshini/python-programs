@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wishlist</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#f1f3f6;
+  margin:0;
+}
+h2{
+  padding:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,250px);
+  gap:20px;
+  padding:30px;
+}
+
+.card{
+  background:#fff;
+  padding:15px;
+  position:relative;
+  border:1px solid #ddd;
+}
+
+img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+}
+
+/* HEART */
+.heart{
+  position:absolute;
+  top:10px;
+  right:10px;
+  font-size:22px;
+  cursor:pointer;
+  color:red;
+}
+.heart.removed{
+  color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<h2>❤️ Wishlist</h2>
+<div class="grid" id="g"></div>
+
+<script>
+let g = document.getElementById("g");
+
+/* ORIGINAL WISHLIST */
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+/* TEMP REMOVAL LIST (until window close) */
+let markedForRemoval = [];
+
+/* RENDER */
+function renderWishlist(){
+  g.innerHTML = "";
+
+  if(wishlist.length === 0){
+    g.innerHTML = "<p style='color:#555'>Wishlist Empty</p>";
+    return;
+  }
+
+  wishlist.forEach((x,index)=>{
+    let removed = markedForRemoval.includes(index);
+
+    g.innerHTML += `
+      <div class="card">
+        <span class="heart ${removed ? 'removed' : ''}"
+              onclick="toggleRemove(${index})">
+          ${removed ? '♡' : '♥'}
+        </span>
+        <img src="${x.image}">
+        <h4>${x.name}</h4>
+        <p>₹${x.price}</p>
+      </div>
+    `;
+  });
+}
+
+/* HEART CLICK → ONLY UI CHANGE */
+function toggleRemove(index){
+  if(markedForRemoval.includes(index)){
+    markedForRemoval = markedForRemoval.filter(i => i !== index);
+  }else{
+    markedForRemoval.push(index);
+  }
+  renderWishlist();
+}
+
+/* WINDOW CLOSE → FINAL REMOVE */
+window.addEventListener("beforeunload", function(){
+  let finalWishlist = wishlist.filter((_,i)=>!markedForRemoval.includes(i));
+  localStorage.setItem("wishlist", JSON.stringify(finalWishlist));
+});
+
+renderWishlist();
+</script>
+
+</body>
+</html>

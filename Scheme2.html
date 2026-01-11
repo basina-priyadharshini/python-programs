@@ -1,0 +1,362 @@
+<html>
+    <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* HEADER */
+.top-header {
+    width: 100%;
+    background: #e498be;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-logo img {
+    width: 110px;
+}
+.center-text {
+    text-align: center;
+}
+.center-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color:rgb(152, 55, 113);
+}
+.center-text h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    color: rgb(15, 15, 135);
+}
+.icons img {
+    width: 75px;
+    margin: 10px;
+}
+.right-image {
+    text-align: center;
+}
+.right-image img {
+    width: 160px;
+    height: 100%;
+    border-radius: 6px;
+}
+/* NAVBAR */
+nav{
+    background:#507be7;
+    padding:15px 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+nav ul li{
+    position:relative;
+}
+nav a{
+    text-decoration:none;
+    color:#000;
+    font-size:17px;
+    padding:8px 10px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+/* Dropdown Arrow */
+.arrow{
+    font-size:12px;
+}
+/* Dropdown Menu */
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:white;
+    min-width:200px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    z-index:100;
+}
+.dropdown-menu a{
+    padding:12px;
+    display:block;
+}
+.dropdown-menu a:hover{
+    background:#f2f2f2;
+}
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu{
+    display:flex;
+}
+/* Hover for main menu */
+nav a:hover{
+    background:#f5f5f5;
+    border-radius:5px;
+}
+/*section*/
+.container {
+        width: 90%;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    }
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    /* Tabs */
+    .tabs {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+    .tabs button {
+        padding: 10px 18px;
+        background: #e6e6ff;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        color: #000;
+    }
+    .tabs button.active {
+        background: #0069ff;
+        color: white;
+    }
+    /* Cards */
+    .card {
+        background: white;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        margin-bottom: 25px;
+    }
+    .card h2 {
+        background: linear-gradient(to right, #c94bdf, #e89ce9);
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-size: 18px;
+        color: white;
+        margin-top: 0;
+    }
+    .list ul {
+        margin: 10px 0 0 20px;
+    }
+    .content-section {
+        display: none;
+    }
+    .content-section.active {
+        display: block;
+    }
+    </style>
+<body>
+    <!-- TOP HEADER WITH LOGOS -->
+<header class="top-header">
+    <div class="left-logo">
+        <img src="Img/I8.png" alt="AP Govt Logo">
+    </div>
+    <div class="left-logo">
+    <img src="Img/O6.png" alt="">
+    </div>
+    <div class="center-text">
+        <h2>Women Development and Child Welfare Department</h2>
+        <h3>Government of Andhra Pradesh</h3>
+    </div>
+    <div class="right-image">
+        <img src="Img/O8.png" alt="CM">
+    </div>
+    <div class="right-image">
+        <img src="Img/O9.png" alt="Minister">
+    </div>
+    <div class="right-image">
+            <img src="Img/O5.png" alt=""></div>
+</header>
+<!-- NAVIGATION BAR -->
+<nav>
+    <ul>
+       <!-- HOME DROPDOWN -->
+        <li><a href="Orphans.html">HOME</a></li>
+        <li><a href="Orphans.html">MISSION & VISION</a></li>
+        <li class="dropdown">
+            <a href="#">SCHEME's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Scheme1.html">Saksham Anganwadi</a>
+                <a href="Scheme2.html">Mission Sakti</a>
+            </div>
+        </li>
+        <li><a href="G2.html">GALLERY</a></li>
+        <!-- ABOUT DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">ACT's<span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="RTI.html">RTI Act</a>
+                <a href="#">Vision & Mission</a>
+            </div>
+        </li>
+        <!-- SERVICES DROPDOWN -->
+        <li class="dropdown">
+            <a href="#">INSTITUTES <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+                <a href="Home.html">Children-Home</a>
+                <a href="Shakti.html">Sakhi Nivas</a>
+                <a href="Hostel.html">Hostels</a>
+            </div>
+        </li>
+        <!-- SIMPLE MENU WITHOUT DROPDOWN -->
+        <li><a href="">CONTACTS</a></li>
+    </ul>
+</nav>
+<!--Section1-->
+<div class="container">
+    <div class="title">I. State Government Supported Schemes/Programmes</div>
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" data-target="state">State Homes</button>
+        <button class="tab-btn" data-target="service">Service Homes</button>
+        <button class="tab-btn" data-target="college">Collegiate Homes</button>
+        <button class="tab-btn" data-target="working">Working Women Hostels</button>
+        <button class="tab-btn" data-target="domestic">Domestic Violence Cells</button>
+        <button class="tab-btn" data-target="victim">Victim Compensation</button>
+    </div>
+    <!-- State Homes -->
+    <div id="state" class="content-section">
+        <div class="card">
+            <h2>Purpose</h2>
+            <p>One Stop Centres (OSCs) are intended to provide integrated
+               immediate, emergency and non-emergency support and assistance 
+               to women affected by violence, both in private and public spaces 
+               under one roof. Medical Assistance, Legal Support, Psychosocial 
+               Support, Police Assistance and short-term shelter at One Stop Centre 
+               and long term shelter at Swadhar Grehs are provided for the women 
+               affected by violence. 19 One Stop Centres are functional in 19 districts.</p></div>
+        <div class="card">     
+               <h2>Admission Rules</h2>
+               <p>The needy women along with their children (girls and boys upto 12 years)
+                  can avail temporary shelter for a maximum period of 5 days.<hr>
+                  In case girls are referred, they will also be provided services in 
+                  coordination with authorities/institutions established under the 
+                  Juvenile Justice (Care and Protection of Children) Act, 2015 and 
+                  the Protection of Children from Sexual Offence Act, 2012.<hr>
+                  The admissibility of any woman to the temporary shelter would be at 
+                  the discretion of the Centre Administrator.<hr> For long-term shelter 
+                  requirements, arrangements will be made by OSCs in coordination with Shakti Sadan</p></div>
+        <div class="card">         
+                  <h2>Facilities</h2>
+                  <p><ul>
+                    <li>Medical aid</li>
+                    <li>Police assistance</li>
+                    <li>Legal aid/case management</li>
+                    <li>Psychosocial Counselling</li>
+                    <li>>Sanitary Napkin</li>
+                    <li>Temporary Shelter</li>
+                    <li>Food</li>
+                    <li>Toiletries</li>
+                  </ul></p>
+        </div>
+    </div>
+    <!-- Service Homes -->
+    <div id="service" class="content-section">
+        <div class="card">
+            <h2>Service Homes</h2>
+            <p>Content for Service Homes section comes here.</p>
+        </div>
+    </div>
+    <!-- Collegiate Homes -->
+    <div id="college" class="content-section">
+        <div class="card">
+            <h2>Collegiate Homes</h2>
+            <p>Collegiate homes related information.</p>
+        </div>
+    </div>
+    <!-- Working Women Hostels -->
+    <div id="working" class="content-section">
+        <div class="card">
+            <h2>Working Women Hostels</h2>
+            <p>Working Women Hostels under WD&CW Dept provide food, 
+                shelter and security to young women employees of 
+                low-income group, who are away from families.</p></div>
+        <div class="card">
+            <h2>Services</h2>
+            <p>Out of the total strength in the hostels, 20% to be provided 
+                for the students under training for employment for a period of 
+                two years with preference to departmental students of nurse training, 
+                women’s technical training institute and other employment training programmes</p></div>
+            <div class="card">
+            <h2>Target Group</h2>
+            <p>
+                <ul>
+                    <li> Women who may be single, widowed, divorced, separated or married (whose 
+                        immediate family does not reside in the same city/area).</li>
+                    <li>Preference will be given to women from disadvantaged sections of the society.</li>
+                    <li> Special preference would be given to beneficiaries with physical 
+                        disabilities, in case there is shortage of accommodation.</li>
+                    <li>Women who are under one year job training will also be considered 
+                        for accommodation subject to availability.</li>
+                    <li>The number of women under training for jobs should not exceed 30% of the total capacity.</li>
+                    <li>Girls up to 18 years and boys up to the age of 12 years, accompanying 
+                        working mothers will be provided accommodation with their mothers.</li>
+                    <li>Working mothers may also avail of the services of the Day Care Centre, as provided under the scheme.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <!-- Domestic Violence -->
+    <div id="domestic" class="content-section active">
+        <div class="card">
+            <h2>Purpose</h2>
+            <p>The Act covers all women who are or have been in a relationship...</p>
+        </div>
+        <div class="card">
+            <h2>Services</h2>
+            <p>Services such as family counselling, legal aid, DIR filing...</p>
+        </div>
+        <div class="card">
+            <h2>Act Implementation</h2>
+            <p>The Government appointed 55 protection officers...</p>
+        </div>
+        <div class="card list">
+            <h2>Relief Orders</h2>
+            <ul>
+                <li>Protection Order (Section 18)</li>
+                <li>Residence Order (Section 19)</li>
+                <li>Monetary Relief (Section 20)</li>
+                <li>Custody Order (Section 21)</li>
+                <li>Compensation Order (Section 22)</li>
+                <li>Ex-Parte Order (Section 23)</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Victim Compensation -->
+    <div id="victim" class="content-section">
+        <div class="card">
+            <h2>Victim Compensation</h2>
+            <p>Information about Victim Compensation.</p>
+        </div>
+    </div>
+</div>
+<script>
+    const tabs = document.querySelectorAll(".tab-btn");
+    const sections = document.querySelectorAll(".content-section");
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            sections.forEach(sec => sec.classList.remove("active"));
+            document.getElementById(tab.dataset.target).classList.add("active");
+        });
+    });
+</script>
+</body>
+</html>

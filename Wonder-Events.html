@@ -1,0 +1,295 @@
+ <html>
+    <style>
+        body{
+            background: #fff;
+        }
+header{
+    position:fixed;
+    top:0;
+    width:95%;
+    z-index:1000;
+    padding:15px 40px;
+}
+
+.header-bar{
+    background:#d3d7df;
+    border-radius:30px;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#141313;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 15px;
+    color:#1f3556;
+    font-weight:600;
+}
+
+.book-btn{
+    background:#ffcc00;
+    border:none;
+    padding:10px 22px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+/* EVENTS BODY */
+.events-body{
+  padding:70px 60px 120px;
+  max-width:1300px;
+  height: 60%;
+  margin:auto;
+}
+
+/* TOP ROW */
+.events-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:120px;
+}
+
+.events-title{
+  font-size:52px;
+  font-weight:900;
+  color:#1f2f49;
+}
+
+/* SEARCH BOX */
+.events-search{
+  position:relative;
+}
+
+.events-search input{
+  width:300px;
+  padding:16px 50px 16px 20px;
+  border-radius:14px;
+  border:1px solid #cfd7e6;
+  outline:none;
+  font-size:15px;
+}
+
+.events-search span{
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:20px;
+  color:#333;
+}
+
+/* CENTER MESSAGE */
+.events-message{
+  text-align:center;
+  font-size:18px;
+  color:#1f2f49;
+}
+
+.events-message span{
+  font-size:20px;
+}
+
+/* FOOTER */
+.footer{
+  background:#1f2f49;
+  color:#fff;
+  padding:70px 60px;
+}
+
+.footer-container{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1.5fr;
+  gap:60px;
+}
+
+/* LEFT */
+.footer-left img{
+  width:140px;
+  margin-bottom:20px;
+}
+
+.footer-left p{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:20px;
+  color:#d7dce3;
+}
+
+.social-icons span{
+  display:inline-block;
+  margin-right:15px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* NEWSLETTER */
+.newsletter h3{
+  font-size:20px;
+  margin:30px 0 15px;
+}
+
+.newsletter input{
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  border:none;
+  margin-bottom:15px;
+  outline:none;
+}
+
+.newsletter button{
+  width:100%;
+  padding:15px;
+  background:#ffd800;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* MIDDLE LINKS */
+.footer-links div{
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding:15px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* RIGHT CONTACT */
+.footer-contact h4{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.contact-box{
+  margin-bottom:25px;
+  font-size:14px;
+  color:#d7dce3;
+}
+
+.contact-box p{
+  margin:6px 0;
+}
+    </style>
+    <body>
+    <header>
+    <div class="header-bar">
+        <div class="logo">WONDERLA</div>
+        <nav>
+            <a href="Wonderla.html">Park</a>
+            <a href="Wonder-Offers.html">Offers</a>
+            <a href="Wonder-Ride.html">Rides</a>
+            <a href="Wonder-Restarent.html">Restaurants</a>
+            <a href="Wonder-Events.html">Events</a>
+        </nav>
+        <button class="book-btn">Book Tickets</button>
+    </div>
+    </header>
+<section class="events-body">
+
+  <!-- TOP -->
+  <div class="events-top">
+    <h1 class="events-title">EVENT MANIA</h1>
+
+    <div class="events-search">
+      <input type="text" placeholder="Search events">
+      <span>🔍</span>
+    </div>
+  </div>
+
+  <!-- MESSAGE -->
+  <div class="events-message">
+    <span>🚀</span>
+    The adventure of events is on pause for now, but keep your seatbelts fastened –
+    we'll be back with thrilling events soon!
+    <span>🚀</span>
+  </div>
+
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <img src="Img2/WONDER.webp" alt="Wonderla">
+
+      <p>
+        We dream of creating a world of thrilling experiences that bring endless joy to adventurers of all age groups!
+      </p>
+
+      <div class="social-icons">
+        <span>📷</span>
+        <span>✖</span>
+        <span>▶</span>
+        <span>f</span>
+      </div>
+
+      <div class="newsletter">
+        <h3>Stay Looped Into Fun & Thrills!</h3>
+        <input type="email" placeholder="Enter email address">
+        <button>Subscribe To Our Newsletter</button>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="footer-links">
+      <div>Parks & Resorts <span>+</span></div>
+      <div>Guest Services <span>+</span></div>
+      <div>Corporate <span>+</span></div>
+      <div>Legal <span>+</span></div>
+      <div>News & Resources <span>+</span></div>
+      <div>Contact Us <span>+</span></div>
+      <div>FAQs</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-contact">
+
+      <div class="contact-box">
+        <h4>Wonderla Chennai</h4>
+        <p>✉ mail.che@wonderla.com</p>
+        <p>📞 044-35024300</p>
+        <p>📞 044-35024242</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Kochi</h4>
+        <p>✉ mail.cok@wonderla.com</p>
+        <p>📞 0484 351 4001</p>
+        <p>📞 +91 75938 53107</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Bengaluru</h4>
+        <p>✉ mail.blr@wonderla.com</p>
+        <p>📞 080 372 30333</p>
+        <p>📞 080 350 73966</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Hyderabad</h4>
+        <p>✉ mail.hyd@wonderla.com</p>
+        <p>📞 084 146 76333</p>
+        <p>📞 +91 91000 63636</p>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>

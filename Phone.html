@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Phone Validation</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#f2f2f2;
+}
+
+.box{
+  width:300px;
+  margin:100px auto;
+  padding:20px;
+  background:white;
+  text-align:center;
+  box-shadow:0px 0px 10px gray;
+}
+
+input{
+  width:100%;
+  padding:8px;
+  margin-bottom:10px;
+}
+
+button{
+  width:100%;
+  padding:8px;
+  background:blue;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="box">
+  <h3>Phone Validation</h3>
+
+  <input type="text" id="phone" placeholder="Enter Phone Number">
+  <button onclick="checkPhone()">Submit</button>
+</div>
+
+<script>
+function checkPhone(){
+  let phone = document.getElementById("phone").value;
+
+  if(phone == ""){
+    alert("Enter Your Phone Number ❗");
+  }
+  else if(phone.length == 10 && !isNaN(phone)){
+    alert ("Valid Phone Number ✅");
+  }
+  else{
+    alert("Invalid Phone Number ❌");
+  }
+}
+</script>
+
+</body>
+</html>

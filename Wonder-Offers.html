@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wonderla Offers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+}
+
+/* ===== PAGE WRAP ===== */
+.offer-page{
+    padding:60px 40px;
+}
+
+/* ===== GRID ===== */
+.offer-grid{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+/* ===== CARD ===== */
+.offer-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    display:flex;
+    flex-direction:column;
+}
+
+/* IMAGE */
+.offer-image{
+    height:200px;
+}
+
+.offer-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* CONTENT */
+.offer-body{
+    padding:18px;
+    flex:1;
+}
+
+.offer-title{
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:#0b1c3d;
+}
+
+/* TAGS */
+.offer-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:12px;
+}
+
+.offer-tags span{
+    background:#e6efff;
+    color:#3567ff;
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:8px;
+}
+
+/* DESC */
+.offer-desc{
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+}
+
+/* FOOTER BUTTONS */
+.offer-actions{
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.book-btn{
+    background:#3a57d7;
+    color:#fff;
+    text-align:center;
+    padding:14px;
+    border-radius:10px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.view-btn{
+    background:#ffd800;
+    color:#0b1c3d;
+    text-align:center;
+    padding:14px;
+    border-radius:10px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1200px){
+    .offer-grid{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:650px){
+    .offer-grid{ grid-template-columns:1fr; }
+}
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 40px;
+}
+
+.header-bar{
+    background:#fff;
+    border-radius:30px;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#ffcc00;
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 15px;
+    color:#1f3556;
+    font-weight:600;
+}
+
+.book-btn{
+    background:#ffcc00;
+    border:none;
+    padding:10px 22px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.head{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:black;
+    padding-top:120px;
+}
+
+.head h1{
+    font-size:64px;
+    font-weight:900;
+}
+
+.head-btn{
+    margin-top:25px;
+    background:#ffcc00;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.head{
+    text-align: center;
+}
+
+.faq-section{
+  background:#ffd800;
+  padding:80px 60px;
+}
+
+.faq-container{
+  display:flex;
+  gap:60px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* LEFT CONTENT */
+.faq-left{
+  width:40%;
+}
+
+.faq-left h1{
+  font-size:64px;
+  font-weight:900;
+  color:#1b2b3a;
+  line-height:1;
+}
+
+.faq-left p{
+  margin:20px 0 40px;
+  color:#1b2b3a;
+  font-size:16px;
+}
+
+.faq-btn{
+  background:#3b4fd8;
+  color:#fff;
+  padding:16px 35px;
+  border-radius:30px;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* RIGHT FAQ BOXES */
+.faq-right{
+  width:60%;
+}
+
+.faq-item{
+  background:#fff;
+  border-radius:14px;
+  padding:22px 25px;
+  margin-bottom:18px;
+  cursor:pointer;
+}
+
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:17px;
+  font-weight:600;
+  color:#1b2b3a;
+}
+
+.faq-icon{
+  font-size:22px;
+  transition:0.3s;
+}
+
+/* ANSWER */
+.faq-answer{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:all 0.4s ease;
+  margin-top:0;
+  color:#444;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.faq-item.active .faq-answer{
+  max-height:200px;
+  opacity:1;
+  margin-top:15px;
+}
+
+.faq-item.active .faq-icon{
+  transform:rotate(45deg);
+}
+
+/* FOOTER */
+.footer{
+  background:#1f2f49;
+  color:#fff;
+  padding:70px 60px;
+}
+
+.footer-container{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1.5fr;
+  gap:60px;
+}
+
+/* LEFT */
+.footer-left img{
+  width:140px;
+  margin-bottom:20px;
+}
+
+.footer-left p{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:20px;
+  color:#d7dce3;
+}
+
+.social-icons span{
+  display:inline-block;
+  margin-right:15px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* NEWSLETTER */
+.newsletter h3{
+  font-size:20px;
+  margin:30px 0 15px;
+}
+
+.newsletter input{
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  border:none;
+  margin-bottom:15px;
+  outline:none;
+}
+
+.newsletter button{
+  width:100%;
+  padding:15px;
+  background:#ffd800;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* MIDDLE LINKS */
+.footer-links div{
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding:15px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* RIGHT CONTACT */
+.footer-contact h4{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.contact-box{
+  margin-bottom:25px;
+  font-size:14px;
+  color:#d7dce3;
+}
+
+.contact-box p{
+  margin:6px 0;
+}
+</style>
+</head>
+<header>
+    <div class="header-bar">
+        <div class="logo">WONDERLA</div>
+        <nav>
+            <a href="Wonderla.html">Park</a>
+            <a href="Wonder-Offers.html">Offers</a>
+            <a href="Wonder-Ride.html">Rides</a>
+            <a href="Wonder-Restarent.html">Restaurants</a>
+            <a href="Wonder-Events.html">Events</a>
+        </nav>
+        <button class="book-btn">Book Tickets</button>
+    </div>
+</header>
+
+<body>
+    <div class="head">
+        <h1>Offers & Combos</h1>
+        <p>Plan the perfect day with exciting ticket combos designed to give you endless fun and incredible savings!</p>
+    </div>
+<section class="offer-page">
+    <div class="offer-grid">
+        <!-- CARD 1 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O1.webp">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">MINDBLOWING CHRISTMAS @ WONDERLA</h3>
+                <div class="offer-tags">
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                    Avail attractive discounts on ticket categories for Christmas.
+                    Enjoy epic shows, Christmas cheer and magical celebrations.
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="Wonder-Offers-page.html" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O2.webp">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">HARVEST FUN THIS PONGAL: 20% OFF</h3>
+                <div class="offer-tags">
+                    <span>Chennai</span>
+                </div>
+                <p class="offer-desc">
+                    Book online now to avail 20% off on ticket + buffet.
+                    Celebrate Pongal season with exciting rides.
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="Wonder-Offers-page.html" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O3.webp">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">10% OFF FOR EARLY BIRDS</h3>
+                <div class="offer-tags">
+                    <span>Chennai</span>
+                </div>
+                <p class="offer-desc">
+                    Book your tickets in advance and get an extra 10% off.
+                    Plan early and save more.
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="Wonder-Offers-page.html" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O4.webp">
+            </div>
+            <div class="offer-body">
+                <h3 class="offer-title">WONDER WOMEN WEDNESDAYS</h3>
+                <div class="offer-tags">
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                </div>
+                <p class="offer-desc">
+                    Celebrate women power! Buy 2 get 2 free tickets every Wednesday.
+                    Exclusive online offer.
+                </p>
+            </div>
+            <div class="offer-actions">
+                <a href="Wonder-Offers-page.html" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+        <!-- Offer Card 1 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O5.webp" alt="Birthday Offer">
+            </div>
+
+            <div class="offer-body">
+                <h3 class="offer-title">
+                    BIRTHDAY OFFER BUY 1 GET 1 FREE
+                </h3>
+
+                <div class="offer-tags">
+                    <span>Kochi</span>
+                    <span>Bengaluru</span>
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                    <span>Chennai</span>
+                </div>
+
+                <p class="offer-desc">
+                    Buy 1 get 1 free ticket for your birthday! Celebrate your special
+                    day at Wonderla with unlimited rides and fun.
+                </p>
+            </div>
+
+            <div class="offer-actions">
+                <a href="#" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+
+        <!-- Offer Card 2 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O6.webp" alt="Student Offer">
+            </div>
+
+            <div class="offer-body">
+                <h3 class="offer-title">
+                    STUDENT ID = UP TO 25% OFF
+                </h3>
+
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                    <span>Kochi</span>
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                    <span>Chennai</span>
+                </div>
+
+                <p class="offer-desc">
+                    Study hard, play harder! Exclusive student discounts
+                    on tickets with valid student ID.
+                </p>
+            </div>
+
+            <div class="offer-actions">
+                <a href="#" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+
+        <!-- Offer Card 3 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O7.webp" alt="Defense Offer">
+            </div>
+
+            <div class="offer-body">
+                <h3 class="offer-title">
+                    DEFENSE OFFER
+                </h3>
+
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                    <span>Kochi</span>
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                    <span>Chennai</span>
+                </div>
+
+                <p class="offer-desc">
+                    Avail a flat 25% discount on ticket categories.
+                    Special offer for service personnel and their families.
+                </p>
+            </div>
+
+            <div class="offer-actions">
+                <a href="#" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+
+        <!-- Offer Card 4 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O8.webp" alt="Resort Offer">
+            </div>
+
+            <div class="offer-body">
+                <h3 class="offer-title">
+                    FESTIVE ESCAPE AT WONDERLA RESORT
+                </h3>
+
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                </div>
+
+                <p class="offer-desc">
+                    Festive special stay package! Enjoy flavors, fun,
+                    and festive cheer at Wonderla Resort.
+                </p>
+            </div>
+
+            <div class="offer-actions">
+                <a href="#" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="Img2/O9.webp" alt="Student Offer">
+            </div>
+
+            <div class="offer-body">
+                <h3 class="offer-title">
+                    STUDENT ID = UP TO 25% OFF
+                </h3>
+
+                <div class="offer-tags">
+                    <span>Bengaluru</span>
+                    <span>Kochi</span>
+                    <span>Hyderabad</span>
+                    <span>Bhubaneswar</span>
+                    <span>Chennai</span>
+                </div>
+
+                <p class="offer-desc">
+                    Study hard, play harder! Exclusive student discounts
+                    on tickets with valid student ID.
+                </p>
+            </div>
+
+            <div class="offer-actions">
+                <a href="#" class="book-btn">BOOK NOW</a>
+                <a href="#" class="view-btn">VIEW DETAILS</a>
+            </div>
+        </div>
+        </div>
+</section>
+<section class="faq-section">
+  <div class="faq-container">
+
+    <!-- LEFT -->
+    <div class="faq-left">
+      <h1>FREQUENTLY<br>ASKED<br>QUESTIONS</h1>
+      <p>Find the answers to all your questions about tickets, rides, safety and more!</p>
+      <button class="faq-btn">Explore All FAQs</button>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="faq-right">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Are all the rides included in the entry ticket?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, all rides and attractions inside the park are included in the entry ticket unless mentioned otherwise.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you offer individual ride tickets?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          No, individual ride tickets are not available. All rides are included with the entry ticket.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Should I make reservations before coming?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Online booking is recommended for faster entry, but tickets are also available at the counter.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What is the minimum age for full ticket entry?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Children above a specified height are required to purchase a full ticket.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Are lockers or changing rooms available?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, lockers and changing rooms are available near water rides.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item=>{
+  item.addEventListener("click",()=>{
+    faqItems.forEach(i=>{
+      if(i !== item){
+        i.classList.remove("active");
+      }
+    });
+    item.classList.toggle("active");
+  });
+});
+</script>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <img src="https://www.wonderla.com/images/logo.svg" alt="Wonderla">
+
+      <p>
+        We dream of creating a world of thrilling experiences that bring endless joy to adventurers of all age groups!
+      </p>
+
+      <div class="social-icons">
+        <span>📷</span>
+        <span>✖</span>
+        <span>▶</span>
+        <span>f</span>
+      </div>
+
+      <div class="newsletter">
+        <h3>Stay Looped Into Fun & Thrills!</h3>
+        <input type="email" placeholder="Enter email address">
+        <button>Subscribe To Our Newsletter</button>
+      </div>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="footer-links">
+      <div>Parks & Resorts <span>+</span></div>
+      <div>Guest Services <span>+</span></div>
+      <div>Corporate <span>+</span></div>
+      <div>Legal <span>+</span></div>
+      <div>News & Resources <span>+</span></div>
+      <div>Contact Us <span>+</span></div>
+      <div>FAQs</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-contact">
+
+      <div class="contact-box">
+        <h4>Wonderla Chennai</h4>
+        <p>✉ mail.che@wonderla.com</p>
+        <p>📞 044-35024300</p>
+        <p>📞 044-35024242</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Kochi</h4>
+        <p>✉ mail.cok@wonderla.com</p>
+        <p>📞 0484 351 4001</p>
+        <p>📞 +91 75938 53107</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Bengaluru</h4>
+        <p>✉ mail.blr@wonderla.com</p>
+        <p>📞 080 372 30333</p>
+        <p>📞 080 350 73966</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>Wonderla Hyderabad</h4>
+        <p>✉ mail.hyd@wonderla.com</p>
+        <p>📞 084 146 76333</p>
+        <p>📞 +91 91000 63636</p>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>
